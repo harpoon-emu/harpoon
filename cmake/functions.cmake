@@ -1,3 +1,10 @@
+function(check_and_create_file name)
+	if(NOT EXISTS "${CURRENT_TARGET_DIR}/${name}")
+		file(APPEND "${CURRENT_TARGET_DIR}/${name}" "")
+		message(STATUS "Creating file: ${CURRENT_TARGET_DIR}/${name}")
+	endif()
+endfunction(check_and_create_file)
+
 function(add_sources)
 
 	if(SOURCE_DIR)
@@ -27,12 +34,14 @@ function(add_sources)
 	set(lst_src "")
 	foreach(f ${SOURCE_FILES})
 		list(APPEND lst_src "${SOURCE_DIR}/${f}")
+		check_and_create_file("${SOURCE_DIR}/${f}")
 	endforeach(f)
 	list(APPEND lst_src "${SOURCE_DIR}/CMakeLists.txt")
 
 	set(lst_inc "")
 	foreach(f ${INCLUDE_FILES})
 		list(APPEND lst_inc "${INCLUDE_DIR}/${f}")
+		check_and_create_file(${INCLUDE_DIR}/${f})
 	endforeach(f)
 
 	set(SOURCES 

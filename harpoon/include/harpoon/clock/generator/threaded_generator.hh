@@ -1,11 +1,9 @@
 #ifndef HARPOON_CLOCK_GENERATOR_THREADED_GENERATOR_HH
 #define HARPOON_CLOCK_GENERATOR_THREADED_GENERATOR_HH
 
-#include "../../harpoon.hh"
-#include "generator.hh"
+#include "harpoon/harpoon.hh"
+#include "harpoon/clock/generator/generator.hh"
 
-#include <string>
-#include <memory>
 #include <thread>
 
 namespace harpoon {
@@ -21,16 +19,11 @@ public:
 
 	virtual ~threaded_generator();
 
-	bool is_running() const {
-		return _running;
-	}
-
 	virtual void start();
 	virtual void stop();
 
 private:
 	std::unique_ptr<std::thread> _thread{};
-	bool _running{};
 };
 
 }
