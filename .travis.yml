@@ -5,22 +5,12 @@ env:
     - secure: "kFPcTSi1z80VfIOxFqZYXqfmaWX1+S5e0ZQ9Fr9DN5NcWB0UqKpzTumtxiOs5GHduQOSczFR6I3ISvXbcQyFoPayfzGwC2gcIUvYA9YMTTEpWE/tH0FazORsp3wqnIMsQc9SLkxlchJGgmCWC+Cmbfz+1B6SmuFVCAZyxkRXrwA="
 
 branches:
-  only: master
+  only: coverity_scan
 
 matrix:
   include:
     - compiler: gcc
-      env: GCC_VERSION=4.8
-    - compiler: gcc
       env: GCC_VERSION=4.9
-    - compiler: gcc
-      env: GCC_VERSION=5
-    - compiler: clang
-      env: LLVM_VERSION=3.5
-    - compiler: clang
-      env: LLVM_VERSION=3.6
-    - compiler: clang
-      env: LLVM_VERSION=3.7
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
