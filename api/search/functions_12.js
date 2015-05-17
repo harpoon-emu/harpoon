@@ -7,6 +7,8 @@ var searchData=
   ['_7eexecution_5funit',['~execution_unit',['../d6/d5c/classharpoon_1_1execution_1_1execution__unit.html#a34486ac073c78a7778f0a6cda4d0f029',1,'harpoon::execution::execution_unit']]],
   ['_7egenerator',['~generator',['../d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#a843f1168681d23bd448a1428ef74a1d3',1,'harpoon::clock::generator::generator']]],
   ['_7ehardware_5fcomponent',['~hardware_component',['../df/d54/classharpoon_1_1hardware__component.html#a609a8f8b6051eb781bb0d28bbbe0fab4',1,'harpoon::hardware_component']]],
+  ['_7ehardware_5fcomponent_5fexception',['~hardware_component_exception',['../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html#a23f6d16ac7603893241a1a5e97d6231d',1,'harpoon::exception::hardware_component_exception']]],
+  ['_7eharpoon_5fexception',['~harpoon_exception',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a3be9ea2e027afc11584b1ecd53993397',1,'harpoon::exception::harpoon_exception']]],
   ['_7elog',['~log',['../d8/dae/classharpoon_1_1log_1_1log.html#a12e6db1d7025d5cc9305da0291e7a93f',1,'harpoon::log::log']]],
   ['_7emessage',['~message',['../d5/d06/classharpoon_1_1log_1_1message.html#a6d7fccc7ece813d15aa3635021741428',1,'harpoon::log::message']]],
   ['_7eprocessing_5funit',['~processing_unit',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#acec32045220fe2688cf05b2a6b7d6f28',1,'harpoon::execution::processing_unit']]],
