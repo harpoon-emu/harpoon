@@ -12,7 +12,7 @@ void threaded_generator::start() {
 
 	_thread.reset(new std::thread([this, delay] {
 		while (is_running()) {
-			tick();
+			next_tick();
 			std::this_thread::sleep_for(std::chrono::nanoseconds(delay));
 		}
 	}));
@@ -24,7 +24,7 @@ void threaded_generator::stop() {
 
 	if (_thread) {
 		_thread->join();
-		_thread.reset(nullptr);
+		_thread.reset();
 	}
 }
 

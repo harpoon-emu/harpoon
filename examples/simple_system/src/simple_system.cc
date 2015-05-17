@@ -1,16 +1,15 @@
 #include "simple_computer_system.hh"
-#include "harpoon/execution/up_execution_unit.hh"
-#include "harpoon/execution/cpu.hh"
-#include "harpoon/clock/clock.hh"
-#include "harpoon/clock/generator/dummy_generator.hh"
+#include "simple_cpu.hh"
+
 #include "harpoon/log/console_log.hh"
+#include "harpoon/clock/clock.hh"
+#include "harpoon/clock/generator/threaded_generator.hh"
+#include "harpoon/execution/up_execution_unit.hh"
 
 #include <memory>
 #include <condition_variable>
 #include <mutex>
 #include <csignal>
-
-using dummy_generator = harpoon::clock::generator::dummy_generator;
 
 static std::condition_variable signal_condition_variable{};
 static std::mutex signal_mutex{};
@@ -30,8 +29,13 @@ int main(int argc, char* argv[]) {
 	auto execution_unit = harpoon::execution::make_up_execution_unit("Execution unit");
 	computer_system->set_main_execution_unit(execution_unit);
 
-	auto clock = harpoon::clock::make_clock<10, dummy_generator>("Clock#1");
-	computer_system->add_component(clock);
+	auto clock = harpoon::clock::make_clock(
+		std::static_pointer_cast<harpoon::clock::generator::generator>(
+			harpoon::clock::generator::make_threaded_generator(1000)), "Clock#1");
+	execution_unit->set_clock(clock);
+
+	auto cpu = std::make_shared<simple_cpu>("CPU#0");
+	execution_unit->set_cpu(cpu);
 
 	computer_system->prepare();
 	computer_system->boot();

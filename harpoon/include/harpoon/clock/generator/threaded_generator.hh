@@ -26,6 +26,13 @@ private:
 	std::unique_ptr<std::thread> _thread{};
 };
 
+using threaded_generator_ptr = std::shared_ptr<threaded_generator>;
+using threaded_generator_weak_ptr = std::weak_ptr<threaded_generator>;
+template<typename... Args>
+threaded_generator_ptr make_threaded_generator(Args&&... args) {
+	return std::make_shared<threaded_generator>(std::forward<Args>(args)...);
+}
+
 }
 }
 }

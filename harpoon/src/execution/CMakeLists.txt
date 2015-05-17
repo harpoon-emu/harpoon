@@ -7,6 +7,7 @@ set(SOURCE_FILES
 	)
 
 set(INCLUDE_FILES
+	cycle.hh
 	cpu.hh
 	execution_unit.hh
 	up_execution_unit.hh

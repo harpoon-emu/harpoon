@@ -20,13 +20,16 @@ public:
 		_cpu = cpu;
 	}
 
-	virtual void cleanup();
+	cpu_ptr get_cpu() const {
+		return _cpu.lock();
+	}
 
 private:
-	cpu_ptr _cpu{};
+	cpu_weak_ptr _cpu{};
 };
 
 using up_execution_unit_ptr = std::shared_ptr<up_execution_unit>;
+using up_execution_unit_weak_ptr = std::weak_ptr<up_execution_unit>;
 template<typename... Args>
 up_execution_unit_ptr make_up_execution_unit(Args&&... args) {
 	return std::make_shared<up_execution_unit>(std::forward<Args>(args)...);

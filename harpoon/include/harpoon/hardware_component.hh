@@ -5,12 +5,14 @@
 #include "harpoon/log/log.hh"
 
 #include <list>
+#include <atomic>
 
 namespace harpoon {
 
 class hardware_component;
 
 using hardware_component_ptr = std::shared_ptr<hardware_component>;
+using hardware_component_weak_ptr = std::weak_ptr<hardware_component>;
 
 class hardware_component : public std::enable_shared_from_this<hardware_component> {
 public:
@@ -31,13 +33,13 @@ public:
 		_name = name;
 	}
 
-	const hardware_component_ptr& get_parent_component() const {
-		return _parent_component;
+	hardware_component_ptr get_parent_component() const {
+		return _parent_component.lock();
 	}
 
 	void add_component(const hardware_component_ptr& component);
 
-	void replace_component(const hardware_component_ptr& old_component,
+	void replace_component(const hardware_component_weak_ptr& old_component,
 						   const hardware_component_ptr& new_component);
 
 	void set_log(const log::log_ptr& log) {
@@ -54,15 +56,20 @@ public:
 	virtual void boot();
 	virtual void shutdown();
 
+	bool is_running() const {
+		return _running;
+	}
+
 private:
 	void set_parent_component(const hardware_component_ptr& parent_component) {
 		_parent_component = parent_component;
 	}
 
 	std::string _name{};
-	hardware_component_ptr _parent_component{};
+	hardware_component_weak_ptr _parent_component{};
 	std::list<hardware_component_ptr> _components{};
 	log::log_ptr _log{};
+	std::atomic_bool _running{false};
 };
 
 #define component_critical (log_debug_c(get_name()))

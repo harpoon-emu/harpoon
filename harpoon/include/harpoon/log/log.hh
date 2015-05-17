@@ -20,6 +20,7 @@ public:
 };
 
 using log_ptr = std::shared_ptr<log>;
+using log_weak_ptr = std::weak_ptr<log>;
 
 }
 }

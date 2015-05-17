@@ -8,6 +8,9 @@ using namespace harpoon::log;
 console_log::~console_log() {}
 
 void console_log::out(const message& message) {
+
+	std::lock_guard<std::mutex> lk(_mutex);
+
 	if (_display_component) {
 		std::cout << "[" << message.get_component() << "] ";
 	}

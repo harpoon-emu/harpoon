@@ -4,6 +4,8 @@
 #include "harpoon/harpoon.hh"
 #include "harpoon/log/log.hh"
 
+#include <mutex>
+
 namespace harpoon {
 namespace log {
 
@@ -36,9 +38,11 @@ private:
 	bool _display_file{false};
 	bool _display_line{false};
 	bool _display_function{false};
+	std::mutex _mutex{};
 };
 
 using console_log_ptr = std::shared_ptr<console_log>;
+using console_log_weak_ptr = std::weak_ptr<console_log>;
 template<typename... Args>
 console_log_ptr make_console_log(Args&&... args) {
 	return std::make_shared<console_log>(std::forward<Args>(args)...);

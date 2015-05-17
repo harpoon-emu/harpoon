@@ -6,7 +6,6 @@ env:
 
 branches:
   only: coverity_scan
-
 matrix:
   include:
     - compiler: gcc
