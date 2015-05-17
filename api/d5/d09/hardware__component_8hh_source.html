@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d54/classharpoon_1_1hardware__component.html#a79f39271e79427df69e4114bac1dc0ef">add_component</a>(<span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a>&amp; component);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d54/classharpoon_1_1hardware__component.html#a640ad8a3b4dd08d4bd15797d03ea0966">remove_component</a>(<span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a>&amp; component);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d54/classharpoon_1_1hardware__component.html#a05ac6abc73c78267520b18f24dad8156">replace_component</a>(<span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a>&amp; old_component,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                           <span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a>&amp; new_component);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -151,26 +151,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> set_parent_component(<span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#acf5a676acea7b39ffca191333bf372ff">hardware_component_ptr</a>&amp; parent_component) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        _parent_component = parent_component;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::string _name{};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> _parent_component{};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::list&lt;hardware_component_ptr&gt; _components{};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> _log{};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::atomic_bool _running{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#aca1a722c821b89087d0fc3a767ce6b4c">   75</a></span>&#160;<span class="preprocessor">#define component_critical (log_debug_c(get_name()))</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a35d9c0e75f6c24247595b084b5d73d49">   76</a></span>&#160;<span class="preprocessor">#define component_error (log_error_c(get_name()))</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#ac5b0c7bcdaa16156510f0c6c2bd7160b">   77</a></span>&#160;<span class="preprocessor">#define component_warning (log_warning_c(get_name()))</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a9a974bb07ffa41ee8522a7a289153f59">   78</a></span>&#160;<span class="preprocessor">#define component_notice (log_notice_c(get_name()))</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a9e8f4863336390664fd1a31ed6343d02">   79</a></span>&#160;<span class="preprocessor">#define component_debug (log_debug_c(get_name()))</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> set_parent_component(<span class="keyword">const</span> <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a>&amp; parent_component);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::string _name{};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> _parent_component{};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::list&lt;hardware_component_ptr&gt; _components{};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> _log{};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::atomic_bool _running{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#aca1a722c821b89087d0fc3a767ce6b4c">   73</a></span>&#160;<span class="preprocessor">#define component_critical (log_debug_c(get_name()))</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a35d9c0e75f6c24247595b084b5d73d49">   74</a></span>&#160;<span class="preprocessor">#define component_error (log_error_c(get_name()))</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#ac5b0c7bcdaa16156510f0c6c2bd7160b">   75</a></span>&#160;<span class="preprocessor">#define component_warning (log_warning_c(get_name()))</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a9a974bb07ffa41ee8522a7a289153f59">   76</a></span>&#160;<span class="preprocessor">#define component_notice (log_notice_c(get_name()))</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d5/d09/hardware__component_8hh.html#a9e8f4863336390664fd1a31ed6343d02">   77</a></span>&#160;<span class="preprocessor">#define component_debug (log_debug_c(get_name()))</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classharpoon_1_1hardware__component_html_a8e05ba70941b3c0c118171f3f3e7d58b"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#a8e05ba70941b3c0c118171f3f3e7d58b">harpoon::hardware_component::set_name</a></div><div class="ttdeci">void set_name(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> hardware_component.hh:32</div></div>
 <div class="ttc" id="classharpoon_1_1hardware__component_html_a609a8f8b6051eb781bb0d28bbbe0fab4"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#a609a8f8b6051eb781bb0d28bbbe0fab4">harpoon::hardware_component::~hardware_component</a></div><div class="ttdeci">virtual ~hardware_component()</div></div>
 <div class="ttc" id="namespaceharpoon_html_aabc8cfcf86975de1d34b810d8adf5c7b"><div class="ttname"><a href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">harpoon::hardware_component_weak_ptr</a></div><div class="ttdeci">std::weak_ptr&lt; hardware_component &gt; hardware_component_weak_ptr</div><div class="ttdef"><b>Definition:</b> hardware_component.hh:15</div></div>
@@ -190,13 +188,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classharpoon_1_1hardware__component_html_accf97987b337334c97392e4858c030bf"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#accf97987b337334c97392e4858c030bf">harpoon::hardware_component::is_running</a></div><div class="ttdeci">bool is_running() const </div><div class="ttdef"><b>Definition:</b> hardware_component.hh:59</div></div>
 <div class="ttc" id="classharpoon_1_1hardware__component_html_af4e5f8be129c1099f4ee45951a3a691e"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#af4e5f8be129c1099f4ee45951a3a691e">harpoon::hardware_component::get_name</a></div><div class="ttdeci">const std::string &amp; get_name() const </div><div class="ttdef"><b>Definition:</b> hardware_component.hh:28</div></div>
 <div class="ttc" id="log_8hh_html"><div class="ttname"><a href="../../d3/de3/log_8hh.html">log.hh</a></div></div>
+<div class="ttc" id="classharpoon_1_1hardware__component_html_a640ad8a3b4dd08d4bd15797d03ea0966"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#a640ad8a3b4dd08d4bd15797d03ea0966">harpoon::hardware_component::remove_component</a></div><div class="ttdeci">void remove_component(const hardware_component_weak_ptr &amp;component)</div></div>
 <div class="ttc" id="classharpoon_1_1hardware__component_html_ac1fcc61bfc9e10bc407694a37041f70f"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#ac1fcc61bfc9e10bc407694a37041f70f">harpoon::hardware_component::get_parent_component</a></div><div class="ttdeci">hardware_component_ptr get_parent_component() const </div><div class="ttdef"><b>Definition:</b> hardware_component.hh:36</div></div>
 <div class="ttc" id="namespaceharpoon_1_1log_html_abc613a9fd9b1e13dc79db47f9ac3c1e6"><div class="ttname"><a href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">harpoon::log::log_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; log &gt; log_ptr</div><div class="ttdef"><b>Definition:</b> log.hh:22</div></div>
 <div class="ttc" id="classharpoon_1_1hardware__component_html_a20f69cd3610ba192bfbaf18a81945308"><div class="ttname"><a href="../../df/d54/classharpoon_1_1hardware__component.html#a20f69cd3610ba192bfbaf18a81945308">harpoon::hardware_component::cleanup</a></div><div class="ttdeci">virtual void cleanup()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 17 2015 18:59:51 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 17 2015 19:11:41 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
