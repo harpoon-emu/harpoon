@@ -101,14 +101,24 @@ Inheritance diagram for harpoon::exception::harpoon_exception:</div>
  <div class="center">
   <img src="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.png" usemap="#harpoon::exception::harpoon_exception_map" alt=""/>
   <map id="harpoon::exception::harpoon_exception_map" name="harpoon::exception::harpoon_exception_map">
-<area href="../../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html" alt="harpoon::exception::hardware_component_exception" shape="rect" coords="0,112,308,136"/>
+<area href="../../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html" alt="harpoon::exception::hardware_component_exception" shape="rect" coords="159,112,467,136"/>
+<area href="../../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html" alt="harpoon::memory::exception::memory_exception" shape="rect" coords="159,168,467,192"/>
+<area href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html" alt="harpoon::memory::exception::access_violation" shape="rect" coords="159,224,467,248"/>
+<area href="../../de/db7/classharpoon_1_1memory_1_1exception_1_1read__access__violation.html" alt="harpoon::memory::exception::read_access_violation" shape="rect" coords="0,280,308,304"/>
+<area href="../../da/d66/classharpoon_1_1memory_1_1exception_1_1write__access__violation.html" alt="harpoon::memory::exception::write_access_violation" shape="rect" coords="318,280,626,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa471b95a250b2ecd28e6cd0cd73dfd7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#aa471b95a250b2ecd28e6cd0cd73dfd7a">harpoon_exception</a> (const std::string &amp;what, const std::string &amp;file={}, uint32_t line={}, const std::string &amp;function={})</td></tr>
+<tr class="memitem:aa471b95a250b2ecd28e6cd0cd73dfd7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#aa471b95a250b2ecd28e6cd0cd73dfd7a">harpoon_exception</a> (const std::string &amp;<a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>, const std::string &amp;file={}, uint32_t line={}, const std::string &amp;function={})</td></tr>
 <tr class="separator:aa471b95a250b2ecd28e6cd0cd73dfd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c02aebbc121ee7eb6f0a39e1d42c3a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">set_what</a> (const std::string &amp;<a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>)</td></tr>
+<tr class="separator:a8c02aebbc121ee7eb6f0a39e1d42c3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6e8e810d8d5803852d48c330e3355a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">get_what</a> () const </td></tr>
+<tr class="separator:a6b6e8e810d8d5803852d48c330e3355a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb08324f3ee1773a88f236ba12e2c969"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a> () const noexcept(true)</td></tr>
+<tr class="separator:abb08324f3ee1773a88f236ba12e2c969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be9ea2e027afc11584b1ecd53993397"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a3be9ea2e027afc11584b1ecd53993397">~harpoon_exception</a> ()</td></tr>
 <tr class="separator:a3be9ea2e027afc11584b1ecd53993397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -182,13 +192,84 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6b6e8e810d8d5803852d48c330e3355a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; harpoon::exception::harpoon_exception::get_what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c02aebbc121ee7eb6f0a39e1d42c3a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::exception::harpoon_exception::set_what </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>what</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb08324f3ee1773a88f236ba12e2c969"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* harpoon::exception::harpoon_exception::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>harpoon/exception/<a class="el" href="../../d5/d38/harpoon__exception_8hh_source.html">harpoon_exception.hh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 17 2015 22:24:40 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2015 07:49:27 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

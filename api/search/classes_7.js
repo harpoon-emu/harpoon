@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['processing_5funit',['processing_unit',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html',1,'harpoon::execution']]]
+  ['memory',['memory',['../db/d2f/classharpoon_1_1memory_1_1memory.html',1,'harpoon::memory']]],
+  ['memory_5fexception',['memory_exception',['../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html',1,'harpoon::memory::exception']]],
+  ['message',['message',['../d5/d06/classharpoon_1_1log_1_1message.html',1,'harpoon::log']]]
 ];

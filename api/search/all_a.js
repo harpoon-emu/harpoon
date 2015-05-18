@@ -1,8 +1,10 @@
 var searchData=
 [
   ['level',['Level',['../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c',1,'harpoon::log::message']]],
-  ['log',['log',['../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c',1,'harpoon::hardware_component']]],
+  ['linear_5fmemory',['linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html',1,'harpoon::memory']]],
+  ['linear_5fmemory_2ehh',['linear_memory.hh',['../d1/d70/linear__memory_8hh.html',1,'']]],
   ['log',['log',['../d8/dae/classharpoon_1_1log_1_1log.html',1,'harpoon::log']]],
+  ['log',['log',['../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c',1,'harpoon::hardware_component']]],
   ['log_2ehh',['log.hh',['../d3/de3/log_8hh.html',1,'']]],
   ['log_5fcritical',['log_critical',['../d9/d74/message_8hh.html#a1c3b22efa78556bf6dd0b68e43fb4c50',1,'message.hh']]],
   ['log_5fcritical_5fc',['log_critical_c',['../d9/d74/message_8hh.html#a65a601c0ec53dbd6117fb4c58c93c809',1,'message.hh']]],
