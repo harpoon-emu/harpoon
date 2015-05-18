@@ -2,6 +2,7 @@ var searchData=
 [
   ['level',['Level',['../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c',1,'harpoon::log::message']]],
   ['linear_5fmemory',['linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html',1,'harpoon::memory']]],
+  ['linear_5fmemory',['linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a0836bdf81be1f5e50a59fcad27867b9f',1,'harpoon::memory::linear_memory::linear_memory(const std::string &amp;name={}, const address_range &amp;address_range={})'],['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#afbec754ba0939fbc1453fe722fb71edf',1,'harpoon::memory::linear_memory::linear_memory(const linear_memory &amp;)=delete']]],
   ['linear_5fmemory_2ehh',['linear_memory.hh',['../d1/d70/linear__memory_8hh.html',1,'']]],
   ['log',['log',['../d8/dae/classharpoon_1_1log_1_1log.html',1,'harpoon::log']]],
   ['log',['log',['../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c',1,'harpoon::hardware_component']]],
