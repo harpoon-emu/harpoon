@@ -94,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for all hardware components of computer system (i.e. CPU, memory). All components should derive from this class.  
+ <a href="../../df/d54/classharpoon_1_1hardware__component.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d5/d09/hardware__component_8hh_source.html">hardware_component.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for harpoon::hardware_component:</div>
@@ -114,43 +117,63 @@ Inheritance diagram for harpoon::hardware_component:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac65fe91e363d6f36f046dff966550ff1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ac65fe91e363d6f36f046dff966550ff1">hardware_component</a> (const std::string &amp;name={})</td></tr>
+<tr class="memdesc:ac65fe91e363d6f36f046dff966550ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware component default constructor.  <a href="#ac65fe91e363d6f36f046dff966550ff1">More...</a><br /></td></tr>
 <tr class="separator:ac65fe91e363d6f36f046dff966550ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0cc9de4cc147f6b79d3695ad513e1f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ac0cc9de4cc147f6b79d3695ad513e1f8">hardware_component</a> (const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;)=default</td></tr>
-<tr class="separator:ac0cc9de4cc147f6b79d3695ad513e1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54002110bf7ea420bb750b92c3826564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a54002110bf7ea420bb750b92c3826564">operator=</a> (const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;)=default</td></tr>
-<tr class="separator:a54002110bf7ea420bb750b92c3826564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87fdc39aee349050e9b48f37029fd53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ae87fdc39aee349050e9b48f37029fd53">hardware_component</a> (const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;source)=default</td></tr>
+<tr class="memdesc:ae87fdc39aee349050e9b48f37029fd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor.  <a href="#ae87fdc39aee349050e9b48f37029fd53">More...</a><br /></td></tr>
+<tr class="separator:ae87fdc39aee349050e9b48f37029fd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2403a266e5ca89227deb41fc3dbc8086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a2403a266e5ca89227deb41fc3dbc8086">operator=</a> (const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;source)=default</td></tr>
+<tr class="memdesc:a2403a266e5ca89227deb41fc3dbc8086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default assignment operator.  <a href="#a2403a266e5ca89227deb41fc3dbc8086">More...</a><br /></td></tr>
+<tr class="separator:a2403a266e5ca89227deb41fc3dbc8086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a609a8f8b6051eb781bb0d28bbbe0fab4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a609a8f8b6051eb781bb0d28bbbe0fab4">~hardware_component</a> ()</td></tr>
+<tr class="memdesc:a609a8f8b6051eb781bb0d28bbbe0fab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a609a8f8b6051eb781bb0d28bbbe0fab4">More...</a><br /></td></tr>
 <tr class="separator:a609a8f8b6051eb781bb0d28bbbe0fab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4e5f8be129c1099f4ee45951a3a691e"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#af4e5f8be129c1099f4ee45951a3a691e">get_name</a> () const </td></tr>
-<tr class="separator:af4e5f8be129c1099f4ee45951a3a691e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e05ba70941b3c0c118171f3f3e7d58b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a8e05ba70941b3c0c118171f3f3e7d58b">set_name</a> (const std::string &amp;name)</td></tr>
-<tr class="separator:a8e05ba70941b3c0c118171f3f3e7d58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1fcc61bfc9e10bc407694a37041f70f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9e/namespaceharpoon.html#acf5a676acea7b39ffca191333bf372ff">hardware_component_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ac1fcc61bfc9e10bc407694a37041f70f">get_parent_component</a> () const </td></tr>
-<tr class="separator:ac1fcc61bfc9e10bc407694a37041f70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f39271e79427df69e4114bac1dc0ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a79f39271e79427df69e4114bac1dc0ef">add_component</a> (const <a class="el" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> &amp;component)</td></tr>
+<tr class="memdesc:a79f39271e79427df69e4114bac1dc0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add hardware component to components hierarchy.  <a href="#a79f39271e79427df69e4114bac1dc0ef">More...</a><br /></td></tr>
 <tr class="separator:a79f39271e79427df69e4114bac1dc0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a640ad8a3b4dd08d4bd15797d03ea0966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a640ad8a3b4dd08d4bd15797d03ea0966">remove_component</a> (const <a class="el" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> &amp;component)</td></tr>
+<tr class="memdesc:a640ad8a3b4dd08d4bd15797d03ea0966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove component from components hierachy.  <a href="#a640ad8a3b4dd08d4bd15797d03ea0966">More...</a><br /></td></tr>
 <tr class="separator:a640ad8a3b4dd08d4bd15797d03ea0966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05ac6abc73c78267520b18f24dad8156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a05ac6abc73c78267520b18f24dad8156">replace_component</a> (const <a class="el" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> &amp;old_component, const <a class="el" href="../../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b">hardware_component_weak_ptr</a> &amp;new_component)</td></tr>
+<tr class="memdesc:a05ac6abc73c78267520b18f24dad8156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace component with new component.  <a href="#a05ac6abc73c78267520b18f24dad8156">More...</a><br /></td></tr>
 <tr class="separator:a05ac6abc73c78267520b18f24dad8156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab218adbe929266bd3736ff396e93ede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#aab218adbe929266bd3736ff396e93ede">set_log</a> (const <a class="el" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> &amp;<a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c">log</a>)</td></tr>
-<tr class="separator:aab218adbe929266bd3736ff396e93ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af14d8d9f0e4196a92c0fae3270145e24"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#af14d8d9f0e4196a92c0fae3270145e24">get_log</a> () const </td></tr>
-<tr class="separator:af14d8d9f0e4196a92c0fae3270145e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b50b175144ccb9b6f4e1f69df2e6d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c">log</a> (const std::ostream &amp;stream) const </td></tr>
-<tr class="separator:a9b50b175144ccb9b6f4e1f69df2e6d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d65d1dbac4ebdd343eb9d37f262d128"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a7d65d1dbac4ebdd343eb9d37f262d128">prepare</a> ()</td></tr>
+<tr class="memdesc:a7d65d1dbac4ebdd343eb9d37f262d128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform component setup. Called during system preparation stage.  <a href="#a7d65d1dbac4ebdd343eb9d37f262d128">More...</a><br /></td></tr>
 <tr class="separator:a7d65d1dbac4ebdd343eb9d37f262d128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f69cd3610ba192bfbaf18a81945308"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a20f69cd3610ba192bfbaf18a81945308">cleanup</a> ()</td></tr>
+<tr class="memdesc:a20f69cd3610ba192bfbaf18a81945308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup component. Called during system cleanup stage.  <a href="#a20f69cd3610ba192bfbaf18a81945308">More...</a><br /></td></tr>
 <tr class="separator:a20f69cd3610ba192bfbaf18a81945308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6906cf2c58c29be6bd9a450561806361"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a6906cf2c58c29be6bd9a450561806361">boot</a> ()</td></tr>
+<tr class="memdesc:a6906cf2c58c29be6bd9a450561806361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boot component. Called during system startup stage (booting).  <a href="#a6906cf2c58c29be6bd9a450561806361">More...</a><br /></td></tr>
 <tr class="separator:a6906cf2c58c29be6bd9a450561806361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7296b461a91427d1648822ead2dbb31"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ab7296b461a91427d1648822ead2dbb31">shutdown</a> ()</td></tr>
+<tr class="memdesc:ab7296b461a91427d1648822ead2dbb31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown component. Called during system shutdown stage.  <a href="#ab7296b461a91427d1648822ead2dbb31">More...</a><br /></td></tr>
 <tr class="separator:ab7296b461a91427d1648822ead2dbb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b50b175144ccb9b6f4e1f69df2e6d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c">log</a> (const std::ostream &amp;stream) const </td></tr>
+<tr class="memdesc:a9b50b175144ccb9b6f4e1f69df2e6d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit message to component log.  <a href="#a9b50b175144ccb9b6f4e1f69df2e6d3c">More...</a><br /></td></tr>
+<tr class="separator:a9b50b175144ccb9b6f4e1f69df2e6d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf97987b337334c97392e4858c030bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#accf97987b337334c97392e4858c030bf">is_running</a> () const </td></tr>
+<tr class="memdesc:accf97987b337334c97392e4858c030bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is component is running.  <a href="#accf97987b337334c97392e4858c030bf">More...</a><br /></td></tr>
 <tr class="separator:accf97987b337334c97392e4858c030bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e5f8be129c1099f4ee45951a3a691e"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#af4e5f8be129c1099f4ee45951a3a691e">get_name</a> () const </td></tr>
+<tr class="memdesc:af4e5f8be129c1099f4ee45951a3a691e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return hardware component name.  <a href="#af4e5f8be129c1099f4ee45951a3a691e">More...</a><br /></td></tr>
+<tr class="separator:af4e5f8be129c1099f4ee45951a3a691e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e05ba70941b3c0c118171f3f3e7d58b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a8e05ba70941b3c0c118171f3f3e7d58b">set_name</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a8e05ba70941b3c0c118171f3f3e7d58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set hardware component name.  <a href="#a8e05ba70941b3c0c118171f3f3e7d58b">More...</a><br /></td></tr>
+<tr class="separator:a8e05ba70941b3c0c118171f3f3e7d58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fcc61bfc9e10bc407694a37041f70f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9e/namespaceharpoon.html#acf5a676acea7b39ffca191333bf372ff">hardware_component_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#ac1fcc61bfc9e10bc407694a37041f70f">get_parent_component</a> () const </td></tr>
+<tr class="memdesc:ac1fcc61bfc9e10bc407694a37041f70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get parent component.  <a href="#ac1fcc61bfc9e10bc407694a37041f70f">More...</a><br /></td></tr>
+<tr class="separator:ac1fcc61bfc9e10bc407694a37041f70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14d8d9f0e4196a92c0fae3270145e24"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#af14d8d9f0e4196a92c0fae3270145e24">get_log</a> () const </td></tr>
+<tr class="memdesc:af14d8d9f0e4196a92c0fae3270145e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get hardware component log.  <a href="#af14d8d9f0e4196a92c0fae3270145e24">More...</a><br /></td></tr>
+<tr class="separator:af14d8d9f0e4196a92c0fae3270145e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab218adbe929266bd3736ff396e93ede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#aab218adbe929266bd3736ff396e93ede">set_log</a> (const <a class="el" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> &amp;<a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c">log</a>)</td></tr>
+<tr class="memdesc:aab218adbe929266bd3736ff396e93ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set hardware component log.  <a href="#aab218adbe929266bd3736ff396e93ede">More...</a><br /></td></tr>
+<tr class="separator:aab218adbe929266bd3736ff396e93ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for all hardware components of computer system (i.e. CPU, memory). All components should derive from this class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac65fe91e363d6f36f046dff966550ff1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,9 +196,17 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Hardware component default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Hardware component name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ac0cc9de4cc147f6b79d3695ad513e1f8"></a>
+<a class="anchor" id="ae87fdc39aee349050e9b48f37029fd53"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -186,7 +217,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">harpoon::hardware_component::hardware_component </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -196,6 +227,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>Source hardware component. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -220,6 +259,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -236,6 +277,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Add hardware component to components hierarchy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Child component. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -259,6 +308,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Boot component. Called during system startup stage (booting). </p>
 
 <p>Reimplemented in <a class="el" href="../../d5/d84/classharpoon_1_1clock_1_1clock.html#a22c11c51f83529d475855e112bbf9fc6">harpoon::clock::clock</a>, and <a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#af4513992c1e857d724ea5aafbec743df">harpoon::execution::processing_unit</a>.</p>
 
@@ -285,6 +336,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cleanup component. Called during system cleanup stage. </p>
+
 </div>
 </div>
 <a class="anchor" id="af14d8d9f0e4196a92c0fae3270145e24"></a>
@@ -299,6 +352,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get hardware component log. </p>
+<p>If component has no associated log then parent component log is returned. </p><dl class="section return"><dt>Returns</dt><dd>Hardware component log. </dd></dl>
 
 </div>
 </div>
@@ -323,6 +379,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return hardware component name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Hardware component name. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ac1fcc61bfc9e10bc407694a37041f70f"></a>
@@ -345,6 +404,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get parent component. </p>
+<dl class="section return"><dt>Returns</dt><dd>Parent component. </dd></dl>
 
 </div>
 </div>
@@ -369,6 +431,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Check is component is running. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if component is running. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a9b50b175144ccb9b6f4e1f69df2e6d3c"></a>
@@ -385,9 +450,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Emit message to component log. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>Stream with log message collected. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="a54002110bf7ea420bb750b92c3826564"></a>
+<a class="anchor" id="a2403a266e5ca89227deb41fc3dbc8086"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -398,7 +471,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a>&amp; harpoon::hardware_component::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">hardware_component</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -408,6 +481,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>Source hardware component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to hardware component. </dd></dl>
 
 </div>
 </div>
@@ -432,6 +514,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Perform component setup. Called during system preparation stage. </p>
+
 <p>Reimplemented in <a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ad3c830f9075e96334ab0c8c8a9d22ac5">harpoon::execution::processing_unit</a>, and <a class="el" href="../../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a5a6eef89f1ad071dd47f4c4e5632d4cc">harpoon::memory::linear_memory</a>.</p>
 
 </div>
@@ -449,6 +533,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Remove component from components hierachy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Component to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -476,6 +568,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Replace component with new component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">old_component</td><td>Component to be replaced. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_component</td><td>New component. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="aab218adbe929266bd3736ff396e93ede"></a>
@@ -499,6 +600,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set hardware component log. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">log</td><td>Log. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -524,6 +633,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set hardware component name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Hardware component name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ab7296b461a91427d1648822ead2dbb31"></a>
@@ -547,6 +664,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Shutdown component. Called during system shutdown stage. </p>
+
 <p>Reimplemented in <a class="el" href="../../d5/d84/classharpoon_1_1clock_1_1clock.html#a5a87e797a2a4138f2c051514bb406816">harpoon::clock::clock</a>, and <a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a4bdbd6725359566c5f5b3d3549aeebb1">harpoon::execution::processing_unit</a>.</p>
 
 </div>
@@ -557,7 +676,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 07:49:27 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2015 14:22:43 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -6,7 +6,7 @@ var searchData=
   ['execution',['execution',['../d3/df0/namespaceharpoon_1_1execution.html',1,'harpoon']]],
   ['generator',['generator',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html',1,'harpoon::clock']]],
   ['hardware_5fcomponent',['hardware_component',['../df/d54/classharpoon_1_1hardware__component.html',1,'harpoon']]],
-  ['hardware_5fcomponent',['hardware_component',['../df/d54/classharpoon_1_1hardware__component.html#ac65fe91e363d6f36f046dff966550ff1',1,'harpoon::hardware_component::hardware_component(const std::string &amp;name={})'],['../df/d54/classharpoon_1_1hardware__component.html#ac0cc9de4cc147f6b79d3695ad513e1f8',1,'harpoon::hardware_component::hardware_component(const hardware_component &amp;)=default']]],
+  ['hardware_5fcomponent',['hardware_component',['../df/d54/classharpoon_1_1hardware__component.html#ac65fe91e363d6f36f046dff966550ff1',1,'harpoon::hardware_component::hardware_component(const std::string &amp;name={})'],['../df/d54/classharpoon_1_1hardware__component.html#ae87fdc39aee349050e9b48f37029fd53',1,'harpoon::hardware_component::hardware_component(const hardware_component &amp;source)=default']]],
   ['hardware_5fcomponent_2ehh',['hardware_component.hh',['../d5/d09/hardware__component_8hh.html',1,'']]],
   ['hardware_5fcomponent_5fexception',['hardware_component_exception',['../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html#af642a9c28f0b35509ea59543ae998a3f',1,'harpoon::exception::hardware_component_exception']]],
   ['hardware_5fcomponent_5fexception',['hardware_component_exception',['../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html',1,'harpoon::exception']]],
