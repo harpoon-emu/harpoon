@@ -1,6 +1,15 @@
 var searchData=
 [
-  ['cleanup',['cleanup',['../df/d54/classharpoon_1_1hardware__component.html#a20f69cd3610ba192bfbaf18a81945308',1,'harpoon::hardware_component::cleanup()'],['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a32c42059e55bd01b38333bdf20ae4453',1,'harpoon::memory::linear_memory::cleanup()']]],
+  ['chunk_5fcontainer',['chunk_container',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a00d4aa9761461f0eb089fd5dd150ef6a',1,'harpoon::memory::chunked_memory']]],
+  ['chunk_5findex',['chunk_index',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a1f916ad912746dbce69da54f38f78cd5',1,'harpoon::memory::chunked_memory']]],
+  ['chunk_5fitem',['chunk_item',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a7433dab7149cfb0c366bd1c1dd057d81',1,'harpoon::memory::chunked_memory']]],
+  ['chunk_5flength',['chunk_length',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#acbd494e173317703cc2895249bb85e54',1,'harpoon::memory::chunked_memory']]],
+  ['chunk_5foffset',['chunk_offset',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a7476dc3ec83ea83d82256273f5790ee1',1,'harpoon::memory::chunked_memory']]],
+  ['chunk_5fptr',['chunk_ptr',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a0ee6b30d7a539dcef7ac3443c97be5c6',1,'harpoon::memory::chunked_memory']]],
+  ['chunked_5fmemory',['chunked_memory',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#afb7371ef80df3e0a77e576158284eb28',1,'harpoon::memory::chunked_memory::chunked_memory(const std::string &amp;name={}, const address_range &amp;address_range={}, chunk_length chunk_length=65536)'],['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#ae9e8956b11082c7728d9d8155b6344ea',1,'harpoon::memory::chunked_memory::chunked_memory(const chunked_memory &amp;)=delete']]],
+  ['chunked_5fmemory',['chunked_memory',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html',1,'harpoon::memory']]],
+  ['chunked_5fmemory_2ehh',['chunked_memory.hh',['../dc/d1d/chunked__memory_8hh.html',1,'']]],
+  ['cleanup',['cleanup',['../df/d54/classharpoon_1_1hardware__component.html#a20f69cd3610ba192bfbaf18a81945308',1,'harpoon::hardware_component::cleanup()'],['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#aa1f5ed597ef6f309a1c95253627e3c17',1,'harpoon::memory::chunked_memory::cleanup()'],['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a32c42059e55bd01b38333bdf20ae4453',1,'harpoon::memory::linear_memory::cleanup()']]],
   ['clock',['clock',['../d5/d84/classharpoon_1_1clock_1_1clock.html',1,'harpoon::clock']]],
   ['clock',['clock',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a3664d6a551907179aa02dcca140f87f7',1,'harpoon::clock::clock']]],
   ['clock_2ehh',['clock.hh',['../d7/d55/clock_8hh.html',1,'']]],

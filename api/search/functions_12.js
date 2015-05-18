@@ -1,6 +1,7 @@
 var searchData=
 [
   ['_7eaccess_5fviolation',['~access_violation',['../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aade26823ba7b645a8716a14084c85d47',1,'harpoon::memory::exception::access_violation']]],
+  ['_7echunked_5fmemory',['~chunked_memory',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a64b0957849e303aba2eb0b8d6fa7f478',1,'harpoon::memory::chunked_memory']]],
   ['_7eclock',['~clock',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a3181695c9afd3eebed0903b112ae10ce',1,'harpoon::clock::clock']]],
   ['_7ecomputer_5fsystem',['~computer_system',['../dd/d91/classharpoon_1_1computer__system.html#a2e417b2e3b0f845483b5ba870031927d',1,'harpoon::computer_system']]],
   ['_7econsole_5flog',['~console_log',['../da/d5c/classharpoon_1_1log_1_1console__log.html#aacc51e70bc8fc7b19d4b0bd34fac49f0',1,'harpoon::log::console_log']]],
