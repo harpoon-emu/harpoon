@@ -10,5 +10,6 @@ var searchData=
   ['make_5fthreaded_5fgenerator',['make_threaded_generator',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a6f6e152e15117025ba888f182c69ae0a',1,'harpoon::clock::generator']]],
   ['make_5fup_5fexecution_5funit',['make_up_execution_unit',['../d3/df0/namespaceharpoon_1_1execution.html#ae6a675d2fdafa2b62a16aa8609efc7e8',1,'harpoon::execution']]],
   ['memory',['memory',['../db/d2f/classharpoon_1_1memory_1_1memory.html#ad1c846605f2f705ec990147ef79e0914',1,'harpoon::memory::memory']]],
+  ['memory_5fexception',['memory_exception',['../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html#af3ddfebe0289c6e757c9c0bb01235bb5',1,'harpoon::memory::exception::memory_exception']]],
   ['message',['message',['../d5/d06/classharpoon_1_1log_1_1message.html#a6f626aa5f40313f3f5eb980b631b1c6b',1,'harpoon::log::message::message(Level level=Level::NOTICE, const std::string &amp;file={}, unsigned int line={}, const std::string &amp;function={}, const std::string &amp;component={})'],['../d5/d06/classharpoon_1_1log_1_1message.html#ab2d5ad7e79ebda5f65bdef8f92ad8fa0',1,'harpoon::log::message::message(const message &amp;)=default']]]
 ];

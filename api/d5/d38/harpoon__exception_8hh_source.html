@@ -101,54 +101,59 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html">harpoon_exception</a> : <span class="keyword">public</span> std::runtime_error {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#aa471b95a250b2ecd28e6cd0cd73dfd7a">   14</a></span>&#160;    <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#aa471b95a250b2ecd28e6cd0cd73dfd7a">harpoon_exception</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">   14</a></span>&#160;    <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon_exception</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>,</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                      <span class="keyword">const</span> std::string&amp; file = {},</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                      uint32_t line = {},</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                      <span class="keywordtype">int</span> line = {},</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                      <span class="keyword">const</span> std::string&amp; <span class="keyword">function</span> = {})</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        : std::runtime_error(what), _what(what), _file(file), _line(line), _function(<span class="keyword">function</span>) {}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">   20</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">set_what</a>(<span class="keyword">const</span> std::string&amp; what) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        _what = <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">   24</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">get_what</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> _what;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>() const noexcept(true);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    virtual ~<a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html">harpoon_exception</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;private:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::<span class="keywordtype">string</span> _what{};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string _file{};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::uint32_t _line{};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string _function{};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exception, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">   40</a></span>&#160;Exception <a class="code" href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">make_harpoon_exception</a>(Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> Exception(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d5/d38/harpoon__exception_8hh.html#aa87f0e7d2e87674cf30088f8ee829225">   44</a></span>&#160;<span class="preprocessor">#define MAKE_HARPOON_EXCEPTION(EXCEPTION, ...)  \</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    harpoon::exception::make_harpoon_exception&lt;EXCEPTION&gt;(__VA_ARGS__, __FILE__, __LINE__, __FUNCTION__);</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon_exception</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon_exception</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon_exception</a>&amp; <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ae553a567a70cdd798747fa5237868f9e">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon_exception</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">   23</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">set_what</a>(<span class="keyword">const</span> std::string&amp; what) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        _what = <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">   27</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">get_what</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> _what;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">what</a>() const noexcept(true);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    virtual ~<a class="code" href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html">harpoon_exception</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;private:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::<span class="keywordtype">string</span> _what{};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string _file{};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> _line{};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string _function{};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exception, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">   43</a></span>&#160;Exception <a class="code" href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">make_harpoon_exception</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> Exception(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d5/d38/harpoon__exception_8hh.html#aa87f0e7d2e87674cf30088f8ee829225">   47</a></span>&#160;<span class="preprocessor">#define MAKE_HARPOON_EXCEPTION(EXCEPTION, ...)  \</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">    harpoon::exception::make_harpoon_exception&lt;EXCEPTION&gt;(__VA_ARGS__, __FILE__, __LINE__, __FUNCTION__);</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_a6b6e8e810d8d5803852d48c330e3355a"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">harpoon::exception::harpoon_exception::get_what</a></div><div class="ttdeci">const std::string &amp; get_what() const </div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:24</div></div>
-<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_aa471b95a250b2ecd28e6cd0cd73dfd7a"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#aa471b95a250b2ecd28e6cd0cd73dfd7a">harpoon::exception::harpoon_exception::harpoon_exception</a></div><div class="ttdeci">harpoon_exception(const std::string &amp;what, const std::string &amp;file={}, uint32_t line={}, const std::string &amp;function={})</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:14</div></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_a6b6e8e810d8d5803852d48c330e3355a"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a">harpoon::exception::harpoon_exception::get_what</a></div><div class="ttdeci">const std::string &amp; get_what() const </div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:27</div></div>
+<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_ad69f39e933d96be353ad5416d7dc07ba"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ad69f39e933d96be353ad5416d7dc07ba">harpoon::exception::harpoon_exception::harpoon_exception</a></div><div class="ttdeci">harpoon_exception(const std::string &amp;what, const std::string &amp;file={}, int line={}, const std::string &amp;function={})</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:14</div></div>
 <div class="ttc" id="harpoon_8hh_html"><div class="ttname"><a href="../../d5/d08/harpoon_8hh.html">harpoon.hh</a></div><div class="ttdoc">Harpoon library common header file. </div></div>
-<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_a8c02aebbc121ee7eb6f0a39e1d42c3a4"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">harpoon::exception::harpoon_exception::set_what</a></div><div class="ttdeci">void set_what(const std::string &amp;what)</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:20</div></div>
+<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_a8c02aebbc121ee7eb6f0a39e1d42c3a4"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">harpoon::exception::harpoon_exception::set_what</a></div><div class="ttdeci">void set_what(const std::string &amp;what)</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:23</div></div>
 <div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html">harpoon::exception::harpoon_exception</a></div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:11</div></div>
+<div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_ae553a567a70cdd798747fa5237868f9e"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#ae553a567a70cdd798747fa5237868f9e">harpoon::exception::harpoon_exception::operator=</a></div><div class="ttdeci">harpoon_exception &amp; operator=(const harpoon_exception &amp;)=default</div></div>
 <div class="ttc" id="classharpoon_1_1exception_1_1harpoon__exception_html_abb08324f3ee1773a88f236ba12e2c969"><div class="ttname"><a href="../../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969">harpoon::exception::harpoon_exception::what</a></div><div class="ttdeci">virtual const char * what() const noexcept(true)</div></div>
-<div class="ttc" id="namespaceharpoon_1_1exception_html_a01fe71df7b558c91c580d1d4705c376b"><div class="ttname"><a href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">harpoon::exception::make_harpoon_exception</a></div><div class="ttdeci">Exception make_harpoon_exception(Args &amp;&amp;...args)</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:40</div></div>
+<div class="ttc" id="namespaceharpoon_1_1exception_html_a01fe71df7b558c91c580d1d4705c376b"><div class="ttname"><a href="../../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b">harpoon::exception::make_harpoon_exception</a></div><div class="ttdeci">Exception make_harpoon_exception(Args &amp;&amp;...args)</div><div class="ttdef"><b>Definition:</b> harpoon_exception.hh:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 14:22:43 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2015 14:28:22 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

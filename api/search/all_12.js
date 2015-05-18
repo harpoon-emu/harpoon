@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['up_5fexecution_5funit',['up_execution_unit',['../d7/dcf/classharpoon_1_1execution_1_1up__execution__unit.html',1,'harpoon::execution']]],
-  ['up_5fexecution_5funit_2ehh',['up_execution_unit.hh',['../d9/d67/up__execution__unit_8hh.html',1,'']]],
-  ['up_5fexecution_5funit_5fptr',['up_execution_unit_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#a9a13485f4126a8808aa0aa84ef64ef66',1,'harpoon::execution']]],
-  ['up_5fexecution_5funit_5fweak_5fptr',['up_execution_unit_weak_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#abc398f489633d5fd605f10eb2eee0669',1,'harpoon::execution']]]
+  ['wait_5ffor_5fcycle',['wait_for_cycle',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ae24ba312fa7e15b482e4703abff47ee6',1,'harpoon::execution::processing_unit']]],
+  ['wait_5ffor_5fnext_5fcycle',['wait_for_next_cycle',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ade5e1d822cd9b3b5ceacea2e22639c6b',1,'harpoon::execution::processing_unit']]],
+  ['wait_5ffor_5ftick',['wait_for_tick',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a2f14abeaa1277efef81b02d5dc3c597c',1,'harpoon::clock::clock::wait_for_tick()'],['../df/d89/classharpoon_1_1clock_1_1generator_1_1dummy__generator.html#abca16f578adfa1c315f5d7ab0170bd0b',1,'harpoon::clock::generator::dummy_generator::wait_for_tick()'],['../d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#a2751a5c3c3a9e9b537dd5a9975ba2aff',1,'harpoon::clock::generator::generator::wait_for_tick()']]],
+  ['wait_5ftick',['wait_tick',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a87d037b86c8b6938cc8afef7a289e265',1,'harpoon::clock::clock::wait_tick()'],['../df/d89/classharpoon_1_1clock_1_1generator_1_1dummy__generator.html#a1454204abf9ff81bfb4e442b768b8eef',1,'harpoon::clock::generator::dummy_generator::wait_tick()'],['../d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#aab48e727711aac44e2a20a47e90471c7',1,'harpoon::clock::generator::generator::wait_tick()']]],
+  ['warning',['WARNING',['../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4ca059e9861e0400dfbe05c98a841f3f96b',1,'harpoon::log::message']]],
+  ['what',['what',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#abb08324f3ee1773a88f236ba12e2c969',1,'harpoon::exception::harpoon_exception']]],
+  ['write_5faccess_5fviolation',['write_access_violation',['../da/d66/classharpoon_1_1memory_1_1exception_1_1write__access__violation.html#abc8b76e81e55424e9ba196a4829f3437',1,'harpoon::memory::exception::write_access_violation::write_access_violation(const std::string &amp;component, address address, const std::string &amp;file={}, int line={}, const std::string &amp;function={})'],['../da/d66/classharpoon_1_1memory_1_1exception_1_1write__access__violation.html#a5eb400d75a3cbc4eca5bd3b70d8f114c',1,'harpoon::memory::exception::write_access_violation::write_access_violation(const write_access_violation &amp;)=default']]],
+  ['write_5faccess_5fviolation',['write_access_violation',['../da/d66/classharpoon_1_1memory_1_1exception_1_1write__access__violation.html',1,'harpoon::memory::exception']]],
+  ['write_5faccess_5fviolation_2ehh',['write_access_violation.hh',['../de/da3/write__access__violation_8hh.html',1,'']]]
 ];

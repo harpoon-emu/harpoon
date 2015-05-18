@@ -102,40 +102,45 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">access_violation</a> : <span class="keyword">public</span> <a class="code" href="../../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html">memory_exception</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aa1e5faa8186cfd089237c4a6b5cbc3c8">access_violation</a>(<span class="keyword">const</span> std::string&amp; component,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a056c6c53ff0901b3723c7b78ad87e96f">access_violation</a>(<span class="keyword">const</span> std::string&amp; component,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                     <a class="code" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a> <a class="code" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a>,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                     <span class="keyword">const</span> std::string&amp; file = {},</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                     uint32_t line = {},</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                     <span class="keywordtype">int</span> line = {},</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                     <span class="keyword">const</span> std::string&amp; <span class="keyword">function</span> = {});</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">   21</a></span>&#160;    address <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">get_address</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> _address;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aade26823ba7b645a8716a14084c85d47">~access_violation</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    address _address{};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a056c6c53ff0901b3723c7b78ad87e96f">access_violation</a>(<span class="keyword">const</span> <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">access_violation</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">access_violation</a>&amp; <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a9024082ae1724a0dc6ddd28fb04c7473">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">access_violation</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">   24</a></span>&#160;    address <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">get_address</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> _address;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aade26823ba7b645a8716a14084c85d47">~access_violation</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    address _address{};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_aade26823ba7b645a8716a14084c85d47"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aade26823ba7b645a8716a14084c85d47">harpoon::memory::exception::access_violation::~access_violation</a></div><div class="ttdeci">virtual ~access_violation()</div></div>
 <div class="ttc" id="namespaceharpoon_1_1memory_html_a5a373f09060a08d1c97ce3c97d155643"><div class="ttname"><a href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">harpoon::memory::address</a></div><div class="ttdeci">std::uint_fast64_t address</div><div class="ttdef"><b>Definition:</b> address.hh:9</div></div>
 <div class="ttc" id="harpoon_8hh_html"><div class="ttname"><a href="../../d5/d08/harpoon_8hh.html">harpoon.hh</a></div><div class="ttdoc">Harpoon library common header file. </div></div>
 <div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1memory__exception_html"><div class="ttname"><a href="../../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html">harpoon::memory::exception::memory_exception</a></div><div class="ttdef"><b>Definition:</b> memory_exception.hh:11</div></div>
-<div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_a427db5031ec12ffd8ef4c20c704f7bf6"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">harpoon::memory::exception::access_violation::get_address</a></div><div class="ttdeci">address get_address() const </div><div class="ttdef"><b>Definition:</b> access_violation.hh:21</div></div>
+<div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_a427db5031ec12ffd8ef4c20c704f7bf6"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a427db5031ec12ffd8ef4c20c704f7bf6">harpoon::memory::exception::access_violation::get_address</a></div><div class="ttdeci">address get_address() const </div><div class="ttdef"><b>Definition:</b> access_violation.hh:24</div></div>
 <div class="ttc" id="address_8hh_html"><div class="ttname"><a href="../../db/db3/address_8hh.html">address.hh</a></div></div>
 <div class="ttc" id="memory__exception_8hh_html"><div class="ttname"><a href="../../df/d8d/memory__exception_8hh.html">memory_exception.hh</a></div></div>
-<div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_aa1e5faa8186cfd089237c4a6b5cbc3c8"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aa1e5faa8186cfd089237c4a6b5cbc3c8">harpoon::memory::exception::access_violation::access_violation</a></div><div class="ttdeci">access_violation(const std::string &amp;component, address address, const std::string &amp;file={}, uint32_t line={}, const std::string &amp;function={})</div></div>
+<div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_a056c6c53ff0901b3723c7b78ad87e96f"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a056c6c53ff0901b3723c7b78ad87e96f">harpoon::memory::exception::access_violation::access_violation</a></div><div class="ttdeci">access_violation(const std::string &amp;component, address address, const std::string &amp;file={}, int line={}, const std::string &amp;function={})</div></div>
+<div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html_a9024082ae1724a0dc6ddd28fb04c7473"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#a9024082ae1724a0dc6ddd28fb04c7473">harpoon::memory::exception::access_violation::operator=</a></div><div class="ttdeci">access_violation &amp; operator=(const access_violation &amp;)=default</div></div>
 <div class="ttc" id="classharpoon_1_1memory_1_1exception_1_1access__violation_html"><div class="ttname"><a href="../../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html">harpoon::memory::exception::access_violation</a></div><div class="ttdef"><b>Definition:</b> access_violation.hh:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 14:22:43 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2015 14:28:22 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

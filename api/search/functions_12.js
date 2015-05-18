@@ -19,6 +19,7 @@ var searchData=
   ['_7erandom_5faccess_5fmemory',['~random_access_memory',['../dc/d01/classharpoon_1_1memory_1_1random__access__memory.html#ac96e96c18ed79c99bf3b889479396012',1,'harpoon::memory::random_access_memory']]],
   ['_7eread_5faccess_5fviolation',['~read_access_violation',['../de/db7/classharpoon_1_1memory_1_1exception_1_1read__access__violation.html#a379483cdd1bb83b52b6cc37a899a3c5a',1,'harpoon::memory::exception::read_access_violation']]],
   ['_7eread_5fonly_5fmemory',['~read_only_memory',['../db/dd3/classharpoon_1_1memory_1_1read__only__memory.html#a60ed2559639288eb2531e3ad90225cfd',1,'harpoon::memory::read_only_memory']]],
+  ['_7estreambuf',['~streambuf',['../d4/d01/classharpoon_1_1log_1_1message_1_1streambuf.html#a71fd46029b85b59b355fa94601ffa7c0',1,'harpoon::log::message::streambuf']]],
   ['_7ethreaded_5fgenerator',['~threaded_generator',['../dc/def/classharpoon_1_1clock_1_1generator_1_1threaded__generator.html#ad6c89a11cd685a9778a41cc6515e3ff6',1,'harpoon::clock::generator::threaded_generator']]],
   ['_7eup_5fexecution_5funit',['~up_execution_unit',['../d7/dcf/classharpoon_1_1execution_1_1up__execution__unit.html#acc9b0ea3cbbc585667d2224c0e17e6c9',1,'harpoon::execution::up_execution_unit']]],
   ['_7ewrite_5faccess_5fviolation',['~write_access_violation',['../da/d66/classharpoon_1_1memory_1_1exception_1_1write__access__violation.html#ae10cb492a530631dcda207c1522b0c01',1,'harpoon::memory::exception::write_access_violation']]]

@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['threaded_5fgenerator',['threaded_generator',['../dc/def/classharpoon_1_1clock_1_1generator_1_1threaded__generator.html',1,'harpoon::clock::generator']]],
-  ['threaded_5fgenerator',['threaded_generator',['../dc/def/classharpoon_1_1clock_1_1generator_1_1threaded__generator.html#a21c74d8a693b1819b4b37120b3ae6300',1,'harpoon::clock::generator::threaded_generator']]],
-  ['threaded_5fgenerator_2ehh',['threaded_generator.hh',['../df/d47/threaded__generator_8hh.html',1,'']]],
-  ['threaded_5fgenerator_5fptr',['threaded_generator_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a49063bc5ded96261d11c0112565d0b60',1,'harpoon::clock::generator']]],
-  ['threaded_5fgenerator_5fweak_5fptr',['threaded_generator_weak_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a4351f055de79c79653dee2a3a35f8516',1,'harpoon::clock::generator']]],
-  ['tick',['tick',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#ad6678c43fc7f845ee75b82be6b7b27ca',1,'harpoon::clock::generator::tick()'],['../df/dba/namespaceharpoon_1_1clock.html#afab280b361df560ddd1d7fa6217f598a',1,'harpoon::clock::tick()']]],
-  ['tick_2ehh',['tick.hh',['../d3/dce/tick_8hh.html',1,'']]]
+  ['up_5fexecution_5funit',['up_execution_unit',['../d7/dcf/classharpoon_1_1execution_1_1up__execution__unit.html',1,'harpoon::execution']]],
+  ['up_5fexecution_5funit_2ehh',['up_execution_unit.hh',['../d9/d67/up__execution__unit_8hh.html',1,'']]],
+  ['up_5fexecution_5funit_5fptr',['up_execution_unit_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#a9a13485f4126a8808aa0aa84ef64ef66',1,'harpoon::execution']]],
+  ['up_5fexecution_5funit_5fweak_5fptr',['up_execution_unit_weak_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#abc398f489633d5fd605f10eb2eee0669',1,'harpoon::execution']]]
 ];
