@@ -13,6 +13,7 @@ var searchData=
   ['_7eharpoon_5fexception',['~harpoon_exception',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a3be9ea2e027afc11584b1ecd53993397',1,'harpoon::exception::harpoon_exception']]],
   ['_7elinear_5fmemory',['~linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a809208f5e14316b168021604aa798d57',1,'harpoon::memory::linear_memory']]],
   ['_7elog',['~log',['../d8/dae/classharpoon_1_1log_1_1log.html#a12e6db1d7025d5cc9305da0291e7a93f',1,'harpoon::log::log']]],
+  ['_7emain_5fmemory',['~main_memory',['../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#aa2cac09371794c5b6e9b027bd26df430',1,'harpoon::memory::main_memory']]],
   ['_7ememory',['~memory',['../db/d2f/classharpoon_1_1memory_1_1memory.html#ad6585ab8ad8f901e7a49f1bf6c57998b',1,'harpoon::memory::memory']]],
   ['_7ememory_5fexception',['~memory_exception',['../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html#a770696cff722e62a152739c725bab1a0',1,'harpoon::memory::exception::memory_exception']]],
   ['_7emessage',['~message',['../d5/d06/classharpoon_1_1log_1_1message.html#a6d7fccc7ece813d15aa3635021741428',1,'harpoon::log::message']]],
