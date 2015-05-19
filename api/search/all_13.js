@@ -2,6 +2,8 @@ var searchData=
 [
   ['_7eaccess_5fviolation',['~access_violation',['../d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html#aade26823ba7b645a8716a14084c85d47',1,'harpoon::memory::exception::access_violation']]],
   ['_7echunked_5fmemory',['~chunked_memory',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#a64b0957849e303aba2eb0b8d6fa7f478',1,'harpoon::memory::chunked_memory']]],
+  ['_7echunked_5frandom_5faccess_5fmemory',['~chunked_random_access_memory',['../de/d86/classharpoon_1_1memory_1_1chunked__random__access__memory.html#a6e91517448e98ddf376d3187f60bc88b',1,'harpoon::memory::chunked_random_access_memory']]],
+  ['_7echunked_5fread_5fonly_5fmemory',['~chunked_read_only_memory',['../d5/d6c/classharpoon_1_1memory_1_1chunked__read__only__memory.html#a2cdeb4e6bf7a4d8e7ef41e13d914697e',1,'harpoon::memory::chunked_read_only_memory']]],
   ['_7eclock',['~clock',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a3181695c9afd3eebed0903b112ae10ce',1,'harpoon::clock::clock']]],
   ['_7ecomputer_5fsystem',['~computer_system',['../dd/d91/classharpoon_1_1computer__system.html#a2e417b2e3b0f845483b5ba870031927d',1,'harpoon::computer_system']]],
   ['_7econsole_5flog',['~console_log',['../da/d5c/classharpoon_1_1log_1_1console__log.html#aacc51e70bc8fc7b19d4b0bd34fac49f0',1,'harpoon::log::console_log']]],
@@ -12,6 +14,8 @@ var searchData=
   ['_7ehardware_5fcomponent_5fexception',['~hardware_component_exception',['../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html#a23f6d16ac7603893241a1a5e97d6231d',1,'harpoon::exception::hardware_component_exception']]],
   ['_7eharpoon_5fexception',['~harpoon_exception',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a3be9ea2e027afc11584b1ecd53993397',1,'harpoon::exception::harpoon_exception']]],
   ['_7elinear_5fmemory',['~linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html#a809208f5e14316b168021604aa798d57',1,'harpoon::memory::linear_memory']]],
+  ['_7elinear_5frandom_5faccess_5fmemory',['~linear_random_access_memory',['../df/d20/classharpoon_1_1memory_1_1linear__random__access__memory.html#ae21e0873d2df525a2f77d3c975ec09cd',1,'harpoon::memory::linear_random_access_memory']]],
+  ['_7elinear_5fread_5fonly_5fmemory',['~linear_read_only_memory',['../de/dd2/classharpoon_1_1memory_1_1linear__read__only__memory.html#a7781614cf3f650371e37f151bb9795eb',1,'harpoon::memory::linear_read_only_memory']]],
   ['_7elog',['~log',['../d8/dae/classharpoon_1_1log_1_1log.html#a12e6db1d7025d5cc9305da0291e7a93f',1,'harpoon::log::log']]],
   ['_7emain_5fmemory',['~main_memory',['../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#aa2cac09371794c5b6e9b027bd26df430',1,'harpoon::memory::main_memory']]],
   ['_7ememory',['~memory',['../db/d2f/classharpoon_1_1memory_1_1memory.html#ad6585ab8ad8f901e7a49f1bf6c57998b',1,'harpoon::memory::memory']]],
