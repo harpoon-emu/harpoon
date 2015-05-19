@@ -1,0 +1,6 @@
+<map id="harpoon::memory::exception::read_access_violation" name="harpoon::memory::exception::read_access_violation">
+<area shape="rect" id="node2" href="$d2/dc6/classharpoon_1_1memory_1_1exception_1_1access__violation.html" title="{harpoon::memory::exception\l::access_violation\n||+ access_violation()\l+ access_violation()\l+ operator=()\l+ get_address()\l+ ~access_violation()\l}" alt="" coords="5,873,192,1045"/>
+<area shape="rect" id="node4" href="$dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html" title="{harpoon::memory::exception\l::memory_exception\n||+ memory_exception()\l+ operator=()\l+ ~memory_exception()\l}" alt="" coords="5,686,192,823"/>
+<area shape="rect" id="node6" href="$d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html" title="{harpoon::exception\l::hardware_component\l_exception\n||+ hardware_component\l_exception()\l+ hardware_component\l_exception()\l+ operator=()\l+ get_component()\l+ ~hardware_component\l_exception()\l}" alt="" coords="16,395,181,637"/>
+<area shape="rect" id="node8" href="$d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html" title="{harpoon::exception\l::harpoon_exception\n||+ harpoon_exception()\l+ harpoon_exception()\l+ operator=()\l+ set_what()\l+ get_what()\l+ what()\l+ ~harpoon_exception()\l}" alt="" coords="20,139,177,346"/>
+</map>

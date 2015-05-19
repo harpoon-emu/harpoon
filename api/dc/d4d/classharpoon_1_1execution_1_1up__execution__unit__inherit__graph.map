@@ -1,0 +1,4 @@
+<map id="harpoon::execution::up_execution_unit" name="harpoon::execution::up_execution_unit">
+<area shape="rect" id="node2" href="$d6/d5c/classharpoon_1_1execution_1_1execution__unit.html" title="{harpoon::execution\l::execution_unit\n||+ set_clock()\l+ get_clock()\l+ ~execution_unit()\l}" alt="" coords="39,481,172,618"/>
+<area shape="rect" id="node4" href="$df/d54/classharpoon_1_1hardware__component.html" title="Base class for all hardware components of computer system (i.e. CPU, memory). All components should d..." alt="" coords="5,173,205,432"/>
+</map>

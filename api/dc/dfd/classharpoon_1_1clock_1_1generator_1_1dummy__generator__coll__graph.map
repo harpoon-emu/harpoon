@@ -1,0 +1,3 @@
+<map id="harpoon::clock::generator::dummy_generator" name="harpoon::clock::generator::dummy_generator">
+<area shape="rect" id="node2" href="$d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html" title="{harpoon::clock::generator\l::generator\n||+ generator()\l+ generator()\l+ operator=()\l+ ~generator()\l+ set_frequency()\l+ get_frequency()\l+ get_tick()\l+ wait_for_tick()\l+ wait_tick()\l+ next_tick()\l+ is_running()\l+ start()\l+ stop()\l# set_tick()\l# get_atomic_tick()\l# get_atomic_tick()\l}" alt="" coords="5,5,173,368"/>
+</map>

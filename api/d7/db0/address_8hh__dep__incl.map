@@ -1,0 +1,16 @@
+<map id="harpoon/memory/address.hh" name="harpoon/memory/address.hh">
+<area shape="rect" id="node3" href="$d3/d22/address__range_8hh.html" title="harpoon/memory/address\l_range.hh" alt="" coords="441,83,609,130"/>
+<area shape="rect" id="node23" href="$d2/d41/access__violation_8hh.html" title="harpoon/memory/exception\l/access_violation.hh" alt="" coords="755,83,933,130"/>
+<area shape="rect" id="node29" href="$d9/d5e/read__only__memory_8hh.html" title="harpoon/memory/read\l_only_memory.hh" alt="" coords="771,275,917,322"/>
+<area shape="rect" id="node5" href="$dc/d3f/memory_8hh.html" title="harpoon/memory/memory.hh" alt="" coords="361,188,548,217"/>
+<area shape="rect" id="node7" href="$d5/d22/computer__system_8hh.html" title="harpoon/computer_system.hh" alt="" coords="357,284,552,313"/>
+<area shape="rect" id="node9" href="$dc/d1d/chunked__memory_8hh.html" title="harpoon/memory/chunked\l_memory.hh" alt="" coords="576,275,747,322"/>
+<area shape="rect" id="node15" href="$d1/d70/linear__memory_8hh.html" title="harpoon/memory/linear\l_memory.hh" alt="" coords="179,275,333,322"/>
+<area shape="rect" id="node21" href="$d4/d85/main__memory_8hh.html" title="harpoon/memory/main\l_memory.hh" alt="" coords="5,275,155,322"/>
+<area shape="rect" id="node11" href="$d4/d48/chunked__random__access__memory_8hh.html" title="harpoon/memory/chunked\l_random_access_memory.hh" alt="" coords="549,371,741,418"/>
+<area shape="rect" id="node13" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="765,371,936,418"/>
+<area shape="rect" id="node17" href="$d0/d9e/linear__random__access__memory_8hh.html" title="harpoon/memory/linear\l_random_access_memory.hh" alt="" coords="152,371,344,418"/>
+<area shape="rect" id="node19" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="368,371,525,418"/>
+<area shape="rect" id="node25" href="$d2/d7f/read__access__violation_8hh.html" title="harpoon/memory/exception\l/read_access_violation.hh" alt="" coords="957,179,1136,226"/>
+<area shape="rect" id="node27" href="$de/da3/write__access__violation_8hh.html" title="harpoon/memory/exception\l/write_access_violation.hh" alt="" coords="755,179,933,226"/>
+</map>

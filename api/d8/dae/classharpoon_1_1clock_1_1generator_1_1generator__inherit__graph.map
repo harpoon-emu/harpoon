@@ -1,0 +1,4 @@
+<map id="harpoon::clock::generator::generator" name="harpoon::clock::generator::generator">
+<area shape="rect" id="node3" href="$df/d89/classharpoon_1_1clock_1_1generator_1_1dummy__generator.html" title="{harpoon::clock::generator\l::dummy_generator\n||+ ~dummy_generator()\l+ wait_for_tick()\l+ wait_tick()\l}" alt="" coords="5,434,173,571"/>
+<area shape="rect" id="node5" href="$dc/def/classharpoon_1_1clock_1_1generator_1_1threaded__generator.html" title="{harpoon::clock::generator\l::threaded_generator\n||+ threaded_generator()\l+ operator=()\l+ ~threaded_generator()\l+ start()\l+ stop()\l}" alt="" coords="197,417,365,589"/>
+</map>

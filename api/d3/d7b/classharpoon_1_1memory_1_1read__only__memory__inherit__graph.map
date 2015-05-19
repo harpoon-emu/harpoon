@@ -1,0 +1,6 @@
+<map id="harpoon::memory::read_only_memory&lt; MemoryImplementation &gt;" name="harpoon::memory::read_only_memory&lt; MemoryImplementation &gt;">
+<area shape="rect" id="node5" href="$db/dd3/classharpoon_1_1memory_1_1read__only__memory.html" title="{harpoon::memory::read\l_only_memory\&lt; chunked\l_memory \&gt;\n||+ set()\l+ ~read_only_memory()\l}" alt="" coords="17,329,185,466"/>
+<area shape="rect" id="node9" href="$db/dd3/classharpoon_1_1memory_1_1read__only__memory.html" title="{harpoon::memory::read\l_only_memory\&lt; linear\l_memory \&gt;\n||+ set()\l+ ~read_only_memory()\l}" alt="" coords="224,329,384,466"/>
+<area shape="rect" id="node7" href="$d5/d6c/classharpoon_1_1memory_1_1chunked__read__only__memory.html" title="{harpoon::memory::chunked\l_read_only_memory\n||+ ~chunked_read_only\l_memory()\l}" alt="" coords="5,517,184,637"/>
+<area shape="rect" id="node11" href="$de/dd2/classharpoon_1_1memory_1_1linear__read__only__memory.html" title="{harpoon::memory::linear\l_read_only_memory\n||+ ~linear_read_only_memory()\l}" alt="" coords="208,526,405,629"/>
+</map>

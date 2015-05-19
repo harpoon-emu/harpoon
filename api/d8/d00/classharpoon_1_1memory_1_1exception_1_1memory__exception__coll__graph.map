@@ -1,0 +1,4 @@
+<map id="harpoon::memory::exception::memory_exception" name="harpoon::memory::exception::memory_exception">
+<area shape="rect" id="node2" href="$d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html" title="{harpoon::exception\l::hardware_component\l_exception\n||+ hardware_component\l_exception()\l+ hardware_component\l_exception()\l+ operator=()\l+ get_component()\l+ ~hardware_component\l_exception()\l}" alt="" coords="16,395,181,637"/>
+<area shape="rect" id="node4" href="$d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html" title="{harpoon::exception\l::harpoon_exception\n||+ harpoon_exception()\l+ harpoon_exception()\l+ operator=()\l+ set_what()\l+ get_what()\l+ what()\l+ ~harpoon_exception()\l}" alt="" coords="20,139,177,346"/>
+</map>

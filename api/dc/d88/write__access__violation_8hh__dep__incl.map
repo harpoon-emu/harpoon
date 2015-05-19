@@ -1,0 +1,5 @@
+<map id="harpoon/memory/exception/write_access_violation.hh" name="harpoon/memory/exception/write_access_violation.hh">
+<area shape="rect" id="node3" href="$d9/d5e/read__only__memory_8hh.html" title="harpoon/memory/read\l_only_memory.hh" alt="" coords="111,102,257,149"/>
+<area shape="rect" id="node5" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="5,198,176,245"/>
+<area shape="rect" id="node7" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="200,198,357,245"/>
+</map>
