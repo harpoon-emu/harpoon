@@ -1,6 +1,7 @@
 var searchData=
 [
   ['main_5fmemory',['main_memory',['../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#a2cf614872e3a32ea7f390b8d1870e773',1,'harpoon::memory::main_memory::main_memory(const std::string &amp;name={}, const address_range &amp;address_range={0, address_range::max()})'],['../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#a52f8aeff11223c61a901494dfcc8b276',1,'harpoon::memory::main_memory::main_memory(const main_memory &amp;)=delete']]],
+  ['make_5fbasic_5fregister',['make_basic_register',['../d3/df0/namespaceharpoon_1_1execution.html#a8ac6dc884c7d5f43d96ed86e5bc780da',1,'harpoon::execution']]],
   ['make_5fchunked_5frandom_5faccess_5fmemory',['make_chunked_random_access_memory',['../d1/df1/namespaceharpoon_1_1memory.html#af416c27a568d8c4f2f5c82a3f3e4ced7',1,'harpoon::memory']]],
   ['make_5fchunked_5fread_5fonly_5fmemory',['make_chunked_read_only_memory',['../d1/df1/namespaceharpoon_1_1memory.html#aecfe9a8460df2aa0db8710934f7381ac',1,'harpoon::memory']]],
   ['make_5fclock',['make_clock',['../df/dba/namespaceharpoon_1_1clock.html#a0a87d16a684e1668a3ef0cd80e374dfa',1,'harpoon::clock']]],

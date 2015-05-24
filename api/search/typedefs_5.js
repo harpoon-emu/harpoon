@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hardware_5fcomponent_5fptr',['hardware_component_ptr',['../da/d9e/namespaceharpoon.html#acf5a676acea7b39ffca191333bf372ff',1,'harpoon']]],
-  ['hardware_5fcomponent_5fweak_5fptr',['hardware_component_weak_ptr',['../da/d9e/namespaceharpoon.html#aabc8cfcf86975de1d34b810d8adf5c7b',1,'harpoon']]]
+  ['generator_5fptr',['generator_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a3f5347383935bf9464a2a1305935e4ab',1,'harpoon::clock::generator']]],
+  ['generator_5fweak_5fptr',['generator_weak_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#add15a32a18294a236660cc67b84ccf45',1,'harpoon::clock::generator']]]
 ];

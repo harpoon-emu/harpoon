@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['execution_5funit_5fptr',['execution_unit_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#aff981bad36fa34dc4cdc5da397d561f5',1,'harpoon::execution']]],
-  ['execution_5funit_5fweak_5fptr',['execution_unit_weak_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#a65620d45bd80e8ce5c4d8f5ab30e3cea',1,'harpoon::execution']]]
+  ['dummy_5fgenerator_5fptr',['dummy_generator_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a4520f5c85947b046c7a4c44bfa75f605',1,'harpoon::clock::generator']]],
+  ['dummy_5fgenerator_5fweak_5fptr',['dummy_generator_weak_ptr',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#ada96022b4c4dc57f1c4e75aaf188f7b8',1,'harpoon::clock::generator']]]
 ];

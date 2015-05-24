@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['threaded_5fgenerator',['threaded_generator',['../dc/def/classharpoon_1_1clock_1_1generator_1_1threaded__generator.html',1,'harpoon::clock::generator']]]
+  ['streambuf',['streambuf',['../d4/d01/classharpoon_1_1log_1_1message_1_1streambuf.html',1,'harpoon::log::message']]]
 ];

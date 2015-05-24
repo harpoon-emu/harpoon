@@ -31,5 +31,6 @@ var searchData=
   ['get_5fstream',['get_stream',['../d5/d06/classharpoon_1_1log_1_1message.html#ac27e3945d1b7b918ecb4993d044d91a4',1,'harpoon::log::message']]],
   ['get_5ftext',['get_text',['../d5/d06/classharpoon_1_1log_1_1message.html#a7a8c6df2a0dff3b1cb342f09f94e2e08',1,'harpoon::log::message']]],
   ['get_5ftick',['get_tick',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a1972f4e389ca09b30889f6e39e41f050',1,'harpoon::clock::clock::get_tick()'],['../d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#ad2134aea965a9b0d62b05f2b781e87d6',1,'harpoon::clock::generator::generator::get_tick()']]],
+  ['get_5fvalue',['get_value',['../da/d18/classharpoon_1_1execution_1_1basic__register.html#a2007cbab637b6867d7247e6c604d1091',1,'harpoon::execution::basic_register']]],
   ['get_5fwhat',['get_what',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a6b6e8e810d8d5803852d48c330e3355a',1,'harpoon::exception::harpoon_exception']]]
 ];

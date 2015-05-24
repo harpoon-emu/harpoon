@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['linear_5fmemory',['linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html',1,'harpoon::memory']]],
-  ['linear_5frandom_5faccess_5fmemory',['linear_random_access_memory',['../df/d20/classharpoon_1_1memory_1_1linear__random__access__memory.html',1,'harpoon::memory']]],
-  ['linear_5fread_5fonly_5fmemory',['linear_read_only_memory',['../de/dd2/classharpoon_1_1memory_1_1linear__read__only__memory.html',1,'harpoon::memory']]],
-  ['log',['log',['../d8/dae/classharpoon_1_1log_1_1log.html',1,'harpoon::log']]]
+  ['hardware_5fcomponent',['hardware_component',['../df/d54/classharpoon_1_1hardware__component.html',1,'harpoon']]],
+  ['hardware_5fcomponent_5fexception',['hardware_component_exception',['../d7/df5/classharpoon_1_1exception_1_1hardware__component__exception.html',1,'harpoon::exception']]],
+  ['harpoon_5fexception',['harpoon_exception',['../d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html',1,'harpoon::exception']]]
 ];
