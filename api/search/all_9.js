@@ -24,6 +24,8 @@ var searchData=
   ['log_5fnotice',['log_notice',['../d9/d74/message_8hh.html#a755ec8dda5e2209259fc2caaed365c69',1,'message.hh']]],
   ['log_5fnotice_5fc',['log_notice_c',['../d9/d74/message_8hh.html#a622fcb3c9c65514240b9362b873ba8b2',1,'message.hh']]],
   ['log_5fptr',['log_ptr',['../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6',1,'harpoon::log']]],
+  ['log_5fregisters',['log_registers',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a21d8cfdecbdc7277d6623b750c8d4291',1,'harpoon::execution::processing_unit']]],
+  ['log_5fstate',['log_state',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#aaea193270218876761235883f7a5a74b',1,'harpoon::execution::processing_unit::log_state()'],['../df/d54/classharpoon_1_1hardware__component.html#a33d75deab7e7e085ff5b78c8ddd887ad',1,'harpoon::hardware_component::log_state(bool subcomponents=true, log::message::Level level=log::message::Level::DEBUG) const '],['../df/d54/classharpoon_1_1hardware__component.html#acae5b0095c75d22bd70cca618247ccb2',1,'harpoon::hardware_component::log_state(log::message::Level level) const ']]],
   ['log_5fwarning',['log_warning',['../d9/d74/message_8hh.html#a3b13449fd73544347bd0e85a2e1328c7',1,'message.hh']]],
   ['log_5fwarning_5fc',['log_warning_c',['../d9/d74/message_8hh.html#ae22d0e7ad62e4371c074cc2ff430abf1',1,'message.hh']]],
   ['log_5fweak_5fptr',['log_weak_ptr',['../d8/d7d/namespaceharpoon_1_1log.html#ab68e3d94d73872c96754d1b1f2fc6b80',1,'harpoon::log']]]

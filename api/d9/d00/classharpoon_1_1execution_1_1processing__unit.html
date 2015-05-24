@@ -137,6 +137,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a73652046ddc7fc471a2e1f0efd421c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a966ca4b8ce3c001af97a990827269a"><td class="memItemLeft" align="right" valign="top">std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a5a966ca4b8ce3c001af97a990827269a">get_executed_instructions</a> () const </td></tr>
 <tr class="separator:a5a966ca4b8ce3c001af97a990827269a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea193270218876761235883f7a5a74b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#aaea193270218876761235883f7a5a74b">log_state</a> (<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a> level=<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4cadc30ec20708ef7b0f641ef78b7880a15">log::message::Level::DEBUG</a>) const </td></tr>
+<tr class="memdesc:aaea193270218876761235883f7a5a74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump state of component to log.  <a href="#aaea193270218876761235883f7a5a74b">More...</a><br /></td></tr>
+<tr class="separator:aaea193270218876761235883f7a5a74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d8cfdecbdc7277d6623b750c8d4291"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a21d8cfdecbdc7277d6623b750c8d4291">log_registers</a> (<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a> level) const </td></tr>
+<tr class="separator:a21d8cfdecbdc7277d6623b750c8d4291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec32045220fe2688cf05b2a6b7d6f28"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#acec32045220fe2688cf05b2a6b7d6f28">~processing_unit</a> ()</td></tr>
 <tr class="separator:acec32045220fe2688cf05b2a6b7d6f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classharpoon_1_1hardware__component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classharpoon_1_1hardware__component')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html">harpoon::hardware_component</a></td></tr>
@@ -185,6 +190,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab218adbe929266bd3736ff396e93ede inherit pub_methods_classharpoon_1_1hardware__component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#aab218adbe929266bd3736ff396e93ede">set_log</a> (const <a class="el" href="../../d8/d7d/namespaceharpoon_1_1log.html#abc613a9fd9b1e13dc79db47f9ac3c1e6">log::log_ptr</a> &amp;<a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a9b50b175144ccb9b6f4e1f69df2e6d3c">log</a>)</td></tr>
 <tr class="memdesc:aab218adbe929266bd3736ff396e93ede inherit pub_methods_classharpoon_1_1hardware__component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set hardware component log.  <a href="#aab218adbe929266bd3736ff396e93ede">More...</a><br /></td></tr>
 <tr class="separator:aab218adbe929266bd3736ff396e93ede inherit pub_methods_classharpoon_1_1hardware__component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d75deab7e7e085ff5b78c8ddd887ad inherit pub_methods_classharpoon_1_1hardware__component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#a33d75deab7e7e085ff5b78c8ddd887ad">log_state</a> (bool subcomponents=true, <a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a> level=<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4cadc30ec20708ef7b0f641ef78b7880a15">log::message::Level::DEBUG</a>) const </td></tr>
+<tr class="memdesc:a33d75deab7e7e085ff5b78c8ddd887ad inherit pub_methods_classharpoon_1_1hardware__component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump state of component to log.  <a href="#a33d75deab7e7e085ff5b78c8ddd887ad">More...</a><br /></td></tr>
+<tr class="separator:a33d75deab7e7e085ff5b78c8ddd887ad inherit pub_methods_classharpoon_1_1hardware__component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acec32045220fe2688cf05b2a6b7d6f28"></a>
@@ -376,6 +384,64 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a21d8cfdecbdc7277d6623b750c8d4291"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void harpoon::execution::processing_unit::log_registers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a>&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaea193270218876761235883f7a5a74b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void harpoon::execution::processing_unit::log_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a>&#160;</td>
+          <td class="paramname"><em>level</em> = <code><a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4cadc30ec20708ef7b0f641ef78b7880a15">log::message::Level::DEBUG</a></code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dump state of component to log. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Log level to be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="../../df/d54/classharpoon_1_1hardware__component.html#acae5b0095c75d22bd70cca618247ccb2">harpoon::hardware_component</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad3c830f9075e96334ab0c8c8a9d22ac5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +564,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2015 18:39:44 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 24 2015 21:41:55 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

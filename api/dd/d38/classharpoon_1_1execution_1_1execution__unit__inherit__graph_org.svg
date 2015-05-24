@@ -58,7 +58,7 @@
 <text text-anchor="start" x="8" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ prepare()</text>
 <text text-anchor="start" x="8" y="-314.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ cleanup()</text>
 <text text-anchor="start" x="8" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ boot()</text>
-<text text-anchor="start" x="8" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<text text-anchor="start" x="8" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
 </a>
 </g>
 <!-- Node2&#45;&gt;Node1 -->

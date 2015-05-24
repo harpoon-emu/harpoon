@@ -11,7 +11,7 @@ var searchData=
   ['make_5fcomputer_5fsystem',['make_computer_system',['../da/d9e/namespaceharpoon.html#a024b96fbe3bc03f04b315249976a5dcf',1,'harpoon']]],
   ['make_5fconsole_5flog',['make_console_log',['../d8/d7d/namespaceharpoon_1_1log.html#a0fc9ed015d51bc543d4dfe0c33c7bd19',1,'harpoon::log']]],
   ['make_5fdummy_5fgenerator',['make_dummy_generator',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a4d80f8386caa044704e0560eca49a978',1,'harpoon::clock::generator']]],
-  ['make_5fharpoon_5fexception',['make_harpoon_exception',['../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b',1,'harpoon::exception::make_harpoon_exception()'],['../d5/d38/harpoon__exception_8hh.html#aa87f0e7d2e87674cf30088f8ee829225',1,'MAKE_HARPOON_EXCEPTION():&#160;harpoon_exception.hh']]],
+  ['make_5fharpoon_5fexception',['MAKE_HARPOON_EXCEPTION',['../d5/d38/harpoon__exception_8hh.html#aa87f0e7d2e87674cf30088f8ee829225',1,'MAKE_HARPOON_EXCEPTION():&#160;harpoon_exception.hh'],['../d1/dc4/namespaceharpoon_1_1exception.html#a01fe71df7b558c91c580d1d4705c376b',1,'harpoon::exception::make_harpoon_exception()']]],
   ['make_5flinear_5frandom_5faccess_5fmemory',['make_linear_random_access_memory',['../d1/df1/namespaceharpoon_1_1memory.html#aba3335266db6bf3a4a3cbbd45aaf29f0',1,'harpoon::memory']]],
   ['make_5flinear_5fread_5fonly_5fmemory',['make_linear_read_only_memory',['../d1/df1/namespaceharpoon_1_1memory.html#a6f66cd0f8807b544e262bbf2373bfe68',1,'harpoon::memory']]],
   ['make_5fmain_5fmemory',['make_main_memory',['../d1/df1/namespaceharpoon_1_1memory.html#aaebfbfae1a5b8dc3c7f934714424c8f7',1,'harpoon::memory']]],
