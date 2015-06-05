@@ -1,9 +1,9 @@
 <map id="harpoon/memory/read_only_memory.hh" name="harpoon/memory/read_only_memory.hh">
 <area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="313,581,449,611"/>
-<area shape="rect" id="node11" href="$db/db3/address_8hh.html" title="harpoon/memory/address.hh" alt="" coords="5,303,192,332"/>
-<area shape="rect" id="node14" href="$de/da3/write__access__violation_8hh.html" title="harpoon/memory/exception\l/write_access_violation.hh" alt="" coords="279,102,457,149"/>
-<area shape="rect" id="node17" href="$d2/d41/access__violation_8hh.html" title="harpoon/memory/exception\l/access_violation.hh" alt="" coords="241,198,420,245"/>
-<area shape="rect" id="node20" href="$df/d8d/memory__exception_8hh.html" title="harpoon/memory/exception\l/memory_exception.hh" alt="" coords="216,294,395,341"/>
-<area shape="rect" id="node23" href="$df/d18/hardware__component__exception_8hh.html" title="harpoon/exception/hardware\l_component_exception.hh" alt="" coords="160,390,344,437"/>
-<area shape="rect" id="node26" href="$d5/d38/harpoon__exception_8hh.html" title="harpoon/exception/harpoon\l_exception.hh" alt="" coords="115,486,293,533"/>
+<area shape="rect" id="node13" href="$db/db3/address_8hh.html" title="harpoon/memory/address.hh" alt="" coords="5,303,192,332"/>
+<area shape="rect" id="node16" href="$de/da3/write__access__violation_8hh.html" title="harpoon/memory/exception\l/write_access_violation.hh" alt="" coords="279,102,457,149"/>
+<area shape="rect" id="node19" href="$d2/d41/access__violation_8hh.html" title="harpoon/memory/exception\l/access_violation.hh" alt="" coords="241,198,420,245"/>
+<area shape="rect" id="node22" href="$df/d8d/memory__exception_8hh.html" title="harpoon/memory/exception\l/memory_exception.hh" alt="" coords="216,294,395,341"/>
+<area shape="rect" id="node25" href="$df/d18/hardware__component__exception_8hh.html" title="harpoon/exception/hardware\l_component_exception.hh" alt="" coords="160,390,344,437"/>
+<area shape="rect" id="node28" href="$d5/d38/harpoon__exception_8hh.html" title="harpoon/exception/harpoon\l_exception.hh" alt="" coords="115,486,293,533"/>
 </map>

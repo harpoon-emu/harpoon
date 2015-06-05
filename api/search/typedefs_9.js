@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['processing_5funit_5fptr',['processing_unit_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#a85e6a5554450fb47c772d49181ace2b6',1,'harpoon::execution']]],
-  ['processing_5funit_5fweak_5fptr',['processing_unit_weak_ptr',['../d3/df0/namespaceharpoon_1_1execution.html#a598917949a4fd3fc2413983b82af63c0',1,'harpoon::execution']]]
+  ['main_5fmemory_5fptr',['main_memory_ptr',['../d1/df1/namespaceharpoon_1_1memory.html#a893ae3b70f6a19ecc5521ce30c28159d',1,'harpoon::memory']]],
+  ['main_5fmemory_5fweak_5fptr',['main_memory_weak_ptr',['../d1/df1/namespaceharpoon_1_1memory.html#a183eaf817787a404b4e133169db32acf',1,'harpoon::memory']]],
+  ['memory_5fptr',['memory_ptr',['../d1/df1/namespaceharpoon_1_1memory.html#ab35c79da3161bfcd1e23e83756293f55',1,'harpoon::memory']]],
+  ['memory_5fweak_5fptr',['memory_weak_ptr',['../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45',1,'harpoon::memory']]]
 ];

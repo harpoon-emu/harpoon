@@ -1,9 +1,9 @@
 <map id="harpoon/execution/execution_unit.hh" name="harpoon/execution/execution_unit.hh">
-<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="249,429,385,459"/>
-<area shape="rect" id="node11" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="399,188,612,217"/>
-<area shape="rect" id="node26" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="197,101,352,131"/>
-<area shape="rect" id="node14" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="611,275,739,304"/>
-<area shape="rect" id="node17" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="661,352,824,381"/>
-<area shape="rect" id="node30" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="277,275,424,304"/>
-<area shape="rect" id="node34" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="153,179,313,226"/>
+<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="383,429,519,459"/>
+<area shape="rect" id="node13" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="277,188,491,217"/>
+<area shape="rect" id="node30" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="609,101,764,131"/>
+<area shape="rect" id="node16" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="91,275,219,304"/>
+<area shape="rect" id="node19" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="5,352,168,381"/>
+<area shape="rect" id="node34" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="672,275,819,304"/>
+<area shape="rect" id="node38" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="548,179,708,226"/>
 </map>

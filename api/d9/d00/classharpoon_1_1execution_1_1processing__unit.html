@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,10 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae24ba312fa7e15b482e4703abff47ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade5e1d822cd9b3b5ceacea2e22639c6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#a8dec821118eb2880d52c1c4f2d55d3ea">cycle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ade5e1d822cd9b3b5ceacea2e22639c6b">wait_for_next_cycle</a> ()</td></tr>
 <tr class="separator:ade5e1d822cd9b3b5ceacea2e22639c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4eaa0a96d85ca51567647719f5ed18c"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ab4eaa0a96d85ca51567647719f5ed18c">fetch</a> ()=0</td></tr>
-<tr class="separator:ab4eaa0a96d85ca51567647719f5ed18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2751115affee72f425183b56734e0bdf"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a2751115affee72f425183b56734e0bdf">execute</a> ()=0</td></tr>
-<tr class="separator:a2751115affee72f425183b56734e0bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03a52bb16ea7754faf386a1fc995896"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ab03a52bb16ea7754faf386a1fc995896">begin_execution</a> ()=0</td></tr>
+<tr class="separator:ab03a52bb16ea7754faf386a1fc995896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa964c5c069463f4b99664c9704c8ed03"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#aa964c5c069463f4b99664c9704c8ed03">fetch_decode</a> (<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>)=0</td></tr>
+<tr class="separator:aa964c5c069463f4b99664c9704c8ed03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc4b97b751801661837e5cc24118625"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a9bc4b97b751801661837e5cc24118625">execute</a> (<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>)</td></tr>
+<tr class="separator:a9bc4b97b751801661837e5cc24118625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2515684dcfb86dbe00dd233ca5cda1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a2e2515684dcfb86dbe00dd233ca5cda1">is_running</a> () const </td></tr>
 <tr class="separator:a2e2515684dcfb86dbe00dd233ca5cda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e253d81f008901ec6d95a52d573f48f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#aff981bad36fa34dc4cdc5da397d561f5">execution_unit_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a1e253d81f008901ec6d95a52d573f48f">get_execution_unit</a> () const </td></tr>
@@ -219,6 +221,29 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab03a52bb16ea7754faf386a1fc995896"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::uint_fast64_t harpoon::execution::processing_unit::begin_execution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af4513992c1e857d724ea5aafbec743df"></a>
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +271,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2751115affee72f425183b56734e0bdf"></a>
+<a class="anchor" id="a9bc4b97b751801661837e5cc24118625"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -256,20 +281,21 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual std::uint_fast64_t harpoon::execution::processing_unit::execute </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;&#160;</td>
+          <td class="paramname"><em>instruction_handler</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab4eaa0a96d85ca51567647719f5ed18c"></a>
+<a class="anchor" id="aa964c5c069463f4b99664c9704c8ed03"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -277,9 +303,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::uint_fast64_t harpoon::execution::processing_unit::fetch </td>
+          <td class="memname">virtual std::uint_fast64_t harpoon::execution::processing_unit::fetch_decode </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;&#160;</td>
+          <td class="paramname"><em>instruction_handler</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -564,7 +591,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2015 21:54:30 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 5 2015 07:49:27 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

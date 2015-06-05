@@ -1,13 +1,13 @@
 <map id="harpoon/computer_system.hh" name="harpoon/computer_system.hh">
-<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="568,525,704,555"/>
-<area shape="rect" id="node11" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="447,265,660,295"/>
-<area shape="rect" id="node26" href="$d9/d3e/execution__unit_8hh.html" title="harpoon/execution/execution\l_unit.hh" alt="" coords="319,83,506,130"/>
-<area shape="rect" id="node45" href="$dc/d3f/memory_8hh.html" title="harpoon/memory/memory.hh" alt="" coords="611,179,798,208"/>
-<area shape="rect" id="node14" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="483,361,611,391"/>
-<area shape="rect" id="node17" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="432,448,595,477"/>
-<area shape="rect" id="node30" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="184,179,339,208"/>
-<area shape="rect" id="node34" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="27,361,174,391"/>
-<area shape="rect" id="node38" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="182,257,342,303"/>
-<area shape="rect" id="node49" href="$d3/d22/address__range_8hh.html" title="harpoon/memory/address\l_range.hh" alt="" coords="866,353,1034,399"/>
-<area shape="rect" id="node52" href="$db/db3/address_8hh.html" title="harpoon/memory/address.hh" alt="" coords="771,448,958,477"/>
+<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="549,525,685,555"/>
+<area shape="rect" id="node13" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="488,265,701,295"/>
+<area shape="rect" id="node30" href="$d9/d3e/execution__unit_8hh.html" title="harpoon/execution/execution\l_unit.hh" alt="" coords="369,83,556,130"/>
+<area shape="rect" id="node49" href="$dc/d3f/memory_8hh.html" title="harpoon/memory/memory.hh" alt="" coords="709,179,896,208"/>
+<area shape="rect" id="node16" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="632,361,760,391"/>
+<area shape="rect" id="node19" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="659,448,821,477"/>
+<area shape="rect" id="node34" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="333,179,488,208"/>
+<area shape="rect" id="node38" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="43,361,189,391"/>
+<area shape="rect" id="node42" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="197,257,357,303"/>
+<area shape="rect" id="node53" href="$d3/d22/address__range_8hh.html" title="harpoon/memory/address\l_range.hh" alt="" coords="896,353,1064,399"/>
+<area shape="rect" id="node56" href="$db/db3/address_8hh.html" title="harpoon/memory/address.hh" alt="" coords="1024,448,1211,477"/>
 </map>

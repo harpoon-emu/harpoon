@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['main_5fmemory',['main_memory',['../d8/d1f/classharpoon_1_1memory_1_1main__memory.html',1,'harpoon::memory']]],
-  ['memory',['memory',['../db/d2f/classharpoon_1_1memory_1_1memory.html',1,'harpoon::memory']]],
-  ['memory_5fexception',['memory_exception',['../dd/de3/classharpoon_1_1memory_1_1exception_1_1memory__exception.html',1,'harpoon::memory::exception']]],
-  ['message',['message',['../d5/d06/classharpoon_1_1log_1_1message.html',1,'harpoon::log']]]
+  ['linear_5fmemory',['linear_memory',['../da/df3/classharpoon_1_1memory_1_1linear__memory.html',1,'harpoon::memory']]],
+  ['linear_5frandom_5faccess_5fmemory',['linear_random_access_memory',['../df/d20/classharpoon_1_1memory_1_1linear__random__access__memory.html',1,'harpoon::memory']]],
+  ['linear_5fread_5fonly_5fmemory',['linear_read_only_memory',['../de/dd2/classharpoon_1_1memory_1_1linear__read__only__memory.html',1,'harpoon::memory']]],
+  ['log',['log',['../d8/dae/classharpoon_1_1log_1_1log.html',1,'harpoon::log']]]
 ];

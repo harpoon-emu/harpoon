@@ -40,5 +40,7 @@ var searchData=
   ['console_5flog_5fweak_5fptr',['console_log_weak_ptr',['../d8/d7d/namespaceharpoon_1_1log.html#a074b1fcb9e1956318d42dad30120c7cf',1,'harpoon::log']]],
   ['critical',['CRITICAL',['../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4ca99cd1c61610c76a57cb8d10d6df6b870',1,'harpoon::log::message']]],
   ['cycle',['cycle',['../d3/df0/namespaceharpoon_1_1execution.html#a8dec821118eb2880d52c1c4f2d55d3ea',1,'harpoon::execution']]],
-  ['cycle_2ehh',['cycle.hh',['../d0/df4/cycle_8hh.html',1,'']]]
+  ['cycle_2ehh',['cycle.hh',['../d0/df4/cycle_8hh.html',1,'']]],
+  ['cycles_5fdecode',['CYCLES_DECODE',['../da/db2/classharpoon_1_1execution_1_1instruction.html#ae2f20cb3ecebc0539885cac0bd891be4',1,'harpoon::execution::instruction']]],
+  ['cycles_5fexecute',['CYCLES_EXECUTE',['../da/db2/classharpoon_1_1execution_1_1instruction.html#aca5eae21cabb2fa17cd8acaa98b7b9bf',1,'harpoon::execution::instruction']]]
 ];

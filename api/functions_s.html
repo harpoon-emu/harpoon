@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
@@ -105,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,10 +120,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>set()
-: <a class="el" href="da/d84/classharpoon_1_1memory_1_1chunked__memory.html#ad437b40fac11175616d6c12edbe47f4e">harpoon::memory::chunked_memory</a>
+: <a class="el" href="da/d18/classharpoon_1_1execution_1_1basic__register.html#a998207830ee4e0a43ceec233698d36bc">harpoon::execution::basic_register&lt; T &gt;</a>
+, <a class="el" href="da/d84/classharpoon_1_1memory_1_1chunked__memory.html#ad437b40fac11175616d6c12edbe47f4e">harpoon::memory::chunked_memory</a>
 , <a class="el" href="da/df3/classharpoon_1_1memory_1_1linear__memory.html#aed4a91f072b951282cdc48c53b5b8b7f">harpoon::memory::linear_memory</a>
 , <a class="el" href="d8/d1f/classharpoon_1_1memory_1_1main__memory.html#a686ec7fbd79ec5a290b5184692b7dca5">harpoon::memory::main_memory</a>
-, <a class="el" href="db/d2f/classharpoon_1_1memory_1_1memory.html#ad65c9af1da2d2cec8ab48cf896684181">harpoon::memory::memory</a>
+, <a class="el" href="db/d2f/classharpoon_1_1memory_1_1memory.html#a1285f08479fba9fefc27d5530a050cab">harpoon::memory::memory</a>
 , <a class="el" href="db/dd3/classharpoon_1_1memory_1_1read__only__memory.html#a61758899772f3e66e393dafc4bbec5e1">harpoon::memory::read_only_memory&lt; MemoryImplementation &gt;</a>
 </li>
 <li>set_address_range()
@@ -130,6 +132,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>set_clock()
 : <a class="el" href="d6/d5c/classharpoon_1_1execution_1_1execution__unit.html#adbf0f246457302a648ba0db7bdeee95c">harpoon::execution::execution_unit</a>
+</li>
+<li>set_cpu()
+: <a class="el" href="da/db2/classharpoon_1_1execution_1_1instruction.html#a7eedd7fb52e6eae5d5a8382df886934b">harpoon::execution::instruction&lt; CPU &gt;</a>
 </li>
 <li>set_end()
 : <a class="el" href="d1/da0/classharpoon_1_1memory_1_1address__range.html#a101a7bd58f2d43e93ca6aa7f7a55690b">harpoon::memory::address_range</a>
@@ -170,9 +175,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>set_tick()
 : <a class="el" href="d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#a4a67f1e2bfe0e2afd62d576b412da2c8">harpoon::clock::generator::generator</a>
 </li>
-<li>set_value()
-: <a class="el" href="da/d18/classharpoon_1_1execution_1_1basic__register.html#a8f47d4ffc48e8f0f353894da6d27ffea">harpoon::execution::basic_register&lt; T &gt;</a>
-</li>
 <li>set_what()
 : <a class="el" href="d0/d5b/classharpoon_1_1exception_1_1harpoon__exception.html#a8c02aebbc121ee7eb6f0a39e1d42c3a4">harpoon::exception::harpoon_exception</a>
 </li>
@@ -196,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 24 2015 21:54:30 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 5 2015 07:49:28 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

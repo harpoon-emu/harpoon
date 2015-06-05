@@ -1,4 +1,4 @@
 <map id="harpoon::memory::chunked_memory" name="harpoon::memory::chunked_memory">
-<area shape="rect" id="node2" href="$db/d2f/classharpoon_1_1memory_1_1memory.html" title="{harpoon::memory::memory\n||+ memory()\l+ get_address_range()\l+ get_address_range()\l+ set_address_range()\l+ has_address()\l+ get()\l+ set()\l+ ~memory()\l}" alt="" coords="16,481,195,687"/>
+<area shape="rect" id="node2" href="$db/d2f/classharpoon_1_1memory_1_1memory.html" title="{harpoon::memory::memory\n||+ memory()\l+ get_address_range()\l+ get_address_range()\l+ set_address_range()\l+ has_address()\l+ get()\l+ set()\l+ get()\l+ set()\l+ get()\l+ set()\l+ get()\l+ set()\l+ ~memory()\l}" alt="" coords="16,481,195,791"/>
 <area shape="rect" id="node4" href="$df/d54/classharpoon_1_1hardware__component.html" title="Base class for all hardware components of computer system (i.e. CPU, memory). All components should d..." alt="" coords="5,173,205,432"/>
 </map>
