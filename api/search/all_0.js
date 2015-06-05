@@ -10,6 +10,7 @@ var searchData=
   ['address_5frange',['address_range',['../d1/da0/classharpoon_1_1memory_1_1address__range.html#ada94ecad7c7ca87d7ea65ae5328598d1',1,'harpoon::memory::address_range::address_range(address start={}, std::uint_fast64_t end={})'],['../d1/da0/classharpoon_1_1memory_1_1address__range.html#a7f5a4f9935d43321b1bc305a4c435a23',1,'harpoon::memory::address_range::address_range(const address_range &amp;)=default']]],
   ['address_5frange',['address_range',['../d1/da0/classharpoon_1_1memory_1_1address__range.html',1,'harpoon::memory']]],
   ['address_5frange_2ehh',['address_range.hh',['../d3/d22/address__range_8hh.html',1,'']]],
+  ['allocate_5fchunk',['allocate_chunk',['../da/d84/classharpoon_1_1memory_1_1chunked__memory.html#ae60552feeb8fedba83565df37f089a7e',1,'harpoon::memory::chunked_memory']]],
   ['atomic_5fcycle',['atomic_cycle',['../d3/df0/namespaceharpoon_1_1execution.html#af46fa393fcbd4ef3d69837509b47b0aa',1,'harpoon::execution']]],
   ['atomic_5ftick',['atomic_tick',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html#a48edb1b97e51e143b3a55f7b39e89b08',1,'harpoon::clock::generator::atomic_tick()'],['../df/dba/namespaceharpoon_1_1clock.html#aa515855edc74d46182266e19002c1708',1,'harpoon::clock::atomic_tick()']]]
 ];

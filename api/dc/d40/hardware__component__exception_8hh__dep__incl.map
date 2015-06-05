@@ -1,9 +1,11 @@
 <map id="harpoon/exception/hardware_component_exception.hh" name="harpoon/exception/hardware_component_exception.hh">
-<area shape="rect" id="node3" href="$df/d8d/memory__exception_8hh.html" title="harpoon/memory/exception\l/memory_exception.hh" alt="" coords="107,102,285,149"/>
-<area shape="rect" id="node5" href="$d2/d41/access__violation_8hh.html" title="harpoon/memory/exception\l/access_violation.hh" alt="" coords="107,198,285,245"/>
-<area shape="rect" id="node7" href="$d2/d7f/read__access__violation_8hh.html" title="harpoon/memory/exception\l/read_access_violation.hh" alt="" coords="5,294,184,341"/>
-<area shape="rect" id="node9" href="$de/da3/write__access__violation_8hh.html" title="harpoon/memory/exception\l/write_access_violation.hh" alt="" coords="208,294,387,341"/>
-<area shape="rect" id="node11" href="$d9/d5e/read__only__memory_8hh.html" title="harpoon/memory/read\l_only_memory.hh" alt="" coords="224,390,371,437"/>
-<area shape="rect" id="node13" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="119,486,289,533"/>
-<area shape="rect" id="node15" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="313,486,471,533"/>
+<area shape="rect" id="node3" href="$d5/d38/execution__exception_8hh.html" title="harpoon/execution/exception\l/execution_exception.hh" alt="" coords="5,102,192,149"/>
+<area shape="rect" id="node7" href="$df/d8d/memory__exception_8hh.html" title="harpoon/memory/exception\l/memory_exception.hh" alt="" coords="216,102,395,149"/>
+<area shape="rect" id="node5" href="$d9/db0/invalid__instruction_8hh.html" title="harpoon/execution/exception\l/invalid_instruction.hh" alt="" coords="5,198,192,245"/>
+<area shape="rect" id="node9" href="$d2/d41/access__violation_8hh.html" title="harpoon/memory/exception\l/access_violation.hh" alt="" coords="216,198,395,245"/>
+<area shape="rect" id="node11" href="$d2/d7f/read__access__violation_8hh.html" title="harpoon/memory/exception\l/read_access_violation.hh" alt="" coords="115,294,293,341"/>
+<area shape="rect" id="node13" href="$de/da3/write__access__violation_8hh.html" title="harpoon/memory/exception\l/write_access_violation.hh" alt="" coords="317,294,496,341"/>
+<area shape="rect" id="node15" href="$d9/d5e/read__only__memory_8hh.html" title="harpoon/memory/read\l_only_memory.hh" alt="" coords="333,390,480,437"/>
+<area shape="rect" id="node17" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="228,486,399,533"/>
+<area shape="rect" id="node19" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="423,486,580,533"/>
 </map>

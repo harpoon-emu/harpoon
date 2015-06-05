@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 357;
+var viewWidth = 439;
 var viewHeight = 476;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,116 +54,142 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>harpoon/exception/harpoon_exception.hh</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-472 354,-472 354,5 -4,5"/>
+<polygon fill="white" stroke="white" points="-4,5 -4,-472 436,-472 436,5 -4,5"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="76,-433 76,-467 210,-467 210,-433 76,-433"/>
-<text text-anchor="start" x="84" y="-454" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/exception/harpoon</text>
-<text text-anchor="middle" x="143" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00">_exception.hh</text>
+<polygon fill="#bfbfbf" stroke="black" points="80,-433 80,-467 214,-467 214,-433 80,-433"/>
+<text text-anchor="start" x="88" y="-454" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/exception/harpoon</text>
+<text text-anchor="middle" x="147" y="-441" font-family="Helvetica,sans-Serif" font-size="10.00">_exception.hh</text>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
 <a xlink:href="../../df/d18/hardware__component__exception_8hh.html" target="_top" xlink:title="harpoon/exception/hardware\l_component_exception.hh">
-<polygon fill="white" stroke="black" points="73.5,-361 73.5,-395 212.5,-395 212.5,-361 73.5,-361"/>
-<text text-anchor="start" x="81.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/exception/hardware</text>
-<text text-anchor="middle" x="143" y="-369" font-family="Helvetica,sans-Serif" font-size="10.00">_component_exception.hh</text>
+<polygon fill="white" stroke="black" points="77.5,-361 77.5,-395 216.5,-395 216.5,-361 77.5,-361"/>
+<text text-anchor="start" x="85.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/exception/hardware</text>
+<text text-anchor="middle" x="147" y="-369" font-family="Helvetica,sans-Serif" font-size="10.00">_component_exception.hh</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M143,-422.719C143,-413.572 143,-403.625 143,-395.441"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="139.5,-422.937 143,-432.937 146.5,-422.937 139.5,-422.937"/>
+<path fill="none" stroke="midnightblue" d="M147,-422.719C147,-413.572 147,-403.625 147,-395.441"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="143.5,-422.937 147,-432.937 150.5,-422.937 143.5,-422.937"/>
 </g>
 <!-- Node3 -->
 <g id="node5" class="node"><title>Node3</title>
-<a xlink:href="../../df/d8d/memory__exception_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/memory_exception.hh">
-<polygon fill="white" stroke="black" points="76,-289 76,-323 210,-323 210,-289 76,-289"/>
-<text text-anchor="start" x="84" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
-<text text-anchor="middle" x="143" y="-297" font-family="Helvetica,sans-Serif" font-size="10.00">/memory_exception.hh</text>
+<a xlink:href="../../d5/d38/execution__exception_8hh.html" target="_top" xlink:title="harpoon/execution/exception\l/execution_exception.hh">
+<polygon fill="white" stroke="black" points="-0.5,-289 -0.5,-323 140.5,-323 140.5,-289 -0.5,-289"/>
+<text text-anchor="start" x="7.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/execution/exception</text>
+<text text-anchor="middle" x="70" y="-297" font-family="Helvetica,sans-Serif" font-size="10.00">/execution_exception.hh</text>
 </a>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge4" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M143,-350.719C143,-341.572 143,-331.625 143,-323.441"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="139.5,-350.937 143,-360.937 146.5,-350.937 139.5,-350.937"/>
+<path fill="none" stroke="midnightblue" d="M121.235,-353.908C110.472,-343.844 98.2118,-332.38 88.3838,-323.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="119.057,-356.664 128.752,-360.937 123.838,-351.551 119.057,-356.664"/>
+</g>
+<!-- Node5 -->
+<g id="node9" class="node"><title>Node5</title>
+<a xlink:href="../../df/d8d/memory__exception_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/memory_exception.hh">
+<polygon fill="white" stroke="black" points="158,-289 158,-323 292,-323 292,-289 158,-289"/>
+<text text-anchor="start" x="166" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
+<text text-anchor="middle" x="225" y="-297" font-family="Helvetica,sans-Serif" font-size="10.00">/memory_exception.hh</text>
+</a>
+</g>
+<!-- Node2&#45;&gt;Node5 -->
+<g id="edge8" class="edge"><title>Node2&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M173.099,-353.908C184.003,-343.844 196.422,-332.38 206.377,-323.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="170.459,-351.582 165.485,-360.937 175.207,-356.726 170.459,-351.582"/>
 </g>
 <!-- Node4 -->
 <g id="node7" class="node"><title>Node4</title>
-<a xlink:href="../../d2/d41/access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/access_violation.hh">
-<polygon fill="white" stroke="black" points="76,-217 76,-251 210,-251 210,-217 76,-217"/>
-<text text-anchor="start" x="84" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
-<text text-anchor="middle" x="143" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">/access_violation.hh</text>
+<a xlink:href="../../d9/db0/invalid__instruction_8hh.html" target="_top" xlink:title="harpoon/execution/exception\l/invalid_instruction.hh">
+<polygon fill="white" stroke="black" points="-0.5,-217 -0.5,-251 140.5,-251 140.5,-217 -0.5,-217"/>
+<text text-anchor="start" x="7.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/execution/exception</text>
+<text text-anchor="middle" x="70" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">/invalid_instruction.hh</text>
 </a>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge6" class="edge"><title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M143,-278.719C143,-269.572 143,-259.625 143,-251.441"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="139.5,-278.937 143,-288.937 146.5,-278.937 139.5,-278.937"/>
-</g>
-<!-- Node5 -->
-<g id="node9" class="node"><title>Node5</title>
-<a xlink:href="../../d2/d7f/read__access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/read_access_violation.hh">
-<polygon fill="white" stroke="black" points="0,-145 0,-179 134,-179 134,-145 0,-145"/>
-<text text-anchor="start" x="8" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
-<text text-anchor="middle" x="67" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">/read_access_violation.hh</text>
-</a>
-</g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge8" class="edge"><title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M117.57,-209.908C106.946,-199.844 94.8454,-188.38 85.145,-179.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="115.322,-212.6 124.989,-216.937 120.137,-207.519 115.322,-212.6"/>
+<path fill="none" stroke="midnightblue" d="M70,-278.719C70,-269.572 70,-259.625 70,-251.441"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="66.5001,-278.937 70,-288.937 73.5001,-278.937 66.5001,-278.937"/>
 </g>
 <!-- Node6 -->
 <g id="node11" class="node"><title>Node6</title>
-<a xlink:href="../../de/da3/write__access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/write_access_violation.hh">
-<polygon fill="white" stroke="black" points="152,-145 152,-179 286,-179 286,-145 152,-145"/>
-<text text-anchor="start" x="160" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
-<text text-anchor="middle" x="219" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">/write_access_violation.hh</text>
+<a xlink:href="../../d2/d41/access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/access_violation.hh">
+<polygon fill="white" stroke="black" points="158,-217 158,-251 292,-251 292,-217 158,-217"/>
+<text text-anchor="start" x="166" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
+<text text-anchor="middle" x="225" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">/access_violation.hh</text>
 </a>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge10" class="edge"><title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M168.43,-209.908C179.054,-199.844 191.155,-188.38 200.855,-179.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="165.863,-207.519 161.011,-216.937 170.678,-212.6 165.863,-207.519"/>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge10" class="edge"><title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M225,-278.719C225,-269.572 225,-259.625 225,-251.441"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="221.5,-278.937 225,-288.937 228.5,-278.937 221.5,-278.937"/>
 </g>
 <!-- Node7 -->
 <g id="node13" class="node"><title>Node7</title>
-<a xlink:href="../../d9/d5e/read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/read\l_only_memory.hh">
-<polygon fill="white" stroke="black" points="163.5,-73 163.5,-107 274.5,-107 274.5,-73 163.5,-73"/>
-<text text-anchor="start" x="171.5" y="-94" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/read</text>
-<text text-anchor="middle" x="219" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">_only_memory.hh</text>
+<a xlink:href="../../d2/d7f/read__access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/read_access_violation.hh">
+<polygon fill="white" stroke="black" points="82,-145 82,-179 216,-179 216,-145 82,-145"/>
+<text text-anchor="start" x="90" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
+<text text-anchor="middle" x="149" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">/read_access_violation.hh</text>
 </a>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
 <g id="edge12" class="edge"><title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M219,-134.719C219,-125.572 219,-115.625 219,-107.441"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="215.5,-134.937 219,-144.937 222.5,-134.937 215.5,-134.937"/>
+<path fill="none" stroke="midnightblue" d="M199.57,-209.908C188.946,-199.844 176.845,-188.38 167.145,-179.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="197.322,-212.6 206.989,-216.937 202.137,-207.519 197.322,-212.6"/>
 </g>
 <!-- Node8 -->
 <g id="node15" class="node"><title>Node8</title>
-<a xlink:href="../../dd/ddc/chunked__read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/chunked\l_read_only_memory.hh">
-<polygon fill="white" stroke="black" points="84.5,-1 84.5,-35 213.5,-35 213.5,-1 84.5,-1"/>
-<text text-anchor="start" x="92.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/chunked</text>
-<text text-anchor="middle" x="149" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">_read_only_memory.hh</text>
+<a xlink:href="../../de/da3/write__access__violation_8hh.html" target="_top" xlink:title="harpoon/memory/exception\l/write_access_violation.hh">
+<polygon fill="white" stroke="black" points="234,-145 234,-179 368,-179 368,-145 234,-145"/>
+<text text-anchor="start" x="242" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/exception</text>
+<text text-anchor="middle" x="301" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">/write_access_violation.hh</text>
 </a>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge14" class="edge"><title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M195.346,-65.6706C185.706,-55.7551 174.779,-44.5151 165.956,-35.4407"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="192.931,-68.2068 202.411,-72.937 197.95,-63.3272 192.931,-68.2068"/>
+<!-- Node6&#45;&gt;Node8 -->
+<g id="edge14" class="edge"><title>Node6&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M250.43,-209.908C261.054,-199.844 273.155,-188.38 282.855,-179.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="247.863,-207.519 243.011,-216.937 252.678,-212.6 247.863,-207.519"/>
 </g>
 <!-- Node9 -->
 <g id="node17" class="node"><title>Node9</title>
-<a xlink:href="../../dd/db0/linear__read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/linear\l_read_only_memory.hh">
-<polygon fill="white" stroke="black" points="231,-1 231,-35 349,-35 349,-1 231,-1"/>
-<text text-anchor="start" x="239" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/linear</text>
-<text text-anchor="middle" x="290" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">_read_only_memory.hh</text>
+<a xlink:href="../../d9/d5e/read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/read\l_only_memory.hh">
+<polygon fill="white" stroke="black" points="245.5,-73 245.5,-107 356.5,-107 356.5,-73 245.5,-73"/>
+<text text-anchor="start" x="253.5" y="-94" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/read</text>
+<text text-anchor="middle" x="301" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">_only_memory.hh</text>
 </a>
 </g>
-<!-- Node7&#45;&gt;Node9 -->
-<g id="edge16" class="edge"><title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M242.992,-65.6706C252.769,-55.7551 263.853,-44.5151 272.802,-35.4407"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="240.355,-63.3591 235.826,-72.937 245.34,-68.2742 240.355,-63.3591"/>
+<!-- Node8&#45;&gt;Node9 -->
+<g id="edge16" class="edge"><title>Node8&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M301,-134.719C301,-125.572 301,-115.625 301,-107.441"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="297.5,-134.937 301,-144.937 304.5,-134.937 297.5,-134.937"/>
+</g>
+<!-- Node10 -->
+<g id="node19" class="node"><title>Node10</title>
+<a xlink:href="../../dd/ddc/chunked__read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/chunked\l_read_only_memory.hh">
+<polygon fill="white" stroke="black" points="166.5,-1 166.5,-35 295.5,-35 295.5,-1 166.5,-1"/>
+<text text-anchor="start" x="174.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/chunked</text>
+<text text-anchor="middle" x="231" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">_read_only_memory.hh</text>
+</a>
+</g>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge18" class="edge"><title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M277.346,-65.6706C267.706,-55.7551 256.779,-44.5151 247.956,-35.4407"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="274.931,-68.2068 284.411,-72.937 279.95,-63.3272 274.931,-68.2068"/>
+</g>
+<!-- Node11 -->
+<g id="node21" class="node"><title>Node11</title>
+<a xlink:href="../../dd/db0/linear__read__only__memory_8hh.html" target="_top" xlink:title="harpoon/memory/linear\l_read_only_memory.hh">
+<polygon fill="white" stroke="black" points="313,-1 313,-35 431,-35 431,-1 313,-1"/>
+<text text-anchor="start" x="321" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon/memory/linear</text>
+<text text-anchor="middle" x="372" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">_read_only_memory.hh</text>
+</a>
+</g>
+<!-- Node9&#45;&gt;Node11 -->
+<g id="edge20" class="edge"><title>Node9&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M324.992,-65.6706C334.769,-55.7551 345.853,-44.5151 354.802,-35.4407"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="322.355,-63.3591 317.826,-72.937 327.34,-68.2742 322.355,-63.3591"/>
 </g>
 </g>
 </svg>

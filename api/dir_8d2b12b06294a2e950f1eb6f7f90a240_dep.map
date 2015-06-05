@@ -1,6 +1,9 @@
 <map id="harpoon/execution" name="harpoon/execution">
-<area shape="rect" id="node2" href="dir_8d2b12b06294a2e950f1eb6f7f90a240.html" title="execution" alt="" coords="27,55,104,103"/>
-<area shape="rect" id="node3" href="dir_3efc55d360d15bc5b946832cb8e0b0f5.html" title="clock" alt="" coords="29,151,101,199"/>
-<area shape="rect" id="edge3" href="dir_000004_000001.html" title="1" alt="" coords="70,123,78,141"/>
-<area shape="rect" id="graph2" href="dir_d6cfac7184b3a2ae06630a5923aa12d1.html" title="harpoon" alt="" coords="16,16,115,113"/>
+<area shape="rect" id="node6" href="dir_3efc55d360d15bc5b946832cb8e0b0f5.html" title="clock" alt="" coords="40,161,112,209"/>
+<area shape="rect" id="edge4" href="dir_000004_000001.html" title="1" alt="" coords="80,134,88,151"/>
+<area shape="rect" id="node4" href="dir_bb16d08d08d9935665df9214a4b5d60a.html" title="exception" alt="" coords="139,65,216,113"/>
+<area shape="rect" id="node5" href="dir_53e624dd41e30a87ca3c360098cd913c.html" title="exception" alt="" coords="139,161,216,209"/>
+<area shape="rect" id="edge6" href="dir_000005_000003.html" title="1" alt="" coords="182,134,190,151"/>
+<area shape="rect" id="graph3" href="dir_8d2b12b06294a2e950f1eb6f7f90a240.html" alt="" coords="27,55,227,124"/>
+<area shape="rect" id="graph2" href="dir_d6cfac7184b3a2ae06630a5923aa12d1.html" title="harpoon" alt="" coords="16,16,237,135"/>
 </map>

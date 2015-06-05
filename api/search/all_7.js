@@ -1,8 +1,9 @@
 var searchData=
 [
   ['clock',['clock',['../df/dba/namespaceharpoon_1_1clock.html',1,'harpoon']]],
-  ['exception',['exception',['../d3/de3/namespaceharpoon_1_1memory_1_1exception.html',1,'harpoon::memory']]],
+  ['exception',['exception',['../dd/dc8/namespaceharpoon_1_1execution_1_1exception.html',1,'harpoon::execution']]],
   ['exception',['exception',['../d1/dc4/namespaceharpoon_1_1exception.html',1,'harpoon']]],
+  ['exception',['exception',['../d3/de3/namespaceharpoon_1_1memory_1_1exception.html',1,'harpoon::memory']]],
   ['execution',['execution',['../d3/df0/namespaceharpoon_1_1execution.html',1,'harpoon']]],
   ['generator',['generator',['../d9/d7f/namespaceharpoon_1_1clock_1_1generator.html',1,'harpoon::clock']]],
   ['hardware_5fcomponent',['hardware_component',['../df/d54/classharpoon_1_1hardware__component.html',1,'harpoon']]],
@@ -22,5 +23,6 @@ var searchData=
   ['harpoon_5flog_5fc',['harpoon_log_c',['../d9/d74/message_8hh.html#af6873841d9d4f35c1cfa4cb6fe057222',1,'message.hh']]],
   ['has_5faddress',['has_address',['../d1/da0/classharpoon_1_1memory_1_1address__range.html#ac1ce69dc0b3f25481d1aa26837a05d3c',1,'harpoon::memory::address_range::has_address()'],['../db/d2f/classharpoon_1_1memory_1_1memory.html#a376405b2037d359309ae27d48f486ce2',1,'harpoon::memory::memory::has_address()']]],
   ['log',['log',['../d8/d7d/namespaceharpoon_1_1log.html',1,'harpoon']]],
-  ['memory',['memory',['../d1/df1/namespaceharpoon_1_1memory.html',1,'harpoon']]]
+  ['memory',['memory',['../d1/df1/namespaceharpoon_1_1memory.html',1,'harpoon']]],
+  ['serializer',['serializer',['../d0/d8c/namespaceharpoon_1_1memory_1_1serializer.html',1,'harpoon::memory']]]
 ];

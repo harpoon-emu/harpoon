@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['read',['read',['../de/dda/classharpoon_1_1memory_1_1serializer_1_1binary__file.html#abc952aecbea850faafa0ea0bba44c9cf',1,'harpoon::memory::serializer::binary_file::read()'],['../d4/d42/classharpoon_1_1memory_1_1serializer_1_1serializer.html#aeb71a0bf0ae36bc6a514b24dd82c5906',1,'harpoon::memory::serializer::serializer::read()']]],
   ['read_5faccess_5fviolation',['read_access_violation',['../de/db7/classharpoon_1_1memory_1_1exception_1_1read__access__violation.html#ae24d491579cc1556b55774f8a8b81929',1,'harpoon::memory::exception::read_access_violation::read_access_violation(const std::string &amp;component, address address, const std::string &amp;file={}, int line={}, const std::string &amp;function={})'],['../de/db7/classharpoon_1_1memory_1_1exception_1_1read__access__violation.html#abbc05b7b851d6ff36137347cb6a81bf3',1,'harpoon::memory::exception::read_access_violation::read_access_violation(const read_access_violation &amp;)=default']]],
   ['remove_5fcomponent',['remove_component',['../df/d54/classharpoon_1_1hardware__component.html#a640ad8a3b4dd08d4bd15797d03ea0966',1,'harpoon::hardware_component']]],
   ['replace_5fcomponent',['replace_component',['../df/d54/classharpoon_1_1hardware__component.html#a05ac6abc73c78267520b18f24dad8156',1,'harpoon::hardware_component']]],

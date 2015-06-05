@@ -1,18 +1,20 @@
 <map id="harpoon/log/message.hh" name="harpoon/log/message.hh">
 <area shape="rect" id="node3" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="299,83,427,112"/>
 <area shape="rect" id="node5" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="156,169,369,199"/>
-<area shape="rect" id="node38" href="$dd/d8e/console__log_8hh.html" title="harpoon/log/console\l_log.hh" alt="" coords="393,161,532,207"/>
+<area shape="rect" id="node42" href="$dd/d8e/console__log_8hh.html" title="harpoon/log/console\l_log.hh" alt="" coords="393,161,532,207"/>
 <area shape="rect" id="node7" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="185,256,340,285"/>
 <area shape="rect" id="node9" href="$d9/d3e/execution__unit_8hh.html" title="harpoon/execution/execution\l_unit.hh" alt="" coords="144,334,331,381"/>
-<area shape="rect" id="node11" href="$d5/d22/computer__system_8hh.html" title="harpoon/computer_system.hh" alt="" coords="277,439,472,468"/>
+<area shape="rect" id="node11" href="$d5/d22/computer__system_8hh.html" title="harpoon/computer_system.hh" alt="" coords="280,439,475,468"/>
 <area shape="rect" id="node13" href="$dd/dba/processing__unit_8hh.html" title="harpoon/execution/processing\l_unit.hh" alt="" coords="5,430,200,477"/>
-<area shape="rect" id="node21" href="$dc/d3f/memory_8hh.html" title="harpoon/memory/memory.hh" alt="" coords="447,256,633,285"/>
+<area shape="rect" id="node21" href="$dc/d3f/memory_8hh.html" title="harpoon/memory/memory.hh" alt="" coords="569,256,756,285"/>
 <area shape="rect" id="node15" href="$d9/d67/up__execution__unit_8hh.html" title="harpoon/execution/up\l_execution_unit.hh" alt="" coords="96,526,243,573"/>
-<area shape="rect" id="node24" href="$dc/d1d/chunked__memory_8hh.html" title="harpoon/memory/chunked\l_memory.hh" alt="" coords="639,334,809,381"/>
-<area shape="rect" id="node30" href="$d1/d70/linear__memory_8hh.html" title="harpoon/memory/linear\l_memory.hh" alt="" coords="908,334,1063,381"/>
-<area shape="rect" id="node36" href="$d4/d85/main__memory_8hh.html" title="harpoon/memory/main\l_memory.hh" alt="" coords="465,334,615,381"/>
-<area shape="rect" id="node26" href="$d4/d48/chunked__random__access__memory_8hh.html" title="harpoon/memory/chunked\l_random_access_memory.hh" alt="" coords="691,430,883,477"/>
-<area shape="rect" id="node28" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="496,430,667,477"/>
-<area shape="rect" id="node32" href="$d0/d9e/linear__random__access__memory_8hh.html" title="harpoon/memory/linear\l_random_access_memory.hh" alt="" coords="1088,430,1280,477"/>
-<area shape="rect" id="node34" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="907,430,1064,477"/>
+<area shape="rect" id="node24" href="$dc/d1d/chunked__memory_8hh.html" title="harpoon/memory/chunked\l_memory.hh" alt="" coords="836,334,1007,381"/>
+<area shape="rect" id="node30" href="$d1/d70/linear__memory_8hh.html" title="harpoon/memory/linear\l_memory.hh" alt="" coords="1189,334,1344,381"/>
+<area shape="rect" id="node36" href="$d4/d85/main__memory_8hh.html" title="harpoon/memory/main\l_memory.hh" alt="" coords="415,334,564,381"/>
+<area shape="rect" id="node38" href="$d0/dcd/serializer_8hh.html" title="harpoon/memory/serializer\l/serializer.hh" alt="" coords="639,334,812,381"/>
+<area shape="rect" id="node26" href="$d4/d48/chunked__random__access__memory_8hh.html" title="harpoon/memory/chunked\l_random_access_memory.hh" alt="" coords="760,430,952,477"/>
+<area shape="rect" id="node28" href="$dd/ddc/chunked__read__only__memory_8hh.html" title="harpoon/memory/chunked\l_read_only_memory.hh" alt="" coords="976,430,1147,477"/>
+<area shape="rect" id="node32" href="$d0/d9e/linear__random__access__memory_8hh.html" title="harpoon/memory/linear\l_random_access_memory.hh" alt="" coords="1171,430,1363,477"/>
+<area shape="rect" id="node34" href="$dd/db0/linear__read__only__memory_8hh.html" title="harpoon/memory/linear\l_read_only_memory.hh" alt="" coords="1387,430,1544,477"/>
+<area shape="rect" id="node40" href="$de/d7d/binary__file_8hh.html" title="harpoon/memory/serializer\l/binary_file.hh" alt="" coords="563,430,736,477"/>
 </map>

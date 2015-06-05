@@ -86,60 +86,60 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<a xlink:href="../../da/d84/classharpoon_1_1memory_1_1chunked__memory.html" target="_top" xlink:title="{harpoon::memory::chunked\l_memory\n||+ chunked_memory()\l+ chunked_memory()\l+ operator=()\l+ prepare()\l+ cleanup()\l+ get()\l+ set()\l+ ~chunked_memory()\l# get_chunk_index()\l# get_chunk_offset()\l# get_chunk()\l# get_chunk()\l}">
-<polygon fill="white" stroke="black" points="7.5,-268.5 7.5,-487.5 142.5,-487.5 142.5,-268.5 7.5,-268.5"/>
-<text text-anchor="start" x="15.5" y="-474.5" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::chunked</text>
-<text text-anchor="middle" x="75" y="-461.5" font-family="Helvetica,sans-Serif" font-size="10.00">_memory</text>
-<polyline fill="none" stroke="black" points="7.5,-453.5 142.5,-453.5 "/>
-<text text-anchor="middle" x="75" y="-440.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="7.5,-432.5 142.5,-432.5 "/>
-<text text-anchor="start" x="15.5" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ chunked_memory()</text>
-<text text-anchor="start" x="15.5" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ chunked_memory()</text>
-<text text-anchor="start" x="15.5" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="15.5" y="-380.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ prepare()</text>
-<text text-anchor="start" x="15.5" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ cleanup()</text>
-<text text-anchor="start" x="15.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="15.5" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="15.5" y="-328.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~chunked_memory()</text>
-<text text-anchor="start" x="15.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk_index()</text>
-<text text-anchor="start" x="15.5" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk_offset()</text>
-<text text-anchor="start" x="15.5" y="-289.5" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk()</text>
-<text text-anchor="start" x="15.5" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk()</text>
+<a xlink:href="../../da/d84/classharpoon_1_1memory_1_1chunked__memory.html" target="_top" xlink:title="{harpoon::memory::chunked\l_memory\n||+ chunked_memory()\l+ chunked_memory()\l+ operator=()\l+ prepare()\l+ cleanup()\l+ get()\l+ set()\l+ serialize()\l+ deserialize()\l+ ~chunked_memory()\l# get_chunk_index()\l# get_chunk_offset()\l# get_chunk()\l# get_chunk()\l# allocate_chunk()\l}">
+<polygon fill="white" stroke="black" points="7.5,-269 7.5,-527 142.5,-527 142.5,-269 7.5,-269"/>
+<text text-anchor="start" x="15.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::chunked</text>
+<text text-anchor="middle" x="75" y="-501" font-family="Helvetica,sans-Serif" font-size="10.00">_memory</text>
+<polyline fill="none" stroke="black" points="7.5,-493 142.5,-493 "/>
+<text text-anchor="middle" x="75" y="-480" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="7.5,-472 142.5,-472 "/>
+<text text-anchor="start" x="15.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ chunked_memory()</text>
+<text text-anchor="start" x="15.5" y="-446" font-family="Helvetica,sans-Serif" font-size="10.00">+ chunked_memory()</text>
+<text text-anchor="start" x="15.5" y="-433" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="15.5" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">+ prepare()</text>
+<text text-anchor="start" x="15.5" y="-407" font-family="Helvetica,sans-Serif" font-size="10.00">+ cleanup()</text>
+<text text-anchor="start" x="15.5" y="-394" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
+<text text-anchor="start" x="15.5" y="-381" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
+<text text-anchor="start" x="15.5" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
+<text text-anchor="start" x="15.5" y="-355" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
+<text text-anchor="start" x="15.5" y="-342" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~chunked_memory()</text>
+<text text-anchor="start" x="15.5" y="-329" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk_index()</text>
+<text text-anchor="start" x="15.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk_offset()</text>
+<text text-anchor="start" x="15.5" y="-303" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk()</text>
+<text text-anchor="start" x="15.5" y="-290" font-family="Helvetica,sans-Serif" font-size="10.00"># get_chunk()</text>
+<text text-anchor="start" x="15.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00"># allocate_chunk()</text>
 </a>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge4" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M141.463,-259.523C149.782,-244.693 157.845,-230.32 164.931,-217.687"/>
-<polygon fill="none" stroke="midnightblue" points="138.38,-257.864 136.54,-268.298 144.485,-261.289 138.38,-257.864"/>
+<path fill="none" stroke="midnightblue" d="M145.616,-259.838C153.293,-244.818 160.64,-230.444 167.07,-217.864"/>
+<polygon fill="none" stroke="midnightblue" points="142.498,-258.249 141.063,-268.747 148.731,-261.435 142.498,-258.249"/>
 </g>
 <!-- Node4 -->
 <g id="node6" class="node"><title>Node4</title>
-<a xlink:href="../../db/d2f/classharpoon_1_1memory_1_1memory.html" target="_top" xlink:title="{harpoon::memory::memory\n||+ memory()\l+ get_address_range()\l+ get_address_range()\l+ set_address_range()\l+ has_address()\l+ get()\l+ set()\l+ get()\l+ set()\l+ get()\l+ set()\l+ get()\l+ set()\l+ ~memory()\l}">
-<polygon fill="white" stroke="black" points="8,-527 8,-759 142,-759 142,-527 8,-527"/>
-<text text-anchor="middle" x="75" y="-746" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::memory</text>
-<polyline fill="none" stroke="black" points="8,-738 142,-738 "/>
-<text text-anchor="middle" x="75" y="-725" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="8,-717 142,-717 "/>
-<text text-anchor="start" x="16" y="-704" font-family="Helvetica,sans-Serif" font-size="10.00">+ memory()</text>
-<text text-anchor="start" x="16" y="-691" font-family="Helvetica,sans-Serif" font-size="10.00">+ get_address_range()</text>
-<text text-anchor="start" x="16" y="-678" font-family="Helvetica,sans-Serif" font-size="10.00">+ get_address_range()</text>
-<text text-anchor="start" x="16" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">+ set_address_range()</text>
-<text text-anchor="start" x="16" y="-652" font-family="Helvetica,sans-Serif" font-size="10.00">+ has_address()</text>
-<text text-anchor="start" x="16" y="-639" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="16" y="-626" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="16" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="16" y="-600" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="16" y="-587" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="16" y="-574" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="16" y="-561" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="16" y="-548" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="16" y="-535" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~memory()</text>
+<a xlink:href="../../db/d2f/classharpoon_1_1memory_1_1memory.html" target="_top" xlink:title="{harpoon::memory::memory\n||+ memory()\l+ get_address_range()\l+ get_address_range()\l+ set_address_range()\l+ has_address()\l+ get_offset()\l+ get()\l+ set()\l+ get()\l+ set()\land 7 more...\l}">
+<polygon fill="white" stroke="black" points="8,-566.5 8,-759.5 142,-759.5 142,-566.5 8,-566.5"/>
+<text text-anchor="middle" x="75" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::memory</text>
+<polyline fill="none" stroke="black" points="8,-738.5 142,-738.5 "/>
+<text text-anchor="middle" x="75" y="-725.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="8,-717.5 142,-717.5 "/>
+<text text-anchor="start" x="16" y="-704.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ memory()</text>
+<text text-anchor="start" x="16" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get_address_range()</text>
+<text text-anchor="start" x="16" y="-678.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get_address_range()</text>
+<text text-anchor="start" x="16" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set_address_range()</text>
+<text text-anchor="start" x="16" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ has_address()</text>
+<text text-anchor="start" x="16" y="-639.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get_offset()</text>
+<text text-anchor="start" x="16" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
+<text text-anchor="start" x="16" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
+<text text-anchor="start" x="16" y="-600.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
+<text text-anchor="start" x="16" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
+<text text-anchor="start" x="16" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
 </a>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge6" class="edge"><title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M75,-516.731C75,-507.076 75,-497.378 75,-487.841"/>
-<polygon fill="none" stroke="midnightblue" points="71.5001,-516.767 75,-526.767 78.5001,-516.767 71.5001,-516.767"/>
+<path fill="none" stroke="midnightblue" d="M75,-555.981C75,-546.485 75,-536.807 75,-527.154"/>
+<polygon fill="none" stroke="midnightblue" points="71.5001,-556.204 75,-566.204 78.5001,-556.204 71.5001,-556.204"/>
 </g>
 <!-- Node5 -->
 <g id="node8" class="node"><title>Node5</title>
@@ -164,7 +164,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge8" class="edge"><title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M75,-788.036C75,-778.522 75,-768.859 75,-759.273"/>
+<path fill="none" stroke="midnightblue" d="M75,-788.03C75,-778.533 75,-768.955 75,-759.552"/>
 <polygon fill="none" stroke="midnightblue" points="71.5001,-788.291 75,-798.291 78.5001,-788.291 71.5001,-788.291"/>
 </g>
 <!-- Node6 -->
@@ -186,34 +186,34 @@ var sectionId = 'dynsection-0';
 <!-- Node7 -->
 <g id="node12" class="node"><title>Node7</title>
 <a xlink:href="../../dc/d01/classharpoon_1_1memory_1_1random__access__memory.html" target="_top" xlink:title="{harpoon::memory::random\l_access_memory\&lt; MemoryImplementation \&gt;\n||+ ~random_access_memory()\l}">
-<polygon fill="white" stroke="black" points="160,-340 160,-416 374,-416 374,-340 160,-340"/>
-<text text-anchor="start" x="168" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::random</text>
-<text text-anchor="middle" x="267" y="-390" font-family="Helvetica,sans-Serif" font-size="10.00">_access_memory&lt; MemoryImplementation &gt;</text>
-<polyline fill="none" stroke="black" points="160,-382 374,-382 "/>
-<text text-anchor="middle" x="267" y="-369" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="160,-361 374,-361 "/>
-<text text-anchor="start" x="168" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~random_access_memory()</text>
+<polygon fill="white" stroke="black" points="160,-360 160,-436 374,-436 374,-360 160,-360"/>
+<text text-anchor="start" x="168" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::random</text>
+<text text-anchor="middle" x="267" y="-410" font-family="Helvetica,sans-Serif" font-size="10.00">_access_memory&lt; MemoryImplementation &gt;</text>
+<polyline fill="none" stroke="black" points="160,-402 374,-402 "/>
+<text text-anchor="middle" x="267" y="-389" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="160,-381 374,-381 "/>
+<text text-anchor="start" x="168" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~random_access_memory()</text>
 </a>
 </g>
 <!-- Node7&#45;&gt;Node2 -->
 <g id="edge12" class="edge"><title>Node7&#45;&gt;Node2</title>
-<path fill="none" stroke="orange" d="M249.051,-330.213C236.288,-296.234 219.263,-250.907 206.773,-217.655"/>
-<polygon fill="orange" stroke="orange" points="245.905,-331.791 252.697,-339.922 252.458,-329.329 245.905,-331.791"/>
-<text text-anchor="middle" x="267.5" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &lt; chunked_memory &gt;</text>
+<path fill="none" stroke="orange" d="M250.649,-350.222C237.226,-310.998 218.358,-255.865 205.246,-217.549"/>
+<polygon fill="orange" stroke="orange" points="247.389,-351.504 253.938,-359.832 254.012,-349.237 247.389,-351.504"/>
+<text text-anchor="middle" x="264.5" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &lt; chunked_memory &gt;</text>
 </g>
 <!-- Node8 -->
 <g id="node14" class="node"><title>Node8</title>
-<polygon fill="white" stroke="#bfbfbf" points="207.5,-611.5 207.5,-674.5 326.5,-674.5 326.5,-611.5 207.5,-611.5"/>
-<text text-anchor="middle" x="267" y="-661.5" font-family="Helvetica,sans-Serif" font-size="10.00">MemoryImplementation</text>
-<polyline fill="none" stroke="#bfbfbf" points="207.5,-653.5 326.5,-653.5 "/>
-<text text-anchor="middle" x="267" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="207.5,-632.5 326.5,-632.5 "/>
-<text text-anchor="middle" x="267" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="207.5,-631.5 207.5,-694.5 326.5,-694.5 326.5,-631.5 207.5,-631.5"/>
+<text text-anchor="middle" x="267" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">MemoryImplementation</text>
+<polyline fill="none" stroke="#bfbfbf" points="207.5,-673.5 326.5,-673.5 "/>
+<text text-anchor="middle" x="267" y="-660.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="207.5,-652.5 326.5,-652.5 "/>
+<text text-anchor="middle" x="267" y="-639.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </g>
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge14" class="edge"><title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M267,-600.987C267,-550.129 267,-465.215 267,-416.155"/>
-<polygon fill="none" stroke="midnightblue" points="263.5,-601.298 267,-611.298 270.5,-601.298 263.5,-601.298"/>
+<path fill="none" stroke="midnightblue" d="M267,-620.987C267,-570.129 267,-485.215 267,-436.155"/>
+<polygon fill="none" stroke="midnightblue" points="263.5,-621.298 267,-631.298 270.5,-621.298 263.5,-621.298"/>
 </g>
 </g>
 </svg>
