@@ -127,8 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade5e1d822cd9b3b5ceacea2e22639c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab03a52bb16ea7754faf386a1fc995896"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ab03a52bb16ea7754faf386a1fc995896">begin_execution</a> ()=0</td></tr>
 <tr class="separator:ab03a52bb16ea7754faf386a1fc995896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa964c5c069463f4b99664c9704c8ed03"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#aa964c5c069463f4b99664c9704c8ed03">fetch_decode</a> (<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>)=0</td></tr>
-<tr class="separator:aa964c5c069463f4b99664c9704c8ed03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd539471e76e2cfeabb4de7e9518e442"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#abd539471e76e2cfeabb4de7e9518e442">fetch_decode</a> (<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a>)=0</td></tr>
+<tr class="separator:abd539471e76e2cfeabb4de7e9518e442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc4b97b751801661837e5cc24118625"><td class="memItemLeft" align="right" valign="top">virtual std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a9bc4b97b751801661837e5cc24118625">execute</a> (<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;<a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>)</td></tr>
 <tr class="separator:a9bc4b97b751801661837e5cc24118625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2515684dcfb86dbe00dd233ca5cda1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a2e2515684dcfb86dbe00dd233ca5cda1">is_running</a> () const </td></tr>
@@ -139,6 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a73652046ddc7fc471a2e1f0efd421c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a966ca4b8ce3c001af97a990827269a"><td class="memItemLeft" align="right" valign="top">std::uint_fast64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a5a966ca4b8ce3c001af97a990827269a">get_executed_instructions</a> () const </td></tr>
 <tr class="separator:a5a966ca4b8ce3c001af97a990827269a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab923e721e68d58b9286a207532a8f044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#ab923e721e68d58b9286a207532a8f044">enable_disassemble</a> ()</td></tr>
+<tr class="separator:ab923e721e68d58b9286a207532a8f044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233bbe68e3890d7ccfa3e27dd81f98e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a233bbe68e3890d7ccfa3e27dd81f98e6">disable_disassemble</a> ()</td></tr>
+<tr class="separator:a233bbe68e3890d7ccfa3e27dd81f98e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f474830e2b5adba2a859bcd292a15b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a6f474830e2b5adba2a859bcd292a15b3">set_disassemble</a> (bool disassemble)</td></tr>
+<tr class="separator:a6f474830e2b5adba2a859bcd292a15b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaea193270218876761235883f7a5a74b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#aaea193270218876761235883f7a5a74b">log_state</a> (<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4c">log::message::Level</a> level=<a class="el" href="../../d5/d06/classharpoon_1_1log_1_1message.html#aa6e6fad3ffd45ea42aac53f8c6686a4cadc30ec20708ef7b0f641ef78b7880a15">log::message::Level::DEBUG</a>) const </td></tr>
 <tr class="memdesc:aaea193270218876761235883f7a5a74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump state of component to log.  <a href="#aaea193270218876761235883f7a5a74b">More...</a><br /></td></tr>
 <tr class="separator:aaea193270218876761235883f7a5a74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +277,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a233bbe68e3890d7ccfa3e27dd81f98e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::execution::processing_unit::disable_disassemble </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab923e721e68d58b9286a207532a8f044"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::execution::processing_unit::enable_disassemble </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9bc4b97b751801661837e5cc24118625"></a>
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +347,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa964c5c069463f4b99664c9704c8ed03"></a>
+<a class="anchor" id="abd539471e76e2cfeabb4de7e9518e442"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -306,8 +358,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual std::uint_fast64_t harpoon::execution::processing_unit::fetch_decode </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;&#160;</td>
-          <td class="paramname"><em>instruction_handler</em></td><td>)</td>
+          <td class="paramname"><em>instruction_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a> &amp;&#160;</td>
+          <td class="paramname"><em>disassemble_handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -519,6 +581,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6f474830e2b5adba2a859bcd292a15b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::execution::processing_unit::set_disassemble </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disassemble</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4bdbd6725359566c5f5b3d3549aeebb1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +677,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 6 2015 10:13:46 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 16:37:49 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

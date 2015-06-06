@@ -109,6 +109,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d55/classharpoon_1_1execution_1_1instruction__decoder.html">instruction_decoder</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dc0/classharpoon_1_1execution_1_1instruction__disassembler.html">instruction_disassembler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dba/classharpoon_1_1execution_1_1instruction__invoker.html">instruction_invoker</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html">processing_unit</a></td></tr>
@@ -134,9 +136,11 @@ Typedefs</h2></td></tr>
 <tr class="separator:a65620d45bd80e8ce5c4d8f5ab30e3cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb67037802b8b8ffbd9be177965e3185"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> = std::function&lt; std::uint_fast64_t(<a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html">processing_unit</a> *)&gt;</td></tr>
 <tr class="separator:adb67037802b8b8ffbd9be177965e3185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f9a48a6c49aa39c15a93e148f3a5a9"><td class="memTemplParams" colspan="2">template&lt;typename CPU &gt; </td></tr>
-<tr class="memitem:ae1f9a48a6c49aa39c15a93e148f3a5a9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#ae1f9a48a6c49aa39c15a93e148f3a5a9">instruction_decode_handler</a> = std::function&lt; std::uint_fast64_t(CPU *, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;, std::size_t &amp;)&gt;</td></tr>
-<tr class="separator:ae1f9a48a6c49aa39c15a93e148f3a5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa35b64ac52ba3e581efe6b9408d2b88"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a> = std::function&lt; void(std::ostream &amp;)&gt;</td></tr>
+<tr class="separator:afa35b64ac52ba3e581efe6b9408d2b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b6cabfe806ac1f35c725b0a7bc5616"><td class="memTemplParams" colspan="2">template&lt;typename CPU &gt; </td></tr>
+<tr class="memitem:a75b6cabfe806ac1f35c725b0a7bc5616"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#a75b6cabfe806ac1f35c725b0a7bc5616">instruction_decode_handler</a> = std::function&lt; std::uint_fast64_t(CPU *, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a> &amp;, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a> &amp;, std::size_t &amp;)&gt;</td></tr>
+<tr class="separator:a75b6cabfe806ac1f35c725b0a7bc5616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e6a5554450fb47c772d49181ace2b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#a85e6a5554450fb47c772d49181ace2b6">processing_unit_ptr</a> = std::shared_ptr&lt; <a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html">processing_unit</a> &gt;</td></tr>
 <tr class="separator:a85e6a5554450fb47c772d49181ace2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a598917949a4fd3fc2413983b82af63c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#a598917949a4fd3fc2413983b82af63c0">processing_unit_weak_ptr</a> = std::weak_ptr&lt; <a class="el" href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html">processing_unit</a> &gt;</td></tr>
@@ -214,6 +218,18 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="afa35b64ac52ba3e581efe6b9408d2b88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">harpoon::execution::disassemble_handler</a> = typedef std::function&lt;void(std::ostream&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aff981bad36fa34dc4cdc5da397d561f5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -238,14 +254,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae1f9a48a6c49aa39c15a93e148f3a5a9"></a>
+<a class="anchor" id="a75b6cabfe806ac1f35c725b0a7bc5616"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename CPU &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#ae1f9a48a6c49aa39c15a93e148f3a5a9">harpoon::execution::instruction_decode_handler</a> = typedef std::function&lt;std::uint_fast64_t(CPU *, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>&amp;, std::size_t&amp;)&gt;</td>
+          <td class="memname">using <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#a75b6cabfe806ac1f35c725b0a7bc5616">harpoon::execution::instruction_decode_handler</a> = typedef std::function&lt;std::uint_fast64_t(CPU *, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#adb67037802b8b8ffbd9be177965e3185">instruction_handler</a>&amp;, <a class="el" href="../../d3/df0/namespaceharpoon_1_1execution.html#afa35b64ac52ba3e581efe6b9408d2b88">disassemble_handler</a>&amp;, std::size_t&amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -424,7 +440,7 @@ template&lt;&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 6 2015 10:13:46 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 16:37:49 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

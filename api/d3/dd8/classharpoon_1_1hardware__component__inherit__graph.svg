@@ -140,7 +140,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node13" class="node"><title>Node7</title>
-<a xlink:href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html" target="_top" xlink:title="{harpoon::execution\l::processing_unit\n||+ prepare()\l+ boot()\l+ shutdown()\l+ run()\l+ wait_for_cycle()\l+ wait_for_next_cycle()\l+ begin_execution()\l+ fetch_decode()\l+ execute()\l+ is_running()\land 6 more...\l}">
+<a xlink:href="../../d9/d00/classharpoon_1_1execution_1_1processing__unit.html" target="_top" xlink:title="{harpoon::execution\l::processing_unit\n||+ prepare()\l+ boot()\l+ shutdown()\l+ run()\l+ wait_for_cycle()\l+ wait_for_next_cycle()\l+ begin_execution()\l+ fetch_decode()\l+ execute()\l+ is_running()\land 9 more...\l}">
 <polygon fill="white" stroke="black" points="403.5,-563 403.5,-769 522.5,-769 522.5,-563 403.5,-563"/>
 <text text-anchor="start" x="411.5" y="-756" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::execution</text>
 <text text-anchor="middle" x="463" y="-743" font-family="Helvetica,sans-Serif" font-size="10.00">::processing_unit</text>
@@ -157,7 +157,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="411.5" y="-610" font-family="Helvetica,sans-Serif" font-size="10.00">+ fetch_decode()</text>
 <text text-anchor="start" x="411.5" y="-597" font-family="Helvetica,sans-Serif" font-size="10.00">+ execute()</text>
 <text text-anchor="start" x="411.5" y="-584" font-family="Helvetica,sans-Serif" font-size="10.00">+ is_running()</text>
-<text text-anchor="start" x="411.5" y="-571" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
+<text text-anchor="start" x="411.5" y="-571" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node7 -->

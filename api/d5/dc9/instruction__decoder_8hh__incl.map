@@ -1,5 +1,6 @@
 <map id="harpoon/execution/instruction_decoder.hh" name="harpoon/execution/instruction_decoder.hh">
-<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="92,197,228,227"/>
-<area shape="rect" id="node13" href="$d4/d15/instruction_8hh.html" title="harpoon/execution/instruction.hh" alt="" coords="280,111,491,140"/>
-<area shape="rect" id="node18" href="$da/d16/instruction__invoker_8hh.html" title="harpoon/execution/instruction\l_invoker.hh" alt="" coords="64,102,256,149"/>
+<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="164,197,300,227"/>
+<area shape="rect" id="node13" href="$d4/d15/instruction_8hh.html" title="harpoon/execution/instruction.hh" alt="" coords="460,111,671,140"/>
+<area shape="rect" id="node18" href="$da/d16/instruction__invoker_8hh.html" title="harpoon/execution/instruction\l_invoker.hh" alt="" coords="28,102,220,149"/>
+<area shape="rect" id="node21" href="$d9/dbf/instruction__disassembler_8hh.html" title="harpoon/execution/instruction\l_disassembler.hh" alt="" coords="244,102,436,149"/>
 </map>

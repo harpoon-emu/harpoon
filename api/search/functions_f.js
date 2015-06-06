@@ -6,6 +6,7 @@ var searchData=
   ['set_5faddress_5frange',['set_address_range',['../db/d2f/classharpoon_1_1memory_1_1memory.html#a2f047995f4a0942cd4b26f833b0f06e0',1,'harpoon::memory::memory']]],
   ['set_5fclock',['set_clock',['../d6/d5c/classharpoon_1_1execution_1_1execution__unit.html#adbf0f246457302a648ba0db7bdeee95c',1,'harpoon::execution::execution_unit']]],
   ['set_5fcpu',['set_cpu',['../da/db2/classharpoon_1_1execution_1_1instruction.html#a7eedd7fb52e6eae5d5a8382df886934b',1,'harpoon::execution::instruction']]],
+  ['set_5fdisassemble',['set_disassemble',['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#a6f474830e2b5adba2a859bcd292a15b3',1,'harpoon::execution::processing_unit']]],
   ['set_5fend',['set_end',['../d1/da0/classharpoon_1_1memory_1_1address__range.html#a101a7bd58f2d43e93ca6aa7f7a55690b',1,'harpoon::memory::address_range']]],
   ['set_5ffrequency',['set_frequency',['../d8/dea/classharpoon_1_1clock_1_1generator_1_1generator.html#adf7a9f26ca9b34e124c26ba3164fcaa5',1,'harpoon::clock::generator::generator']]],
   ['set_5fgenerator',['set_generator',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a8c5f264c0aad1634653af8d887e1b3e4',1,'harpoon::clock::clock']]],
