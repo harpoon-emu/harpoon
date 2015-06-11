@@ -72,8 +72,8 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="23.5" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">+ begin_execution()</text>
 <text text-anchor="start" x="23.5" y="-48" font-family="Helvetica,sans-Serif" font-size="10.00">+ fetch_decode()</text>
 <text text-anchor="start" x="23.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">+ execute()</text>
-<text text-anchor="start" x="23.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+ is_running()</text>
-<text text-anchor="start" x="23.5" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
+<text text-anchor="start" x="23.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+ add_breakpoint()</text>
+<text text-anchor="start" x="23.5" y="-9" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>

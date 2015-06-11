@@ -118,6 +118,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a736a381bb3863098c25ee31bc15a423f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48e5ffdbe4cc86f43b881e53f34f8195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#a48e5ffdbe4cc86f43b881e53f34f8195">add_memory</a> (const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;<a class="el" href="../../db/d2f/classharpoon_1_1memory_1_1memory.html">memory</a>, bool owner=true)</td></tr>
 <tr class="separator:a48e5ffdbe4cc86f43b881e53f34f8195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30fd9614b14261e20fd2004bd6f1610"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#ac30fd9614b14261e20fd2004bd6f1610">remove_memory</a> (const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;<a class="el" href="../../db/d2f/classharpoon_1_1memory_1_1memory.html">memory</a>, bool owner=true)</td></tr>
+<tr class="separator:ac30fd9614b14261e20fd2004bd6f1610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e54a8895e1b67076945a3e6026f83c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#ac9e54a8895e1b67076945a3e6026f83c">replace_memory</a> (const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;old_memory, const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;new_memory, bool owner=true)</td></tr>
+<tr class="separator:ac9e54a8895e1b67076945a3e6026f83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af829d23e281b8a5ec0d5449fa5393d84"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#af829d23e281b8a5ec0d5449fa5393d84">get</a> (<a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a> <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a>, uint8_t &amp;value)</td></tr>
 <tr class="separator:af829d23e281b8a5ec0d5449fa5393d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a686ec7fbd79ec5a290b5184692b7dca5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html#a686ec7fbd79ec5a290b5184692b7dca5">set</a> (<a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a> <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#a5a373f09060a08d1c97ce3c97d155643">address</a>, uint8_t value)</td></tr>
@@ -388,6 +392,64 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac30fd9614b14261e20fd2004bd6f1610"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::memory::main_memory::remove_memory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>owner</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9e54a8895e1b67076945a3e6026f83c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void harpoon::memory::main_memory::replace_memory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>old_memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/df1/namespaceharpoon_1_1memory.html#ac22454ce8df04a0d5993b33582b26a45">memory_weak_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>owner</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a686ec7fbd79ec5a290b5184692b7dca5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -428,7 +490,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 6 2015 16:37:49 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 11 2015 15:28:16 for harpoon by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

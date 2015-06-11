@@ -1,12 +1,13 @@
 <map id="harpoon/execution/processing_unit.hh" name="harpoon/execution/processing_unit.hh">
-<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="777,525,913,555"/>
-<area shape="rect" id="node13" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="428,284,641,313"/>
-<area shape="rect" id="node30" href="$d9/d3e/execution__unit_8hh.html" title="harpoon/execution/execution\l_unit.hh" alt="" coords="735,102,921,149"/>
-<area shape="rect" id="node49" href="$d0/df4/cycle_8hh.html" title="harpoon/execution/cycle.hh" alt="" coords="157,371,339,400"/>
-<area shape="rect" id="node53" href="$d4/d15/instruction_8hh.html" title="harpoon/execution/instruction.hh" alt="" coords="1023,111,1233,140"/>
-<area shape="rect" id="node16" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="5,371,133,400"/>
-<area shape="rect" id="node19" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="5,448,168,477"/>
-<area shape="rect" id="node34" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="768,197,923,227"/>
-<area shape="rect" id="node38" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="843,371,989,400"/>
-<area shape="rect" id="node42" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="719,275,879,322"/>
+<area shape="rect" id="node3" href="$d5/d08/harpoon_8hh.html" title="Harpoon library common header file. " alt="" coords="487,525,623,555"/>
+<area shape="rect" id="node13" href="$d5/d09/hardware__component_8hh.html" title="Hardware component. " alt="" coords="203,284,416,313"/>
+<area shape="rect" id="node30" href="$d9/d3e/execution__unit_8hh.html" title="harpoon/execution/execution\l_unit.hh" alt="" coords="449,102,636,149"/>
+<area shape="rect" id="node49" href="$d0/df4/cycle_8hh.html" title="harpoon/execution/cycle.hh" alt="" coords="947,371,1128,400"/>
+<area shape="rect" id="node53" href="$d4/d15/instruction_8hh.html" title="harpoon/execution/instruction.hh" alt="" coords="977,111,1188,140"/>
+<area shape="rect" id="node58" href="$d5/d5f/breakpoint_8hh.html" title="harpoon/execution/breakpoint.hh" alt="" coords="1212,111,1423,140"/>
+<area shape="rect" id="node16" href="$d3/de3/log_8hh.html" title="harpoon/log/log.hh" alt="" coords="155,371,283,400"/>
+<area shape="rect" id="node19" href="$d9/d74/message_8hh.html" title="harpoon/log/message.hh" alt="" coords="180,448,343,477"/>
+<area shape="rect" id="node34" href="$d7/d55/clock_8hh.html" title="harpoon/clock/clock.hh" alt="" coords="551,197,705,227"/>
+<area shape="rect" id="node38" href="$d3/dce/tick_8hh.html" title="harpoon/clock/tick.hh" alt="" coords="592,371,739,400"/>
+<area shape="rect" id="node42" href="$d8/d45/generator_8hh.html" title="harpoon/clock/generator\l/generator.hh" alt="" coords="692,275,852,322"/>
 </map>

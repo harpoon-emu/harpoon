@@ -87,25 +87,27 @@
 </g>
 <!-- Node14 -->
 <g id="node27" class="node"><title>Node14</title>
-<a xlink:href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html" target="_top" xlink:title="{harpoon::memory::main\l_memory\n||+ main_memory()\l+ main_memory()\l+ operator=()\l+ add_memory()\l+ get()\l+ set()\l+ ~main_memory()\l}">
-<polygon fill="white" stroke="black" points="460.5,-319 460.5,-473 579.5,-473 579.5,-319 460.5,-319"/>
-<text text-anchor="start" x="468.5" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::main</text>
-<text text-anchor="middle" x="520" y="-447" font-family="Helvetica,sans-Serif" font-size="10.00">_memory</text>
-<polyline fill="none" stroke="black" points="460.5,-439 579.5,-439 "/>
-<text text-anchor="middle" x="520" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="460.5,-418 579.5,-418 "/>
+<a xlink:href="../../d8/d1f/classharpoon_1_1memory_1_1main__memory.html" target="_top" xlink:title="{harpoon::memory::main\l_memory\n||+ main_memory()\l+ main_memory()\l+ operator=()\l+ add_memory()\l+ remove_memory()\l+ replace_memory()\l+ get()\l+ set()\l+ ~main_memory()\l}">
+<polygon fill="white" stroke="black" points="460.5,-306 460.5,-486 579.5,-486 579.5,-306 460.5,-306"/>
+<text text-anchor="start" x="468.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">harpoon::memory::main</text>
+<text text-anchor="middle" x="520" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">_memory</text>
+<polyline fill="none" stroke="black" points="460.5,-452 579.5,-452 "/>
+<text text-anchor="middle" x="520" y="-439" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="460.5,-431 579.5,-431 "/>
+<text text-anchor="start" x="468.5" y="-418" font-family="Helvetica,sans-Serif" font-size="10.00">+ main_memory()</text>
 <text text-anchor="start" x="468.5" y="-405" font-family="Helvetica,sans-Serif" font-size="10.00">+ main_memory()</text>
-<text text-anchor="start" x="468.5" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">+ main_memory()</text>
-<text text-anchor="start" x="468.5" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="468.5" y="-366" font-family="Helvetica,sans-Serif" font-size="10.00">+ add_memory()</text>
-<text text-anchor="start" x="468.5" y="-353" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
-<text text-anchor="start" x="468.5" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
-<text text-anchor="start" x="468.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~main_memory()</text>
+<text text-anchor="start" x="468.5" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="468.5" y="-379" font-family="Helvetica,sans-Serif" font-size="10.00">+ add_memory()</text>
+<text text-anchor="start" x="468.5" y="-366" font-family="Helvetica,sans-Serif" font-size="10.00">+ remove_memory()</text>
+<text text-anchor="start" x="468.5" y="-353" font-family="Helvetica,sans-Serif" font-size="10.00">+ replace_memory()</text>
+<text text-anchor="start" x="468.5" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">+ get()</text>
+<text text-anchor="start" x="468.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ set()</text>
+<text text-anchor="start" x="468.5" y="-314" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~main_memory()</text>
 </a>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge26" class="edge"><title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M437.563,-553.49C442.448,-544.195 447.314,-534.93 452,-526 460.994,-508.859 470.641,-490.437 479.761,-473.007"/>
+<path fill="none" stroke="midnightblue" d="M437.563,-553.49C442.448,-544.195 447.314,-534.93 452,-526 458.745,-513.144 465.858,-499.568 472.84,-486.23"/>
 <polygon fill="none" stroke="midnightblue" points="434.433,-551.922 432.878,-562.402 440.629,-555.179 434.433,-551.922"/>
 </g>
 <!-- Node2 -->

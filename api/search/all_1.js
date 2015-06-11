@@ -9,5 +9,8 @@ var searchData=
   ['binary_5ffile',['binary_file',['../de/dda/classharpoon_1_1memory_1_1serializer_1_1binary__file.html#ad8ea2f06e0478153b6a715552a364861',1,'harpoon::memory::serializer::binary_file']]],
   ['binary_5ffile',['binary_file',['../de/dda/classharpoon_1_1memory_1_1serializer_1_1binary__file.html',1,'harpoon::memory::serializer']]],
   ['binary_5ffile_2ehh',['binary_file.hh',['../de/d7d/binary__file_8hh.html',1,'']]],
-  ['boot',['boot',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a22c11c51f83529d475855e112bbf9fc6',1,'harpoon::clock::clock::boot()'],['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#af4513992c1e857d724ea5aafbec743df',1,'harpoon::execution::processing_unit::boot()'],['../df/d54/classharpoon_1_1hardware__component.html#a6906cf2c58c29be6bd9a450561806361',1,'harpoon::hardware_component::boot()']]]
+  ['boot',['boot',['../d5/d84/classharpoon_1_1clock_1_1clock.html#a22c11c51f83529d475855e112bbf9fc6',1,'harpoon::clock::clock::boot()'],['../d9/d00/classharpoon_1_1execution_1_1processing__unit.html#af4513992c1e857d724ea5aafbec743df',1,'harpoon::execution::processing_unit::boot()'],['../df/d54/classharpoon_1_1hardware__component.html#a6906cf2c58c29be6bd9a450561806361',1,'harpoon::hardware_component::boot()']]],
+  ['breakpoint',['breakpoint',['../d3/d24/classharpoon_1_1execution_1_1breakpoint.html',1,'harpoon::execution']]],
+  ['breakpoint',['breakpoint',['../d3/d24/classharpoon_1_1execution_1_1breakpoint.html#afe611766a5265077f2523577025a7075',1,'harpoon::execution::breakpoint::breakpoint(const condition &amp;condition, const action &amp;action)'],['../d3/d24/classharpoon_1_1execution_1_1breakpoint.html#ac1375c9ef2be849c5bc46c56218975b0',1,'harpoon::execution::breakpoint::breakpoint(const breakpoint &amp;)=default']]],
+  ['breakpoint_2ehh',['breakpoint.hh',['../d5/d5f/breakpoint_8hh.html',1,'']]]
 ];
