@@ -48,7 +48,9 @@ main_window::main_window(QWidget * parent) : QMainWindow(parent) {
 	}
 }
 
-main_window::~main_window() {}
+main_window::~main_window() {
+	_c64->shutdown();
+}
 
 }
 }
