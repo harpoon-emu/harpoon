@@ -16,6 +16,7 @@ endforeach()
 
 set(CMAKE_AUTOMOC ON)
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
@@ -24,7 +25,7 @@ add_executable(c64
 	${INCLUDES}
 	)
 target_link_libraries(c64 
-	${CMAKE_THREAD_LIBS_INIT}
+	Threads::Threads
 	harpoon
 	Qt5::Widgets
 	)
