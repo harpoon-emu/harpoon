@@ -14,6 +14,9 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 		-Wno-c++98-compat
 		-Wno-c++98-compat-pedantic
 		-Wno-padded
+		-Wno-redundant-parens
+		-Wno-extra-semi-stmt
+		-Wno-unknown-warning-option
 		)
 endif()
 

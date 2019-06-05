@@ -18,8 +18,8 @@ class generator {
 public:
 
 	generator(std::uint32_t frequency = 1) : _frequency(frequency) {}
-	generator(const generator&) = default;
-	generator& operator=(const generator&) = default;
+	generator(const generator&) = delete;
+	generator& operator=(const generator&) = delete;
 
 	virtual ~generator();
 

@@ -14,9 +14,6 @@ linear_memory::~linear_memory() {}
 void linear_memory::prepare() {
 
 	auto len = get_address_range().get_length();
-	if (len > std::numeric_limits<std::size_t>::max()) {
-		throw COMPONENT_EXCEPTION(exception::memory_exception, "Memory block too large. Use another implementation.");
-	}
 	if (0 == len) {
 		throw COMPONENT_EXCEPTION(exception::memory_exception, "Zero-length memory block.");
 	}

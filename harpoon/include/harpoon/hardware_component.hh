@@ -39,14 +39,14 @@ public:
 	 * @brief Default copy constructor.
 	 * @param[in] source Source hardware component.
 	 */
-	hardware_component(const hardware_component& source) = default;
+	hardware_component(const hardware_component& source) = delete;
 
 	/**
 	 * @brief Default assignment operator.
 	 * @param[in] source Source hardware component.
 	 * @return Reference to hardware component.
 	 */
-	hardware_component& operator=(const hardware_component& source) = default;
+	hardware_component& operator=(const hardware_component& source) = delete;
 
 	/**
 	 * @brief Destructor.

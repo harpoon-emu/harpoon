@@ -45,7 +45,7 @@ Exception make_harpoon_exception(Args&&... args) {
 }
 
 #define MAKE_HARPOON_EXCEPTION(EXCEPTION, ...)	\
-	harpoon::exception::make_harpoon_exception<EXCEPTION>(__VA_ARGS__, __FILE__, __LINE__, __FUNCTION__);
+	harpoon::exception::make_harpoon_exception<EXCEPTION>(__VA_ARGS__, __FILE__, __LINE__, __FUNCTION__)
 
 }
 }
