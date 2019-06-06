@@ -2,6 +2,7 @@
 
 #include "harpoon/memory/linear_read_only_memory.hh"
 #include "harpoon/memory/chunked_random_access_memory.hh"
+#include "harpoon/memory/chunked_read_only_memory.hh"
 #include "harpoon/memory/serializer/binary_file.hh"
 
 namespace commodore {
@@ -57,16 +58,41 @@ void memory::create() {
 	read_memory->add_memory(ram, false);
 	write_memory->add_memory(ram, false);
 
-	ram = make_chunked_random_access_memory("RAM $D000", harpoon::memory::address_range{0xd000, 0xdfff}, 1024);
-	add_component(ram);
-	_ram_d000_dfff = ram;
-	read_memory->add_memory(ram, false);
-	write_memory->add_memory(ram, false);
+	create_d000_dfff_area();
 
 	ram = make_chunked_random_access_memory("RAM $E000", harpoon::memory::address_range{0xe000, 0xffff}, 1024);
 	add_component(ram);
 	write_memory->add_memory(ram, false);
 
+}
+
+void memory::create_d000_dfff_area() {
+
+	auto mplx = harpoon::memory::make_multiplexed_memory("MPX $D000", harpoon::memory::address_range{0xd000, 0xdfff});
+	add_component(mplx);
+	_d000_dfff = mplx;
+
+	auto ram = make_chunked_random_access_memory("RAM $D000", harpoon::memory::address_range{0xd000, 0xdfff}, 1024);
+	add_component(ram);
+	_ram_d000_dfff = ram;
+	mplx->add_memory(0, ram, false);
+
+	ram = make_chunked_random_access_memory("I/O $D000", harpoon::memory::address_range{0xd000, 0xdfff}, 1024);
+	add_component(ram);
+	_io_d000_dfff = ram;
+	mplx->add_memory(5, ram, false);
+	mplx->add_memory(6, ram, false);
+	mplx->add_memory(7, ram, false);
+
+	auto rom = harpoon::memory::make_chunked_read_only_memory("ROM $D000", harpoon::memory::address_range{0xd000, 0xdfff}, 1024);
+	add_component(rom);
+	_character_rom_d000_dfff = rom;
+	mplx->add_memory(1, rom, false);
+	mplx->add_memory(2, rom, false);
+	mplx->add_memory(3, rom, false);
+
+	_read_memory.lock()->add_memory(_d000_dfff, false);
+	_write_memory.lock()->add_memory(_d000_dfff, false);
 }
 
 void memory::prepare() {
