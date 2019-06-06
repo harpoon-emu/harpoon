@@ -5,6 +5,7 @@ set(SOURCE_FILES
 	access_violation.cc
 	read_access_violation.cc
 	write_access_violation.cc
+	multiplexer_error.cc
 	)
 
 set(INCLUDE_FILES
@@ -12,6 +13,7 @@ set(INCLUDE_FILES
 	access_violation.hh
 	read_access_violation.hh
 	write_access_violation.hh
+	multiplexer_error.hh
 	)
 
 add_sources()
