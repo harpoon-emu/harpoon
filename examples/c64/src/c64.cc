@@ -32,17 +32,6 @@ void c64::create_execution_unit() {
 	auto cpu = std::make_shared<cpu::mos_6510>("CPU");
 	execution_unit->set_processing_unit(cpu);
 
-	cpu->add_breakpoint({
-		[](harpoon::execution::processing_unit * processing_unit) -> bool {
-			cpu::mos_6510 * mos = static_cast<cpu::mos_6510 *>(processing_unit);
-			return mos->get_registers().PC == 0xFF61;
-		},
-		[](harpoon::execution::processing_unit * processing_unit) {
-			cpu::mos_6510 * mos = static_cast<cpu::mos_6510 *>(processing_unit);
-			mos->get_registers().P.Z() = true;
-		}
-	});
-
 	cpu->create();
 }
 
