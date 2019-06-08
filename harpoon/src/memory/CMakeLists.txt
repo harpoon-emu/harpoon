@@ -28,7 +28,6 @@ set(INCLUDE_FILES
 	chunked_random_access_memory.hh
 	chunked_read_only_memory.hh
 	multiplexed_memory.hh
-	io_memory.hh
 	)
 
 add_sources()
