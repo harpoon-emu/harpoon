@@ -45,22 +45,26 @@ public:
 		return get_address_range().get_offset(address);
 	}
 
-	virtual void get(address address, std::uint8_t& value) = 0;
-	virtual void set(address address, std::uint8_t value) = 0;
+	void get(address address, std::uint8_t& value);
+	void set(address address, std::uint8_t value);
 
-	virtual void get(address address, std::uint16_t& value);
-	virtual void set(address address, std::uint16_t value);
+	void get(address address, std::uint16_t& value);
+	void set(address address, std::uint16_t value);
 
-	virtual void get(address address, std::uint32_t& value);
-	virtual void set(address address, std::uint32_t value);
+	void get(address address, std::uint32_t& value);
+	void set(address address, std::uint32_t value);
 
-	virtual void get(address address, std::uint64_t& value);
-	virtual void set(address address, std::uint64_t value);
+	void get(address address, std::uint64_t& value);
+	void set(address address, std::uint64_t value);
 
 	virtual void serialize(serializer::serializer& serializer);
 	virtual void deserialize(serializer::serializer& serializer);
 
 	virtual ~memory();
+
+protected:
+	virtual void get_cell(address address, std::uint8_t& value) = 0;
+	virtual void set_cell(address address, std::uint8_t value) = 0;
 
 private:
 	address_range _address_range{};

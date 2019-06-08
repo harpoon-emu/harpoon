@@ -15,16 +15,18 @@ public:
 	linear_memory(const linear_memory&) = delete;
 	linear_memory& operator=(const linear_memory&) = delete;
 
-	virtual void prepare();
-	virtual void cleanup();
+	virtual void prepare() override;
+	virtual void cleanup() override;
 
-	virtual void get(address address, uint8_t& value);
-	virtual void set(address address, uint8_t value);
+	virtual void serialize(serializer::serializer& serializer) override;
+	virtual void deserialize(serializer::serializer& serializer) override;
 
-	virtual void serialize(serializer::serializer& serializer);
-	virtual void deserialize(serializer::serializer& serializer);
+	virtual ~linear_memory() override;
 
-	virtual ~linear_memory();
+protected:
+
+	virtual void get_cell(address address, uint8_t& value) override;
+	virtual void set_cell(address address, uint8_t value) override;
 
 private:
 	std::unique_ptr<std::uint8_t[]> _memory{};

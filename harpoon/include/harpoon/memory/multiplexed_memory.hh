@@ -25,10 +25,11 @@ public:
 
     void switch_memory(memory_id mem_id);
 
-	virtual void get(address address, uint8_t& value);
-	virtual void set(address address, uint8_t value);
+	virtual ~multiplexed_memory() override;
 
-	virtual ~multiplexed_memory();
+protected:
+	virtual void get_cell(address address, uint8_t& value) override;
+	virtual void set_cell(address address, uint8_t value) override;
 
 private:
 	std::map<memory_id, memory_weak_ptr> _memory{};

@@ -24,18 +24,18 @@ public:
 	chunked_memory(const chunked_memory&) = delete;
 	chunked_memory& operator=(const chunked_memory&) = delete;
 
-	virtual void prepare();
-	virtual void cleanup();
+	virtual void prepare() override;
+	virtual void cleanup() override;
 
-	virtual void get(address address, uint8_t& value);
-	virtual void set(address address, uint8_t value);
+	virtual void serialize(serializer::serializer& serializer) override;
+	virtual void deserialize(serializer::serializer& serializer) override;
 
-	virtual void serialize(serializer::serializer& serializer);
-	virtual void deserialize(serializer::serializer& serializer);
-
-	virtual ~chunked_memory();
+	virtual ~chunked_memory() override;
 
 protected:
+
+	virtual void get_cell(address address, uint8_t& value) override;
+	virtual void set_cell(address address, uint8_t value) override;
 
 	chunk_index get_chunk_index(address address) const {
 		return static_cast<chunk_index>(get_offset(address) / _chunk_length);
