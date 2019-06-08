@@ -11,7 +11,7 @@ namespace memory {
 
 class address_range {
 public:
-	address_range(const address& start = {}, const address& end = {}) 
+	address_range(address start = {}, std::uint_fast64_t end = {}) 
 		: _start(start), _end(end) {}
 	address_range(const address_range&) = default;
 	address_range& operator=(const address_range&) = default;
