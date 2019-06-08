@@ -2,13 +2,10 @@
 #define CPU_MOS_6510_HH
 
 #include "mos_6510_flags.hh"
-#include "../memory/memory.hh"
 
 #include "harpoon/execution/processing_unit.hh"
 #include "harpoon/execution/basic_register.hh"
 #include "harpoon/memory/memory.hh"
-#include "harpoon/memory/io_memory.hh"
-#include "harpoon/memory/linear_random_access_memory.hh"
 
 namespace commodore {
 namespace cpu {
@@ -33,9 +30,6 @@ public:
 
 	using harpoon::execution::processing_unit::processing_unit;
 
-	using zero_page_memory = harpoon::memory::io_memory<harpoon::memory::linear_random_access_memory>;
-	using zero_page_memory_weak_ptr = std::weak_ptr<zero_page_memory>;
-
 	void create();
 
 	virtual void boot();
@@ -43,15 +37,11 @@ public:
 	virtual std::uint_fast64_t begin_execution();
 	virtual std::uint_fast64_t fetch_decode(harpoon::execution::instruction_handler& instruction_handler, harpoon::execution::disassemble_handler& disassemble_handler);
 
-	const zero_page_memory_weak_ptr& get_zero_page() const {
-		return _zero_page;
-	}
-
-	void set_memory(const memory::memory_weak_ptr& memory) {
+	void set_memory(const harpoon::memory::memory_weak_ptr& memory) {
 		_memory = memory;
 	}
 
-	memory::memory_ptr get_memory() const {
+	harpoon::memory::memory_ptr get_memory() const {
 		return _memory.lock();
 	}
 
@@ -121,16 +111,10 @@ public:
 
 private:
 
-	void create_zero_page();
-
 	void init_registers();
-	void init_zero_page();
-
-	void _zp_01_processor_port_out(const harpoon::memory::address& address, std::uint8_t value);
 
 	struct registers _registers{};
-	memory::memory_weak_ptr _memory{};
-	zero_page_memory_weak_ptr _zero_page{};
+	harpoon::memory::memory_weak_ptr _memory{};
 	std::weak_ptr<mos_6510_decoder> _decoder{};
 };
 
