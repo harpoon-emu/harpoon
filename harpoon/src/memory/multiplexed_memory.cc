@@ -49,14 +49,14 @@ void multiplexed_memory::switch_memory(memory_id mem_id) {
 	_active_memory = _memory[mem_id].lock();
 }
 
-void multiplexed_memory::get_cell(address address, uint8_t& value) {
+void multiplexed_memory::get(address address, uint8_t& value) {
 	if (_active_memory.get() == nullptr) {
 		throw COMPONENT_EXCEPTION(exception::multiplexer_error, ~0U);
 	}
 	_active_memory->get(address, value);
 }
 
-void multiplexed_memory::set_cell(address address, uint8_t value) {
+void multiplexed_memory::set(address address, uint8_t value) {
 	if (_active_memory.get() == nullptr) {
 		throw COMPONENT_EXCEPTION(exception::multiplexer_error, ~0U);
 	}

@@ -36,7 +36,7 @@ void chunked_memory::cleanup() {
 	_memory.clear();
 }
 
-void chunked_memory::get_cell(address address, uint8_t& value) {
+void chunked_memory::get(address address, uint8_t& value) {
 	if (!has_address(address)) {
 		throw COMPONENT_EXCEPTION(exception::read_access_violation, address);
 	}
@@ -48,7 +48,7 @@ void chunked_memory::get_cell(address address, uint8_t& value) {
 	}
 }
 
-void chunked_memory::set_cell(address address, uint8_t value) {
+void chunked_memory::set(address address, uint8_t value) {
 	if (!has_address(address)) {
 		throw COMPONENT_EXCEPTION(exception::write_access_violation, address);
 	}

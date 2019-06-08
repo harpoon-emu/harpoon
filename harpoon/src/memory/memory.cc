@@ -6,14 +6,6 @@ namespace memory {
 
 memory::~memory() {}
 
-void memory::get(address address, std::uint8_t& value) {
-	get_cell(address, value);
-}
-
-void memory::set(address address, std::uint8_t value) {
-	set_cell(address, value);
-}
-
 void memory::get(address address, std::uint16_t& value) {
 	std::uint8_t lo, hi;
 	get(address, lo);

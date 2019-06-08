@@ -14,13 +14,12 @@ public:
 
 	using MemoryImplementation::MemoryImplementation;
 
-	virtual ~read_only_memory() override {}
-
-protected:
-	virtual void set_cell(address address, uint8_t value) override {
+	virtual void set(address address, uint8_t value) {
 		(void)value;
 		throw COMPONENT_EXCEPTION(exception::write_access_violation, address);
 	}
+
+	virtual ~read_only_memory() {}
 };
 
 template<typename MemoryImplementation>

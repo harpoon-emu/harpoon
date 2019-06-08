@@ -21,11 +21,10 @@ public:
 	void remove_memory(const memory_weak_ptr& memory, bool owner = true);
 	void replace_memory(const memory_weak_ptr& old_memory, const memory_weak_ptr& new_memory, bool owner = true);
 
-	virtual ~main_memory() override;
+	virtual void get(address address, uint8_t& value);
+	virtual void set(address address, uint8_t value);
 
-protected:
-	virtual void get_cell(address address, uint8_t& value) override;
-	virtual void set_cell(address address, uint8_t value) override;
+	virtual ~main_memory();
 
 private:
 	memory_ptr get_memory(address address);
