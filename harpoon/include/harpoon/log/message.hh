@@ -50,6 +50,8 @@ public:
 		_component(component) {
 		_streambuf = std::make_shared<streambuf>(*this);
 		_stream = std::make_shared<std::ostream>(_streambuf.get());
+
+		get_stream() << _component << ": ";
 	}
 
 	message(const message&) = default;

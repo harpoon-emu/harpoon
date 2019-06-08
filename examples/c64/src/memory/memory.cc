@@ -1,6 +1,7 @@
 #include "memory.hh"
 
 #include "harpoon/memory/linear_read_only_memory.hh"
+#include "harpoon/memory/linear_random_access_memory.hh"
 #include "harpoon/memory/chunked_random_access_memory.hh"
 #include "harpoon/memory/chunked_read_only_memory.hh"
 #include "harpoon/memory/serializer/binary_file.hh"
@@ -31,9 +32,9 @@ void memory::create() {
 	_basic_a000_bfff = basic;
 	read_memory->add_memory(_basic_a000_bfff, false);
 
-	auto ram = make_chunked_random_access_memory("RAM $0000", harpoon::memory::address_range{0, 0x3fff}, 1024);
+	auto ram = make_chunked_random_access_memory("RAM $0100", harpoon::memory::address_range{0x0100, 0x3fff}, 1024);
 	add_component(ram);
-	_ram_0000_3fff = ram;
+	_ram_0100_3fff = ram;
 	read_memory->add_memory(ram, false);
 	write_memory->add_memory(ram, false);
 
@@ -66,11 +67,24 @@ void memory::create() {
 
 }
 
+void memory::add_read_memory(const harpoon::memory::memory_weak_ptr& memory) {
+	_read_memory.lock()->add_memory(memory, false);
+}
+
+void memory::add_write_memory(const harpoon::memory::memory_weak_ptr& memory) {
+	_write_memory.lock()->add_memory(memory, false);
+}
+
+void memory::add_memory(const harpoon::memory::memory_weak_ptr& memory) {
+	add_read_memory(memory);
+	add_write_memory(memory);
+}
+
 void memory::create_d000_dfff_area() {
 
 	auto mplx = harpoon::memory::make_multiplexed_memory("MPX $D000", harpoon::memory::address_range{0xd000, 0xdfff});
 	add_component(mplx);
-	_d000_dfff = mplx;
+	_mplx_d000_dfff = mplx;
 
 	auto ram = make_chunked_random_access_memory("RAM $D000", harpoon::memory::address_range{0xd000, 0xdfff}, 1024);
 	add_component(ram);
@@ -91,8 +105,8 @@ void memory::create_d000_dfff_area() {
 	mplx->add_memory(2, rom, false);
 	mplx->add_memory(3, rom, false);
 
-	_read_memory.lock()->add_memory(_d000_dfff, false);
-	_write_memory.lock()->add_memory(_d000_dfff, false);
+	_read_memory.lock()->add_memory(_mplx_d000_dfff, false);
+	_write_memory.lock()->add_memory(_mplx_d000_dfff, false);
 }
 
 void memory::prepare() {
@@ -103,8 +117,8 @@ void memory::prepare() {
 }
 
 void memory::shutdown() {
-	harpoon::memory::serializer::binary_file mem0000("ram_0000.bin");
-	_ram_0000_3fff.lock()->serialize(mem0000);
+	harpoon::memory::serializer::binary_file mem0100("ram_0100.bin");
+	_ram_0100_3fff.lock()->serialize(mem0100);
 
 	harpoon::memory::serializer::binary_file mem4000("ram_4000.bin");
 	_ram_4000_7fff.lock()->serialize(mem4000);
@@ -123,12 +137,17 @@ void memory::load_basic() {
 	_basic_a000_bfff.lock()->deserialize(basic_bin);
 }
 
-void memory::get(harpoon::memory::address address, std::uint8_t& value) {
+void memory::get_cell(harpoon::memory::address address, std::uint8_t& value) {
 	_read_memory.lock()->get(address, value);
 }
 
-void memory::set(harpoon::memory::address address, std::uint8_t value) {
+void memory::set_cell(harpoon::memory::address address, std::uint8_t value) {
 	_write_memory.lock()->set(address, value);
+}
+
+void memory::switch_d000_dfff(harpoon::memory::multiplexed_memory::memory_id mem_id) {
+	log(component_debug << "Switching $D000-$DFFF to " << mem_id);
+	_mplx_d000_dfff.lock()->switch_memory(mem_id);
 }
 
 }

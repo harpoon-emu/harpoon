@@ -30,9 +30,10 @@ void c64::create_execution_unit() {
 	execution_unit->set_clock(clock);
 
 	auto cpu = std::make_shared<cpu::mos_6510>("CPU");
+	//cpu->set_disassemble(true);
 	execution_unit->set_processing_unit(cpu);
 
-	cpu->add_breakpoint({
+	/*cpu->add_breakpoint({
 		[](harpoon::execution::processing_unit * processing_unit) -> bool {
 			cpu::mos_6510 * mos = static_cast<cpu::mos_6510 *>(processing_unit);
 			return mos->get_registers().PC == 0xFF61;
@@ -41,7 +42,7 @@ void c64::create_execution_unit() {
 			cpu::mos_6510 * mos = static_cast<cpu::mos_6510 *>(processing_unit);
 			mos->get_registers().P.Z() = true;
 		}
-	});
+	});*/
 
 	cpu->create();
 }
@@ -56,7 +57,11 @@ void c64::create_memory() {
 void c64::prepare() {
 	auto execution_unit = std::static_pointer_cast<harpoon::execution::up_execution_unit>(get_main_execution_unit());
 	auto cpu = std::static_pointer_cast<cpu::mos_6510>(execution_unit->get_processing_unit());
-	cpu->set_memory(get_main_memory());
+	auto memory = std::static_pointer_cast<memory::memory>(get_main_memory());
+
+	memory->add_memory(cpu->get_zero_page());
+	cpu->set_memory(memory);
+
 	harpoon::computer_system::prepare();
 }
 
