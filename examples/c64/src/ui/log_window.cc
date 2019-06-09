@@ -14,7 +14,7 @@ void log_window::log_message(const harpoon::log::message& message) {
 	} else {
 		setTextColor({0, 0, 0});
 	}
-	append(message.get_text().c_str());
+	append((message.get_component() + ": " + message.get_text()).c_str());
 }
 
 }

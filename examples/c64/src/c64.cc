@@ -29,7 +29,7 @@ void c64::create_execution_unit() {
 			harpoon::clock::generator::make_dummy_generator(1000000)), "Clock");
 	execution_unit->set_clock(clock);
 
-	auto cpu = std::make_shared<cpu::mos_6510>("CPU");
+	auto cpu = std::make_shared<cpu::mos_6510>("MOS 6510");
 	execution_unit->set_processing_unit(cpu);
 
 	cpu->create();
