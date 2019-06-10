@@ -125,6 +125,8 @@ void memory::shutdown() {
 
 	harpoon::memory::serializer::binary_file memd000("ram_d000.bin");
 	_ram_d000_dfff.lock()->serialize(memd000);
+
+	harpoon::memory::main_memory::shutdown();
 }
 
 void memory::load_kernal() {
