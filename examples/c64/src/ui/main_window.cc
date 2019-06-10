@@ -1,5 +1,6 @@
 #include "main_window.hh"
 #include "log_window.hh"
+#include "control_tab.hh"
 #include "qt_log.hh"
 
 #include "../c64.hh"
@@ -17,7 +18,6 @@ main_window::main_window(QWidget * parent) : QMainWindow(parent) {
 	qRegisterMetaType<harpoon::log::message>("harpoon::log::message");
 
 	_tab_widget = new QTabWidget(this);
-	setCentralWidget(_tab_widget);
 
 	QDockWidget * log_widget = new QDockWidget(tr("Log"), this);
 	addDockWidget(Qt::BottomDockWidgetArea, log_widget);
@@ -32,24 +32,21 @@ main_window::main_window(QWidget * parent) : QMainWindow(parent) {
 
 	try {
 		_c64 = std::make_shared<commodore::c64>(_log);
-
 		_c64->create();
-
-		_c64->prepare();
-		_c64->boot();
-
-		//computer_system->shutdown();
-		//computer_system->log_state();
-		//computer_system->cleanup();
 	} catch (harpoon::exception::hardware_component_exception& error) {
 		_log->out(log_critical_c(error.get_component()) << error.what());
 	} catch (std::exception& error) {
 		_log->out(log_critical << error.what());
 	}
+
+	_tab_widget->addTab(new control_tab(_c64), "Control");
+	setCentralWidget(_tab_widget);
 }
 
 main_window::~main_window() {
-	_c64->shutdown();
+	if (_c64->is_running()) {
+		_c64->shutdown();
+	}
 }
 
 }
