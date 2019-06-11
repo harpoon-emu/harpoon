@@ -8,14 +8,16 @@ namespace clock {
 clock::~clock() {}
 
 void clock::boot() {
-	_generator->start();
 	hardware_component::boot();
 }
 
 void clock::shutdown() {
-	_generator->stop();
 	hardware_component::shutdown();
 }
 
+void clock::log_state(log::message::Level level) const {
+	hardware_component::log_state(level);
 }
-}
+
+} // namespace clock
+} // namespace harpoon

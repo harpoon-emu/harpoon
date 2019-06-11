@@ -7,8 +7,7 @@ set(SOURCE_FILES
 set(INCLUDE_FILES
 	tick.hh
 	clock.hh
+	threaded_clock.hh
 	)
 
 add_sources()
-
-add_subdirectory(generator)

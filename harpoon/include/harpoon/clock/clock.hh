@@ -2,59 +2,51 @@
 #define HARPOON_CLOCK_CLOCK_HH
 
 #include "harpoon/harpoon.hh"
-#include "harpoon/hardware_component.hh"
+
 #include "harpoon/clock/tick.hh"
-#include "harpoon/clock/generator/generator.hh"
+#include "harpoon/hardware_component.hh"
 
 namespace harpoon {
 namespace clock {
 
 class clock : public hardware_component {
 public:
-
 	using hardware_component::hardware_component;
-	clock(const generator::generator_ptr& generator, const std::string& name = "") 
-		: hardware_component(name), _generator(generator) {}
+	clock(std::uint32_t frequency = 1, const std::string &name = "")
+	    : hardware_component(name), _frequency(frequency) {}
 
-	void set_generator(const generator::generator_ptr& generator) {
-		_generator = generator;
+	void set_frequency(std::uint32_t frequency) {
+		_frequency = frequency;
 	}
 
-	tick get_tick() const {
-		return _generator->get_tick();
+	std::uint32_t get_frequency() const {
+		return _frequency;
 	}
 
-	tick wait_for_tick(tick tick) {
-		return _generator->wait_for_tick(tick);
-	}
+	virtual tick get_tick() const = 0;
+	virtual tick wait_for_tick(tick tick) = 0;
+	virtual tick wait_tick(std::uint_fast64_t tick_count = 1) = 0;
 
-	tick wait_tick(std::uint_fast64_t tick_count = 1) {
-		return _generator->wait_tick(tick_count);
-	}
+	virtual void boot() override;
+	virtual void shutdown() override;
 
-	bool is_running() const {
-		return _generator->is_running();
-	}
+	virtual void log_state(log::message::Level level) const override;
 
-	virtual void boot();
-	virtual void shutdown();
-
-	virtual ~clock();
+	virtual ~clock() override;
 
 private:
-	generator::generator_ptr _generator{};
+	std::uint32_t _frequency{};
 };
 
 using clock_ptr = std::shared_ptr<clock>;
 using clock_weak_ptr = std::weak_ptr<clock>;
 template<typename... Args>
-clock_ptr make_clock(Args&&... args) {
+clock_ptr make_clock(Args &&... args) {
 	return std::make_shared<clock>(std::forward<Args>(args)...);
 }
 
 
-}
-}
+} // namespace clock
+} // namespace harpoon
 
 #endif
-

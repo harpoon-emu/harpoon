@@ -2,9 +2,10 @@
 #include "cpu/mos_6510.hh"
 #include "memory/memory.hh"
 
-#include "harpoon/clock/clock.hh"
-#include "harpoon/clock/generator/threaded_generator.hh"
+#include "harpoon/clock/threaded_clock.hh"
 #include "harpoon/execution/up_execution_unit.hh"
+
+#include <chrono>
 
 namespace commodore {
 
@@ -31,8 +32,8 @@ void c64::create_execution_unit() {
 	auto execution_unit = harpoon::execution::make_up_execution_unit("Execution unit");
 	set_main_execution_unit(execution_unit);
 
-	auto clock = harpoon::clock::make_clock(
-			harpoon::clock::generator::make_threaded_generator(1000000), "Clock");
+	auto clock
+	    = harpoon::clock::make_threaded_clock<std::chrono::high_resolution_clock>(1000000, "Clock");
 	execution_unit->set_clock(clock);
 
 	auto cpu = std::make_shared<cpu::mos_6510>("MOS 6510");
