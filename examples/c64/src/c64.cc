@@ -3,7 +3,7 @@
 #include "memory/memory.hh"
 
 #include "harpoon/clock/clock.hh"
-#include "harpoon/clock/generator/dummy_generator.hh"
+#include "harpoon/clock/generator/threaded_generator.hh"
 #include "harpoon/execution/up_execution_unit.hh"
 
 namespace commodore {
@@ -32,8 +32,7 @@ void c64::create_execution_unit() {
 	set_main_execution_unit(execution_unit);
 
 	auto clock = harpoon::clock::make_clock(
-		std::static_pointer_cast<harpoon::clock::generator::generator>(
-			harpoon::clock::generator::make_dummy_generator(1000000)), "Clock");
+			harpoon::clock::generator::make_threaded_generator(1000000), "Clock");
 	execution_unit->set_clock(clock);
 
 	auto cpu = std::make_shared<cpu::mos_6510>("MOS 6510");
