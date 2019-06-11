@@ -6,10 +6,11 @@
 #define HARPOON_HARDWARE_COMPONENT_HH
 
 #include "harpoon/harpoon.hh"
+
 #include "harpoon/log/log.hh"
 
-#include <list>
 #include <atomic>
+#include <list>
 #include <mutex>
 
 namespace harpoon {
@@ -28,25 +29,24 @@ using hardware_component_weak_ptr = std::weak_ptr<hardware_component>;
  */
 class hardware_component : public std::enable_shared_from_this<hardware_component> {
 public:
-
 	/**
 	 * @brief Hardware component default constructor.
 	 * @param[in] name Hardware component name.
 	 */
-	hardware_component(const std::string& name = {}) : _name(name) {}
+	hardware_component(const std::string &name = {}) : _name(name) {}
 
 	/**
 	 * @brief Default copy constructor.
 	 * @param[in] source Source hardware component.
 	 */
-	hardware_component(const hardware_component& source) = delete;
+	hardware_component(const hardware_component &source) = delete;
 
 	/**
 	 * @brief Default assignment operator.
 	 * @param[in] source Source hardware component.
 	 * @return Reference to hardware component.
 	 */
-	hardware_component& operator=(const hardware_component& source) = delete;
+	hardware_component &operator=(const hardware_component &source) = delete;
 
 	/**
 	 * @brief Destructor.
@@ -57,21 +57,21 @@ public:
 	 * @brief Add hardware component to components hierarchy.
 	 * @param[in] component Child component.
 	 */
-	void add_component(const hardware_component_weak_ptr& component);
+	void add_component(const hardware_component_weak_ptr &component);
 
 	/**
 	 * @brief Remove component from components hierachy.
 	 * @param[in] component Component to be removed.
 	 */
-	void remove_component(const hardware_component_weak_ptr& component);
+	void remove_component(const hardware_component_weak_ptr &component);
 
 	/**
 	 * @brief Replace component with new component.
 	 * @param[in] old_component Component to be replaced.
 	 * @param[in] new_component New component.
 	 */
-	void replace_component(const hardware_component_weak_ptr& old_component,
-						   const hardware_component_weak_ptr& new_component);
+	void replace_component(const hardware_component_weak_ptr &old_component,
+	                       const hardware_component_weak_ptr &new_component);
 
 	/**
 	 * @brief Perform component setup. Called during system preparation stage.
@@ -97,7 +97,7 @@ public:
 	 * @brief Emit message to component log.
 	 * @param[in] stream Stream with log message collected.
 	 */
-	void log(const std::ostream& stream) const;
+	void log(const std::ostream &stream) const;
 
 	/**
 	 * @brief Check is component is running.
@@ -111,7 +111,7 @@ public:
 	 * @brief Return hardware component name.
 	 * @return Hardware component name.
 	 */
-	const std::string& get_name() const {
+	const std::string &get_name() const {
 		return _name;
 	}
 
@@ -119,7 +119,7 @@ public:
 	 * @brief Set hardware component name.
 	 * @param[in] name Hardware component name.
 	 */
-	void set_name(const std::string& name) {
+	void set_name(const std::string &name) {
 		_name = name;
 	}
 
@@ -136,13 +136,13 @@ public:
 	 * @details If component has no associated log then parent component log is returned.
 	 * @return Hardware component log.
 	 */
-	const log::log_ptr& get_log() const;
+	const log::log_ptr &get_log() const;
 
 	/**
 	 * @brief Set hardware component log.
 	 * @param[in] log Log.
 	 */
-	void set_log(const log::log_ptr& log) {
+	void set_log(const log::log_ptr &log) {
 		_log = log;
 	}
 
@@ -151,16 +151,17 @@ public:
 	 * @param[in] subcomponents If true, state of all subcomponents will also be logged.
 	 * @param[in] level Log level to be used.
 	 */
-	virtual void log_state(bool subcomponents = true, log::message::Level level = log::message::Level::DEBUG) const;
+	virtual void log_state(bool subcomponents = true,
+	                       log::message::Level level = log::message::Level::DEBUG) const;
 
 	/**
-	* @brief Dump state of component to log.
-	* @param[in] level Log level to be used.
-	*/
+	 * @brief Dump state of component to log.
+	 * @param[in] level Log level to be used.
+	 */
 	virtual void log_state(log::message::Level level) const;
 
 private:
-	void set_parent_component(const hardware_component_weak_ptr& parent_component);
+	void set_parent_component(const hardware_component_weak_ptr &parent_component);
 
 	std::string _name{};
 	hardware_component_weak_ptr _parent_component{};
@@ -177,7 +178,6 @@ private:
 #define component_notice (log_notice_c(get_name()))
 #define component_debug (log_debug_c(get_name()))
 
-}
+} // namespace harpoon
 
 #endif
-

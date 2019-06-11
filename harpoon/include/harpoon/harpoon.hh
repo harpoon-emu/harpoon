@@ -5,15 +5,14 @@
 #ifndef HARPOON_HARPOON_HH
 #define HARPOON_HARPOON_HH
 
-#include <string>
-#include <memory>
-#include <utility>
 #include <cstdint>
+#include <memory>
+#include <string>
+#include <utility>
 
 /**
  * @brief Main Harpoon library namespace.
  */
-namespace harpoon {
-}
+namespace harpoon {} // namespace harpoon
 
 #endif

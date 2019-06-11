@@ -22,10 +22,9 @@ public:
 		do_and(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "AND");
 	}
-
 };
 
 class and_zero_page : public and_op<0x25, std::uint8_t, 3> {
@@ -36,10 +35,9 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "AND");
 	}
-
 };
 
 class and_zero_page_x : public and_op<0x35, std::uint8_t, 4> {
@@ -50,10 +48,9 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "AND");
 	}
-
 };
 
 class and_absolute : public and_op<0x2D, std::uint16_t, 4> {
@@ -64,7 +61,7 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "AND");
 	}
 };
@@ -77,7 +74,7 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "AND");
 	}
 };
@@ -90,7 +87,7 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "AND");
 	}
 };
@@ -103,7 +100,7 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "AND");
 	}
 };
@@ -116,15 +113,14 @@ public:
 		do_and(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "AND");
 	}
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

@@ -13,5 +13,5 @@ std::string message::get_text() const {
 
 message::streambuf::~streambuf() {}
 
-}
-}
+} // namespace log
+} // namespace harpoon

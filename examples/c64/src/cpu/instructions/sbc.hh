@@ -31,10 +31,9 @@ public:
 		do_sbc(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "SBC");
 	}
-
 };
 
 class sbc_zero_page : public sbc<0xE5, std::uint8_t, 3> {
@@ -45,10 +44,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "SBC");
 	}
-
 };
 
 class sbc_zero_page_x : public sbc<0xF5, std::uint8_t, 4> {
@@ -59,10 +57,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "SBC");
 	}
-
 };
 
 class sbc_absolute : public sbc<0xED, std::uint16_t, 4> {
@@ -73,10 +70,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "SBC");
 	}
-
 };
 
 class sbc_absolute_x : public sbc<0xFD, std::uint16_t, 4> {
@@ -87,10 +83,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "SBC");
 	}
-
 };
 
 class sbc_absolute_y : public sbc<0xF9, std::uint16_t, 4> {
@@ -101,10 +96,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "SBC");
 	}
-
 };
 
 class sbc_indirect_x : public sbc<0xE1, std::uint8_t, 6> {
@@ -115,10 +109,9 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "SBC");
 	}
-
 };
 
 class sbc_indirect_y : public sbc<0xF1, std::uint8_t, 5> {
@@ -129,16 +122,14 @@ public:
 		do_sbc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "SBC");
 	}
-
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

@@ -5,5 +5,5 @@ namespace memory {
 
 linear_random_access_memory::~linear_random_access_memory() {}
 
-}
-}
+} // namespace memory
+} // namespace harpoon

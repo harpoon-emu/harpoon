@@ -5,5 +5,5 @@ namespace memory {
 
 chunked_random_access_memory::~chunked_random_access_memory() {}
 
-}
-}
+} // namespace memory
+} // namespace harpoon

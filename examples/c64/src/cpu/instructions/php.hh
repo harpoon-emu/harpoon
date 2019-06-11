@@ -13,14 +13,13 @@ public:
 		push(static_cast<std::uint8_t>(get_cpu()->get_registers().P.get_flags()));
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble(stream, "PHP");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

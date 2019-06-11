@@ -2,6 +2,7 @@
 #define HARPOON_MEMORY_ADDRESS_RANGE_HH
 
 #include "harpoon/harpoon.hh"
+
 #include "harpoon/memory/address.hh"
 
 #include <limits>
@@ -11,12 +12,11 @@ namespace memory {
 
 class address_range {
 public:
-	address_range(const address& start = {}, const address& end = {}) 
-		: _start(start), _end(end) {}
-	address_range(const address_range&) = default;
-	address_range& operator=(const address_range&) = default;
+	address_range(const address &start = {}, const address &end = {}) : _start(start), _end(end) {}
+	address_range(const address_range &) = default;
+	address_range &operator=(const address_range &) = default;
 
-	bool operator==(const address_range& second) const {
+	bool operator==(const address_range &second) const {
 		return get_start() == second.get_start() && get_end() == second.get_end();
 	}
 
@@ -62,7 +62,7 @@ public:
 		return address - get_start();
 	}
 
-	bool overlaps(const address_range& second) const {
+	bool overlaps(const address_range &second) const {
 		return has_address(second.get_start()) || has_address(second.get_end());
 	}
 
@@ -75,7 +75,7 @@ private:
 	address _end{};
 };
 
-}
-}
+} // namespace memory
+} // namespace harpoon
 
 #endif

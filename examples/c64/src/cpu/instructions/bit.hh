@@ -10,7 +10,7 @@ namespace instructions {
 template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
 class bit : public mos_6510_mem_unary_instruction<OP, OPERAND, CYCLES> {
 public:
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		this->mos_disassemble_absolute(stream, "BIT");
 	}
 
@@ -40,9 +40,8 @@ public:
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

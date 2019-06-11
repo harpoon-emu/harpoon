@@ -11,8 +11,7 @@ namespace clock {
 using tick = std::uint_fast64_t;
 using atomic_tick = std::atomic_uint_fast64_t;
 
-}
-}
+} // namespace clock
+} // namespace harpoon
 
 #endif
-

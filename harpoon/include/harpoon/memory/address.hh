@@ -8,8 +8,7 @@ namespace memory {
 
 using address = std::uint_fast64_t;
 
-}
-}
+} // namespace memory
+} // namespace harpoon
 
 #endif
-

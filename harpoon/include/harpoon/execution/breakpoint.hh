@@ -12,20 +12,19 @@ class processing_unit;
 
 class breakpoint {
 public:
-
 	using condition = std::function<bool(processing_unit *)>;
 	using action = std::function<void(processing_unit *)>;
 
-	breakpoint(const condition& condition, const action& action)
-		: _condition(condition), _action(action) {}
-	breakpoint(const breakpoint&) = default;
-	breakpoint& operator=(const breakpoint&) = default;
+	breakpoint(const condition &condition, const action &action)
+	    : _condition(condition), _action(action) {}
+	breakpoint(const breakpoint &) = default;
+	breakpoint &operator=(const breakpoint &) = default;
 
-	bool check_condition(processing_unit * processing_unit) const {
+	bool check_condition(processing_unit *processing_unit) const {
 		return _condition(processing_unit);
 	}
 
-	void do_action(processing_unit * processing_unit) const {
+	void do_action(processing_unit *processing_unit) const {
 		_action(processing_unit);
 	}
 
@@ -34,8 +33,7 @@ private:
 	action _action{};
 };
 
-}
-}
+} // namespace execution
+} // namespace harpoon
 
 #endif
-

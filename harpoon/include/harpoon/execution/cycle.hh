@@ -11,8 +11,7 @@ namespace execution {
 using cycle = std::uint_fast64_t;
 using atomic_cycle = std::atomic_uint_fast64_t;
 
-}
-}
+} // namespace execution
+} // namespace harpoon
 
 #endif
-

@@ -13,14 +13,13 @@ public:
 		branch(!get_cpu()->get_registers().P.V());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_relative(stream, "BVC");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

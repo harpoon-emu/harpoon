@@ -13,14 +13,13 @@ public:
 		branch(get_cpu()->get_registers().P.N());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_relative(stream, "BMI");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

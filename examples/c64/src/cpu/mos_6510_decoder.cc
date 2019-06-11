@@ -1,6 +1,7 @@
 #include "mos_6510_decoder.hh"
-#include "mos_6510.hh"
+
 #include "instructions/mos_6510.hh"
+#include "mos_6510.hh"
 
 #include "harpoon/execution/exception/invalid_instruction.hh"
 
@@ -10,16 +11,16 @@ namespace cpu {
 template<typename T>
 class mos_6510_instruction_decoder : public harpoon::execution::instruction_decoder<T, mos_6510> {};
 
-mos_6510_decoder::mos_6510_decoder(mos_6510 * cpu, const std::string& name)
-	: harpoon::hardware_component(name), _cpu(cpu) {}
+mos_6510_decoder::mos_6510_decoder(mos_6510 *cpu, const std::string &name)
+    : harpoon::hardware_component(name), _cpu(cpu) {}
 
 mos_6510_decoder::~mos_6510_decoder() {}
 
 template<typename T>
 void mos_6510_decoder::register_instruction() {
 	_instruction_map[T::OPCODE] = mos_6510_instruction_decoder<T>();
-	log(component_debug << "Registered instruction with opcode 0x"
-		<< std::hex << std::setfill('0') << std::setw(2) << static_cast<std::uint32_t>(T::OPCODE));
+	log(component_debug << "Registered instruction with opcode 0x" << std::hex << std::setfill('0')
+	                    << std::setw(2) << static_cast<std::uint32_t>(T::OPCODE));
 }
 
 void mos_6510_decoder::prepare() {
@@ -177,13 +178,15 @@ void mos_6510_decoder::prepare() {
 	log(component_notice << "Registered " << _instruction_map.size() << " instructions");
 }
 
-std::uint_fast64_t mos_6510_decoder::decode(harpoon::execution::instruction_handler& instruction_handler, harpoon::execution::disassemble_handler& disassemle_handler) {
+std::uint_fast64_t
+mos_6510_decoder::decode(harpoon::execution::instruction_handler &instruction_handler,
+                         harpoon::execution::disassemble_handler &disassemle_handler) {
 	std::uint8_t opcode = get_instruction_byte(0);
 	std::size_t pc_increment = 0;
 
 	_cpu->get_registers().IR = opcode;
 
-	const auto& decoder = _instruction_map[opcode];
+	const auto &decoder = _instruction_map[opcode];
 	if (!decoder) {
 		throw COMPONENT_EXCEPTION0(harpoon::execution::exception::invalid_instruction);
 	}
@@ -201,5 +204,5 @@ std::uint8_t mos_6510_decoder::get_instruction_byte(std::uint_fast64_t offset) {
 	return opbyte;
 }
 
-}
-}
+} // namespace cpu
+} // namespace commodore

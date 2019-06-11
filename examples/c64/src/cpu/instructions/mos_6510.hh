@@ -35,14 +35,14 @@
 #include "lsr.hh"
 #include "nop.hh"
 #include "ora.hh"
-#include "rol.hh"
-#include "ror.hh"
-#include "rti.hh"
-#include "rts.hh"
 #include "pha.hh"
 #include "php.hh"
 #include "pla.hh"
 #include "plp.hh"
+#include "rol.hh"
+#include "ror.hh"
+#include "rti.hh"
+#include "rts.hh"
 #include "sbc.hh"
 #include "sec.hh"
 #include "sed.hh"
@@ -58,4 +58,3 @@
 #include "tya.hh"
 
 #endif
-

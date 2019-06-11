@@ -5,5 +5,5 @@ namespace execution {
 
 up_execution_unit::~up_execution_unit() {}
 
-}
-}
+} // namespace execution
+} // namespace harpoon

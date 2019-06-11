@@ -2,22 +2,22 @@
 #define HARPOON_EXECUTION_PROCESSING_UNIT_HH
 
 #include "harpoon/harpoon.hh"
-#include "harpoon/hardware_component.hh"
-#include "harpoon/execution/execution_unit.hh"
-#include "harpoon/execution/cycle.hh"
-#include "harpoon/execution/instruction.hh"
-#include "harpoon/execution/breakpoint.hh"
 
-#include <thread>
+#include "harpoon/execution/breakpoint.hh"
+#include "harpoon/execution/cycle.hh"
+#include "harpoon/execution/execution_unit.hh"
+#include "harpoon/execution/instruction.hh"
+#include "harpoon/hardware_component.hh"
+
 #include <atomic>
 #include <list>
+#include <thread>
 
 namespace harpoon {
 namespace execution {
 
 class processing_unit : public hardware_component {
 public:
-
 	using hardware_component::hardware_component;
 
 	virtual void prepare();
@@ -34,10 +34,12 @@ public:
 	}
 
 	virtual std::uint_fast64_t begin_execution() = 0;
-	virtual std::uint_fast64_t fetch_decode(instruction_handler& instruction_handler, disassemble_handler& disassemble_handler) = 0;
-	virtual std::uint_fast64_t execute(instruction_handler& instruction_handler);
+	virtual std::uint_fast64_t fetch_decode(instruction_handler &instruction_handler,
+	                                        disassemble_handler &disassemble_handler)
+	    = 0;
+	virtual std::uint_fast64_t execute(instruction_handler &instruction_handler);
 
-	void add_breakpoint(const breakpoint& breakpoint) {
+	void add_breakpoint(const breakpoint &breakpoint) {
 		_breakpoints.push_back(breakpoint);
 	}
 
@@ -88,8 +90,7 @@ private:
 using processing_unit_ptr = std::shared_ptr<processing_unit>;
 using processing_unit_weak_ptr = std::weak_ptr<processing_unit>;
 
-}
-}
+} // namespace execution
+} // namespace harpoon
 
 #endif
-

@@ -15,14 +15,13 @@ public:
 		get_cpu()->get_registers().P.set_flags(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble(stream, "PLP");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

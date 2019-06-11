@@ -1,4 +1,5 @@
 #include "harpoon/log/console_log.hh"
+
 #include "harpoon/log/message.hh"
 
 #include <iostream>
@@ -8,7 +9,7 @@ namespace log {
 
 console_log::~console_log() {}
 
-void console_log::out(const message& message) {
+void console_log::out(const message &message) {
 
 	std::lock_guard<std::mutex> lk(_mutex);
 
@@ -26,5 +27,5 @@ void console_log::out(const message& message) {
 	std::cout << message.get_text() << std::endl;
 }
 
-}
-}
+} // namespace log
+} // namespace harpoon

@@ -26,7 +26,7 @@ public:
 		do_cpy(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "CPY");
 	}
 };
@@ -39,7 +39,7 @@ public:
 		do_cpy(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CPY");
 	}
 };
@@ -52,14 +52,13 @@ public:
 		do_cpy(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CPY");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

@@ -2,14 +2,14 @@
 #define C64_HH
 
 #include "harpoon/computer_system.hh"
-#include "harpoon/memory/memory.hh"
 #include "harpoon/log/log.hh"
+#include "harpoon/memory/memory.hh"
 
 namespace commodore {
 
 class c64 : public harpoon::computer_system {
 public:
-	c64(const harpoon::log::log_ptr& log);
+	c64(const harpoon::log::log_ptr &log);
 
 	virtual ~c64();
 
@@ -22,7 +22,6 @@ private:
 	void create_memory();
 };
 
-}
+} // namespace commodore
 
 #endif
-

@@ -10,7 +10,6 @@ namespace cpu {
 
 class mos_6510_flags : public harpoon::execution::basic_register<std::bitset<8>> {
 public:
-
 	mos_6510_flags() {
 		get()[5] = true;
 		get()[4] = true;
@@ -96,11 +95,9 @@ public:
 	std::bitset<8>::reference C() {
 		return get()[0];
 	}
-
 };
 
-}
-}
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

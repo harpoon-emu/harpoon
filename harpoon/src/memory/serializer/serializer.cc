@@ -6,6 +6,6 @@ namespace serializer {
 
 serializer::~serializer() {}
 
-}
-}
-}
+} // namespace serializer
+} // namespace memory
+} // namespace harpoon

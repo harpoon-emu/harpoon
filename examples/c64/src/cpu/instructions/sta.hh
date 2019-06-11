@@ -13,7 +13,7 @@ public:
 		set_zero_page(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "STA");
 	}
 };
@@ -24,7 +24,7 @@ public:
 		set_zero_page_x(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "STA");
 	}
 };
@@ -35,7 +35,7 @@ public:
 		set_absolute(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "STA");
 	}
 };
@@ -46,7 +46,7 @@ public:
 		set_absolute_x(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "STA");
 	}
 };
@@ -57,7 +57,7 @@ public:
 		set_absolute_y(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "STA");
 	}
 };
@@ -68,7 +68,7 @@ public:
 		set_indirect_x(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "STA");
 	}
 };
@@ -79,16 +79,14 @@ public:
 		set_indirect_y(get_cpu()->get_registers().A);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "STA");
 	}
 };
 
 
-
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

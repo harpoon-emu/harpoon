@@ -11,11 +11,11 @@ class processing_unit;
 template<typename T>
 class instruction_disassembler {
 public:
-	instruction_disassembler(T& instruction) : _instruction(instruction) {}
-	instruction_disassembler(const instruction_disassembler<T>&) = default;
-	instruction_disassembler<T>& operator=(const instruction_disassembler<T>&) = default;
+	instruction_disassembler(T &instruction) : _instruction(instruction) {}
+	instruction_disassembler(const instruction_disassembler<T> &) = default;
+	instruction_disassembler<T> &operator=(const instruction_disassembler<T> &) = default;
 
-	void operator()(std::ostream& stream) {
+	void operator()(std::ostream &stream) {
 		_instruction.disassemble(stream);
 	}
 
@@ -23,8 +23,7 @@ private:
 	T _instruction;
 };
 
-}
-}
+} // namespace execution
+} // namespace harpoon
 
 #endif
-

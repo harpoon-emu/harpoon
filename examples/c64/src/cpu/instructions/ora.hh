@@ -22,10 +22,9 @@ public:
 		do_ora(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "ORA");
 	}
-
 };
 
 class ora_zero_page : public ora<0x05, std::uint8_t, 3> {
@@ -36,10 +35,9 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "ORA");
 	}
-
 };
 
 class ora_zero_page_x : public ora<0x15, std::uint8_t, 4> {
@@ -50,10 +48,9 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "ORA");
 	}
-
 };
 
 class ora_absolute : public ora<0x0D, std::uint16_t, 4> {
@@ -64,10 +61,9 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "ORA");
 	}
-
 };
 
 class ora_absolute_x : public ora<0x1D, std::uint16_t, 4> {
@@ -78,7 +74,7 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "ORA");
 	}
 };
@@ -91,7 +87,7 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "ORA");
 	}
 };
@@ -104,7 +100,7 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "ORA");
 	}
 };
@@ -117,15 +113,14 @@ public:
 		do_ora(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "ORA");
 	}
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

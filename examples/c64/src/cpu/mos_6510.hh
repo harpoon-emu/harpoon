@@ -1,14 +1,14 @@
 #ifndef CPU_MOS_6510_HH
 #define CPU_MOS_6510_HH
 
-#include "mos_6510_flags.hh"
 #include "../memory/memory.hh"
+#include "mos_6510_flags.hh"
 
-#include "harpoon/execution/processing_unit.hh"
 #include "harpoon/execution/basic_register.hh"
-#include "harpoon/memory/memory.hh"
+#include "harpoon/execution/processing_unit.hh"
 #include "harpoon/memory/io_memory.hh"
 #include "harpoon/memory/linear_random_access_memory.hh"
+#include "harpoon/memory/memory.hh"
 
 namespace commodore {
 namespace cpu {
@@ -17,7 +17,6 @@ class mos_6510_decoder;
 
 class mos_6510 : public harpoon::execution::processing_unit {
 public:
-
 	static constexpr const std::uint16_t STACK_ADDRESS = 0x100;
 	static constexpr const std::uint16_t RESET_VECTOR = 0xfffc;
 
@@ -33,7 +32,8 @@ public:
 
 	using harpoon::execution::processing_unit::processing_unit;
 
-	using zero_page_memory = harpoon::memory::io_memory<harpoon::memory::linear_random_access_memory>;
+	using zero_page_memory
+	    = harpoon::memory::io_memory<harpoon::memory::linear_random_access_memory>;
 	using zero_page_memory_weak_ptr = std::weak_ptr<zero_page_memory>;
 
 	void create();
@@ -41,13 +41,15 @@ public:
 	virtual void boot();
 
 	virtual std::uint_fast64_t begin_execution();
-	virtual std::uint_fast64_t fetch_decode(harpoon::execution::instruction_handler& instruction_handler, harpoon::execution::disassemble_handler& disassemble_handler);
+	virtual std::uint_fast64_t
+	fetch_decode(harpoon::execution::instruction_handler &instruction_handler,
+	             harpoon::execution::disassemble_handler &disassemble_handler);
 
-	const zero_page_memory_weak_ptr& get_zero_page() const {
+	const zero_page_memory_weak_ptr &get_zero_page() const {
 		return _zero_page;
 	}
 
-	void set_memory(const memory::memory_weak_ptr& memory) {
+	void set_memory(const memory::memory_weak_ptr &memory) {
 		_memory = memory;
 	}
 
@@ -59,11 +61,11 @@ public:
 		return _decoder.lock();
 	}
 
-	const struct registers& get_registers() const {
+	const struct registers &get_registers() const {
 		return _registers;
 	}
 
-	struct registers& get_registers() {
+	struct registers &get_registers() {
 		return _registers;
 	}
 
@@ -120,22 +122,20 @@ public:
 	virtual ~mos_6510();
 
 private:
-
 	void create_zero_page();
 
 	void init_registers();
 	void init_zero_page();
 
-	void _zp_01_processor_port_out(const harpoon::memory::address& address, std::uint8_t value);
+	void _zp_01_processor_port_out(const harpoon::memory::address &address, std::uint8_t value);
 
-	struct registers _registers{};
+	struct registers _registers {};
 	memory::memory_weak_ptr _memory{};
 	zero_page_memory_weak_ptr _zero_page{};
 	std::weak_ptr<mos_6510_decoder> _decoder{};
 };
 
-}
-}
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

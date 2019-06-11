@@ -2,14 +2,14 @@
 
 #include "../c64.hh"
 
-#include <QPushButton>
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 namespace commodore {
 namespace ui {
 
-control_tab::control_tab(const std::shared_ptr<c64>& c64, QWidget * parent) : QWidget(parent) {
+control_tab::control_tab(const std::shared_ptr<c64> &c64, QWidget *parent) : QWidget(parent) {
 
 	_c64 = c64;
 
@@ -53,5 +53,5 @@ void control_tab::update_buttons() {
 	_shutdown_btn->setEnabled(_c64->is_running());
 }
 
-}
-}
+} // namespace ui
+} // namespace commodore

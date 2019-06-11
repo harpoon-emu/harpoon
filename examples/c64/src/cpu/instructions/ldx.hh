@@ -17,10 +17,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "LDX");
 	}
-
 };
 
 class ldx_zero_page : public ldx<0xA6, std::uint8_t, 3> {
@@ -30,10 +29,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDX");
 	}
-
 };
 
 class ldx_zero_page_y : public ldx<0xB6, std::uint8_t, 4> {
@@ -43,10 +41,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "LDX");
 	}
-
 };
 
 class ldx_absolute : public ldx<0xAE, std::uint16_t, 4> {
@@ -56,10 +53,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDX");
 	}
-
 };
 
 class ldx_absolute_y : public ldx<0xBE, std::uint16_t, 4> {
@@ -69,15 +65,13 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "LDX");
 	}
-
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

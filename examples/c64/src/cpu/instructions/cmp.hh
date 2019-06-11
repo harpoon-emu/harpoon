@@ -26,7 +26,7 @@ public:
 		do_cmp(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "CMP");
 	}
 };
@@ -39,7 +39,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CMP");
 	}
 };
@@ -52,7 +52,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "CMP");
 	}
 };
@@ -65,7 +65,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CMP");
 	}
 };
@@ -78,7 +78,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "CMP");
 	}
 };
@@ -91,7 +91,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "CMP");
 	}
 };
@@ -104,7 +104,7 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "CMP");
 	}
 };
@@ -117,14 +117,13 @@ public:
 		do_cmp(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "CMP");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

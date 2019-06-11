@@ -22,10 +22,9 @@ public:
 		do_eor(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "EOR");
 	}
-
 };
 
 class eor_zero_page : public eor<0x45, std::uint8_t, 3> {
@@ -36,10 +35,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "EOR");
 	}
-
 };
 
 class eor_zero_page_x : public eor<0x55, std::uint8_t, 4> {
@@ -50,10 +48,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "EOR");
 	}
-
 };
 
 class eor_absolute : public eor<0x4D, std::uint16_t, 4> {
@@ -64,10 +61,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "EOR");
 	}
-
 };
 
 class eor_absolute_x : public eor<0x5D, std::uint16_t, 4> {
@@ -78,10 +74,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "EOR");
 	}
-
 };
 
 class eor_absolute_y : public eor<0x59, std::uint16_t, 4> {
@@ -92,10 +87,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "EOR");
 	}
-
 };
 
 class eor_indirect_x : public eor<0x41, std::uint8_t, 6> {
@@ -106,10 +100,9 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "EOR");
 	}
-
 };
 
 class eor_indirect_y : public eor<0x51, std::uint8_t, 5> {
@@ -120,16 +113,14 @@ public:
 		do_eor(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "EOR");
 	}
-
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

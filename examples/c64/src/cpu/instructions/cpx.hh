@@ -26,7 +26,7 @@ public:
 		do_cpx(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "CPX");
 	}
 };
@@ -39,7 +39,7 @@ public:
 		do_cpx(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CPX");
 	}
 };
@@ -52,14 +52,13 @@ public:
 		do_cpx(mem);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "CPX");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

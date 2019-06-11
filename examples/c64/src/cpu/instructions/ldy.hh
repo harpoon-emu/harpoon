@@ -17,10 +17,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "LDY");
 	}
-
 };
 
 class ldy_zero_page : public ldy<0xA4, std::uint8_t, 3> {
@@ -30,7 +29,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDY");
 	}
 };
@@ -42,7 +41,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "LDY");
 	}
 };
@@ -54,7 +53,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDY");
 	}
 };
@@ -66,15 +65,14 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "LDY");
 	}
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

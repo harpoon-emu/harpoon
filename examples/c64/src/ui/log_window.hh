@@ -12,13 +12,13 @@ class log_window : public QTextEdit {
 	Q_OBJECT
 
 public:
-	log_window(QWidget * parent);
+	log_window(QWidget *parent);
 
 public slots:
-	void log_message(const harpoon::log::message& message);
+	void log_message(const harpoon::log::message &message);
 };
 
-}
-}
+} // namespace ui
+} // namespace commodore
 
 #endif

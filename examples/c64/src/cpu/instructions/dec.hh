@@ -10,7 +10,7 @@ namespace instructions {
 template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
 class dec : public mos_6510_mem_unary_instruction<OP, OPERAND, CYCLES> {
 protected:
-	void do_dec(std::uint8_t& val) {
+	void do_dec(std::uint8_t &val) {
 		val--;
 		this->update_flags_NZ(this->get_cpu(), val);
 	}
@@ -25,7 +25,7 @@ public:
 		set_zero_page(m);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "DEC");
 	}
 };
@@ -39,7 +39,7 @@ public:
 		set_zero_page_x(m);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "DEC");
 	}
 };
@@ -53,7 +53,7 @@ public:
 		set_absolute(m);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "DEC");
 	}
 };
@@ -67,14 +67,13 @@ public:
 		set_absolute_x(m);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "DEC");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

@@ -13,7 +13,7 @@ public:
 		get_cpu()->get_registers().PC = _operand;
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "JMP");
 	}
 };
@@ -26,14 +26,13 @@ public:
 		get_cpu()->get_registers().PC = ptr;
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect(stream, "JMP");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

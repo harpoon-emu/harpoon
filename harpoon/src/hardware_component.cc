@@ -1,4 +1,5 @@
 #include "harpoon/hardware_component.hh"
+
 #include "harpoon/log/message.hh"
 
 namespace harpoon {
@@ -7,7 +8,7 @@ hardware_component::~hardware_component() {
 	log(component_debug << "Destroying");
 }
 
-void hardware_component::add_component(const hardware_component_weak_ptr& component) {
+void hardware_component::add_component(const hardware_component_weak_ptr &component) {
 
 	hardware_component_ptr ptr = component.lock();
 
@@ -17,7 +18,7 @@ void hardware_component::add_component(const hardware_component_weak_ptr& compon
 	log(component_debug << "Adding component: " << ptr->get_name());
 }
 
-void hardware_component::remove_component(const hardware_component_weak_ptr& component) {
+void hardware_component::remove_component(const hardware_component_weak_ptr &component) {
 
 	hardware_component_ptr ptr = component.lock();
 
@@ -27,8 +28,8 @@ void hardware_component::remove_component(const hardware_component_weak_ptr& com
 	log(component_debug << "Removing component: " << ptr->get_name());
 }
 
-void hardware_component::replace_component(const hardware_component_weak_ptr& old_component,
-										   const hardware_component_weak_ptr& new_component) {
+void hardware_component::replace_component(const hardware_component_weak_ptr &old_component,
+                                           const hardware_component_weak_ptr &new_component) {
 	hardware_component_ptr old_ptr = old_component.lock();
 	if (old_ptr) {
 		remove_component(old_ptr);
@@ -36,11 +37,11 @@ void hardware_component::replace_component(const hardware_component_weak_ptr& ol
 	add_component(new_component);
 }
 
-void hardware_component::set_parent_component(const hardware_component_weak_ptr& parent_component) {
+void hardware_component::set_parent_component(const hardware_component_weak_ptr &parent_component) {
 	_parent_component = parent_component;
 }
 
-const log::log_ptr& hardware_component::get_log() const {
+const log::log_ptr &hardware_component::get_log() const {
 	if (_log) {
 		return _log;
 	}
@@ -53,8 +54,8 @@ const log::log_ptr& hardware_component::get_log() const {
 	return _log;
 }
 
-void hardware_component::log(const std::ostream& stream) const {
-	auto& log = get_log();
+void hardware_component::log(const std::ostream &stream) const {
+	auto &log = get_log();
 	if (log) {
 		get_log()->out(stream);
 	}
@@ -62,14 +63,14 @@ void hardware_component::log(const std::ostream& stream) const {
 
 void hardware_component::prepare() {
 	log(component_notice << "Preparing");
-	for (auto& component : _components) {
+	for (auto &component : _components) {
 		component->prepare();
 	}
 }
 
 void hardware_component::cleanup() {
 	log(component_notice << "Cleanup");
-	for (auto& component : _components) {
+	for (auto &component : _components) {
 		component->cleanup();
 	}
 	_components.clear();
@@ -77,7 +78,7 @@ void hardware_component::cleanup() {
 
 void hardware_component::boot() {
 	log(component_notice << "Booting");
-	for (auto& component : _components) {
+	for (auto &component : _components) {
 		component->boot();
 	}
 	_running = true;
@@ -86,7 +87,7 @@ void hardware_component::boot() {
 void hardware_component::shutdown() {
 	log(component_notice << "Shutdown");
 	_running = false;
-	for (auto& component : _components) {
+	for (auto &component : _components) {
 		component->shutdown();
 	}
 }
@@ -95,7 +96,7 @@ void hardware_component::log_state(bool subcomponents, log::message::Level level
 	std::lock_guard<std::mutex> _lk(_mutex);
 	log_state(level);
 	if (subcomponents) {
-		for (const auto& component : _components) {
+		for (const auto &component : _components) {
 			component->log_state(subcomponents, level);
 		}
 	}
@@ -107,4 +108,4 @@ void hardware_component::log_state(log::message::Level level) const {
 	}
 }
 
-}
+} // namespace harpoon

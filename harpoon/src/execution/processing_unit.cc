@@ -1,4 +1,5 @@
 #include "harpoon/execution/processing_unit.hh"
+
 #include "harpoon/execution/exception/execution_exception.hh"
 
 namespace harpoon {
@@ -20,9 +21,7 @@ void processing_unit::boot() {
 
 	_running = true;
 
-	_thread.reset(new std::thread([this]() {
-		run();
-	}));
+	_thread.reset(new std::thread([this]() { run(); }));
 }
 
 void processing_unit::shutdown() {
@@ -41,7 +40,7 @@ void processing_unit::run() {
 
 	log(component_notice << "Running processing loop");
 
-	const auto& execution_unit = get_execution_unit();
+	const auto &execution_unit = get_execution_unit();
 
 	wait_for_cycle(begin_execution());
 
@@ -51,7 +50,7 @@ void processing_unit::run() {
 				instruction_handler instruction_handler;
 				disassemble_handler disassemble_handler;
 
-				for (const auto& breakpoint : _breakpoints) {
+				for (const auto &breakpoint : _breakpoints) {
 					if (breakpoint.check_condition(this)) {
 						log(component_debug << "EXECUTION BREAKPOINT");
 						breakpoint.do_action(this);
@@ -74,7 +73,7 @@ void processing_unit::run() {
 				wait_for_next_cycle();
 			}
 		}
-	} catch (const exception::execution_exception& error) {
+	} catch (const exception::execution_exception &error) {
 		log(component_error << "Execution exception: " << error.what());
 		log_state();
 	}
@@ -82,7 +81,7 @@ void processing_unit::run() {
 	log(component_notice << "Exiting processing loop");
 }
 
-std::uint_fast64_t processing_unit::execute(instruction_handler& instruction_handler) {
+std::uint_fast64_t processing_unit::execute(instruction_handler &instruction_handler) {
 	return instruction_handler(this);
 }
 
@@ -101,8 +100,7 @@ void processing_unit::log_state(harpoon::log::message::Level level) const {
 	log_registers(level);
 }
 
-void processing_unit::log_registers(harpoon::log::message::Level) const {
-}
+void processing_unit::log_registers(harpoon::log::message::Level) const {}
 
-}
-}
+} // namespace execution
+} // namespace harpoon

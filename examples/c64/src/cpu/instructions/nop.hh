@@ -9,14 +9,13 @@ namespace instructions {
 
 class nop : public mos_6510_nullary_instruction<0xEA, 2> {
 public:
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble(stream, "NOP");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

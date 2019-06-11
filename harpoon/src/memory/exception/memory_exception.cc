@@ -6,6 +6,6 @@ namespace exception {
 
 memory_exception::~memory_exception() {}
 
-}
-}
-}
+} // namespace exception
+} // namespace memory
+} // namespace harpoon

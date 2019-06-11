@@ -1,9 +1,8 @@
 #ifndef UI_CONFIG_TAB_HH
 #define UI_CONFIG_TAB_HH
 
-#include <QWidget>
 #include <QPushButton>
-
+#include <QWidget>
 #include <memory>
 
 namespace commodore {
@@ -17,7 +16,7 @@ class control_tab : public QWidget {
 	Q_OBJECT
 
 public:
-	explicit control_tab(const std::shared_ptr<c64>& c64, QWidget * parent = nullptr);
+	explicit control_tab(const std::shared_ptr<c64> &c64, QWidget *parent = nullptr);
 
 private slots:
 	void boot();
@@ -25,7 +24,6 @@ private slots:
 	void dump_state();
 
 private:
-
 	void update_buttons();
 
 	std::shared_ptr<c64> _c64;
@@ -35,7 +33,7 @@ private:
 	QPushButton *_dump_state_btn;
 };
 
-}
-}
+} // namespace ui
+} // namespace commodore
 
 #endif

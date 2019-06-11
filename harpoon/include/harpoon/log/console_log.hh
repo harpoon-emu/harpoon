@@ -2,6 +2,7 @@
 #define HARPOON_LOG_CONSOLE_LOG_HH
 
 #include "harpoon/harpoon.hh"
+
 #include "harpoon/log/log.hh"
 
 #include <mutex>
@@ -11,11 +12,10 @@ namespace log {
 
 class console_log : public log {
 public:
-
 	virtual ~console_log();
 
 	using log::out;
-	virtual void out(const message& message);
+	virtual void out(const message &message);
 
 	void display_component(bool display = true) {
 		_display_component = display;
@@ -44,12 +44,11 @@ private:
 using console_log_ptr = std::shared_ptr<console_log>;
 using console_log_weak_ptr = std::weak_ptr<console_log>;
 template<typename... Args>
-console_log_ptr make_console_log(Args&&... args) {
+console_log_ptr make_console_log(Args &&... args) {
 	return std::make_shared<console_log>(std::forward<Args>(args)...);
 }
 
-}
-}
+} // namespace log
+} // namespace harpoon
 
 #endif
-

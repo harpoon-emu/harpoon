@@ -11,9 +11,9 @@ class processing_unit;
 template<typename T>
 class instruction_invoker {
 public:
-	instruction_invoker(T& instruction) : _instruction(instruction) {}
-	instruction_invoker(const instruction_invoker<T>&) = default;
-	instruction_invoker<T>& operator=(const instruction_invoker<T>&) = default;
+	instruction_invoker(T &instruction) : _instruction(instruction) {}
+	instruction_invoker(const instruction_invoker<T> &) = default;
+	instruction_invoker<T> &operator=(const instruction_invoker<T> &) = default;
 
 	std::uint_fast64_t operator()(processing_unit *) {
 		_instruction.execute();
@@ -24,8 +24,7 @@ private:
 	T _instruction;
 };
 
-}
-}
+} // namespace execution
+} // namespace harpoon
 
 #endif
-

@@ -31,10 +31,9 @@ public:
 		do_adc(_operand);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "ADC");
 	}
-
 };
 
 class adc_zero_page : public adc<0x65, std::uint8_t, 3> {
@@ -45,10 +44,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "ADC");
 	}
-
 };
 
 class adc_zero_page_x : public adc<0x75, std::uint8_t, 4> {
@@ -59,10 +57,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "ADC");
 	}
-
 };
 
 class adc_absolute : public adc<0x6D, std::uint16_t, 4> {
@@ -73,10 +70,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "ADC");
 	}
-
 };
 
 class adc_absolute_x : public adc<0x7D, std::uint16_t, 4> {
@@ -87,10 +83,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "ADC");
 	}
-
 };
 
 class adc_absolute_y : public adc<0x79, std::uint16_t, 4> {
@@ -101,10 +96,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "ADC");
 	}
-
 };
 
 class adc_indirect_x : public adc<0x61, std::uint8_t, 6> {
@@ -115,10 +109,9 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "ADC");
 	}
-
 };
 
 class adc_indirect_y : public adc<0x71, std::uint8_t, 5> {
@@ -129,16 +122,14 @@ public:
 		do_adc(val);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "ADC");
 	}
-
 };
 
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

@@ -13,7 +13,7 @@ public:
 		set_zero_page(get_cpu()->get_registers().X);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "STX");
 	}
 };
@@ -24,7 +24,7 @@ public:
 		set_zero_page_y(get_cpu()->get_registers().X);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "STX");
 	}
 };
@@ -35,14 +35,13 @@ public:
 		set_absolute(get_cpu()->get_registers().X);
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "STX");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-

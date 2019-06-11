@@ -1,4 +1,5 @@
 #include "c64.hh"
+
 #include "cpu/mos_6510.hh"
 #include "memory/memory.hh"
 
@@ -9,8 +10,7 @@
 
 namespace commodore {
 
-c64::c64(const harpoon::log::log_ptr& log)
-	: harpoon::computer_system("Commodore 64") {
+c64::c64(const harpoon::log::log_ptr &log) : harpoon::computer_system("Commodore 64") {
 	set_log(log);
 }
 
@@ -20,7 +20,8 @@ void c64::create() {
 	create_memory();
 	create_execution_unit();
 
-	auto execution_unit = std::static_pointer_cast<harpoon::execution::up_execution_unit>(get_main_execution_unit());
+	auto execution_unit = std::static_pointer_cast<harpoon::execution::up_execution_unit>(
+	    get_main_execution_unit());
 	auto cpu = std::static_pointer_cast<cpu::mos_6510>(execution_unit->get_processing_unit());
 	auto memory = std::static_pointer_cast<memory::memory>(get_main_memory());
 
@@ -43,7 +44,8 @@ void c64::create_execution_unit() {
 }
 
 void c64::create_memory() {
-	auto main_memory = std::make_shared<memory::memory>("Memory", harpoon::memory::address_range{0, 0xffff});
+	auto main_memory
+	    = std::make_shared<memory::memory>("Memory", harpoon::memory::address_range{0, 0xffff});
 	set_main_memory(main_memory);
 
 	main_memory->create();
@@ -53,4 +55,4 @@ void c64::prepare() {
 	harpoon::computer_system::prepare();
 }
 
-}
+} // namespace commodore

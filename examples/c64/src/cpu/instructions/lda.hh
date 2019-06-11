@@ -8,7 +8,7 @@ namespace cpu {
 namespace instructions {
 
 template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
-class lda : public mos_6510_a_unary_instruction<OP, OPERAND, CYCLES>{};
+class lda : public mos_6510_a_unary_instruction<OP, OPERAND, CYCLES> {};
 
 class lda_immediate : public lda<0xA9, std::uint8_t, 2> {
 public:
@@ -17,10 +17,9 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_immediate(stream, "LDA");
 	}
-
 };
 
 class lda_zero_page : public lda<0xA5, std::uint8_t, 3> {
@@ -30,7 +29,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDA");
 	}
 };
@@ -42,7 +41,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "LDA");
 	}
 };
@@ -54,7 +53,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute(stream, "LDA");
 	}
 };
@@ -66,7 +65,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_x(stream, "LDA");
 	}
 };
@@ -78,7 +77,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_absolute_y(stream, "LDA");
 	}
 };
@@ -90,7 +89,7 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_x(stream, "LDA");
 	}
 };
@@ -102,14 +101,13 @@ public:
 		update_flags_NZ(get_cpu());
 	}
 
-	void disassemble(std::ostream& stream) const {
+	void disassemble(std::ostream &stream) const {
 		mos_disassemble_indirect_y(stream, "LDA");
 	}
 };
 
-}
-}
-}
+} // namespace instructions
+} // namespace cpu
+} // namespace commodore
 
 #endif
-
