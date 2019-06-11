@@ -5,6 +5,7 @@
 
 #include "harpoon/clock/clock.hh"
 
+#include <atomic>
 #include <thread>
 
 namespace harpoon {
@@ -19,14 +20,21 @@ public:
 
 	virtual ~threaded_clock() override {}
 
+	virtual void prepare() override {
+		_waits = 0;
+		_no_waits = 0;
+		_missed_ticks = 0;
+	}
+
 	virtual void boot() override {
 		clock::boot();
+
+		_start = TrivialClock::now();
 
 		_thread.reset(new std::thread([this] {
 			tick current = 0;
 			while (is_running()) {
-				wait_for_tick(current);
-				current++;
+				current = wait_for_tick(current + 1);
 			}
 		}));
 	}
@@ -58,6 +66,14 @@ public:
 
 		if (now < tick_time) {
 			std::this_thread::sleep_for(tick_time - now);
+			_waits++;
+		} else {
+			_missed_ticks
+			    += static_cast<std::uint64_t>(
+			           std::chrono::duration_cast<std::chrono::nanoseconds>(now - tick_time)
+			               .count())
+			       / tick_ns;
+			_no_waits++;
 		}
 		return get_tick();
 	}
@@ -66,9 +82,23 @@ public:
 		return wait_for_tick(get_tick() + tick_count);
 	}
 
+	virtual void log_state(log::message::Level level) const override {
+		clock::log_state(level);
+
+		tick t = get_tick();
+
+		log(component_log(level) << "Tick: " << t);
+		log(component_log(level) << "Waits / no-Waits: " << _waits << " / " << _no_waits);
+		log(component_log(level) << "Missed ticks (total / avg): " << _missed_ticks << " / "
+		                         << (_no_waits != 0 ? _missed_ticks / _no_waits : 0));
+	}
+
 private:
 	std::unique_ptr<std::thread> _thread{};
 	typename TrivialClock::time_point _start{};
+	std::atomic_uint_fast64_t _waits{};
+	std::atomic_uint_fast64_t _no_waits{};
+	std::atomic_uint_fast64_t _missed_ticks{};
 };
 
 template<typename TrivialClock>
