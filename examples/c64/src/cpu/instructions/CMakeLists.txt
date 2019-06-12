@@ -1,10 +1,73 @@
 set(DIR instructions)
 
 set(SOURCE_FILES
+	instruction_step.cc
+	arith_instruction.cc
+	adc.cc
+	and.cc
+	asl.cc
+	bcc.cc
+	bcs.cc
+	beq.cc
+	bit.cc
+	bmi.cc
+	bne.cc
+	bpl.cc
+	brk.cc
+	bvc.cc
+	bvs.cc
+	clc.cc
+	cld.cc
+	cli.cc
+	clv.cc
+	cmp.cc
+	cpx.cc
+	cpy.cc
+	dec.cc
+	dex.cc
+	dey.cc
+	eor.cc
+	inc.cc
+	inx.cc
+	iny.cc
+	jmp.cc
+	jsr.cc
+	lda.cc
+	ldx.cc
+	ldy.cc
+	lsr.cc
+	nop.cc
+	ora.cc
+	pha.cc
+	php.cc
+	pla.cc
+	plp.cc
+	rol.cc
+	ror.cc
+	rti.cc
+	rts.cc
+	sbc.cc
+	sec.cc
+	sed.cc
+	sei.cc
+	sta.cc
+	stx.cc
+	sty.cc
+	tax.cc
+	tay.cc
+	tsx.cc
+	txa.cc
+	txs.cc
+	tya.cc
 	)
 
 set(INCLUDE_FILES
-	mos_6510_instruction.hh
+	instruction_step.hh
+	arith_instruction.hh
+	branch_instruction.hh
+	read_instruction.hh
+	modify_instruction.hh
+	write_instruction.hh
 	mos_6510.hh
 	adc.hh
 	and.hh
@@ -16,6 +79,7 @@ set(INCLUDE_FILES
 	bmi.hh
 	bne.hh
 	bpl.hh
+	brk.hh
 	bvc.hh
 	bvs.hh
 	clc.hh
@@ -40,10 +104,10 @@ set(INCLUDE_FILES
 	lsr.hh
 	nop.hh
 	ora.hh
-	pha.hh
-	php.hh
-	pla.hh
-	plp.hh
+	pha.cc
+	php.cc
+	pla.cc
+	plp.cc
 	rol.hh
 	ror.hh
 	rti.hh

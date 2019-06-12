@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_BEQ_HH
 #define CPU_INSTRUCTIONS_BEQ_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace beq {
 
-class beq : public mos_6510_relative_branch_instruction<0xF0, 3> {
-public:
-	void execute() {
-		branch(get_cpu()->get_registers().P.Z());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_relative(stream, "BEQ");
-	}
+struct relative {
+	static constexpr const std::uint8_t OPCODE = 0xF0;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace beq
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

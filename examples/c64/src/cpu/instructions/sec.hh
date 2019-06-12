@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_SEC_HH
 #define CPU_INSTRUCTIONS_SEC_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace sec {
 
-class sec : public mos_6510_nullary_instruction<0x38, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().P.C() = true;
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "SEC");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x38;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace sec
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

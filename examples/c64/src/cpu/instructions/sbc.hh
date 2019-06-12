@@ -1,133 +1,54 @@
 #ifndef CPU_INSTRUCTIONS_SBC_HH
 #define CPU_INSTRUCTIONS_SBC_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace sbc {
 
-template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
-class sbc : public mos_6510_a_unary_instruction<OP, OPERAND, CYCLES> {
-protected:
-	void do_sbc(std::uint8_t val) {
-		std::uint8_t x = this->get_cpu()->get_registers().A;
-		std::uint8_t y = ~val;
-		std::uint16_t res = {};
-		res = x + y;
-		if (this->get_cpu()->get_registers().P.C()) {
-			res++;
-		}
-		this->get_cpu()->get_registers().A = (res & 0xff);
-		this->update_flags_NZ(this->get_cpu());
-		this->get_cpu()->get_registers().P.V() = (((~(x ^ y)) & (x ^ res) & 0x80) == 0x80);
-		this->get_cpu()->get_registers().P.C() = (res > 0xff);
-	}
+struct immediate {
+	static constexpr const std::uint8_t OPCODE = 0xE9;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_immediate : public sbc<0xE9, std::uint8_t, 2> {
-public:
-	void execute() {
-		do_sbc(_operand);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_immediate(stream, "SBC");
-	}
+struct zero_page {
+	static constexpr const std::uint8_t OPCODE = 0xE5;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_zero_page : public sbc<0xE5, std::uint8_t, 3> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_zero_page(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "SBC");
-	}
+struct zero_page_x {
+	static constexpr const std::uint8_t OPCODE = 0xF5;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_zero_page_x : public sbc<0xF5, std::uint8_t, 4> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_zero_page_x(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "SBC");
-	}
+struct absolute {
+	static constexpr const std::uint8_t OPCODE = 0xED;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_absolute : public sbc<0xED, std::uint16_t, 4> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_absolute(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "SBC");
-	}
+struct absolute_x {
+	static constexpr const std::uint8_t OPCODE = 0xFD;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_absolute_x : public sbc<0xFD, std::uint16_t, 4> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_absolute_x(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "SBC");
-	}
+struct absolute_y {
+	static constexpr const std::uint8_t OPCODE = 0xF9;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_absolute_y : public sbc<0xF9, std::uint16_t, 4> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_absolute_y(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_y(stream, "SBC");
-	}
+struct indirect_x {
+	static constexpr const std::uint8_t OPCODE = 0xE1;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_indirect_x : public sbc<0xE1, std::uint8_t, 6> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_indirect_x(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_indirect_x(stream, "SBC");
-	}
+struct indirect_y {
+	static constexpr const std::uint8_t OPCODE = 0xF1;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class sbc_indirect_y : public sbc<0xF1, std::uint8_t, 5> {
-public:
-	void execute() {
-		std::uint8_t val{};
-		get_indirect_y(val);
-		do_sbc(val);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_indirect_y(stream, "SBC");
-	}
-};
-
-
+} // namespace sbc
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_TXS_HH
 #define CPU_INSTRUCTIONS_TXS_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace txs {
 
-class txs : public mos_6510_nullary_instruction<0x9A, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().SP = get_cpu()->get_registers().X;
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "TXS");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x9A;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace txs
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

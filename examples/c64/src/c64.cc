@@ -3,10 +3,8 @@
 #include "cpu/mos_6510.hh"
 #include "memory/memory.hh"
 
-#include "harpoon/clock/threaded_clock.hh"
+#include "harpoon/clock/clock.hh"
 #include "harpoon/execution/up_execution_unit.hh"
-
-#include <chrono>
 
 namespace commodore {
 
@@ -33,8 +31,7 @@ void c64::create_execution_unit() {
 	auto execution_unit = harpoon::execution::make_up_execution_unit("Execution unit");
 	set_main_execution_unit(execution_unit);
 
-	auto clock
-	    = harpoon::clock::make_threaded_clock<std::chrono::high_resolution_clock>(1000000, "Clock");
+	auto clock = harpoon::clock::make_clock(1000000, "Clock");
 	execution_unit->set_clock(clock);
 
 	auto cpu = std::make_shared<cpu::mos_6510>("MOS 6510");
@@ -53,6 +50,31 @@ void c64::create_memory() {
 
 void c64::prepare() {
 	harpoon::computer_system::prepare();
+}
+
+void c64::boot() {
+	harpoon::computer_system::boot();
+
+	_thread.reset(new std::thread([this] {
+		try {
+			while (is_running()) {
+				step(nullptr);
+			}
+		} catch (harpoon::exception::hardware_component_exception &error) {
+			get_log()->out(log_critical_c(error.get_component()) << error.what());
+		} catch (std::exception &error) {
+			get_log()->out(log_critical << error.what());
+		}
+	}));
+}
+
+void c64::shutdown() {
+	if (_thread) {
+		_thread->join();
+		_thread.reset();
+	}
+
+	harpoon::computer_system::shutdown();
 }
 
 } // namespace commodore

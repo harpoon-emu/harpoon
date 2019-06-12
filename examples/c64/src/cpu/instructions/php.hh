@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_PHP_HH
 #define CPU_INSTRUCTIONS_PHP_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace php {
 
-class php : public mos_6510_nullary_instruction<0x08, 3> {
-public:
-	void execute() {
-		push(static_cast<std::uint8_t>(get_cpu()->get_registers().P.get_flags()));
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "PHP");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x08;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace php
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

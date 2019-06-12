@@ -1,45 +1,29 @@
 #ifndef CPU_INSTRUCTIONS_STX_HH
 #define CPU_INSTRUCTIONS_STX_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace stx {
 
-class stx_zero_page : public mos_6510_unary_instruction<0x86, std::uint8_t, 3> {
-public:
-	void execute() {
-		set_zero_page(get_cpu()->get_registers().X);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "STX");
-	}
+struct zero_page {
+	static constexpr const std::uint8_t OPCODE = 0x86;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class stx_zero_page_y : public mos_6510_unary_instruction<0x96, std::uint8_t, 4> {
-public:
-	void execute() {
-		set_zero_page_y(get_cpu()->get_registers().X);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_y(stream, "STX");
-	}
+struct zero_page_y {
+	static constexpr const std::uint8_t OPCODE = 0x96;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class stx_absolute : public mos_6510_unary_instruction<0x8E, std::uint16_t, 4> {
-public:
-	void execute() {
-		set_absolute(get_cpu()->get_registers().X);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "STX");
-	}
+struct absolute {
+	static constexpr const std::uint8_t OPCODE = 0x8E;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace stx
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

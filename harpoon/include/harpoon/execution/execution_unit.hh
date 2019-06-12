@@ -19,7 +19,9 @@ public:
 		return _clock.lock();
 	}
 
-	virtual ~execution_unit();
+	virtual void step(hardware_component *trigger) override;
+
+	virtual ~execution_unit() override;
 
 private:
 	clock::clock_weak_ptr _clock{};

@@ -13,8 +13,6 @@ class up_execution_unit : public execution_unit {
 public:
 	using execution_unit::execution_unit;
 
-	virtual ~up_execution_unit();
-
 	void set_processing_unit(const processing_unit_ptr &processing_unit) {
 		replace_component(_processing_unit, processing_unit);
 		_processing_unit = processing_unit;
@@ -23,6 +21,10 @@ public:
 	processing_unit_ptr get_processing_unit() const {
 		return _processing_unit.lock();
 	}
+
+	virtual void prepare() override;
+
+	virtual ~up_execution_unit() override;
 
 private:
 	processing_unit_weak_ptr _processing_unit{};

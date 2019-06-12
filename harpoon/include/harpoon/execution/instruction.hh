@@ -4,38 +4,50 @@
 #include "harpoon/harpoon.hh"
 
 #include <functional>
+#include <vector>
 
 namespace harpoon {
 namespace execution {
 
 class processing_unit;
 
-using instruction_handler = std::function<std::uint_fast64_t(processing_unit *)>;
-using disassemble_handler = std::function<void(std::ostream &)>;
-
-template<typename CPU>
 class instruction {
 public:
-	static constexpr const std::uint_fast64_t CYCLES_DECODE = 0;
-	static constexpr const std::uint_fast64_t CYCLES_EXECUTE = 0;
-	static constexpr const std::uint32_t OPCODE = 0x00;
-	static constexpr const std::size_t LENGTH = 0;
+	using step_handler = std::function<std::uint32_t(const instruction &)>;
+	using disassemble_handler = std::function<void(std::ostream &)>;
 
-	void decode() {}
-	void execute() {}
-	void disassemble(std::ostream &) const {}
+	using step_handlers = std::pair<step_handler, step_handler>;
 
-	void set_cpu(CPU *cpu) {
-		_cpu = cpu;
+	instruction() {}
+	instruction(processing_unit *processing_unit, std::vector<step_handlers> &&steps)
+	    : _processing_unit{processing_unit}, _step_handlers{steps}, _step{0} {}
+
+	std::uint32_t step() {
+		auto delay = _step_handlers[_step].first(*this);
+		if (delay == 0) {
+			delay = _step_handlers[_step].second(*this);
+			_step++;
+		}
+		return delay;
 	}
 
-protected:
-	CPU *get_cpu() const {
-		return _cpu;
+	bool done() const {
+		return _step == _step_handlers.size();
+	}
+
+	processing_unit *get_processing_unit() const {
+		return _processing_unit;
+	}
+
+	std::uint32_t get_step() const {
+		return _step;
 	}
 
 private:
-	CPU *_cpu{};
+	processing_unit *_processing_unit{};
+	std::vector<step_handlers> _step_handlers{};
+	disassemble_handler _disassemble_handler{};
+	std::uint32_t _step{};
 };
 
 } // namespace execution

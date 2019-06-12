@@ -1,76 +1,39 @@
 #ifndef CPU_INSTRUCTIONS_LDY_HH
 #define CPU_INSTRUCTIONS_LDY_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace ldy {
 
-template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
-class ldy : public mos_6510_y_unary_instruction<OP, OPERAND, CYCLES> {};
-
-class ldy_immediate : public ldy<0xA0, std::uint8_t, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().Y = _operand;
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_immediate(stream, "LDY");
-	}
+struct immediate {
+	static constexpr const std::uint8_t OPCODE = 0xA0;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class ldy_zero_page : public ldy<0xA4, std::uint8_t, 3> {
-public:
-	void execute() {
-		get_zero_page(get_cpu()->get_registers().Y);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "LDY");
-	}
+struct zero_page {
+	static constexpr const std::uint8_t OPCODE = 0xA4;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class ldy_zero_page_x : public ldy<0xB4, std::uint8_t, 4> {
-public:
-	void execute() {
-		get_zero_page_x(get_cpu()->get_registers().Y);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "LDY");
-	}
+struct zero_page_x {
+	static constexpr const std::uint8_t OPCODE = 0xB4;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class ldy_absolute : public ldy<0xAC, std::uint16_t, 4> {
-public:
-	void execute() {
-		get_absolute(get_cpu()->get_registers().Y);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "LDY");
-	}
+struct absolute {
+	static constexpr const std::uint8_t OPCODE = 0xAC;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class ldy_absolute_x : public ldy<0xBC, std::uint16_t, 4> {
-public:
-	void execute() {
-		get_absolute_x(get_cpu()->get_registers().Y);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "LDY");
-	}
+struct absolute_x {
+	static constexpr const std::uint8_t OPCODE = 0xBC;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-
+} // namespace ldy
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

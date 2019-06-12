@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_SED_HH
 #define CPU_INSTRUCTIONS_SED_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace sed {
 
-class sed : public mos_6510_nullary_instruction<0xF8, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().P.D() = true;
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "SED");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0xF8;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace sed
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

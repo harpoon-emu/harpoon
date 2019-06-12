@@ -10,5 +10,9 @@ void execution_unit::set_clock(const harpoon::clock::clock_ptr &clock) {
 	_clock = clock;
 }
 
+void execution_unit::step(hardware_component *) {
+	_clock.lock()->step(this);
+}
+
 } // namespace execution
 } // namespace harpoon

@@ -1,24 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_INX_HH
 #define CPU_INSTRUCTIONS_INX_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace inx {
 
-class inx : public mos_6510_x_nullary_instruction<0xE8, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().X++;
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "INX");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0xE8;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace inx
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

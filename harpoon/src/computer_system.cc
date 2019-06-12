@@ -15,6 +15,8 @@ void computer_system::set_main_memory(const memory::memory_weak_ptr &main_memory
 	_main_memory = main_memory;
 }
 
-void computer_system::run() {}
+void computer_system::step(hardware_component *) {
+	_main_execution_unit.lock()->step(this);
+}
 
 } // namespace harpoon

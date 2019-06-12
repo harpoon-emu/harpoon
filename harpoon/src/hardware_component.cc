@@ -84,6 +84,8 @@ void hardware_component::boot() {
 	_running = true;
 }
 
+void hardware_component::step(hardware_component *) {}
+
 void hardware_component::shutdown() {
 	log(component_notice << "Shutdown");
 	_running = false;

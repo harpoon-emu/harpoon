@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_CLV_HH
 #define CPU_INSTRUCTIONS_CLV_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace clv {
 
-class clv : public mos_6510_nullary_instruction<0xB8, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().P.V() = false;
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "CLV");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0xB8;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace clv
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

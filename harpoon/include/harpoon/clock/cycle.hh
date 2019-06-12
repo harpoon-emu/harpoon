@@ -1,5 +1,5 @@
-#ifndef HARPOON_CLOCK_TICK_HH
-#define HARPOON_CLOCK_TICK_HH
+#ifndef HARPOON_CLOCK_CYCLE_HH
+#define HARPOON_CLOCK_CYCLE_HH
 
 #include "harpoon/harpoon.hh"
 
@@ -8,8 +8,10 @@
 namespace harpoon {
 namespace clock {
 
-using tick = std::uint_fast64_t;
-using atomic_tick = std::atomic_uint_fast64_t;
+struct cycle {
+	std::uint64_t tick;
+	std::uint64_t phase;
+};
 
 } // namespace clock
 } // namespace harpoon

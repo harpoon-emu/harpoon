@@ -1,24 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_DEY_HH
 #define CPU_INSTRUCTIONS_DEY_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace dey {
 
-class dey : public mos_6510_y_nullary_instruction<0x88, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().Y--;
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "DEY");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x88;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace dey
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

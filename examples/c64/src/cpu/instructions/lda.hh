@@ -1,111 +1,55 @@
 #ifndef CPU_INSTRUCTIONS_LDA_HH
 #define CPU_INSTRUCTIONS_LDA_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace lda {
 
-template<std::uint8_t OP, typename OPERAND, std::uint_fast64_t CYCLES>
-class lda : public mos_6510_a_unary_instruction<OP, OPERAND, CYCLES> {};
-
-class lda_immediate : public lda<0xA9, std::uint8_t, 2> {
-public:
-	void execute() {
-		this->get_cpu()->get_registers().A = _operand;
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_immediate(stream, "LDA");
-	}
+struct immediate {
+	static constexpr const std::uint8_t OPCODE = 0xA9;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_zero_page : public lda<0xA5, std::uint8_t, 3> {
-public:
-	void execute() {
-		get_zero_page(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "LDA");
-	}
+struct zero_page {
+	static constexpr const std::uint8_t OPCODE = 0xA5;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_zero_page_x : public lda<0xB5, std::uint8_t, 4> {
-public:
-	void execute() {
-		get_zero_page_x(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "LDA");
-	}
+struct zero_page_x {
+	static constexpr const std::uint8_t OPCODE = 0xB5;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_absolute : public lda<0xAD, std::uint16_t, 4> {
-public:
-	void execute() {
-		get_absolute(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute(stream, "LDA");
-	}
+struct absolute {
+	static constexpr const std::uint8_t OPCODE = 0xAD;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_absolute_x : public lda<0xBD, std::uint16_t, 4> {
-public:
-	void execute() {
-		get_absolute_x(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_x(stream, "LDA");
-	}
+struct absolute_x {
+	static constexpr const std::uint8_t OPCODE = 0xBD;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_absolute_y : public lda<0xB9, std::uint16_t, 4> {
-public:
-	void execute() {
-		get_absolute_y(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_absolute_y(stream, "LDA");
-	}
+struct absolute_y {
+	static constexpr const std::uint8_t OPCODE = 0xB9;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_indirect_x : public lda<0xA1, std::uint8_t, 6> {
-public:
-	void execute() {
-		get_indirect_x(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_indirect_x(stream, "LDA");
-	}
+struct indirect_x {
+	static constexpr const std::uint8_t OPCODE = 0xA1;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
-class lda_indirect_y : public lda<0xB1, std::uint8_t, 5> {
-public:
-	void execute() {
-		get_indirect_y(get_cpu()->get_registers().A);
-		update_flags_NZ(get_cpu());
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble_indirect_y(stream, "LDA");
-	}
+struct indirect_y {
+	static constexpr const std::uint8_t OPCODE = 0xB1;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+
+} // namespace lda
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

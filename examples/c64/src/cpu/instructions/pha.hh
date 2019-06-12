@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_PHA_HH
 #define CPU_INSTRUCTIONS_PHA_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace pha {
 
-class pha : public mos_6510_nullary_instruction<0x48, 3> {
-public:
-	void execute() {
-		push(get_cpu()->get_registers().A);
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "PHA");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x48;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace pha
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore

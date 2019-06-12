@@ -17,6 +17,10 @@ namespace harpoon {
 
 class hardware_component;
 
+namespace clock {
+class clock;
+}
+
 /** std::shared_ptr pointing to hardware_component object */
 using hardware_component_ptr = std::shared_ptr<hardware_component>;
 
@@ -87,6 +91,11 @@ public:
 	 * @brief Boot component. Called during system startup stage (booting).
 	 */
 	virtual void boot();
+
+	/**
+	 * @brief Perform one step of operation (for one clock cycle)
+	 */
+	virtual void step(hardware_component *trigger);
 
 	/**
 	 * @brief Shutdown component. Called during system shutdown stage.

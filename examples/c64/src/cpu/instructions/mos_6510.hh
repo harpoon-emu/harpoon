@@ -11,6 +11,7 @@
 #include "bmi.hh"
 #include "bne.hh"
 #include "bpl.hh"
+#include "brk.hh"
 #include "bvc.hh"
 #include "bvs.hh"
 #include "clc.hh"

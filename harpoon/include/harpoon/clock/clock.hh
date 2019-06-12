@@ -3,39 +3,53 @@
 
 #include "harpoon/harpoon.hh"
 
-#include "harpoon/clock/tick.hh"
+#include "harpoon/clock/cycle.hh"
 #include "harpoon/hardware_component.hh"
+
+#include <functional>
+#include <map>
 
 namespace harpoon {
 namespace clock {
 
 class clock : public hardware_component {
 public:
+	using step_handler = std::function<void(clock *)>;
+
 	using hardware_component::hardware_component;
-	clock(std::uint32_t frequency = 1, const std::string &name = "")
+	clock(std::uint64_t frequency = 1, const std::string &name = "")
 	    : hardware_component(name), _frequency(frequency) {}
 
-	void set_frequency(std::uint32_t frequency) {
+	void set_frequency(std::uint64_t frequency) {
 		_frequency = frequency;
 	}
 
-	std::uint32_t get_frequency() const {
+	std::uint64_t get_frequency() const {
 		return _frequency;
 	}
 
-	virtual tick get_tick() const = 0;
-	virtual tick wait_for_tick(tick tick) = 0;
-	virtual tick wait_tick(std::uint_fast64_t tick_count = 1) = 0;
+	const cycle &get_cycle() const {
+		return _cycle;
+	}
 
 	virtual void boot() override;
 	virtual void shutdown() override;
+	virtual void step(hardware_component *trigger) override;
+
+	void schedule(std::uint64_t delay, std::uint64_t phase, step_handler &&fn);
 
 	virtual void log_state(log::message::Level level) const override;
 
 	virtual ~clock() override;
 
+protected:
+	void next_tick();
+
 private:
-	std::uint32_t _frequency{};
+	std::uint64_t _frequency{};
+	cycle _cycle{};
+
+	std::multimap<std::pair<std::uint64_t, std::uint64_t>, step_handler> _handlers{};
 };
 
 using clock_ptr = std::shared_ptr<clock>;

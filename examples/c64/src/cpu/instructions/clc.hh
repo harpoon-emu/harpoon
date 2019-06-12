@@ -1,23 +1,19 @@
 #ifndef CPU_INSTRUCTIONS_CLC_HH
 #define CPU_INSTRUCTIONS_CLC_HH
 
-#include "mos_6510_instruction.hh"
+#include "harpoon/execution/instruction.hh"
 
 namespace commodore {
 namespace cpu {
 namespace instructions {
+namespace clc {
 
-class clc : public mos_6510_nullary_instruction<0x18, 2> {
-public:
-	void execute() {
-		get_cpu()->get_registers().P.C() = false;
-	}
-
-	void disassemble(std::ostream &stream) const {
-		mos_disassemble(stream, "CLC");
-	}
+struct implied {
+	static constexpr const std::uint8_t OPCODE = 0x18;
+	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
 };
 
+} // namespace clc
 } // namespace instructions
 } // namespace cpu
 } // namespace commodore
