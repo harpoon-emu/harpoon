@@ -18,6 +18,7 @@ int main(int argc, char **argv) {
 
 		if (vm.count("help")) {
 			std::cout << desc << std::endl;
+			return 0;
 		}
 
 		std::shared_ptr<c64::cli::console_log> log;
