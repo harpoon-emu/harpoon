@@ -10,7 +10,7 @@ namespace instructions {
 namespace bne {
 
 harpoon::execution::instruction relative::factory(harpoon::execution::processing_unit *cpu) {
-	return relative_branch_factory<&mos_6510::get_flag_Z, false>(cpu);
+	return relative_branch_factory<&mos_6510::get_flag_Z, false>(cpu, MNEMONIC);
 }
 
 } // namespace bne

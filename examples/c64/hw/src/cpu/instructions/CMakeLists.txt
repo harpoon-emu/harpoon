@@ -3,6 +3,7 @@ set(DIR instructions)
 set(SOURCE_FILES
 	instruction_step.cc
 	arith_instruction.cc
+	disassembler.cc
 	adc.cc
 	and.cc
 	asl.cc
@@ -68,6 +69,7 @@ set(INCLUDE_FILES
 	read_instruction.hh
 	modify_instruction.hh
 	write_instruction.hh
+	disassembler.hh
 	mos_6510.hh
 	adc.hh
 	and.hh

@@ -10,7 +10,8 @@ namespace instructions {
 namespace tya {
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
-	return transfer_register_factory<std::uint8_t, &mos_6510::get_Y, &mos_6510::set_A, true>(cpu);
+	return transfer_register_factory<std::uint8_t, &mos_6510::get_Y, &mos_6510::set_A, true>(
+	    cpu, MNEMONIC);
 }
 
 } // namespace tya

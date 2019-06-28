@@ -14,35 +14,35 @@ template<void (instruction_step::*fetch)(std::uint8_t &, bool)>
 using arith_adc = accumulator_arith<&arith::adc, fetch>;
 
 harpoon::execution::instruction immediate::factory(harpoon::execution::processing_unit *cpu) {
-	return immediate_read_factory<arith_adc>(cpu);
+	return immediate_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction zero_page::factory(harpoon::execution::processing_unit *cpu) {
-	return zero_page_read_factory<arith_adc>(cpu);
+	return zero_page_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction zero_page_x::factory(harpoon::execution::processing_unit *cpu) {
-	return zero_page_index_read_factory<arith_adc, &mos_6510::get_X>(cpu);
+	return zero_page_x_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction absolute::factory(harpoon::execution::processing_unit *cpu) {
-	return absolute_read_factory<arith_adc>(cpu);
+	return absolute_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction absolute_x::factory(harpoon::execution::processing_unit *cpu) {
-	return absolute_index_read_factory<arith_adc, &mos_6510::get_X>(cpu);
+	return absolute_x_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction absolute_y::factory(harpoon::execution::processing_unit *cpu) {
-	return absolute_index_read_factory<arith_adc, &mos_6510::get_Y>(cpu);
+	return absolute_y_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction indirect_x::factory(harpoon::execution::processing_unit *cpu) {
-	return indirect_x_read_factory<arith_adc>(cpu);
+	return indirect_x_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction indirect_y::factory(harpoon::execution::processing_unit *cpu) {
-	return indirect_y_read_factory<arith_adc>(cpu);
+	return indirect_y_read_factory<arith_adc>(cpu, MNEMONIC);
 }
 
 } // namespace adc

@@ -24,6 +24,9 @@ public:
 
 	virtual void prepare() override;
 
+	virtual void enable_disassemble() override;
+	virtual void disable_disassemble() override;
+
 	virtual ~up_execution_unit() override;
 
 private:

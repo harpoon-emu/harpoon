@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace php {
 
+static constexpr const char *MNEMONIC = "PHP";
+
 struct implied {
 	static constexpr const std::uint8_t OPCODE = 0x08;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

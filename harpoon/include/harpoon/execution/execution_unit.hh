@@ -21,6 +21,17 @@ public:
 
 	virtual void step(hardware_component *trigger) override;
 
+	virtual void enable_disassemble() = 0;
+	virtual void disable_disassemble() = 0;
+
+	void set_disassemble(bool d) {
+		if (d) {
+			enable_disassemble();
+		} else {
+			disable_disassemble();
+		}
+	}
+
 	virtual ~execution_unit() override;
 
 private:

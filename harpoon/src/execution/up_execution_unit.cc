@@ -12,5 +12,13 @@ void up_execution_unit::prepare() {
 	    0, 0, [this](hardware_component *trigger) { get_processing_unit()->step(trigger); });
 }
 
+void up_execution_unit::enable_disassemble() {
+	get_processing_unit()->enable_disassemble();
+}
+
+void up_execution_unit::disable_disassemble() {
+	get_processing_unit()->disable_disassemble();
+}
+
 } // namespace execution
 } // namespace harpoon

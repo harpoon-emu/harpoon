@@ -15,23 +15,23 @@ template<void (instruction_step::*store)(std::uint8_t)>
 using arith_asl = rmw_arith<&arith::asl, store>;
 
 harpoon::execution::instruction accumulator::factory(harpoon::execution::processing_unit *cpu) {
-	return accumulator_arith_factory<&arith::asl>(cpu);
+	return accumulator_arith_factory<&arith::asl>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction zero_page::factory(harpoon::execution::processing_unit *cpu) {
-	return zero_page_modify_factory<arith_asl>(cpu);
+	return zero_page_modify_factory<arith_asl>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction zero_page_x::factory(harpoon::execution::processing_unit *cpu) {
-	return zero_page_index_modify_factory<arith_asl, &mos_6510::get_X>(cpu);
+	return zero_page_x_modify_factory<arith_asl>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction absolute::factory(harpoon::execution::processing_unit *cpu) {
-	return absolute_modify_factory<arith_asl>(cpu);
+	return absolute_modify_factory<arith_asl>(cpu, MNEMONIC);
 }
 
 harpoon::execution::instruction absolute_x::factory(harpoon::execution::processing_unit *cpu) {
-	return absolute_index_modify_factory<arith_asl, &mos_6510::get_X>(cpu);
+	return absolute_x_modify_factory<arith_asl>(cpu, MNEMONIC);
 }
 
 } // namespace asl

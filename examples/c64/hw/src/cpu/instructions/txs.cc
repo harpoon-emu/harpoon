@@ -10,7 +10,8 @@ namespace instructions {
 namespace txs {
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
-	return transfer_register_factory<std::uint8_t, &mos_6510::get_X, &mos_6510::set_SP, false>(cpu);
+	return transfer_register_factory<std::uint8_t, &mos_6510::get_X, &mos_6510::set_SP, false>(
+	    cpu, MNEMONIC);
 }
 
 } // namespace txs

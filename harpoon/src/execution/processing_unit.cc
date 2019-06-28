@@ -40,6 +40,12 @@ std::uint32_t processing_unit::execute_instruction() {
 	return _current_instruction.step();
 }
 
+void processing_unit::disassemble_instruction() {
+	std::stringstream stream;
+	_current_instruction.disassemble(stream);
+	log(component_debug << stream.str());
+}
+
 void processing_unit::log_state(harpoon::log::message::Level level) const {
 	hardware_component::log_state(level);
 	log(component_log(level) << "Executed instructions: " << _executed_instructions);

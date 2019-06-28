@@ -2,6 +2,7 @@
 #define CPU_INSTRUCTIONS_INSTRUCTION_STEP_HH
 
 #include "../mos_6510.hh"
+#include "disassembler.hh"
 
 #include "harpoon/execution/instruction.hh"
 
@@ -272,8 +273,13 @@ harpoon::execution::instruction::step_handlers make_instruction_step() {
 }
 
 template<void (mos_6510::*set_f)(bool), bool value>
-harpoon::execution::instruction set_flag_factory(harpoon::execution::processing_unit *cpu) {
-	return harpoon::execution::instruction(cpu, {make_instruction_step<set_flag<set_f, value>>()});
+harpoon::execution::instruction set_flag_factory(harpoon::execution::processing_unit *cpu,
+                                                 const std::string &mnemonic) {
+	return harpoon::execution::instruction(cpu,
+	                                       {
+	                                           make_instruction_step<set_flag<set_f, value>>(),
+	                                       },
+	                                       disassembler::implied(mnemonic));
 }
 
 } // namespace instructions

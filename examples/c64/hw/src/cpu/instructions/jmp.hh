@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace jmp {
 
+static constexpr const char *MNEMONIC = "JMP";
+
 struct absolute {
 	static constexpr const std::uint8_t OPCODE = 0x4C;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

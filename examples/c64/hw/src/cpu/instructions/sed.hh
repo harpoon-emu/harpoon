@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace sed {
 
+static constexpr const char *MNEMONIC = "SED";
+
 struct implied {
 	static constexpr const std::uint8_t OPCODE = 0xF8;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

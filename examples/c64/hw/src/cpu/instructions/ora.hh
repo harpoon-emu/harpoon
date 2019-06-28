@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace ora {
 
+static constexpr const char *MNEMONIC = "ORA";
+
 struct immediate {
 	static constexpr const std::uint8_t OPCODE = 0x09;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

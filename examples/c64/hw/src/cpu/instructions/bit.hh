@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace bit {
 
+static constexpr const char *MNEMONIC = "BIT";
+
 struct zero_page {
 	static constexpr const std::uint8_t OPCODE = 0x24;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

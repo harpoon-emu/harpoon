@@ -2,6 +2,7 @@
 #define CPU_INSTRUCTIONS_ARITH_INSTRUCTION_HH
 
 #include "../mos_6510.hh"
+#include "disassembler.hh"
 #include "instruction_step.hh"
 
 #include <functional>
@@ -153,17 +154,25 @@ using implied_arith16 = implied_arith<std::uint16_t, get_reg, op, set_reg, updat
 
 template<std::uint8_t (mos_6510::*get_reg)() const, void (arith::*op)(std::uint8_t &, bool),
          void (mos_6510::*set_reg)(std::uint8_t)>
-harpoon::execution::instruction implied_arith_factory(harpoon::execution::processing_unit *cpu) {
+harpoon::execution::instruction implied_arith_factory(harpoon::execution::processing_unit *cpu,
+                                                      const std::string &mnemonic) {
 	return harpoon::execution::instruction(
-	    cpu, {make_instruction_step<implied_arith8<get_reg, op, set_reg, true>>()});
+	    cpu,
+	    {
+	        make_instruction_step<implied_arith8<get_reg, op, set_reg, true>>(),
+	    },
+	    disassembler::implied(mnemonic));
 }
 
 template<void (arith::*op)(std::uint8_t &, bool)>
-harpoon::execution::instruction
-accumulator_arith_factory(harpoon::execution::processing_unit *cpu) {
+harpoon::execution::instruction accumulator_arith_factory(harpoon::execution::processing_unit *cpu,
+                                                          const std::string &mnemonic) {
 	return harpoon::execution::instruction(
 	    cpu,
-	    {make_instruction_step<implied_arith8<&mos_6510::get_A, op, &mos_6510::set_A, true>>()});
+	    {
+	        make_instruction_step<implied_arith8<&mos_6510::get_A, op, &mos_6510::set_A, true>>(),
+	    },
+	    disassembler::accumulator(mnemonic));
 }
 
 template<void (arith::*op)(std::uint8_t &, std::uint8_t, bool),

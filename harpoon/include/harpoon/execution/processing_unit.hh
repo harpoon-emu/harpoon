@@ -50,6 +50,10 @@ public:
 
 	void set_current_instruction(const instruction &instruction) {
 		_current_instruction = instruction;
+		_executed_instructions++;
+		if (_disassemble) {
+			disassemble_instruction();
+		}
 	}
 
 	const instruction &get_current_instruction() const {
@@ -57,6 +61,8 @@ public:
 	}
 
 	std::uint32_t execute_instruction();
+
+	virtual void disassemble_instruction();
 
 	virtual void log_state(log::message::Level level = log::message::Level::DEBUG) const override;
 	virtual void log_registers(log::message::Level level) const;

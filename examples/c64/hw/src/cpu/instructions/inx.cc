@@ -10,7 +10,7 @@ namespace instructions {
 namespace inx {
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
-	return implied_arith_factory<&mos_6510::get_X, &arith::inc, &mos_6510::set_X>(cpu);
+	return implied_arith_factory<&mos_6510::get_X, &arith::inc, &mos_6510::set_X>(cpu, MNEMONIC);
 }
 
 } // namespace inx

@@ -14,13 +14,13 @@ class processing_unit;
 class instruction {
 public:
 	using step_handler = std::function<std::uint32_t(const instruction &)>;
-	using disassemble_handler = std::function<void(std::ostream &)>;
+	using disassemble_handler = std::function<void(const instruction &, std::ostream &)>;
 
 	using step_handlers = std::pair<step_handler, step_handler>;
 
 	instruction() {}
-	instruction(processing_unit *processing_unit, std::vector<step_handlers> &&steps)
-	    : _processing_unit{processing_unit}, _step_handlers{steps}, _step{0} {}
+	instruction(processing_unit *processing_unit, std::vector<step_handlers> &&steps, const disassemble_handler& d_hndl)
+	    : _processing_unit{processing_unit}, _step_handlers{steps}, _disassemble_handler(d_hndl), _step{0} {}
 
 	std::uint32_t step() {
 		auto delay = _step_handlers[_step].first(*this);
@@ -29,6 +29,12 @@ public:
 			_step++;
 		}
 		return delay;
+	}
+
+	void disassemble(std::ostream &s) {
+		if (_disassemble_handler) {
+			_disassemble_handler(*this, s);
+		}
 	}
 
 	bool done() const {

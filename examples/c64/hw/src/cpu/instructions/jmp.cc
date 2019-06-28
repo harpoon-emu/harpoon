@@ -1,6 +1,7 @@
 #include "jmp.hh"
 
 #include "../mos_6510.hh"
+#include "disassembler.hh"
 #include "read_instruction.hh"
 
 namespace c64 {
@@ -51,15 +52,23 @@ void fetch_pch::execute() {
 }
 
 harpoon::execution::instruction absolute::factory(harpoon::execution::processing_unit *cpu) {
-	return harpoon::execution::instruction(
-	    cpu, {make_instruction_step<fetch_program_code>(), make_instruction_step<set_pc>()});
+	return harpoon::execution::instruction(cpu,
+	                                       {
+	                                           make_instruction_step<fetch_program_code>(),
+	                                           make_instruction_step<set_pc>(),
+	                                       },
+	                                       disassembler::absolute(MNEMONIC));
 }
 
 harpoon::execution::instruction indirect::factory(harpoon::execution::processing_unit *cpu) {
-	return harpoon::execution::instruction(cpu, {make_instruction_step<fetch_program_code>(),
-	                                             make_instruction_step<fetch_program_code>(),
-	                                             make_instruction_step<fetch_pcl>(),
-	                                             make_instruction_step<fetch_pch>()});
+	return harpoon::execution::instruction(cpu,
+	                                       {
+	                                           make_instruction_step<fetch_program_code>(),
+	                                           make_instruction_step<fetch_program_code>(),
+	                                           make_instruction_step<fetch_pcl>(),
+	                                           make_instruction_step<fetch_pch>(),
+	                                       },
+	                                       disassembler::indirect(MNEMONIC));
 }
 
 } // namespace jmp

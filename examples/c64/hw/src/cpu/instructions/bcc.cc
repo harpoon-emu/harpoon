@@ -10,7 +10,7 @@ namespace instructions {
 namespace bcc {
 
 harpoon::execution::instruction relative::factory(harpoon::execution::processing_unit *cpu) {
-	return relative_branch_factory<&mos_6510::get_flag_C, false>(cpu);
+	return relative_branch_factory<&mos_6510::get_flag_C, false>(cpu, MNEMONIC);
 }
 
 } // namespace bcc

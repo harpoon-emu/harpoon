@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace iny {
 
+static constexpr const char *MNEMONIC = "INY";
+
 struct implied {
 	static constexpr const std::uint8_t OPCODE = 0xC8;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);

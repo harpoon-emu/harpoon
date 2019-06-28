@@ -2,6 +2,7 @@
 #define CPU_INSTRUCTIONS_BRANCH_INSTRUCTION_HH
 
 #include "../mos_6510.hh"
+#include "disassembler.hh"
 #include "instruction_step.hh"
 
 #include <functional>
@@ -34,9 +35,12 @@ public:
 };
 
 template<bool (mos_6510::*get_flag)() const, bool V>
-harpoon::execution::instruction relative_branch_factory(harpoon::execution::processing_unit *cpu) {
-	return harpoon::execution::instruction(cpu, {make_instruction_step<fetch_program_code>(),
-	                                             make_instruction_step<branch_on<get_flag, V>>()});
+harpoon::execution::instruction relative_branch_factory(harpoon::execution::processing_unit *cpu,
+                                                        const std::string &mnemonic) {
+	return harpoon::execution::instruction(cpu,
+	                                       {make_instruction_step<fetch_program_code>(),
+	                                        make_instruction_step<branch_on<get_flag, V>>()},
+	                                       disassembler::relative(mnemonic));
 }
 
 } // namespace instructions

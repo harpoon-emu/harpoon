@@ -1,6 +1,7 @@
 #include "brk.hh"
 
 #include "../mos_6510.hh"
+#include "disassembler.hh"
 #include "read_instruction.hh"
 
 namespace c64 {
@@ -23,12 +24,14 @@ public:
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
 	return harpoon::execution::instruction(
-	    cpu, {make_instruction_step<fetch_program_code>(), make_instruction_step<internal_read>(),
-	          make_instruction_step<stack_push<&mos_6510::get_PCH>>(),
-	          make_instruction_step<stack_push<&mos_6510::get_PCL>>(),
-	          make_instruction_step<stack_push<&mos_6510::get_P>>(),
-	          make_instruction_step<set_pc<0xFFFE, &mos_6510::set_PCL>>(),
-	          make_instruction_step<set_pc<0xFFFF, &mos_6510::set_PCH>>()});
+	    cpu,
+	    {make_instruction_step<fetch_program_code>(), make_instruction_step<internal_read>(),
+	     make_instruction_step<stack_push<&mos_6510::get_PCH>>(),
+	     make_instruction_step<stack_push<&mos_6510::get_PCL>>(),
+	     make_instruction_step<stack_push<&mos_6510::get_P>>(),
+	     make_instruction_step<set_pc<0xFFFE, &mos_6510::set_PCL>>(),
+	     make_instruction_step<set_pc<0xFFFF, &mos_6510::set_PCH>>()},
+	    disassembler::implied(MNEMONIC));
 }
 
 } // namespace brk

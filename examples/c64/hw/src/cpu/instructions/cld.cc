@@ -10,7 +10,7 @@ namespace instructions {
 namespace cld {
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
-	return set_flag_factory<&mos_6510::set_flag_D, false>(cpu);
+	return set_flag_factory<&mos_6510::set_flag_D, false>(cpu, MNEMONIC);
 }
 
 } // namespace cld

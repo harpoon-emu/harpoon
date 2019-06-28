@@ -9,6 +9,8 @@ namespace cpu {
 namespace instructions {
 namespace asl {
 
+static constexpr const char *MNEMONIC = "ASL";
+
 struct accumulator {
 	static constexpr const std::uint8_t OPCODE = 0x0A;
 	static harpoon::execution::instruction factory(harpoon::execution::processing_unit *cpu);
