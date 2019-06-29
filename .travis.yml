@@ -8,10 +8,21 @@ branches:
 
 matrix:
   include:
-    - compiler: gcc
-      env: GCC_VERSION=5.4
-    - compiler: clang
-      env: LLVM_VERSION=7
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-9
+      env:
+        - MATRIX_EVAL="CC=gcc-9 && CXX=g++-9"
+    - os: linux
+      compiler: clang
+
+before_install:
+  - eval "${MATRIX_EVAL}"
 
 install:
   - sudo apt-get install -qq qt5-default
@@ -21,7 +32,7 @@ before_script:
   - cd build
   - cmake ..
 
-script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then make ; fi
+script: make
 
 addons:
   coverity_scan:
@@ -30,5 +41,5 @@ addons:
       description: "Build submitted via Travis CI"
     notification_email: michalwy@gmail.com
     build_command_prepend: ""
-    build_command:   "make"
+    build_command: "make"
     branch_pattern: coverity_scan
