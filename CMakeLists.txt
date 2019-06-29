@@ -8,7 +8,7 @@ project(harpoon)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 	set(CMAKE_COMMON_CXX_FLAGS
-		-std=c++11
+		-std=c++14
 		-Werror
 		-Weverything
 		-Wno-c++98-compat
@@ -22,7 +22,7 @@ endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 	set(CMAKE_COMMON_CXX_FLAGS
-		-std=c++11
+		-std=c++14
 		-Wall
 		-Werror
 		)
