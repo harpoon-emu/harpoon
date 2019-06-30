@@ -49,34 +49,5 @@ void c64::create_memory() {
 	main_memory->create();
 }
 
-void c64::prepare() {
-	harpoon::computer_system::prepare();
-}
-
-void c64::boot() {
-	harpoon::computer_system::boot();
-
-	_thread.reset(new std::thread([this] {
-		try {
-			while (is_running()) {
-				step(nullptr);
-			}
-		} catch (harpoon::exception::hardware_component_exception &error) {
-			get_log()->out(log_critical_c(error.get_component()) << error.what());
-		} catch (std::exception &error) {
-			get_log()->out(log_critical << error.what());
-		}
-	}));
-}
-
-void c64::shutdown() {
-	if (_thread) {
-		_thread->join();
-		_thread.reset();
-	}
-
-	harpoon::computer_system::shutdown();
-}
-
 } // namespace hw
 } // namespace c64

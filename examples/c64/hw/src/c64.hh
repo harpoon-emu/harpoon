@@ -18,15 +18,9 @@ public:
 
 	void create();
 
-	virtual void prepare() override;
-	virtual void boot() override;
-	virtual void shutdown() override;
-
 private:
 	void create_execution_unit();
 	void create_memory();
-
-	std::unique_ptr<std::thread> _thread{};
 };
 
 } // namespace hw

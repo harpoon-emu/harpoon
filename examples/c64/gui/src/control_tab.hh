@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QWidget>
 #include <memory>
+#include <thread>
 
 namespace c64 {
 
@@ -28,6 +29,8 @@ private:
 	void update_buttons();
 
 	std::shared_ptr<hw::c64> _c64;
+
+	std::unique_ptr<std::thread> _thread{};
 
 	QPushButton *_boot_btn;
 	QPushButton *_shutdown_btn;

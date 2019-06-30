@@ -34,12 +34,19 @@ control_tab::control_tab(const std::shared_ptr<hw::c64> &c64, QWidget *parent) :
 void control_tab::boot() {
 	_c64->prepare();
 	_c64->boot();
+
+	_thread.reset(new std::thread([this] { _c64->run(); }));
+
 	update_buttons();
 }
 
 void control_tab::shutdown() {
 	if (_c64->is_running()) {
 		_c64->shutdown();
+		if (_thread) {
+			_thread->join();
+			_thread.reset();
+		}
 	}
 	update_buttons();
 }
