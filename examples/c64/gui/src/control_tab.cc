@@ -1,6 +1,6 @@
 #include "control_tab.hh"
 
-#include "../hw/c64.hh"
+#include "c64.hh"
 
 #include <QHBoxLayout>
 #include <QPushButton>

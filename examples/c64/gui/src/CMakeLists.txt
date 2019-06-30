@@ -1,6 +1,8 @@
-set(DIR ui)
+set(DIR src)
+set(BASE_INCLUDE_DIR src)
 
 set(SOURCE_FILES
+	main.cc
 	main_window.cc
 	log_window.cc
 	control_tab.cc

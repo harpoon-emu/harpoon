@@ -1,6 +1,6 @@
 #include "main_window.hh"
 
-#include "../hw/c64.hh"
+#include "c64.hh"
 #include "control_tab.hh"
 #include "log_window.hh"
 #include "qt_log.hh"
