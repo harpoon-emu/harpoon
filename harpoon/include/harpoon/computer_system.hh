@@ -27,6 +27,8 @@ public:
 
 	virtual void step(hardware_component *trigger) override;
 
+	virtual void run();
+
 	virtual ~computer_system() override;
 
 private:
