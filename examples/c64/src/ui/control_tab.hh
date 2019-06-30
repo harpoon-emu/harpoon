@@ -5,18 +5,19 @@
 #include <QWidget>
 #include <memory>
 
-namespace commodore {
-class c64;
-}
+namespace c64 {
 
-namespace commodore {
+namespace hw {
+class c64;
+} // namespace hw
+
 namespace ui {
 
 class control_tab : public QWidget {
 	Q_OBJECT
 
 public:
-	explicit control_tab(const std::shared_ptr<c64> &c64, QWidget *parent = nullptr);
+	explicit control_tab(const std::shared_ptr<hw::c64> &c64, QWidget *parent = nullptr);
 
 private slots:
 	void boot();
@@ -26,7 +27,7 @@ private slots:
 private:
 	void update_buttons();
 
-	std::shared_ptr<c64> _c64;
+	std::shared_ptr<hw::c64> _c64;
 
 	QPushButton *_boot_btn;
 	QPushButton *_shutdown_btn;
@@ -34,6 +35,6 @@ private:
 };
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64
 
 #endif

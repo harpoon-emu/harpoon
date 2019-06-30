@@ -1,6 +1,6 @@
 #include "log_window.hh"
 
-namespace commodore {
+namespace c64 {
 namespace ui {
 
 log_window::log_window(QWidget *parent) : QTextEdit(parent) {
@@ -18,4 +18,4 @@ void log_window::log_message(const harpoon::log::message &message) {
 }
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64

@@ -1,6 +1,6 @@
 #include "main_window.hh"
 
-#include "../c64.hh"
+#include "../hw/c64.hh"
 #include "control_tab.hh"
 #include "log_window.hh"
 #include "qt_log.hh"
@@ -10,7 +10,7 @@
 #include <QDockWidget>
 #include <QTabWidget>
 
-namespace commodore {
+namespace c64 {
 namespace ui {
 
 main_window::main_window(QWidget *parent) : QMainWindow(parent) {
@@ -32,7 +32,7 @@ main_window::main_window(QWidget *parent) : QMainWindow(parent) {
 	                 SLOT(log_message(const harpoon::log::message &)), Qt::QueuedConnection);
 
 	try {
-		_c64 = std::make_shared<commodore::c64>(_log);
+		_c64 = std::make_shared<hw::c64>(_log);
 		_c64->create();
 	} catch (harpoon::exception::hardware_component_exception &error) {
 		_log->out(log_critical_c(error.get_component()) << error.what());
@@ -51,4 +51,4 @@ main_window::~main_window() {
 }
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64

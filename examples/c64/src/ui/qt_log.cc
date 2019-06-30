@@ -1,6 +1,6 @@
 #include "qt_log.hh"
 
-namespace commodore {
+namespace c64 {
 namespace ui {
 
 qt_log::~qt_log() {
@@ -12,4 +12,4 @@ void qt_log::out(const harpoon::log::message &message) {
 }
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64

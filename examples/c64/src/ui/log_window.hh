@@ -5,7 +5,7 @@
 
 #include <QTextEdit>
 
-namespace commodore {
+namespace c64 {
 namespace ui {
 
 class log_window : public QTextEdit {
@@ -19,6 +19,6 @@ public slots:
 };
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64
 
 #endif

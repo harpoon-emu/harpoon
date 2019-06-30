@@ -6,11 +6,14 @@
 
 QT_FORWARD_DECLARE_CLASS(QTabWidget)
 
-namespace commodore {
-class c64;
-}
+namespace c64 {
 
-namespace commodore {
+namespace hw {
+
+class c64;
+
+} // namespace hw
+
 namespace ui {
 
 class log_window;
@@ -22,7 +25,7 @@ class main_window : public QMainWindow {
 	QTabWidget *_tab_widget;
 	log_window *_log_window;
 	std::shared_ptr<qt_log> _log;
-	std::shared_ptr<c64> _c64;
+	std::shared_ptr<hw::c64> _c64;
 
 public:
 	main_window(QWidget *parent = nullptr);
@@ -31,6 +34,6 @@ public:
 };
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64
 
 #endif

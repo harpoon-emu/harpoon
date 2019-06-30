@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
 	QApplication app(argc, argv);
-	commodore::ui::main_window main_window;
+	c64::ui::main_window main_window;
 	main_window.show();
 	app.exec();
 }

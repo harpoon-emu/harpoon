@@ -7,7 +7,7 @@
 
 Q_DECLARE_METATYPE(harpoon::log::message)
 
-namespace commodore {
+namespace c64 {
 namespace ui {
 
 class log_window;
@@ -45,6 +45,6 @@ private:
 };
 
 } // namespace ui
-} // namespace commodore
+} // namespace c64
 
 #endif
