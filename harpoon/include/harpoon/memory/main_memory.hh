@@ -18,10 +18,10 @@ public:
 	main_memory(const main_memory &) = delete;
 	main_memory &operator=(const main_memory &) = delete;
 
-	void add_memory(const memory_weak_ptr &memory, bool owner = true);
-	void remove_memory(const memory_weak_ptr &memory, bool owner = true);
-	void replace_memory(const memory_weak_ptr &old_memory, const memory_weak_ptr &new_memory,
-	                    bool owner = true);
+	virtual void add_memory(const memory_weak_ptr &memory, bool owner = true);
+	virtual void remove_memory(const memory_weak_ptr &memory, bool owner = true);
+	virtual void replace_memory(const memory_weak_ptr &old_memory,
+	                            const memory_weak_ptr &new_memory, bool owner = true);
 
 	virtual ~main_memory() override;
 
