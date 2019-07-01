@@ -16,11 +16,17 @@ public:
 
 	virtual ~c64() override;
 
+	void enable_flat_memory() {
+		_flat_memory = true;
+	}
+
 	void create();
 
 private:
 	void create_execution_unit();
 	void create_memory();
+
+	bool _flat_memory{false};
 };
 
 } // namespace hw

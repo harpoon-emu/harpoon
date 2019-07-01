@@ -1,6 +1,8 @@
 #include "c64.hh"
 
 #include "cpu/mos_6510.hh"
+#include "memory/compound_memory.hh"
+#include "memory/flat_memory.hh"
 #include "memory/memory.hh"
 
 #include "harpoon/clock/clock.hh"
@@ -24,7 +26,9 @@ void c64::create() {
 	auto cpu = std::static_pointer_cast<cpu::mos_6510>(execution_unit->get_processing_unit());
 	auto memory = std::static_pointer_cast<memory::memory>(get_main_memory());
 
-	memory->add_memory(cpu->get_zero_page());
+	if (!_flat_memory) {
+		memory->add_memory(cpu->get_zero_page());
+	}
 	cpu->set_memory(memory);
 }
 
@@ -42,8 +46,15 @@ void c64::create_execution_unit() {
 }
 
 void c64::create_memory() {
-	auto main_memory
-	    = std::make_shared<memory::memory>("Memory", harpoon::memory::address_range{0, 0xffff});
+	memory::memory_ptr main_memory;
+
+	if (_flat_memory) {
+		main_memory = std::make_shared<memory::flat_memory>(
+		    "Memory", harpoon::memory::address_range{0, 0xffff});
+	} else {
+		main_memory = std::make_shared<memory::compound_memory>(
+		    "Memory", harpoon::memory::address_range{0, 0xffff});
+	}
 	set_main_memory(main_memory);
 
 	main_memory->create();
