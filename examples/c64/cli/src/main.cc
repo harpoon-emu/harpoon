@@ -4,13 +4,18 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 
+static void set_options_description(boost::program_options::options_description &desc) {
+	desc.add_options()("help,h", "produce help message");
+	desc.add_options()("disassemble,d", "disassemble executed instructions");
+	desc.add_options()("flat-memory,f",
+	                   "use flat memory (no ROM, no I/O, don't load KERNAL and ROM");
+}
+
 int main(int argc, char **argv) {
 
 	try {
 		boost::program_options::options_description desc("Allowed options");
-
-		desc.add_options()("help,h", "produce help message");
-		desc.add_options()("disassemble,d", "disassemble executed instructions");
+		set_options_description(desc);
 
 		boost::program_options::variables_map vm;
 		boost::program_options::store(boost::program_options::parse_command_line(argc, argv, desc),
@@ -27,6 +32,10 @@ int main(int argc, char **argv) {
 
 		log = std::make_shared<c64::cli::console_log>();
 		c64 = std::make_shared<c64::hw::c64>(log);
+
+		if (vm.count("flat-memory")) {
+			c64->enable_flat_memory();
+		}
 
 		c64->create();
 
