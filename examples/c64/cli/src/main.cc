@@ -10,6 +10,7 @@ int main(int argc, char **argv) {
 		boost::program_options::options_description desc("Allowed options");
 
 		desc.add_options()("help,h", "produce help message");
+		desc.add_options()("disassemble,d", "disassemble executed instructions");
 
 		boost::program_options::variables_map vm;
 		boost::program_options::store(boost::program_options::parse_command_line(argc, argv, desc),
@@ -26,7 +27,13 @@ int main(int argc, char **argv) {
 
 		log = std::make_shared<c64::cli::console_log>();
 		c64 = std::make_shared<c64::hw::c64>(log);
+
 		c64->create();
+
+		if (vm.count("disassemble")) {
+			c64->get_main_execution_unit()->enable_disassemble();
+		}
+
 		c64->prepare();
 		c64->boot();
 		c64->run();
