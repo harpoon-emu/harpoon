@@ -72,6 +72,10 @@ public:
 		return _memory.lock();
 	}
 
+	void set_init_PC(std::uint16_t v) {
+		_init_PC = v;
+	}
+
 	const struct registers &get_registers() const {
 		return _registers;
 	}
@@ -260,6 +264,8 @@ private:
 	std::uint8_t _latch{};
 	union internal_memory_access _internal_memory_access {};
 	std::uint16_t _indirect_pointer{};
+
+	std::uint16_t _init_PC{0xFFFF};
 
 	std::uint8_t _prev_IR{};
 };

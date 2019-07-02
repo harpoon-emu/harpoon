@@ -30,7 +30,7 @@ void mos_6510::init_registers() {
 	_registers.A = 0xaa;
 	_registers.X = 0;
 	_registers.Y = 0;
-	_registers.PC = 0;
+	_registers.PC = _init_PC;
 	_registers.SP = 0;
 	_registers.IR = 0;
 	_registers.SP--;
@@ -244,8 +244,10 @@ void mos_6510::step(hardware_component *trigger) {
 }
 
 void mos_6510::boot_sequence() {
-	auto memory = get_memory();
-	memory->get(RESET_VECTOR, _registers.PC);
+	if (_registers.PC == 0xFFFF) {
+		auto memory = get_memory();
+		memory->get(RESET_VECTOR, _registers.PC);
+	}
 	fetch_opcode();
 	decode_instruction();
 
