@@ -60,5 +60,11 @@ void c64::create_memory() {
 	main_memory->create();
 }
 
+std::shared_ptr<cpu::mos_6510> c64::get_mos_6510() const {
+	auto execution_unit = std::static_pointer_cast<harpoon::execution::up_execution_unit>(
+	    get_main_execution_unit());
+	return std::static_pointer_cast<cpu::mos_6510>(execution_unit->get_processing_unit());
+}
+
 } // namespace hw
 } // namespace c64

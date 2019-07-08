@@ -16,7 +16,7 @@ endforeach()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-find_package(Boost COMPONENTS program_options REQUIRED)
+find_package(Boost COMPONENTS program_options regex REQUIRED)
 
 add_executable(c64-cli
 	${SOURCES}

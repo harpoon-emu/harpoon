@@ -10,6 +10,10 @@
 namespace c64 {
 namespace hw {
 
+namespace cpu {
+class mos_6510;
+}
+
 class c64 : public harpoon::computer_system {
 public:
 	c64(const harpoon::log::log_ptr &log);
@@ -21,6 +25,8 @@ public:
 	}
 
 	void create();
+
+	std::shared_ptr<cpu::mos_6510> get_mos_6510() const;
 
 private:
 	void create_execution_unit();

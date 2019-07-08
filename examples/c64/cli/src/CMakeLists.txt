@@ -7,6 +7,7 @@ set(SOURCE_FILES
 	)
 
 set(INCLUDE_FILES
+	integer.hh
 	console_log.hh
 	)
 
