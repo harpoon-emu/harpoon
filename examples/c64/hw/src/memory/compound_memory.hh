@@ -19,8 +19,6 @@ public:
 
 	virtual void prepare() override;
 
-	virtual void shutdown() override;
-
 	void add_read_memory(const harpoon::memory::memory_weak_ptr &memory);
 	void add_write_memory(const harpoon::memory::memory_weak_ptr &memory);
 	virtual void add_memory(const harpoon::memory::memory_weak_ptr &memory,

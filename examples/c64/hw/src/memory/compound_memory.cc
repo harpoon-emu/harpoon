@@ -130,19 +130,6 @@ void compound_memory::prepare() {
 	load_basic();
 }
 
-void compound_memory::shutdown() {
-	harpoon::memory::serializer::binary_file mem0100("ram_0100.bin");
-	_ram_0100_3fff.lock()->serialize(mem0100);
-
-	harpoon::memory::serializer::binary_file mem4000("ram_4000.bin");
-	_ram_4000_7fff.lock()->serialize(mem4000);
-
-	harpoon::memory::serializer::binary_file memd000("ram_d000.bin");
-	_ram_d000_dfff.lock()->serialize(memd000);
-
-	harpoon::memory::main_memory::shutdown();
-}
-
 void compound_memory::load_kernal() {
 	harpoon::memory::serializer::binary_file kernal_bin("kernal.rom");
 	_kernal_e000_ffff.lock()->deserialize(kernal_bin);
