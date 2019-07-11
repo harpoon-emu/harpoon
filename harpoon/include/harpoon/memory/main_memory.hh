@@ -23,6 +23,9 @@ public:
 	virtual void replace_memory(const memory_weak_ptr &old_memory,
 	                            const memory_weak_ptr &new_memory, bool owner = true);
 
+	virtual void serialize(serializer::serializer &serializer) override;
+	virtual void deserialize(deserializer::deserializer &deserializer) override;
+
 	virtual ~main_memory() override;
 
 protected:

@@ -33,6 +33,18 @@ void main_memory::replace_memory(const memory_weak_ptr &old_memory,
 	add_memory(new_memory, owner);
 }
 
+void main_memory::serialize(serializer::serializer &serializer) {
+	for (const auto &memory : _memory) {
+		memory.lock()->serialize(serializer);
+	}
+}
+
+void main_memory::deserialize(deserializer::deserializer &deserializer) {
+	for (const auto &memory : _memory) {
+		memory.lock()->deserialize(deserializer);
+	}
+}
+
 memory_ptr main_memory::get_memory(address address) {
 	if (!_last_used_memory.expired() && _last_used_range.has_address(address)) {
 		return _last_used_memory.lock();
