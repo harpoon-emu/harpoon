@@ -37,6 +37,10 @@ static void set_options_description(boost::program_options::options_description 
 	desc.add_options()("no-basic,b", boost::program_options::bool_switch()->default_value(false),
 	                   "do not load BASIC (has no effect if BASIC image is loaded using --load "
 	                   "option)");
+	desc.add_options()(
+	    "terminate-at,T",
+	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
+	    "terminate and dump MOS 6510 state when PC equal to address");
 }
 
 int main(int argc, char **argv) {
@@ -88,6 +92,23 @@ int main(int argc, char **argv) {
 		for (auto &l : loads) {
 			harpoon::memory::deserializer::binary_file d(l.address, l.file);
 			c64->get_main_memory()->deserialize(d);
+		}
+
+		if (!vm["terminate-at"].empty()) {
+			for (auto b : vm["terminate-at"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
+				mos_6510->add_breakpoint(
+				    {[b](harpoon::execution::processing_unit *processing_unit) -> bool {
+					     c64::hw::cpu::mos_6510 *mos
+					         = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
+					     return mos->get_PC() - 1 == b;
+				     },
+				     [&c64](harpoon::execution::processing_unit *processing_unit) {
+					     c64::hw::cpu::mos_6510 *mos
+					         = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
+					     mos->log_state();
+					     c64->shutdown();
+				     }});
+			}
 		}
 
 		c64->boot();
