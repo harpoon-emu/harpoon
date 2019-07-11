@@ -16,8 +16,7 @@ public:
 	binary_file(address base, const std::string &file_name);
 
 protected:
-	virtual void do_open_memory_block();
-	virtual std::size_t do_read(uint8_t *data, std::size_t offset, std::size_t length);
+	virtual std::size_t do_read(const memory *memory, uint8_t *data, const address_range &range);
 
 private:
 	std::string _file_name{};

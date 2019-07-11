@@ -65,9 +65,7 @@ void linear_memory::serialize(serializer::serializer &serializer) {
 }
 
 void linear_memory::deserialize(deserializer::deserializer &deserializer) {
-	deserializer.open_memory_block(this);
-	deserializer.read(_memory.get(), static_cast<std::size_t>(get_address_range().get_length()));
-	deserializer.close_memory_block();
+	deserializer.read(this, _memory.get(), get_address_range());
 }
 
 } // namespace memory

@@ -83,21 +83,21 @@ void chunked_memory::serialize(serializer::serializer &serializer) {
 }
 
 void chunked_memory::deserialize(deserializer::deserializer &deserializer) {
-	deserializer.open_memory_block(this);
-
 	for (address address = get_address_range().get_start(); address < get_address_range().get_end();
 	     address += _chunk_length) {
+
+		address_range cr{address, address + _chunk_length - 1};
+		if (!deserializer.has_range(cr)) {
+			continue;
+		}
+
 		chunk_ptr &chunk = get_chunk(address);
 		if (!chunk) {
 			allocate_chunk(chunk, address);
 		}
-		if (deserializer.read(chunk.get(), address - get_address_range().get_start(), _chunk_length)
-		    < _chunk_length) {
-			return;
-		}
-	}
 
-	deserializer.close_memory_block();
+		deserializer.read(this, chunk.get(), cr);
+	}
 }
 
 } // namespace memory
