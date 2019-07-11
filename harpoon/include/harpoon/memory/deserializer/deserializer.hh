@@ -14,6 +14,10 @@ class deserializer {
 public:
 	deserializer(const address_range &range) : _range(range) {}
 
+	const address_range &get_range() const {
+		return _range;
+	}
+
 	virtual void open_memory_block(const memory *memory);
 	virtual void open_memory_block(const memory *memory, const address_range &range);
 
@@ -25,8 +29,8 @@ public:
 	virtual ~deserializer();
 
 protected:
-	const address_range &get_range() const {
-		return _range;
+	void set_range(const address_range &range) {
+		_range = range;
 	}
 
 	const memory *get_block_memory() const {

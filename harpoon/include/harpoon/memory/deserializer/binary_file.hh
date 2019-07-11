@@ -13,7 +13,7 @@ namespace deserializer {
 
 class binary_file : public deserializer {
 public:
-	binary_file(const address_range &range, const std::string &file_name);
+	binary_file(address base, const std::string &file_name);
 
 protected:
 	virtual void do_open_memory_block();
