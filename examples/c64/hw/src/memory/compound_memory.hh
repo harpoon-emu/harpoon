@@ -19,6 +19,9 @@ public:
 
 	virtual void prepare() override;
 
+	virtual void serialize(harpoon::memory::serializer::serializer &serializer) override;
+	virtual void deserialize(harpoon::memory::deserializer::deserializer &deserializer) override;
+
 	void add_read_memory(const harpoon::memory::memory_weak_ptr &memory);
 	void add_write_memory(const harpoon::memory::memory_weak_ptr &memory);
 	virtual void add_memory(const harpoon::memory::memory_weak_ptr &memory,

@@ -130,6 +130,14 @@ void compound_memory::prepare() {
 	load_basic();
 }
 
+void compound_memory::serialize(harpoon::memory::serializer::serializer &serializer) {
+	_read_memory.lock()->serialize(serializer);
+}
+
+void compound_memory::deserialize(harpoon::memory::deserializer::deserializer &deserializer) {
+	_write_memory.lock()->deserialize(deserializer);
+}
+
 void compound_memory::load_kernal() {
 	harpoon::memory::deserializer::binary_file kernal_bin(
 	    _kernal_e000_ffff.lock()->get_address_range(), "kernal.rom");
