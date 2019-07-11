@@ -7,6 +7,7 @@
 #include "harpoon/memory/deserializer/binary_file.hh"
 
 #include <boost/program_options.hpp>
+#include <functional>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -41,6 +42,10 @@ static void set_options_description(boost::program_options::options_description 
 	    "terminate-at,T",
 	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
 	    "terminate and dump MOS 6510 state when PC equal to address");
+	desc.add_options()(
+	    "dump-state-at,D",
+	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
+	    "dump MOS 6510 state when PC equal to address");
 }
 
 int main(int argc, char **argv) {
@@ -94,20 +99,32 @@ int main(int argc, char **argv) {
 			c64->get_main_memory()->deserialize(d);
 		}
 
+		auto b_test = [](c64::cli::integer<std::uint16_t> b,
+		                 harpoon::execution::processing_unit *processing_unit) -> bool {
+			c64::hw::cpu::mos_6510 *mos = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
+			return mos->get_PC() - 1 == b;
+		};
+
+		auto b_action = [&c64](bool shutdown,
+		                       harpoon::execution::processing_unit *processing_unit) {
+			c64::hw::cpu::mos_6510 *mos = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
+			mos->log_state();
+			if (shutdown) {
+				c64->shutdown();
+			}
+		};
+
 		if (!vm["terminate-at"].empty()) {
 			for (auto b : vm["terminate-at"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
-				mos_6510->add_breakpoint(
-				    {[b](harpoon::execution::processing_unit *processing_unit) -> bool {
-					     c64::hw::cpu::mos_6510 *mos
-					         = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
-					     return mos->get_PC() - 1 == b;
-				     },
-				     [&c64](harpoon::execution::processing_unit *processing_unit) {
-					     c64::hw::cpu::mos_6510 *mos
-					         = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
-					     mos->log_state();
-					     c64->shutdown();
-				     }});
+				mos_6510->add_breakpoint({std::bind(b_test, b, std::placeholders::_1),
+				                          std::bind(b_action, true, std::placeholders::_1)});
+			}
+		}
+
+		if (!vm["dump-state-at"].empty()) {
+			for (auto b : vm["dump-state-at"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
+				mos_6510->add_breakpoint({std::bind(b_test, b, std::placeholders::_1),
+				                          std::bind(b_action, false, std::placeholders::_1)});
 			}
 		}
 
