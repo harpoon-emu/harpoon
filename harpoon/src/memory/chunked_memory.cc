@@ -76,7 +76,8 @@ void chunked_memory::serialize(serializer::serializer &serializer) {
 	for (address address = get_address_range().get_start(); address < get_address_range().get_end();
 	     address += _chunk_length) {
 		chunk_ptr &chunk = get_chunk(address);
-		serializer.write(chunk.get(), _chunk_length, !chunk);
+		serializer.write(chunk.get(), address - get_address_range().get_start(), _chunk_length,
+		                 !chunk);
 	}
 	serializer.finalize_memory_block();
 }
@@ -90,7 +91,8 @@ void chunked_memory::deserialize(deserializer::deserializer &deserializer) {
 		if (!chunk) {
 			allocate_chunk(chunk, address);
 		}
-		if (deserializer.read(chunk.get(), _chunk_length) < _chunk_length) {
+		if (deserializer.read(chunk.get(), address - get_address_range().get_start(), _chunk_length)
+		    < _chunk_length) {
 			return;
 		}
 	}
