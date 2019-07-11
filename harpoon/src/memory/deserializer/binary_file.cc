@@ -17,7 +17,7 @@ binary_file::binary_file(address base, const std::string &file_name)
 	}
 
 	_input.seekg(0, _input.end);
-	set_range({base, base + static_cast<address>(_input.tellg())});
+	set_range({base, base + static_cast<address>(_input.tellg()) - 1});
 	_input.seekg(0, _input.beg);
 }
 
