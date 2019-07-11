@@ -10,7 +10,7 @@ namespace instructions {
 namespace tax {
 
 harpoon::execution::instruction implied::factory(harpoon::execution::processing_unit *cpu) {
-	return transfer_register_factory<std::uint8_t, &mos_6510::get_A, &mos_6510::set_Y, true>(
+	return transfer_register_factory<std::uint8_t, &mos_6510::get_A, &mos_6510::set_X, true>(
 	    cpu, MNEMONIC);
 }
 
