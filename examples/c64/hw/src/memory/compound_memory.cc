@@ -60,7 +60,6 @@ void compound_memory::create() {
 	ram = make_chunked_random_access_memory("RAM $A000",
 	                                        harpoon::memory::address_range{0xa000, 0xbfff}, 1024);
 	add_component(ram);
-	read_memory->add_memory(ram, false);
 	write_memory->add_memory(ram, false);
 
 	ram = make_chunked_random_access_memory("RAM $C000",
