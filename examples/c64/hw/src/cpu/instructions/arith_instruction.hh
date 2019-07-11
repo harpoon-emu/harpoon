@@ -95,8 +95,8 @@ public:
 
 	void bit(std::uint8_t &a, std::uint8_t m, bool) {
 		update_flags_NZ(static_cast<std::uint8_t>(a & m));
-		get_cpu()->set_flag_V((a & 0x40) == 0x40);
-		get_cpu()->set_flag_N((a & 0x80) == 0x80);
+		get_cpu()->set_flag_V((m & 0x40) == 0x40);
+		get_cpu()->set_flag_N((m & 0x80) == 0x80);
 	}
 
 	void adc(std::uint8_t &v, std::uint8_t operand, bool update_nzcv = true) {
