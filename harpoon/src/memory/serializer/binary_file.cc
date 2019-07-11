@@ -6,42 +6,30 @@ namespace harpoon {
 namespace memory {
 namespace serializer {
 
-void binary_file::start_memory_block(const harpoon::memory::memory *memory,
-                                     const harpoon::memory::address_range &address_range) {
-	_address_range = address_range;
-	_memory = memory;
+binary_file::binary_file(const address_range &range, const std::string &file_name)
+    : serializer(range), _file_name(file_name) {
 	_output.exceptions(std::ofstream::badbit);
-	_output.open(_file_name, std::ios::binary);
+	_output.open(_file_name, std::ios::binary | std::ios::trunc);
 }
 
-std::size_t binary_file::write(const uint8_t *data, std::size_t length, bool sparse) {
+void binary_file::do_start_memory_block() {}
+
+std::size_t binary_file::do_write(uint8_t *data, std::size_t offset, std::size_t length,
+                                  bool sparse) {
+	_output.seekp(static_cast<std::ifstream::off_type>(get_block_range().get_start()
+	                                                   - get_range().get_start() + offset),
+	              _output.beg);
 	if (sparse) {
-		_memory->log(log_debug_c(_memory->get_name() + " => binary_file")
-		             << "Writing " << length << " bytes of sparse buffer to " << _file_name);
-		_output.seekp(static_cast<std::streamsize>(length), std::ios_base::cur);
+		get_block_memory()->log(log_debug_c(get_block_memory()->get_name() + " => binary_file")
+		                        << "Writing " << length << " bytes of sparse buffer to "
+		                        << _file_name);
+		_output.seekp(static_cast<std::ifstream::off_type>(length), _output.cur);
 	} else {
-		_memory->log(log_debug_c(_memory->get_name() + " => binary_file")
-		             << "Writing " << length << " bytes to " << _file_name);
+		get_block_memory()->log(log_debug_c(get_block_memory()->get_name() + " => binary_file")
+		                        << "Writing " << length << " bytes to " << _file_name);
 		_output.write(reinterpret_cast<const char *>(data), static_cast<std::streamsize>(length));
 	}
 	return length;
-}
-
-void binary_file::end_memory_block() {}
-
-void binary_file::seek_memory_block(const harpoon::memory::memory *memory,
-                                    const harpoon::memory::address_range &address_range) {
-	_address_range = address_range;
-	_memory = memory;
-	_input.exceptions(std::ifstream::badbit);
-	_input.open(_file_name, std::ios::binary);
-}
-
-std::size_t binary_file::read(std::uint8_t *data, std::size_t length) {
-	_memory->log(log_debug_c("binary_file => " + _memory->get_name())
-	             << "Reading " << length << " bytes from " << _file_name);
-	_input.read(reinterpret_cast<char *>(data), static_cast<std::streamsize>(length));
-	return static_cast<std::size_t>(_input.gcount());
 }
 
 } // namespace serializer

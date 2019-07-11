@@ -29,9 +29,9 @@ private:
 };
 
 #define COMPONENT_EXCEPTION(EXCEPTION, ...) \
-	MAKE_HARPOON_EXCEPTION(EXCEPTION, this->get_name(), __VA_ARGS__)
+	HARPOON_EXCEPTION(EXCEPTION, this->get_name(), __VA_ARGS__)
 
-#define COMPONENT_EXCEPTION0(EXCEPTION) MAKE_HARPOON_EXCEPTION(EXCEPTION, this->get_name())
+#define COMPONENT_EXCEPTION0(EXCEPTION) HARPOON_EXCEPTION(EXCEPTION, this->get_name())
 
 } // namespace exception
 } // namespace harpoon

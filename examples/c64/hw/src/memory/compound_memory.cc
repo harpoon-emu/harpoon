@@ -2,9 +2,9 @@
 
 #include "harpoon/memory/chunked_random_access_memory.hh"
 #include "harpoon/memory/chunked_read_only_memory.hh"
+#include "harpoon/memory/deserializer/binary_file.hh"
 #include "harpoon/memory/linear_random_access_memory.hh"
 #include "harpoon/memory/linear_read_only_memory.hh"
-#include "harpoon/memory/serializer/binary_file.hh"
 
 namespace c64 {
 namespace hw {
@@ -131,12 +131,14 @@ void compound_memory::prepare() {
 }
 
 void compound_memory::load_kernal() {
-	harpoon::memory::serializer::binary_file kernal_bin("kernal.rom");
+	harpoon::memory::deserializer::binary_file kernal_bin(
+	    _kernal_e000_ffff.lock()->get_address_range(), "kernal.rom");
 	_kernal_e000_ffff.lock()->deserialize(kernal_bin);
 }
 
 void compound_memory::load_basic() {
-	harpoon::memory::serializer::binary_file basic_bin("basic.rom");
+	harpoon::memory::deserializer::binary_file basic_bin(
+	    _basic_a000_bfff.lock()->get_address_range(), "basic.rom");
 	_basic_a000_bfff.lock()->deserialize(basic_bin);
 }
 

@@ -1,12 +1,12 @@
-set(DIR serializer)
+set(DIR deserializer)
 
 set(SOURCE_FILES
-	serializer.cc
+	deserializer.cc
 	binary_file.cc
 	)
 
 set(INCLUDE_FILES
-	serializer.hh
+	deserializer.hh
 	binary_file.hh
 	)
 

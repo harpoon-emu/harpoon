@@ -41,7 +41,7 @@ Exception make_harpoon_exception(Args &&... args) {
 	return Exception(std::forward<Args>(args)...);
 }
 
-#define MAKE_HARPOON_EXCEPTION(EXCEPTION, ...)                                             \
+#define HARPOON_EXCEPTION(EXCEPTION, ...)                                                  \
 	harpoon::exception::make_harpoon_exception<EXCEPTION>(__VA_ARGS__, __FILE__, __LINE__, \
 	                                                      __FUNCTION__)
 

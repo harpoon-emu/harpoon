@@ -1,5 +1,6 @@
 #include "harpoon/memory/memory.hh"
 
+#include "harpoon/memory/deserializer/deserializer.hh"
 #include "harpoon/memory/serializer/serializer.hh"
 
 namespace harpoon {
@@ -52,12 +53,13 @@ void memory::set(address address, std::uint64_t value) {
 }
 
 void memory::serialize(serializer::serializer &serializer) {
-	serializer.start_memory_block(this, _address_range);
-	serializer.end_memory_block();
+	serializer.start_memory_block(this);
+	serializer.finalize_memory_block();
 }
 
-void memory::deserialize(serializer::serializer &serializer) {
-	serializer.seek_memory_block(this, _address_range);
+void memory::deserialize(deserializer::deserializer &deserializer) {
+	deserializer.open_memory_block(this);
+	deserializer.close_memory_block();
 }
 
 } // namespace memory

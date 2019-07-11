@@ -35,3 +35,4 @@ add_sources()
 
 add_subdirectory(exception)
 add_subdirectory(serializer)
+add_subdirectory(deserializer)

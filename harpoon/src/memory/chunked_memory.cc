@@ -1,5 +1,6 @@
 #include "harpoon/memory/chunked_memory.hh"
 
+#include "harpoon/memory/deserializer/deserializer.hh"
 #include "harpoon/memory/exception/memory_exception.hh"
 #include "harpoon/memory/exception/read_access_violation.hh"
 #include "harpoon/memory/exception/write_access_violation.hh"
@@ -71,17 +72,17 @@ inline void chunked_memory::allocate_chunk(chunk_ptr &chunk, address address) {
 }
 
 void chunked_memory::serialize(serializer::serializer &serializer) {
-	serializer.start_memory_block(this, get_address_range());
+	serializer.start_memory_block(this);
 	for (address address = get_address_range().get_start(); address < get_address_range().get_end();
 	     address += _chunk_length) {
 		chunk_ptr &chunk = get_chunk(address);
 		serializer.write(chunk.get(), _chunk_length, !chunk);
 	}
-	serializer.end_memory_block();
+	serializer.finalize_memory_block();
 }
 
-void chunked_memory::deserialize(serializer::serializer &serializer) {
-	serializer.seek_memory_block(this, get_address_range());
+void chunked_memory::deserialize(deserializer::deserializer &deserializer) {
+	deserializer.open_memory_block(this);
 
 	for (address address = get_address_range().get_start(); address < get_address_range().get_end();
 	     address += _chunk_length) {
@@ -89,10 +90,12 @@ void chunked_memory::deserialize(serializer::serializer &serializer) {
 		if (!chunk) {
 			allocate_chunk(chunk, address);
 		}
-		if (serializer.read(chunk.get(), _chunk_length) < _chunk_length) {
+		if (deserializer.read(chunk.get(), _chunk_length) < _chunk_length) {
 			return;
 		}
 	}
+
+	deserializer.close_memory_block();
 }
 
 } // namespace memory

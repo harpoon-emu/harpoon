@@ -15,6 +15,10 @@ namespace serializer {
 class serializer;
 }
 
+namespace deserializer {
+class deserializer;
+}
+
 class memory;
 
 using memory_ptr = std::shared_ptr<memory>;
@@ -58,7 +62,7 @@ public:
 	void set(address address, std::uint64_t value);
 
 	virtual void serialize(serializer::serializer &serializer);
-	virtual void deserialize(serializer::serializer &serializer);
+	virtual void deserialize(deserializer::deserializer &deserializer);
 
 	virtual ~memory();
 

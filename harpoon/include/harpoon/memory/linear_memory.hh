@@ -19,7 +19,7 @@ public:
 	virtual void cleanup() override;
 
 	virtual void serialize(serializer::serializer &serializer) override;
-	virtual void deserialize(serializer::serializer &serializer) override;
+	virtual void deserialize(deserializer::deserializer &deserializer) override;
 
 	virtual ~linear_memory() override;
 

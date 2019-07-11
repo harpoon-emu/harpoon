@@ -1,5 +1,6 @@
 #include "harpoon/memory/linear_memory.hh"
 
+#include "harpoon/memory/deserializer/deserializer.hh"
 #include "harpoon/memory/exception/memory_exception.hh"
 #include "harpoon/memory/exception/read_access_violation.hh"
 #include "harpoon/memory/exception/write_access_violation.hh"
@@ -58,14 +59,15 @@ void linear_memory::set_cell(address address, uint8_t value) {
 }
 
 void linear_memory::serialize(serializer::serializer &serializer) {
-	serializer.start_memory_block(this, get_address_range());
+	serializer.start_memory_block(this);
 	serializer.write(_memory.get(), static_cast<std::size_t>(get_address_range().get_length()));
-	serializer.end_memory_block();
+	serializer.finalize_memory_block();
 }
 
-void linear_memory::deserialize(serializer::serializer &serializer) {
-	serializer.seek_memory_block(this, get_address_range());
-	serializer.read(_memory.get(), static_cast<std::size_t>(get_address_range().get_length()));
+void linear_memory::deserialize(deserializer::deserializer &deserializer) {
+	deserializer.open_memory_block(this);
+	deserializer.read(_memory.get(), static_cast<std::size_t>(get_address_range().get_length()));
+	deserializer.close_memory_block();
 }
 
 } // namespace memory

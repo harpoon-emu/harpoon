@@ -5,6 +5,7 @@
 
 #include "harpoon/memory/address.hh"
 
+#include <iomanip>
 #include <limits>
 
 namespace harpoon {
@@ -12,7 +13,8 @@ namespace memory {
 
 class address_range {
 public:
-	address_range(const address &start = {}, const address &end = {}) : _start(start), _end(end) {}
+	address_range() {}
+	address_range(const address &start, const address &end) : _start(start), _end(end) {}
 	address_range(const address_range &) = default;
 	address_range &operator=(const address_range &) = default;
 
@@ -68,6 +70,18 @@ public:
 
 	static inline address max() {
 		return std::numeric_limits<address>::max();
+	}
+
+	friend std::ostream &operator<<(std::ostream &stream, const address_range &range) {
+		std::ostream out(stream.rdbuf());
+		out << "[";
+		out << std::hex << std::setw(sizeof(address) * 2) << std::uppercase << std::setfill('0')
+		    << range._start;
+		out << ", ";
+		out << std::hex << std::setw(sizeof(address) * 2) << std::uppercase << std::setfill('0')
+		    << range._end;
+		out << "]";
+		return stream;
 	}
 
 private:
