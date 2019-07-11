@@ -17,8 +17,6 @@ public:
 
 	virtual void create() override;
 
-	virtual void prepare() override;
-
 	virtual void serialize(harpoon::memory::serializer::serializer &serializer) override;
 	virtual void deserialize(harpoon::memory::deserializer::deserializer &deserializer) override;
 
@@ -35,9 +33,6 @@ public:
 	virtual ~compound_memory() override;
 
 private:
-	void load_kernal();
-	void load_basic();
-
 	void create_d000_dfff_area();
 
 	harpoon::memory::main_memory_weak_ptr _read_memory{};

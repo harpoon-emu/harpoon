@@ -31,31 +31,44 @@ public:
 	}
 
 	template<class CharType, class Traits>
-	static void validate(boost::any &v, const std::vector<std::basic_string<CharType, Traits>> &xs,
-	                     integer<T> *, int) {
-
+	bool parse(const std::basic_string<CharType, Traits> &s) {
 		std::stringstream reg_hex;
 		reg_hex << "^(\\$|0x)([0-9a-fA-F]{1," << sizeof(T) * 2 << "})$";
 
 		boost::regex r_c64_hex(reg_hex.str());
 		boost::regex r_c64_dec("^([0-9]+)$");
 
-		boost::program_options::validators::check_first_occurrence(v);
-		const std::string &s = boost::program_options::validators::get_single_string(xs);
-
 		boost::smatch match;
 		std::stringstream ss;
-		int i;
+
 		if (boost::regex_match(s, match, r_c64_hex)) {
 			ss << std::hex << match[2];
 		} else if (boost::regex_match(s, match, r_c64_dec)) {
 			ss << std::dec << match[1];
 		} else {
+			return false;
+		}
+
+		ss >> _value;
+		return true;
+	}
+
+	template<class CharType, class Traits>
+	static void validate(boost::any &v, const std::vector<std::basic_string<CharType, Traits>> &xs,
+	                     integer<T> *, int) {
+
+
+		boost::program_options::validators::check_first_occurrence(v);
+		const std::basic_string<CharType, Traits> &s
+		    = boost::program_options::validators::get_single_string(xs);
+
+		integer<T> i;
+
+		if (!i.parse(s)) {
 			throw boost::program_options::validation_error(
 			    boost::program_options::validation_error::invalid_option_value);
 		}
-		ss >> i;
-		v = boost::any(integer<T>(boost::numeric_cast<T>(i)));
+		v = boost::any(i);
 	}
 
 private:

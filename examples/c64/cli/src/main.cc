@@ -2,9 +2,14 @@
 #include "console_log.hh"
 #include "cpu/mos_6510.hh"
 #include "integer.hh"
+#include "load_argument.hh"
+
+#include "harpoon/memory/deserializer/binary_file.hh"
 
 #include <boost/program_options.hpp>
 #include <iostream>
+#include <string>
+#include <vector>
 
 static void set_options_description(boost::program_options::options_description &desc) {
 	desc.add_options()("help,h", "produce help message");
@@ -16,6 +21,22 @@ static void set_options_description(boost::program_options::options_description 
 	    "init-pc,p",
 	    boost::program_options::value<c64::cli::integer<std::uint16_t>>()->default_value(0xffff),
 	    "initial value of PC register ($FFFF - read from RESET_VECTOR)");
+	desc.add_options()(
+	    "load,l",
+	    boost::program_options::value<std::vector<c64::cli::load_argument>>()->composing(),
+	    "load data from file into memory (ADDRESS:FILE)");
+	desc.add_options()(
+	    "kernal,K", boost::program_options::value<std::string>()->default_value("kernal.rom"),
+	    "load KERNAL from file into $E000-$FFFF (same effect as --load FILE:0xE000)");
+	desc.add_options()("basic,B",
+	                   boost::program_options::value<std::string>()->default_value("basic.rom"),
+	                   "load BASIC from file into $A000-$BFFF (same effect as --load FILE:0xA000)");
+	desc.add_options()(
+	    "no-kernal,k", boost::program_options::bool_switch()->default_value(false),
+	    "do not load KERNAL (has no effect if KERNAL image is loaded using --load option)");
+	desc.add_options()("no-basic,b", boost::program_options::bool_switch()->default_value(false),
+	                   "do not load BASIC (has no effect if BASIC image is loaded using --load "
+	                   "option)");
 }
 
 int main(int argc, char **argv) {
@@ -53,6 +74,22 @@ int main(int argc, char **argv) {
 		mos_6510->set_init_PC(vm["init-pc"].as<c64::cli::integer<std::uint16_t>>());
 
 		c64->prepare();
+
+		std::vector<c64::cli::load_argument> loads;
+		if (!vm["load"].empty()) {
+			loads = vm["load"].as<std::vector<c64::cli::load_argument>>();
+		}
+		if (!vm["no-kernal"].as<bool>()) {
+			loads.push_back({0xE000, vm["kernal"].as<std::string>()});
+		}
+		if (!vm["no-basic"].as<bool>()) {
+			loads.push_back({0xA000, vm["basic"].as<std::string>()});
+		}
+		for (auto &l : loads) {
+			harpoon::memory::deserializer::binary_file d(l.address, l.file);
+			c64->get_main_memory()->deserialize(d);
+		}
+
 		c64->boot();
 		c64->run();
 	} catch (std::exception &e) {

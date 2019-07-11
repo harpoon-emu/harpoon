@@ -122,31 +122,12 @@ void compound_memory::create_d000_dfff_area() {
 	_write_memory.lock()->add_memory(_mplx_d000_dfff, false);
 }
 
-void compound_memory::prepare() {
-	harpoon::memory::main_memory::prepare();
-
-	load_kernal();
-	load_basic();
-}
-
 void compound_memory::serialize(harpoon::memory::serializer::serializer &serializer) {
 	_read_memory.lock()->serialize(serializer);
 }
 
 void compound_memory::deserialize(harpoon::memory::deserializer::deserializer &deserializer) {
-	_write_memory.lock()->deserialize(deserializer);
-}
-
-void compound_memory::load_kernal() {
-	harpoon::memory::deserializer::binary_file kernal_bin(
-	    _kernal_e000_ffff.lock()->get_address_range().get_start(), "kernal.rom");
-	_kernal_e000_ffff.lock()->deserialize(kernal_bin);
-}
-
-void compound_memory::load_basic() {
-	harpoon::memory::deserializer::binary_file basic_bin(
-	    _basic_a000_bfff.lock()->get_address_range().get_start(), "basic.rom");
-	_basic_a000_bfff.lock()->deserialize(basic_bin);
+	_read_memory.lock()->deserialize(deserializer);
 }
 
 void compound_memory::get_cell(harpoon::memory::address address, std::uint8_t &value) {
