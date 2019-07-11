@@ -52,15 +52,9 @@ void memory::set(address address, std::uint64_t value) {
 	set(address + 4, static_cast<std::uint32_t>((value >> 32) & 0xffffffff));
 }
 
-void memory::serialize(serializer::serializer &serializer) {
-	serializer.start_memory_block(this);
-	serializer.finalize_memory_block();
-}
+void memory::serialize(serializer::serializer &) {}
 
-void memory::deserialize(deserializer::deserializer &deserializer) {
-	deserializer.open_memory_block(this);
-	deserializer.close_memory_block();
-}
+void memory::deserialize(deserializer::deserializer &) {}
 
 } // namespace memory
 } // namespace harpoon
