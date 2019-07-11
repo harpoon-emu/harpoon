@@ -307,12 +307,24 @@ void mos_6510::stack_pull(std::uint8_t &v) {
 	get_memory()->get(mos_6510::STACK_ADDRESS + _registers.SP, v);
 }
 
+static char fs(bool f) {
+	return f ? '+' : ' ';
+}
+
 void mos_6510::log_registers(harpoon::log::message::Level level) const {
 	log(component_log(level) << "A:  " << _registers.A << "    X: " << _registers.X
 	                         << "  Y: " << _registers.Y);
 	log(component_log(level) << "PC: " << _registers.PC << " SP: " << _registers.SP
 	                         << " IR: " << _registers.IR);
-	log(component_log(level) << "P:  " << _registers.P);
+	log(component_log(level) << "    [ N V - B D I Z C ]");
+	log(component_log(level) << "P:  [ " << fs(_registers.P.N()) << " " << fs(_registers.P.V())
+	                         << " + " << fs(_registers.P.B()) << " " << fs(_registers.P.D()) << " "
+	                         << fs(_registers.P.I()) << " " << fs(_registers.P.Z()) << " "
+	                         << fs(_registers.P.C()) << " ]");
+	log(component_log(level) << "P:  [ " << _registers.P.N() << " " << _registers.P.V() << " 1 "
+	                         << _registers.P.B() << " " << _registers.P.D() << " "
+	                         << _registers.P.I() << " " << _registers.P.Z() << " "
+	                         << _registers.P.C() << " ]");
 }
 
 void mos_6510::_zp_01_processor_port_out(const harpoon::memory::address &, std::uint8_t value) {
