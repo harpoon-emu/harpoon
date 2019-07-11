@@ -19,6 +19,7 @@ public:
 		std::uint8_t v;
 		get_cpu()->get_memory()->get(address, v);
 		(get_cpu()->*set_reg)(v);
+		get_cpu()->set_flag_I(true);
 	}
 };
 
