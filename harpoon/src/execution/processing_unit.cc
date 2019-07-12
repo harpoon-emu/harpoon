@@ -2,6 +2,8 @@
 
 #include "harpoon/execution/exception/execution_exception.hh"
 
+#include <iomanip>
+
 namespace harpoon {
 namespace execution {
 
@@ -35,7 +37,8 @@ std::uint32_t processing_unit::execute_instruction() {
 void processing_unit::disassemble_instruction() {
 	std::stringstream stream;
 	_current_instruction.disassemble(stream);
-	log(component_debug << stream.str());
+	log(component_debug << std::hex << std::setw(8) << std::setfill('0') << std::uppercase
+	                    << _executed_instructions << " | " << stream.str());
 }
 
 void processing_unit::log_state(harpoon::log::message::Level level) const {
