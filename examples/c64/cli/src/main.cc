@@ -1,5 +1,6 @@
 #include "c64.hh"
 #include "console_log.hh"
+#include "counted_breakpoint_argument.hh"
 #include "cpu/mos_6510.hh"
 #include "integer.hh"
 #include "load_argument.hh"
@@ -40,11 +41,21 @@ static void set_options_description(boost::program_options::options_description 
 	                   "do not load BASIC (has no effect if BASIC image is loaded using --load "
 	                   "option)");
 	desc.add_options()(
-	    "terminate-at,T",
+	    "terminate-pc,T",
 	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
-	    "terminate and dump MOS 6510 state when PC equal to address");
+	    "terminate and dump MOS 6510 state when PC equal to address (same as --terminate-at-count "
+	    "ADDRESS:1");
 	desc.add_options()(
-	    "dump-state-at,D",
+	    "terminate-pc-count",
+	    boost::program_options::value<std::vector<c64::cli::counted_breakpoint_argument>>()
+	        ->composing(),
+	    "terminate and dump MOS 6510 state when PC reaches address specified number of times "
+	    "(ADDRESS:COUNT)");
+	desc.add_options()("terminate-after,A",
+	                   boost::program_options::value<c64::cli::integer<std::uint32_t>>(),
+	                   "terminate after executing specified number of instructions");
+	desc.add_options()(
+	    "dump-state-pc,D",
 	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
 	    "dump MOS 6510 state when PC equal to address");
 	desc.add_options()("dump-memory,m", boost::program_options::value<std::string>(),
@@ -102,10 +113,16 @@ int main(int argc, char **argv) {
 			c64->get_main_memory()->deserialize(d);
 		}
 
-		auto b_test = [](c64::cli::integer<std::uint16_t> b,
+		auto b_test = [](c64::cli::integer<std::uint16_t> b, std::uint32_t &count,
 		                 harpoon::execution::processing_unit *processing_unit) -> bool {
 			c64::hw::cpu::mos_6510 *mos = static_cast<c64::hw::cpu::mos_6510 *>(processing_unit);
-			return mos->get_PC() - 1 == b;
+			if (mos->get_PC() - 1 != b) {
+				return false;
+			}
+			if (count > 0) {
+				count--;
+			}
+			return count == 0;
 		};
 
 		auto b_action = [&c64](bool shutdown,
@@ -117,16 +134,35 @@ int main(int argc, char **argv) {
 			}
 		};
 
-		if (!vm["terminate-at"].empty()) {
-			for (auto b : vm["terminate-at"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
-				mos_6510->add_breakpoint({std::bind(b_test, b, std::placeholders::_1),
-				                          std::bind(b_action, true, std::placeholders::_1)});
+		std::vector<c64::cli::counted_breakpoint_argument> c_terms;
+		if (!vm["terminate-pc-count"].empty()) {
+			c_terms
+			    = vm["terminate-pc-count"].as<std::vector<c64::cli::counted_breakpoint_argument>>();
+		}
+		if (!vm["terminate-pc"].empty()) {
+			for (auto b : vm["terminate-pc"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
+				c_terms.push_back({b, 1});
 			}
 		}
+		for (auto &tb : c_terms) {
+			std::uint32_t count = tb.count;
+			mos_6510->add_breakpoint({std::bind(b_test, tb.address, count, std::placeholders::_1),
+			                          std::bind(b_action, true, std::placeholders::_1)});
+		}
 
-		if (!vm["dump-state-at"].empty()) {
-			for (auto b : vm["dump-state-at"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
-				mos_6510->add_breakpoint({std::bind(b_test, b, std::placeholders::_1),
+		if (!vm["terminate-after"].empty()) {
+			std::uint32_t count = vm["terminate-after"].as<c64::cli::integer<std::uint32_t>>();
+			mos_6510->add_breakpoint(
+			    {[count](harpoon::execution::processing_unit *processing_unit) -> bool {
+				     return processing_unit->get_executed_instructions() == count;
+			     },
+			     std::bind(b_action, true, std::placeholders::_1)});
+		}
+
+		if (!vm["dump-state-pc"].empty()) {
+			for (auto b : vm["dump-state-pc"].as<std::vector<c64::cli::integer<std::uint16_t>>>()) {
+				std::uint32_t count = 1;
+				mos_6510->add_breakpoint({std::bind(b_test, b, count, std::placeholders::_1),
 				                          std::bind(b_action, false, std::placeholders::_1)});
 			}
 		}

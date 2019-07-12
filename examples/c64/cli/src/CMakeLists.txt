@@ -9,6 +9,7 @@ set(SOURCE_FILES
 set(INCLUDE_FILES
 	integer.hh
 	load_argument.hh
+	counted_breakpoint_argument.hh
 	console_log.hh
 	)
 
