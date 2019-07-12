@@ -65,9 +65,9 @@ harpoon::execution::instruction absolute_modify_factory(harpoon::execution::proc
 	    {
 	        make_instruction_step<fetch_program_code>(),
 	        make_instruction_step<fetch_program_code>(),
-	        make_instruction_step<load_latch<&instruction_step::fetch_zero_page>>(),
+	        make_instruction_step<load_latch<&instruction_step::fetch_absolute>>(),
 	        make_instruction_step<internal_write>(),
-	        make_instruction_step<I<&instruction_step::store_zero_page>>(),
+	        make_instruction_step<I<&instruction_step::store_absolute>>(),
 	    },
 	    disassembler::absolute(mnemonic));
 }
