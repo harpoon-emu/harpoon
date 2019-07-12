@@ -119,7 +119,7 @@ public:
 		std::uint16_t res = {};
 		res = x + y;
 		if (get_cpu()->get_flag_C()) {
-			res--;
+			res++;
 		}
 		v = static_cast<std::uint8_t>(res & 0xff);
 		if (update_nzcv) {
