@@ -1,7 +1,6 @@
 #include "nop.hh"
 
 #include "../mos_6510.hh"
-#include "arith_instruction.hh"
 #include "disassembler.hh"
 #include "instruction_step.hh"
 
