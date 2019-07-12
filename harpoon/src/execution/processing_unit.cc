@@ -25,14 +25,6 @@ void processing_unit::shutdown() {
 }
 
 std::uint32_t processing_unit::execute_instruction() {
-
-	for (const auto &breakpoint : _breakpoints) {
-		if (breakpoint.check_condition(this)) {
-			log(component_debug << "EXECUTION BREAKPOINT");
-			breakpoint.do_action(this);
-		}
-	}
-
 	if (_current_instruction.done()) {
 		throw COMPONENT_EXCEPTION(exception::execution_exception, "Broken execution flow.");
 	}

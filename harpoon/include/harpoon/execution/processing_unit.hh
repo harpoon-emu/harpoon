@@ -50,10 +50,11 @@ public:
 
 	void set_current_instruction(const instruction &instruction) {
 		_current_instruction = instruction;
-		_executed_instructions++;
 		if (_disassemble) {
 			disassemble_instruction();
 		}
+		process_breakpoints();
+		_executed_instructions++;
 	}
 
 	const instruction &get_current_instruction() const {
@@ -70,6 +71,16 @@ public:
 	virtual ~processing_unit() override;
 
 private:
+	void process_breakpoints() {
+		for (const auto &breakpoint : _breakpoints) {
+			if (breakpoint.check_condition(this)) {
+				log(component_debug << "EXECUTION BREAKPOINT");
+				disassemble_instruction();
+				breakpoint.do_action(this);
+			}
+		}
+	}
+
 	execution_unit_weak_ptr _execution_unit{};
 	std::atomic_uint_fast64_t _executed_instructions{};
 	bool _disassemble{};
