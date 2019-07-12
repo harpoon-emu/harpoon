@@ -5,6 +5,7 @@
 #include "load_argument.hh"
 
 #include "harpoon/memory/deserializer/binary_file.hh"
+#include "harpoon/memory/serializer/binary_file.hh"
 
 #include <boost/program_options.hpp>
 #include <functional>
@@ -46,6 +47,8 @@ static void set_options_description(boost::program_options::options_description 
 	    "dump-state-at,D",
 	    boost::program_options::value<std::vector<c64::cli::integer<std::uint16_t>>>()->composing(),
 	    "dump MOS 6510 state when PC equal to address");
+	desc.add_options()("dump-memory,m", boost::program_options::value<std::string>(),
+	                   "dump content of memory to file on exit");
 }
 
 int main(int argc, char **argv) {
@@ -130,6 +133,12 @@ int main(int argc, char **argv) {
 
 		c64->boot();
 		c64->run();
+
+		if (!vm["dump-memory"].empty()) {
+			harpoon::memory::serializer::binary_file ser(
+			    c64->get_main_memory()->get_address_range(), vm["dump-memory"].as<std::string>());
+			c64->get_main_memory()->serialize(ser);
+		}
 	} catch (std::exception &e) {
 		std::cerr << "error: " << e.what() << std::endl;
 	} catch (...) {
