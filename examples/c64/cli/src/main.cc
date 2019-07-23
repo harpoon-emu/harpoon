@@ -60,6 +60,9 @@ static void set_options_description(boost::program_options::options_description 
 	    "dump MOS 6510 state when PC equal to address");
 	desc.add_options()("dump-memory,m", boost::program_options::value<std::string>(),
 	                   "dump content of memory to file on exit");
+	desc.add_options()("statistics,s",
+	                   boost::program_options::value<std::uint64_t>()->default_value(0),
+	                   "dump statistics every X executed instructions (0 = disable)");
 }
 
 int main(int argc, char **argv) {
@@ -90,6 +93,8 @@ int main(int argc, char **argv) {
 
 		c64->create();
 		auto mos_6510 = c64->get_mos_6510();
+
+		mos_6510->set_stats_interval(vm["statistics"].as<std::uint64_t>());
 
 		if (vm["disassemble"].as<bool>()) {
 			c64->get_main_execution_unit()->enable_disassemble();
