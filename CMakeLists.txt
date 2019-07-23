@@ -40,8 +40,15 @@ endif()
 string(REGEX REPLACE ";" " " CMAKE_COMMON_CXX_FLAGS "${CMAKE_COMMON_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_COMMON_CXX_FLAGS}")
 
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(CURRENT_TARGET_DIR "${PROJECT_SOURCE_DIR}")
+set(SOURCES CACHE INTERNAL "SOURCES")
+set(INCLUDES CACHE INTERNAL "INCLUDES")
 
-add_subdirectory(harpoon)
-add_subdirectory(examples)
+add_subdirectory(src)
 
+add_library(harpoon
+	${SOURCES}
+	${INCLUDES}
+	)
+
+include_directories(include)
