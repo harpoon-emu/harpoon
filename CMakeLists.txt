@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
+set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
+set(CMAKE_DISABLE_SOURCE_CHANGES  ON)
 
-include(functions)
+if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+  message(SEND_ERROR "In-source builds are not allowed.")
+endif ()
+
+set(CMAKE_COLOR_MAKEFILE   ON)
 
 project(harpoon)
 
@@ -40,15 +45,10 @@ endif()
 string(REGEX REPLACE ";" " " CMAKE_COMMON_CXX_FLAGS "${CMAKE_COMMON_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_COMMON_CXX_FLAGS}")
 
-set(CURRENT_TARGET_DIR "${PROJECT_SOURCE_DIR}")
-set(SOURCES CACHE INTERNAL "SOURCES")
-set(INCLUDES CACHE INTERNAL "INCLUDES")
-
-add_subdirectory(src)
-
-add_library(harpoon
-	${SOURCES}
-	${INCLUDES}
-	)
+file(GLOB_RECURSE CC_FILES src/*.cc)
 
 include_directories(include)
+
+add_library(harpoon
+	${CC_FILES}
+	)
