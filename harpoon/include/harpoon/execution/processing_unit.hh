@@ -9,6 +9,7 @@
 #include "harpoon/hardware_component.hh"
 
 #include <atomic>
+#include <chrono>
 #include <list>
 #include <thread>
 
@@ -48,10 +49,18 @@ public:
 		_disassemble = disassemble;
 	}
 
+	void set_stats_interval(std::uint64_t interval) {
+		_stats_interval = interval;
+	}
+
 	void set_current_instruction(const instruction &instruction) {
 		_current_instruction = instruction;
 		if (_disassemble) {
 			disassemble_instruction();
+		}
+		if (_stats_interval > 0 && (_executed_instructions % _stats_interval) == 0) {
+			log_stats();
+			new_stats_checkpoint();
 		}
 		process_breakpoints();
 		_executed_instructions++;
@@ -68,6 +77,9 @@ public:
 	virtual void log_state(log::message::Level level = log::message::Level::DEBUG) const override;
 	virtual void log_registers(log::message::Level level) const;
 
+	virtual void new_stats_checkpoint();
+	virtual void log_stats(log::message::Level level = log::message::Level::DEBUG);
+
 	virtual ~processing_unit() override;
 
 private:
@@ -82,10 +94,13 @@ private:
 	}
 
 	execution_unit_weak_ptr _execution_unit{};
-	std::atomic_uint_fast64_t _executed_instructions{};
+	std::uint_fast64_t _executed_instructions{};
+	std::uint64_t _stats_interval{};
 	bool _disassemble{};
 	std::list<breakpoint> _breakpoints{};
 	instruction _current_instruction{};
+	std::chrono::high_resolution_clock::time_point _stats_checkpoint_start{}, _run_start{};
+	std::uint64_t _stats_checkpoint_executed_instruction{};
 };
 
 using processing_unit_ptr = std::shared_ptr<processing_unit>;

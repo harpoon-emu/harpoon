@@ -18,6 +18,8 @@ void processing_unit::boot() {
 	hardware_component::boot();
 
 	_executed_instructions = 0;
+	_run_start = std::chrono::high_resolution_clock::now();
+	new_stats_checkpoint();
 }
 
 void processing_unit::shutdown() {
@@ -48,6 +50,32 @@ void processing_unit::log_state(harpoon::log::message::Level level) const {
 }
 
 void processing_unit::log_registers(harpoon::log::message::Level) const {}
+
+void processing_unit::new_stats_checkpoint() {
+	_stats_checkpoint_executed_instruction = _executed_instructions;
+	_stats_checkpoint_start = std::chrono::high_resolution_clock::now();
+}
+
+void processing_unit::log_stats(harpoon::log::message::Level level) {
+
+	std::chrono::high_resolution_clock::time_point t = std::chrono::high_resolution_clock::now();
+	std::uint64_t ms = static_cast<std::uint64_t>(
+	    std::chrono::duration_cast<std::chrono::milliseconds>(t - _stats_checkpoint_start).count());
+	std::uint64_t ms_t = static_cast<std::uint64_t>(
+	    std::chrono::duration_cast<std::chrono::milliseconds>(t - _run_start).count());
+
+	log(component_log(level) << "Executed instructions (checkpoint / total): "
+	                         << _executed_instructions - _stats_checkpoint_executed_instruction
+	                         << " / " << _executed_instructions);
+	if (ms > 0) {
+		log(component_log(level) << "Instructions per second (checkpoint / total): "
+		                         << static_cast<double>(_executed_instructions
+		                                                - _stats_checkpoint_executed_instruction)
+		                                / ms * 1000
+		                         << " / "
+		                         << static_cast<double>(_executed_instructions) / ms_t * 1000);
+	}
+}
 
 } // namespace execution
 } // namespace harpoon
