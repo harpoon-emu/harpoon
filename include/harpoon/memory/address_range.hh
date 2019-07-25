@@ -6,6 +6,7 @@
 #include "harpoon/memory/address.hh"
 
 #include <iomanip>
+#include <iostream>
 #include <limits>
 
 namespace harpoon {
