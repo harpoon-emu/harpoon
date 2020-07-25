@@ -1,0 +1,42 @@
+version: 2.1
+commands:
+  build:
+    steps:
+      - checkout
+      - run:
+          name: Generate cmake
+          command: mkdir build && cd build && cmake ..
+      - run:
+          name: Build
+          command: cd build && make
+jobs:
+  build-gcc-fedora-31:
+    docker:
+      - image: harpoonemu/ci-build:gcc-fedora-31-fd8961b
+    steps:
+      - build
+  build-gcc-fedora-32:
+    docker:
+      - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
+    steps:
+      - build
+  build-clang-fedora-31:
+    docker:
+      - image: harpoonemu/ci-build:clang-fedora-31-fd8961b
+    steps:
+      - build
+  build-clang-fedora-32:
+    docker:
+      - image: harpoonemu/ci-build:clang-fedora-32-fd8961b
+    steps:
+      - build
+
+workflows:
+  build:
+    jobs:
+      - build-gcc-fedora-31
+      - build-gcc-fedora-32
+      - build-clang-fedora-31
+      - build-clang-fedora-32
+      
+      
