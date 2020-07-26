@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
 
-include(GNUInstallDirs)
-include(CMakePackageConfigHelpers)
-
 set(Harpoon_MAJOR_VERSION 0)
 set(Harpoon_MINOR_VERSION 1)
 set(Harpoon_PATCH_VERSION 0)
@@ -10,6 +7,9 @@ set(Harpoon_VERSION
   ${Harpoon_MAJOR_VERSION}.${Harpoon_MINOR_VERSION}.${Harpoon_PATCH_VERSION})
 
 project(Harpoon LANGUAGES CXX VERSION ${Harpoon_VERSION})
+
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
 
 add_library(harpoon SHARED
 	src/execution/up_execution_unit.cc
