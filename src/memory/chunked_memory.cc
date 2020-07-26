@@ -87,7 +87,9 @@ void chunked_memory::deserialize(deserializer::deserializer &deserializer) {
 	     address += _chunk_length) {
 
 		address_range cr{address, address + _chunk_length - 1};
-		if (!deserializer.has_range(cr)) {
+		cr.intersect(get_address_range());
+		cr.intersect(deserializer.get_range());
+		if (cr.is_empty()) {
 			continue;
 		}
 
@@ -96,7 +98,7 @@ void chunked_memory::deserialize(deserializer::deserializer &deserializer) {
 			allocate_chunk(chunk, address);
 		}
 
-		deserializer.read(this, chunk.get(), cr);
+		deserializer.read(this, chunk.get() + get_chunk_offset(cr.get_start()), cr);
 	}
 }
 
