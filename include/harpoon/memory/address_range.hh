@@ -33,6 +33,10 @@ public:
 		return get_start() == second.get_start() && get_end() == second.get_end();
 	}
 
+	bool operator!=(const address_range &second) const {
+		return get_start() != second.get_start() || get_end() != second.get_end();
+	}
+
 	operator bool() const {
 		return !is_empty();
 	}
