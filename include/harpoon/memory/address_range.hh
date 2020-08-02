@@ -91,7 +91,8 @@ public:
 	}
 
 	constexpr bool overlaps(const address_range &second) const {
-		return get_start() <= second.get_end() && get_end() >= second.get_start();
+		return !is_empty() && !second.is_empty() && get_start() <= second.get_end()
+		       && get_end() >= second.get_start();
 	}
 
 	constexpr address_range get_intersection(const address_range &r) const {
