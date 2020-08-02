@@ -8,8 +8,11 @@ set(Harpoon_VERSION
 
 project(Harpoon LANGUAGES CXX VERSION ${Harpoon_VERSION})
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
+include(CTest)
 
 add_library(harpoon SHARED
 	src/execution/up_execution_unit.cc
@@ -97,3 +100,19 @@ install(FILES
 )
 
 export(TARGETS harpoon NAMESPACE Harpoon:: FILE HarpoonConfig.cmake)
+
+
+# GTEST
+
+enable_testing()
+
+if (BUILD_TESTING)
+	include(cmake/googletest.cmake)
+	fetch_googletest(
+		${PROJECT_SOURCE_DIR}/cmake
+		${PROJECT_BINARY_DIR}/googletest
+		)
+	add_subdirectory(test)
+endif()
+
+
