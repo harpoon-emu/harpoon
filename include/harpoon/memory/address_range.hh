@@ -18,8 +18,14 @@ namespace memory {
  */
 class address_range {
 public:
-	address_range() {}
-	address_range(const address &start, const address &end) : _start(start), _end(end + 1) {}
+	address_range() {
+		set_range(0, 0);
+	}
+
+	address_range(const address &start, const address &end) {
+		set_range(start, end);
+	}
+
 	address_range(const address_range &) = default;
 	address_range &operator=(const address_range &) = default;
 
@@ -41,6 +47,7 @@ public:
 
 	void set_start(address start) {
 		_start = start;
+		_normalize();
 	}
 
 	address get_end() const {
@@ -49,6 +56,7 @@ public:
 
 	void set_end(address end) {
 		_end = end + 1;
+		_normalize();
 	}
 
 	std::uint_fast64_t get_length() const {
@@ -60,12 +68,13 @@ public:
 	}
 
 	void set_range(address start, address end) {
-		set_start(start);
-		set_end(end);
+		_start = start;
+		_end = end + 1;
+		_normalize();
 	}
 
 	void set_start_and_length(address start, std::uint_fast64_t length) {
-		set_start(start);
+		_start = start;
 		set_length(length);
 	}
 
@@ -118,6 +127,13 @@ public:
 	}
 
 private:
+	void _normalize() {
+		if (_start > _end - 1) {
+			address t = _start;
+			_start = _end - 1;
+			_end = t + 1;
+		}
+	}
 	address _start{};
 	address _end{};
 };
