@@ -19,7 +19,7 @@ namespace memory {
 class address_range {
 public:
 	constexpr address_range() {
-		set_range(0, 0);
+		set_start_and_length(0, 0);
 	}
 
 	constexpr address_range(const address &start, const address &end) {
