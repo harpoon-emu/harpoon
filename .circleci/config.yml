@@ -24,16 +24,6 @@ commands:
           path: build/Testing/Temporary
           destination: test-results
 jobs:
-  build-gcc-fedora-31:
-    docker:
-      - image: harpoonemu/ci-build:gcc-fedora-31-fd8961b
-    steps:
-      - build
-  test-gcc-fedora-31:
-    docker:
-      - image: harpoonemu/ci-build:gcc-fedora-31-fd8961b
-    steps:
-      - test
   build-gcc-fedora-32:
     docker:
       - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
@@ -42,16 +32,6 @@ jobs:
   test-gcc-fedora-32:
     docker:
       - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
-    steps:
-      - test
-  build-clang-fedora-31:
-    docker:
-      - image: harpoonemu/ci-build:clang-fedora-31-fd8961b
-    steps:
-      - build
-  test-clang-fedora-31:
-    docker:
-      - image: harpoonemu/ci-build:clang-fedora-31-fd8961b
     steps:
       - test
   build-clang-fedora-32:
@@ -68,18 +48,10 @@ jobs:
 workflows:
   build:
     jobs:
-      - build-gcc-fedora-31
-      - test-gcc-fedora-31:
-          requires:
-            - build-gcc-fedora-31
       - build-gcc-fedora-32
       - test-gcc-fedora-32:
           requires:
             - build-gcc-fedora-32
-      - build-clang-fedora-31
-      - test-clang-fedora-31:
-          requires:
-            - build-clang-fedora-31
       - build-clang-fedora-32
       - test-clang-fedora-32:
           requires:
