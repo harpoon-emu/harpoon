@@ -24,6 +24,9 @@ class clock;
 /** std::shared_ptr pointing to hardware_component object */
 using hardware_component_ptr = std::shared_ptr<hardware_component>;
 
+/** std::shared_ptr pointing to hardware_component object */
+using hardware_component_cptr = std::shared_ptr<const hardware_component>;
+
 /** std::weak_ptr pointing to hardware_component object */
 using hardware_component_weak_ptr = std::weak_ptr<hardware_component>;
 
@@ -139,6 +142,18 @@ public:
 	hardware_component_ptr get_parent_component() const {
 		return _parent_component.lock();
 	}
+
+	/**
+	 * @brief Check if component has a parent component.
+	 * @return true if component has a parent component.
+	 */
+	bool has_parent_component() const {
+		return _parent_component.lock() != nullptr;
+	}
+
+	bool has_subcomponent(const hardware_component_cptr &c) const;
+
+	bool is_subcomponent_of(const hardware_component_cptr &c) const;
 
 	/**
 	 * @brief Get hardware component log.
