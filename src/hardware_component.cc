@@ -1,6 +1,10 @@
 #include "harpoon/hardware_component.hh"
 
+#include "harpoon/exception/not_subcomponent.hh"
+#include "harpoon/exception/subcomponent_owned.hh"
 #include "harpoon/log/message.hh"
+
+#include <algorithm>
 
 namespace harpoon {
 
@@ -8,9 +12,21 @@ hardware_component::~hardware_component() {
 	log(component_debug << "Destroying");
 }
 
+bool hardware_component::has_subcomponent(const hardware_component_cptr &c) const {
+	return std::find(_components.begin(), _components.end(), c) != _components.end();
+}
+
+bool hardware_component::is_subcomponent_of(const hardware_component_cptr &p) const {
+	return p->has_subcomponent(shared_from_this());
+}
+
 void hardware_component::add_component(const hardware_component_weak_ptr &component) {
 
 	hardware_component_ptr ptr = component.lock();
+
+	if (ptr->has_parent_component()) {
+		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, component);
+	}
 
 	_components.push_back(ptr);
 	ptr->set_parent_component(shared_from_this());
@@ -22,6 +38,10 @@ void hardware_component::remove_component(const hardware_component_weak_ptr &com
 
 	hardware_component_ptr ptr = component.lock();
 
+	if (!has_subcomponent(ptr)) {
+		throw COMPONENT_EXCEPTION(exception::not_subcomponent, component);
+	}
+
 	_components.remove(ptr);
 	ptr->set_parent_component(hardware_component_weak_ptr{});
 
@@ -31,9 +51,15 @@ void hardware_component::remove_component(const hardware_component_weak_ptr &com
 void hardware_component::replace_component(const hardware_component_weak_ptr &old_component,
                                            const hardware_component_weak_ptr &new_component) {
 	hardware_component_ptr old_ptr = old_component.lock();
-	if (old_ptr) {
-		remove_component(old_ptr);
+
+	if (!has_subcomponent(old_ptr)) {
+		throw COMPONENT_EXCEPTION(exception::not_subcomponent, old_component);
 	}
+	if (new_component.lock()->has_parent_component()) {
+		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, new_component);
+	}
+
+	remove_component(old_ptr);
 	add_component(new_component);
 }
 
