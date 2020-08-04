@@ -151,9 +151,9 @@ public:
 		return _parent_component.lock() != nullptr;
 	}
 
-	bool has_subcomponent(const hardware_component_cptr &c) const;
+	bool has_subcomponent(const hardware_component_cptr &c, bool deep = false) const;
 
-	bool is_subcomponent_of(const hardware_component_cptr &c) const;
+	bool is_subcomponent_of(const hardware_component_cptr &c, bool deep = false) const;
 
 	/**
 	 * @brief Get hardware component log.
