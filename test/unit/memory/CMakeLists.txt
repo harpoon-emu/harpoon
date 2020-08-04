@@ -1,19 +1,19 @@
 add_executable(
-	runner
+	t_memory_runner
 	address.cc
 	address_range.cc
 	)
 
 target_link_libraries(
-	runner
+	t_memory_runner
 	gtest_main
 	harpoon
 	)
 
 add_test(
 	NAME
-		unit
+	Harpoon/Memory
 	COMMAND
-		${CMAKE_BINARY_DIR}/test/unit/memory/runner
+		${CMAKE_BINARY_DIR}/test/unit/memory/t_memory_runner
 	)
 
