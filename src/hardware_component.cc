@@ -3,11 +3,18 @@
 #include "harpoon/exception/component_loop.hh"
 #include "harpoon/exception/not_subcomponent.hh"
 #include "harpoon/exception/subcomponent_owned.hh"
+#include "harpoon/exception/wrong_state.hh"
 #include "harpoon/log/message.hh"
 
 #include <algorithm>
 
 namespace harpoon {
+
+std::ostream &operator<<(std::ostream &stream, const hardware_component::state &state) {
+	std::ostream out(stream.rdbuf());
+	out << "[P: " << state.is_prepared() << ", R: " << state.is_running() << "]";
+	return stream;
+}
 
 hardware_component::~hardware_component() {
 	log(component_debug << "Destroying");
@@ -108,10 +115,14 @@ void hardware_component::log(const std::ostream &stream) const {
 }
 
 void hardware_component::prepare() {
+	if (is_prepared()) {
+		throw COMPONENT_EXCEPTION(exception::wrong_state, get_state(), state(false, false));
+	}
 	log(component_notice << "Preparing");
 	for (auto &component : _components) {
 		component->prepare();
 	}
+	_state.set_prepared();
 }
 
 void hardware_component::cleanup() {
@@ -123,18 +134,24 @@ void hardware_component::cleanup() {
 }
 
 void hardware_component::boot() {
+	if (!is_prepared() || is_running()) {
+		throw COMPONENT_EXCEPTION(exception::wrong_state, get_state(), state(true, false));
+	}
 	log(component_notice << "Booting");
 	for (auto &component : _components) {
 		component->boot();
 	}
-	_running = true;
+	_state.set_running();
 }
 
 void hardware_component::step(hardware_component *) {}
 
 void hardware_component::shutdown() {
+	if (!is_running()) {
+		throw COMPONENT_EXCEPTION(exception::wrong_state, get_state(), state(true, true));
+	}
 	log(component_notice << "Shutdown");
-	_running = false;
+	_state.clear_running();
 	for (auto &component : _components) {
 		component->shutdown();
 	}
