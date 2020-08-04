@@ -1,5 +1,6 @@
 #include "harpoon/hardware_component.hh"
 
+#include "harpoon/exception/component_loop.hh"
 #include "harpoon/exception/not_subcomponent.hh"
 #include "harpoon/exception/subcomponent_owned.hh"
 #include "harpoon/log/message.hh"
@@ -12,12 +13,24 @@ hardware_component::~hardware_component() {
 	log(component_debug << "Destroying");
 }
 
-bool hardware_component::has_subcomponent(const hardware_component_cptr &c) const {
-	return std::find(_components.begin(), _components.end(), c) != _components.end();
+bool hardware_component::has_subcomponent(const hardware_component_cptr &c, bool deep) const {
+	bool direct = std::find(_components.begin(), _components.end(), c) != _components.end();
+	if (direct || !deep)
+		return direct;
+
+	for (auto s : _components) {
+		bool b = s->has_subcomponent(c, true);
+		if (b)
+			return true;
+	}
+
+	return false;
 }
 
-bool hardware_component::is_subcomponent_of(const hardware_component_cptr &p) const {
-	return p->has_subcomponent(shared_from_this());
+bool hardware_component::is_subcomponent_of(const hardware_component_cptr &p, bool deep) const {
+	return get_parent_component() == p
+	       || (deep && get_parent_component() != nullptr
+	           && get_parent_component()->is_subcomponent_of(p, true));
 }
 
 void hardware_component::add_component(const hardware_component_weak_ptr &component) {
@@ -26,6 +39,9 @@ void hardware_component::add_component(const hardware_component_weak_ptr &compon
 
 	if (ptr->has_parent_component()) {
 		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, component);
+	}
+	if (ptr == shared_from_this() || is_subcomponent_of(ptr, true)) {
+		throw COMPONENT_EXCEPTION(exception::component_loop, component);
 	}
 
 	_components.push_back(ptr);
@@ -57,6 +73,10 @@ void hardware_component::replace_component(const hardware_component_weak_ptr &ol
 	}
 	if (new_component.lock()->has_parent_component()) {
 		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, new_component);
+	}
+	if (new_component.lock() == shared_from_this()
+	    || is_subcomponent_of(new_component.lock(), true)) {
+		throw COMPONENT_EXCEPTION(exception::component_loop, new_component);
 	}
 
 	remove_component(old_ptr);
