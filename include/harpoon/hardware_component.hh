@@ -36,6 +36,42 @@ using hardware_component_weak_ptr = std::weak_ptr<hardware_component>;
  */
 class hardware_component : public std::enable_shared_from_this<hardware_component> {
 public:
+	class state {
+	public:
+		state() : _prepared{false}, _running{false} {}
+		state(bool prep, bool running) : _prepared{prep}, _running{running} {}
+
+		bool is_prepared() const {
+			return _prepared;
+		}
+
+		bool is_running() const {
+			return _running;
+		}
+
+		void set_prepared() {
+			_prepared = true;
+		}
+
+		void clear_prepared() {
+			_prepared = false;
+		}
+
+		void set_running() {
+			_running = true;
+		}
+
+		void clear_running() {
+			_running = false;
+		}
+
+		friend std::ostream &operator<<(std::ostream &stream, const state &range);
+
+	private:
+		bool _prepared{false};
+		bool _running{false};
+	};
+
 	/**
 	 * @brief Hardware component default constructor.
 	 * @param[in] name Hardware component name.
@@ -111,12 +147,20 @@ public:
 	 */
 	void log(const std::ostream &stream) const;
 
+	const state &get_state() const {
+		return _state;
+	}
+
+	bool is_prepared() const {
+		return _state.is_prepared();
+	}
+
 	/**
 	 * @brief Check is component is running.
 	 * @return true if component is running.
 	 */
 	bool is_running() const {
-		return _running;
+		return _state.is_running();
 	}
 
 	/**
@@ -188,10 +232,10 @@ private:
 	void set_parent_component(const hardware_component_weak_ptr &parent_component);
 
 	std::string _name{};
+	state _state;
 	hardware_component_weak_ptr _parent_component{};
 	std::list<hardware_component_ptr> _components{};
 	log::log_ptr _log{};
-	std::atomic_bool _running{false};
 	mutable std::mutex _mutex;
 };
 
