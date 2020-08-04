@@ -1,59 +1,150 @@
 version: 2.1
 commands:
   build:
+    parameters:
+      compiler:
+        type: enum
+        enum: ["gcc", "clang"]
+      os:
+        type: enum
+        enum: ["fedora-31", "fedora-32"]
+      build:
+        type: enum
+        enum: ["Debug", "Release"]
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
       - run:
           name: Generate cmake
-          command: mkdir build && cd build && cmake ..
+          command: cmake -DCMAKE_BUILD_TYPE=<< parameters.build >> -B << parameters.compiler >>-<< parameters.os >>-<< parameters.build >> .
       - run:
           name: Build
-          command: cd build && make
+          command: cmake --build << parameters.compiler >>-<< parameters.os >>-<< parameters.build >>
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            -  << parameters.compiler >>-<< parameters.os >>-<<parameters.build >>
   test:
+    parameters:
+      compiler:
+        type: enum
+        enum: ["gcc", "clang"]
+      os:
+        type: enum
+        enum: ["fedora-31", "fedora-32"]
+      build:
+        type: enum
+        enum: ["Debug", "Release"]
     steps:
       - attach_workspace:
           at: .
       - run:
           name: Run tests
-          command: cd build && ctest
+          command: cd << parameters.compiler >>-<< parameters.os >>-<<parameters.build >> && ctest
       - store_artifacts:
-          path: build/Testing/Temporary
+          path: << parameters.compiler >>-<< parameters.os >>-<<parameters.build >>/Testing/Temporary
           destination: test-results
 jobs:
-  build-gcc-fedora-32:
+  prepare:
     docker:
       - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
     steps:
-      - build
-  test-gcc-fedora-32:
+      - checkout
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  build-gcc-fedora-32-Debug:
     docker:
       - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
     steps:
-      - test
-  build-clang-fedora-32:
+      - build:
+          os: fedora-32
+          compiler: gcc
+          build: Debug
+  test-gcc-fedora-32-Debug:
+    docker:
+      - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
+    steps:
+      - test:
+          os: fedora-32
+          compiler: gcc
+          build: Debug
+  build-clang-fedora-32-Debug:
     docker:
       - image: harpoonemu/ci-build:clang-fedora-32-fd8961b
     steps:
-      - build
-  test-clang-fedora-32:
+      - build:
+          os: fedora-32
+          compiler: clang
+          build: Debug
+  test-clang-fedora-32-Debug:
     docker:
       - image: harpoonemu/ci-build:clang-fedora-32-fd8961b
     steps:
-      - test
+      - test:
+          os: fedora-32
+          compiler: clang
+          build: Debug
+  build-gcc-fedora-32-Release:
+    docker:
+      - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
+    steps:
+      - build:
+          os: fedora-32
+          compiler: gcc
+          build: Release
+  test-gcc-fedora-32-Release:
+    docker:
+      - image: harpoonemu/ci-build:gcc-fedora-32-fd8961b
+    steps:
+      - test:
+          os: fedora-32
+          compiler: gcc
+          build: Release
+  build-clang-fedora-32-Release:
+    docker:
+      - image: harpoonemu/ci-build:clang-fedora-32-fd8961b
+    steps:
+      - build:
+          os: fedora-32
+          compiler: clang
+          build: Release
+  test-clang-fedora-32-Release:
+    docker:
+      - image: harpoonemu/ci-build:clang-fedora-32-fd8961b
+    steps:
+      - test:
+          os: fedora-32
+          compiler: clang
+          build: Release
 
 workflows:
   build:
     jobs:
-      - build-gcc-fedora-32
-      - test-gcc-fedora-32:
+      - prepare
+      - build-gcc-fedora-32-Debug:
           requires:
-            - build-gcc-fedora-32
-      - build-clang-fedora-32
-      - test-clang-fedora-32:
+            - prepare
+      - test-gcc-fedora-32-Debug:
           requires:
-            - build-clang-fedora-32
+            - build-gcc-fedora-32-Debug
+      - build-clang-fedora-32-Debug:
+          requires:
+            - prepare
+      - test-clang-fedora-32-Debug:
+          requires:
+            - build-clang-fedora-32-Debug
+      - build-gcc-fedora-32-Release:
+          requires:
+            - prepare
+      - test-gcc-fedora-32-Release:
+          requires:
+            - build-gcc-fedora-32-Release
+      - build-clang-fedora-32-Release:
+          requires:
+            - prepare
+      - test-clang-fedora-32-Release:
+          requires:
+            - build-clang-fedora-32-Release
 
