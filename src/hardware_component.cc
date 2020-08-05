@@ -126,11 +126,14 @@ void hardware_component::prepare() {
 }
 
 void hardware_component::cleanup() {
+	if (is_running() || !is_prepared()) {
+		throw COMPONENT_EXCEPTION(exception::wrong_state, get_state(), state(true, false));
+	}
 	log(component_notice << "Cleanup");
 	for (auto &component : _components) {
 		component->cleanup();
 	}
-	_components.clear();
+	_state.clear_prepared();
 }
 
 void hardware_component::boot() {
