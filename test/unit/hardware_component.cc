@@ -98,6 +98,18 @@ TEST(hardware_component, add_component) {
 	EXPECT_EQ(c1->get_parent_component(), p1);
 }
 
+TEST(hardware_component, add_component_owned) {
+	hcp p1(new hc("hw-component-parent1"));
+	hcp p2(new hc("hw-component-parent2"));
+	hcp c1(new hc("hw-component-child1"));
+
+	p2->add_component(c1);
+
+	EXPECT_THROW({ p1->add_component(c1); }, harpoon::exception::subcomponent_owned);
+	EXPECT_TRUE(c1->has_parent_component());
+	EXPECT_EQ(c1->get_parent_component(), p2);
+}
+
 TEST(hardware_component, add_component_circular_0) {
 	hcp c1(new hc("hw-component1"));
 
