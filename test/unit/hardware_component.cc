@@ -189,6 +189,20 @@ TEST(hardware_component, has_subcomponent_deep) {
 	EXPECT_TRUE(c3->has_subcomponent(c4, true));
 }
 
+TEST(hardware_component, has_subcomponent_deep_neg) {
+	hcp c1(new hc("hw-component1"));
+	hcp c2(new hc("hw-component1"));
+	hcp c3(new hc("hw-component1"));
+	hcp c4(new hc("hw-component1"));
+
+	c1->add_component(c2);
+	c2->add_component(c3);
+
+	EXPECT_FALSE(c1->has_subcomponent(c4, true));
+	EXPECT_FALSE(c2->has_subcomponent(c4, true));
+	EXPECT_FALSE(c3->has_subcomponent(c4, true));
+}
+
 TEST(hardware_component, is_subcomponent_of) {
 	hcp p1(new hc("hw-component-parent1"));
 	hcp c1(new hc("hw-component-child"));
@@ -489,4 +503,75 @@ TEST(hardware_component, shutdown_chain) {
 	EXPECT_FALSE(c2->is_running());
 	EXPECT_FALSE(c3->is_running());
 	EXPECT_FALSE(c4->is_running());
+}
+
+TEST(hardware_component, cleanup) {
+	hcp c1(new hc("hw-component1"));
+
+	c1->prepare();
+	c1->boot();
+	c1->shutdown();
+	c1->cleanup();
+	EXPECT_FALSE(c1->is_prepared());
+	EXPECT_FALSE(c1->is_running());
+}
+
+TEST(hardware_component, cleanup_after_prep) {
+	hcp c1(new hc("hw-component1"));
+
+	c1->prepare();
+	c1->cleanup();
+	EXPECT_FALSE(c1->is_prepared());
+	EXPECT_FALSE(c1->is_running());
+}
+
+TEST(hardware_component, cleanup_not_prepared) {
+	hcp c1(new hc("hw-component1"));
+
+	EXPECT_THROW({ c1->cleanup(); }, harpoon::exception::wrong_state);
+	EXPECT_FALSE(c1->is_prepared());
+	EXPECT_FALSE(c1->is_running());
+}
+
+TEST(hardware_component, cleanup_running) {
+	hcp c1(new hc("hw-component1"));
+
+	c1->prepare();
+	c1->boot();
+	EXPECT_THROW({ c1->cleanup(); }, harpoon::exception::wrong_state);
+	EXPECT_TRUE(c1->is_prepared());
+	EXPECT_TRUE(c1->is_running());
+}
+
+TEST(hardware_component, cleanup_chain) {
+	hcp c1(new hc("hw-component1"));
+	mocks::hcp c2(new ::testing::NiceMock<mocks::hc>("hw-component2"));
+	mocks::hcp c3(new ::testing::NiceMock<mocks::hc>("hw-component3"));
+	mocks::hcp c4(new ::testing::NiceMock<mocks::hc>("hw-component4"));
+
+	c1->add_component(c2);
+	c2->add_component(c3);
+	c3->add_component(c4);
+
+	c1->prepare();
+	c1->boot();
+	c1->shutdown();
+
+	EXPECT_CALL(*c2, cleanup()).Times(1);
+	EXPECT_CALL(*c3, cleanup()).Times(1);
+	EXPECT_CALL(*c4, cleanup()).Times(1);
+	c1->cleanup();
+
+	EXPECT_FALSE(c1->is_prepared());
+	EXPECT_FALSE(c2->is_prepared());
+	EXPECT_FALSE(c3->is_prepared());
+	EXPECT_FALSE(c4->is_prepared());
+	EXPECT_FALSE(c1->is_running());
+	EXPECT_FALSE(c2->is_running());
+	EXPECT_FALSE(c3->is_running());
+	EXPECT_FALSE(c4->is_running());
+
+	EXPECT_TRUE(c1->has_subcomponent(c2));
+	EXPECT_TRUE(c2->has_subcomponent(c3));
+	EXPECT_TRUE(c3->has_subcomponent(c4));
 }
