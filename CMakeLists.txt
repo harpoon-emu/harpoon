@@ -79,6 +79,21 @@ target_include_directories(harpoon
 		$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
+option(CODE_COVERAGE "Enable coverage reporting" OFF)
+if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+	target_compile_options(harpoon PUBLIC
+		-O0
+		-g
+		-fprofile-arcs
+		--coverage
+		)
+	if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
+		target_link_options(harpoon PUBLIC --coverage)
+	else()
+		target_link_libraries(harpoon PUBLIC --coverage)
+	endif()
+endif()
+
 install(TARGETS harpoon EXPORT HarpoonTargets
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
