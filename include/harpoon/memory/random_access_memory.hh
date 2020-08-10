@@ -17,9 +17,6 @@ public:
 template<typename MemoryImplementation>
 using random_access_memory_ptr = std::shared_ptr<random_access_memory<MemoryImplementation>>;
 
-template<typename MemoryImplementation>
-using random_access_memory_weak_ptr = std::weak_ptr<random_access_memory<MemoryImplementation>>;
-
 template<typename MemoryImplementation, typename... Args>
 random_access_memory_ptr<MemoryImplementation> make_random_access_memory(Args &&... args) {
 	return std::make_shared<random_access_memory<MemoryImplementation>>(

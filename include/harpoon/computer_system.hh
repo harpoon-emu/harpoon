@@ -37,7 +37,7 @@ private:
 };
 
 using computer_system_ptr = std::shared_ptr<computer_system>;
-using computer_system_weak_ptr = std::weak_ptr<computer_system>;
+
 template<typename... Args>
 computer_system_ptr make_computer_system(Args &&... args) {
 	return std::make_shared<computer_system>(std::forward<Args>(args)...);

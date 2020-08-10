@@ -40,53 +40,44 @@ bool hardware_component::is_subcomponent_of(const hardware_component_cptr &p, bo
 	           && get_parent_component()->is_subcomponent_of(p, true));
 }
 
-void hardware_component::add_component(const hardware_component_weak_ptr &component) {
-
-	hardware_component_ptr ptr = component.lock();
-
-	if (ptr->has_parent_component()) {
+void hardware_component::add_component(const hardware_component_ptr &component) {
+	if (component->has_parent_component()) {
 		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, component);
 	}
-	if (ptr == shared_from_this() || is_subcomponent_of(ptr, true)) {
+	if (component == shared_from_this() || is_subcomponent_of(component, true)) {
 		throw COMPONENT_EXCEPTION(exception::component_loop, component);
 	}
 
-	_components.push_back(ptr);
-	ptr->set_parent_component(shared_from_this());
+	_components.push_back(component);
+	component->set_parent_component(shared_from_this());
 
-	log(component_debug << "Adding component: " << ptr->get_name());
+	log(component_debug << "Adding component: " << component->get_name());
 }
 
-void hardware_component::remove_component(const hardware_component_weak_ptr &component) {
-
-	hardware_component_ptr ptr = component.lock();
-
-	if (!has_subcomponent(ptr)) {
+void hardware_component::remove_component(const hardware_component_ptr &component) {
+	if (!has_subcomponent(component)) {
 		throw COMPONENT_EXCEPTION(exception::not_subcomponent, component);
 	}
 
-	_components.remove(ptr);
-	ptr->set_parent_component(hardware_component_weak_ptr{});
+	_components.remove(component);
+	component->set_parent_component(hardware_component_ptr{});
 
-	log(component_debug << "Removing component: " << ptr->get_name());
+	log(component_debug << "Removing component: " << component->get_name());
 }
 
-void hardware_component::replace_component(const hardware_component_weak_ptr &old_component,
-                                           const hardware_component_weak_ptr &new_component) {
-	hardware_component_ptr old_ptr = old_component.lock();
-
-	if (!has_subcomponent(old_ptr)) {
+void hardware_component::replace_component(const hardware_component_ptr &old_component,
+                                           const hardware_component_ptr &new_component) {
+	if (!has_subcomponent(old_component)) {
 		throw COMPONENT_EXCEPTION(exception::not_subcomponent, old_component);
 	}
-	if (new_component.lock()->has_parent_component()) {
+	if (new_component->has_parent_component()) {
 		throw COMPONENT_EXCEPTION(exception::subcomponent_owned, new_component);
 	}
-	if (new_component.lock() == shared_from_this()
-	    || is_subcomponent_of(new_component.lock(), true)) {
+	if (new_component == shared_from_this() || is_subcomponent_of(new_component, true)) {
 		throw COMPONENT_EXCEPTION(exception::component_loop, new_component);
 	}
 
-	remove_component(old_ptr);
+	remove_component(old_component);
 	add_component(new_component);
 }
 

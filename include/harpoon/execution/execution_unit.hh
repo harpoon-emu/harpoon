@@ -15,8 +15,8 @@ public:
 
 	void set_clock(const clock::clock_ptr &clock);
 
-	clock::clock_ptr get_clock() const {
-		return _clock.lock();
+	const clock::clock_ptr &get_clock() const {
+		return _clock;
 	}
 
 	virtual void step(hardware_component *trigger) override;
@@ -35,11 +35,10 @@ public:
 	virtual ~execution_unit() override;
 
 private:
-	clock::clock_weak_ptr _clock{};
+	clock::clock_ptr _clock{};
 };
 
 using execution_unit_ptr = std::shared_ptr<execution_unit>;
-using execution_unit_weak_ptr = std::weak_ptr<execution_unit>;
 
 } // namespace execution
 } // namespace harpoon

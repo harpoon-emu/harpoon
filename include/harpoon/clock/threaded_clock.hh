@@ -31,7 +31,6 @@ private:
 };
 
 using threaded_clock_ptr = std::shared_ptr<threaded_clock>;
-using threaded_clock_weak_ptr = std::weak_ptr<threaded_clock>;
 
 template<typename... Args>
 threaded_clock_ptr make_threaded_clock(Args &&... args) {

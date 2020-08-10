@@ -100,21 +100,21 @@ public:
 	 * @brief Add hardware component to components hierarchy.
 	 * @param[in] component Child component.
 	 */
-	void add_component(const hardware_component_weak_ptr &component);
+	void add_component(const hardware_component_ptr &component);
 
 	/**
 	 * @brief Remove component from components hierachy.
 	 * @param[in] component Component to be removed.
 	 */
-	void remove_component(const hardware_component_weak_ptr &component);
+	void remove_component(const hardware_component_ptr &component);
 
 	/**
 	 * @brief Replace component with new component.
 	 * @param[in] old_component Component to be replaced.
 	 * @param[in] new_component New component.
 	 */
-	void replace_component(const hardware_component_weak_ptr &old_component,
-	                       const hardware_component_weak_ptr &new_component);
+	void replace_component(const hardware_component_ptr &old_component,
+	                       const hardware_component_ptr &new_component);
 
 	/**
 	 * @brief Perform component setup. Called during system preparation stage.

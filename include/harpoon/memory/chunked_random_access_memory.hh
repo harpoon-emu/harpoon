@@ -17,7 +17,6 @@ public:
 };
 
 using chunked_random_access_memory_ptr = std::shared_ptr<chunked_random_access_memory>;
-using chunked_random_access_memory_weak_ptr = std::weak_ptr<chunked_random_access_memory>;
 
 template<typename... Args>
 chunked_random_access_memory_ptr make_chunked_random_access_memory(Args &&... args) {

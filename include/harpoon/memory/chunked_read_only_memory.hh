@@ -17,7 +17,6 @@ public:
 };
 
 using chunked_read_only_memory_ptr = std::shared_ptr<chunked_read_only_memory>;
-using chunked_read_only_memory_weak_ptr = std::weak_ptr<chunked_read_only_memory>;
 
 template<typename... Args>
 chunked_read_only_memory_ptr make_chunked_read_only_memory(Args &&... args) {

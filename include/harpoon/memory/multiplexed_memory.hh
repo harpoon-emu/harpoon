@@ -20,9 +20,9 @@ public:
 	multiplexed_memory(const multiplexed_memory &) = delete;
 	multiplexed_memory &operator=(const multiplexed_memory &) = delete;
 
-	void add_memory(memory_id mem_id, const memory_weak_ptr &memory, bool owner = true);
+	void add_memory(memory_id mem_id, const memory_ptr &memory, bool owner = true);
 	void remove_memory(memory_id mem_id, bool owner = true);
-	void replace_memory(memory_id mem_id, const memory_weak_ptr &new_memory, bool owner = true);
+	void replace_memory(memory_id mem_id, const memory_ptr &new_memory, bool owner = true);
 
 	void switch_memory(memory_id mem_id);
 
@@ -33,12 +33,11 @@ protected:
 	virtual void set_cell(address address, uint8_t value) override;
 
 private:
-	std::map<memory_id, memory_weak_ptr> _memory{};
+	std::map<memory_id, memory_ptr> _memory{};
 	memory_ptr _active_memory{};
 };
 
 using multiplexed_memory_ptr = std::shared_ptr<multiplexed_memory>;
-using multiplexed_memory_weak_ptr = std::weak_ptr<multiplexed_memory>;
 
 template<typename... Args>
 multiplexed_memory_ptr make_multiplexed_memory(Args &&... args) {
