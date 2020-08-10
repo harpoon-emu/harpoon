@@ -29,8 +29,8 @@ public:
 		_breakpoints.push_back(breakpoint);
 	}
 
-	execution_unit_ptr get_execution_unit() const {
-		return _execution_unit.lock();
+	const execution_unit_ptr &get_execution_unit() const {
+		return _execution_unit;
 	}
 
 	std::uint_fast64_t get_executed_instructions() const {
@@ -93,7 +93,7 @@ private:
 		}
 	}
 
-	execution_unit_weak_ptr _execution_unit{};
+	execution_unit_ptr _execution_unit{};
 	std::uint_fast64_t _executed_instructions{};
 	std::uint64_t _stats_interval{};
 	bool _disassemble{};
@@ -104,7 +104,6 @@ private:
 };
 
 using processing_unit_ptr = std::shared_ptr<processing_unit>;
-using processing_unit_weak_ptr = std::weak_ptr<processing_unit>;
 
 } // namespace execution
 } // namespace harpoon

@@ -17,7 +17,6 @@ public:
 };
 
 using linear_random_access_memory_ptr = std::shared_ptr<linear_random_access_memory>;
-using linear_random_access_memory_weak_ptr = std::weak_ptr<linear_random_access_memory>;
 
 template<typename... Args>
 linear_random_access_memory_ptr make_linear_random_access_memory(Args &&... args) {

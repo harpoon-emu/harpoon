@@ -42,7 +42,7 @@ private:
 };
 
 using console_log_ptr = std::shared_ptr<console_log>;
-using console_log_weak_ptr = std::weak_ptr<console_log>;
+
 template<typename... Args>
 console_log_ptr make_console_log(Args &&... args) {
 	return std::make_shared<console_log>(std::forward<Args>(args)...);

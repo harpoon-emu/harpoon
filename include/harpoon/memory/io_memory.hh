@@ -102,9 +102,6 @@ private:
 template<typename MemoryImplementation>
 using io_memory_ptr = std::shared_ptr<io_memory<MemoryImplementation>>;
 
-template<typename MemoryImplementation>
-using io_memory_weak_ptr = std::weak_ptr<io_memory<MemoryImplementation>>;
-
 template<typename MemoryImplementation, typename... Args>
 io_memory_ptr<MemoryImplementation> make_io_memory(Args &&... args) {
 	return std::make_shared<io_memory<MemoryImplementation>>(std::forward<Args>(args)...);

@@ -18,10 +18,10 @@ public:
 	main_memory(const main_memory &) = delete;
 	main_memory &operator=(const main_memory &) = delete;
 
-	virtual void add_memory(const memory_weak_ptr &memory, bool owner = true);
-	virtual void remove_memory(const memory_weak_ptr &memory, bool owner = true);
-	virtual void replace_memory(const memory_weak_ptr &old_memory,
-	                            const memory_weak_ptr &new_memory, bool owner = true);
+	virtual void add_memory(const memory_ptr &memory, bool owner = true);
+	virtual void remove_memory(const memory_ptr &memory, bool owner = true);
+	virtual void replace_memory(const memory_ptr &old_memory, const memory_ptr &new_memory,
+	                            bool owner = true);
 
 	virtual void serialize(serializer::serializer &serializer) override;
 	virtual void deserialize(deserializer::deserializer &deserializer) override;
@@ -33,15 +33,14 @@ protected:
 	virtual void set_cell(address address, uint8_t value) override;
 
 private:
-	memory_ptr get_memory(address address);
+	const memory_ptr &get_memory(address address);
 
-	std::list<memory_weak_ptr> _memory;
-	memory_weak_ptr _last_used_memory;
+	std::list<memory_ptr> _memory;
+	memory_ptr _last_used_memory;
 	address_range _last_used_range;
 };
 
 using main_memory_ptr = std::shared_ptr<main_memory>;
-using main_memory_weak_ptr = std::weak_ptr<main_memory>;
 
 template<typename... Args>
 main_memory_ptr make_main_memory(Args &&... args) {

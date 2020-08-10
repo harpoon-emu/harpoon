@@ -17,7 +17,6 @@ public:
 };
 
 using linear_read_only_memory_ptr = std::shared_ptr<linear_read_only_memory>;
-using linear_read_only_memory_weak_ptr = std::weak_ptr<linear_read_only_memory>;
 
 template<typename... Args>
 linear_read_only_memory_ptr make_linear_read_only_memory(Args &&... args) {

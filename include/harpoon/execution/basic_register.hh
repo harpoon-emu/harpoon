@@ -84,9 +84,6 @@ inline std::ostream &operator<<(std::ostream &stream, const basic_register<std::
 template<typename T>
 using basic_register_ptr = std::shared_ptr<basic_register<T>>;
 
-template<typename T>
-using basic_register_weak_ptr = std::weak_ptr<basic_register<T>>;
-
 template<typename T, typename... Args>
 basic_register_ptr<T> make_basic_register(Args &&... args) {
 	return std::make_shared<basic_register<T>>(std::forward<Args>(args)...);
