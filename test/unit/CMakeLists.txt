@@ -3,6 +3,7 @@ add_subdirectory(memory)
 add_executable(
 	t_runner
 	hardware_component.cc
+	computer_system.cc
 	)
 
 target_link_libraries(
