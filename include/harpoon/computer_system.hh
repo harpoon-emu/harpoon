@@ -13,16 +13,16 @@ class computer_system : public hardware_component {
 public:
 	using hardware_component::hardware_component;
 
-	void set_main_execution_unit(const execution::execution_unit_weak_ptr &main_execution_unit);
+	void set_main_execution_unit(const execution::execution_unit_ptr &main_execution_unit);
 
-	execution::execution_unit_ptr get_main_execution_unit() const {
-		return _main_execution_unit.lock();
+	const execution::execution_unit_ptr &get_main_execution_unit() const {
+		return _main_execution_unit;
 	}
 
-	void set_main_memory(const memory::memory_weak_ptr &main_memory);
+	void set_main_memory(const memory::memory_ptr &main_memory);
 
 	memory::memory_ptr get_main_memory() const {
-		return _main_memory.lock();
+		return _main_memory;
 	}
 
 	virtual void step(hardware_component *trigger) override;
@@ -32,8 +32,8 @@ public:
 	virtual ~computer_system() override;
 
 private:
-	execution::execution_unit_weak_ptr _main_execution_unit{};
-	memory::memory_weak_ptr _main_memory{};
+	execution::execution_unit_ptr _main_execution_unit{};
+	memory::memory_ptr _main_memory{};
 };
 
 using computer_system_ptr = std::shared_ptr<computer_system>;
