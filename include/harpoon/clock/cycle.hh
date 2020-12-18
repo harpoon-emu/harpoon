@@ -4,6 +4,7 @@
 #include "harpoon/harpoon.hh"
 
 #include <atomic>
+#include <iostream>
 
 namespace harpoon {
 namespace clock {
@@ -15,6 +16,12 @@ struct cycle {
 	tick_t tick;
 	phase_t phase;
 };
+
+static inline std::ostream &operator<<(std::ostream &stream, const cycle &c) {
+	std::ostream out(stream.rdbuf());
+	out << "[T: " << c.tick << ", P: " << c.phase << "]";
+	return stream;
+}
 
 } // namespace clock
 } // namespace harpoon

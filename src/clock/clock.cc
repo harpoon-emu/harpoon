@@ -1,5 +1,7 @@
 #include "harpoon/clock/clock.hh"
 
+#include "harpoon/clock/exception/dead_clock.hh"
+
 #include <chrono>
 #include <thread>
 
@@ -42,7 +44,7 @@ void clock::step(hardware_component *) {
 	}
 
 	if (_handlers.empty()) {
-		throw std::runtime_error("DEAD CLOCK");
+		throw COMPONENT_EXCEPTION(exception::dead_clock, _cycle);
 	}
 
 	std::uint64_t ns = (std::begin(_handlers)->first.first - _cycle.tick) * 1000000000 / _frequency;
