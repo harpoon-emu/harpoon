@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <harpoon/clock/clock.hh>
 #include <harpoon/clock/exception/dead_clock.hh>
+#include <harpoon/log/queue_log.hh>
 
 namespace {
 
@@ -20,6 +21,7 @@ protected:
 
 	virtual void SetUp() {
 		_clock = harpoon::clock::make_clock(1000000);
+		_clock->set_name("clock_TEST");
 		_clock->prepare();
 		_clock->boot();
 	}
@@ -29,6 +31,19 @@ protected:
 		_clock->cleanup();
 	}
 };
+
+TEST_F(clock, log_state) {
+	harpoon::log::queue_log_ptr l = harpoon::log::make_queue_log();
+
+	_clock->set_log(l);
+
+	_clock->log_state(harpoon::log::message::Level::NOTICE);
+
+	EXPECT_FALSE(l->empty());
+	auto m = l->pop();
+	EXPECT_EQ(m.get_component(), _clock->get_name());
+	EXPECT_EQ(m.get_level(), harpoon::log::message::Level::NOTICE);
+}
 
 TEST_F(clock, dead_clock) {
 	EXPECT_THROW({ _clock->step(_clock.get()); }, harpoon::clock::exception::dead_clock);
