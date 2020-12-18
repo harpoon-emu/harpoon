@@ -44,9 +44,10 @@ add_library(harpoon SHARED
 	src/memory/linear_random_access_memory.cc
 	src/memory/main_memory.cc
 	src/memory/chunked_random_access_memory.cc
+	src/log/console_log.cc
+	src/log/queue_log.cc
 	src/log/log.cc
 	src/log/message.cc
-	src/log/console_log.cc
 	src/log/stream_log.cc
 	src/exception/hardware_component_exception.cc
 	src/exception/harpoon_exception.cc
