@@ -2,6 +2,7 @@ add_executable(
 	t_log_runner
 	message.cc
 	log.cc
+	stream_log.cc
 	)
 
 target_link_libraries(
