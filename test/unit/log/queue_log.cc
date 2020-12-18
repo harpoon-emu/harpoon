@@ -72,3 +72,19 @@ TEST(queue_log, pop) {
 	l->pop();
 	EXPECT_TRUE(l->empty());
 }
+
+TEST(queue_log, clear) {
+	harpoon::log::queue_log_ptr l = harpoon::log::make_queue_log();
+	harpoon::log::message m1(harpoon::log::message::Level::ERROR, "!!file!!", 31415, "@@function@@",
+	                         "##component##");
+	harpoon::log::message m2(harpoon::log::message::Level::ERROR, "!!file!!", 31415, "@@function@@",
+	                         "##component##");
+	harpoon::log::message m3(harpoon::log::message::Level::ERROR, "!!file!!", 31415, "@@function@@",
+	                         "##component##");
+
+	l->out(m1);
+	l->out(m2);
+	l->out(m3);
+	l->clear();
+	EXPECT_TRUE(l->empty());
+}
