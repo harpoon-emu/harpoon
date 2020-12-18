@@ -24,7 +24,7 @@ void clock::log_state(log::message::Level level) const {
 	hardware_component::log_state(level);
 }
 
-void clock::schedule(uint64_t delay, uint64_t phase, step_handler &&fn) {
+void clock::schedule(uint64_t delay, phase_t phase, step_handler &&fn) {
 	_handlers.insert({{_cycle.tick + delay, phase}, fn});
 }
 
