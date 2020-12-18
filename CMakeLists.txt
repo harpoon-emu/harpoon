@@ -54,7 +54,6 @@ add_library(harpoon SHARED
 	src/exception/not_subcomponent.cc
 	src/exception/component_loop.cc
 	src/exception/wrong_state.cc
-	src/clock/threaded_clock.cc
 	src/clock/clock.cc
 	src/clock/exception/clock_exception.cc
 	src/clock/exception/dead_clock.cc
