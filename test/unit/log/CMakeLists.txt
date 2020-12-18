@@ -3,6 +3,7 @@ add_executable(
 	message.cc
 	log.cc
 	stream_log.cc
+	queue_log.cc
 	)
 
 target_link_libraries(

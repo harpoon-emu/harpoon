@@ -15,7 +15,7 @@ public:
 namespace harpoon {
 namespace log {
 
-bool operator==(const harpoon::log::message &a, const harpoon::log::message &b) {
+static bool operator==(const harpoon::log::message &a, const harpoon::log::message &b) {
 	return a.get_component() == b.get_component() && a.get_file() == b.get_file()
 	       && a.get_function() == b.get_function() && a.get_level() == b.get_level()
 	       && a.get_line() == b.get_line() && a.get_text() == b.get_text();
