@@ -17,6 +17,10 @@ struct cycle {
 	phase_t phase;
 };
 
+static inline bool operator==(const cycle &a, const cycle &b) {
+	return a.tick == b.tick && a.phase == b.phase;
+}
+
 static inline std::ostream &operator<<(std::ostream &stream, const cycle &c) {
 	std::ostream out(stream.rdbuf());
 	out << "[T: " << c.tick << ", P: " << c.phase << "]";
