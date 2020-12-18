@@ -3,42 +3,19 @@
 
 #include "harpoon/harpoon.hh"
 
-#include "harpoon/log/log.hh"
+#include "harpoon/log/stream_log.hh"
 
+#include <iostream>
 #include <mutex>
 
 namespace harpoon {
 namespace log {
 
-class console_log : public log {
+class console_log : public stream_log {
 public:
+	console_log() : stream_log(std::cout) {}
+
 	virtual ~console_log();
-
-	using log::out;
-	virtual void out(const message &message);
-
-	void display_component(bool display = true) {
-		_display_component = display;
-	}
-
-	void display_file(bool display = true) {
-		_display_file = display;
-	}
-
-	void display_line(bool display = true) {
-		_display_line = display;
-	}
-
-	void display_function(bool display = true) {
-		_display_function = display;
-	}
-
-private:
-	bool _display_component{true};
-	bool _display_file{false};
-	bool _display_line{false};
-	bool _display_function{false};
-	std::mutex _mutex{};
 };
 
 using console_log_ptr = std::shared_ptr<console_log>;

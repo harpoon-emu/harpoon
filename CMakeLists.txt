@@ -47,6 +47,7 @@ add_library(harpoon SHARED
 	src/log/log.cc
 	src/log/message.cc
 	src/log/console_log.cc
+	src/log/stream_log.cc
 	src/exception/hardware_component_exception.cc
 	src/exception/harpoon_exception.cc
 	src/exception/subcomponent_owned.cc
