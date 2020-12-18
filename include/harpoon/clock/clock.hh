@@ -36,7 +36,7 @@ public:
 	virtual void shutdown() override;
 	virtual void step(hardware_component *trigger) override;
 
-	void schedule(std::uint64_t delay, std::uint64_t phase, step_handler &&fn);
+	void schedule(std::uint64_t delay, phase_t phase, step_handler &&fn);
 
 	virtual void log_state(log::message::Level level) const override;
 
@@ -49,7 +49,7 @@ private:
 	std::uint64_t _frequency{};
 	cycle _cycle{};
 
-	std::multimap<std::pair<std::uint64_t, std::uint64_t>, step_handler> _handlers{};
+	std::multimap<std::pair<tick_t, phase_t>, step_handler> _handlers{};
 };
 
 using clock_ptr = std::shared_ptr<clock>;

@@ -8,9 +8,12 @@
 namespace harpoon {
 namespace clock {
 
+using tick_t = std::uint64_t;
+using phase_t = std::uint64_t;
+
 struct cycle {
-	std::uint64_t tick;
-	std::uint64_t phase;
+	tick_t tick;
+	phase_t phase;
 };
 
 } // namespace clock
