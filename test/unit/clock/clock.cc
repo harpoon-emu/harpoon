@@ -23,6 +23,11 @@ protected:
 		_clock->prepare();
 		_clock->boot();
 	}
+
+	virtual void TearDown() {
+		_clock->shutdown();
+		_clock->cleanup();
+	}
 };
 
 TEST_F(clock, dead_clock) {
